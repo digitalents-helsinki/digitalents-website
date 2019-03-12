@@ -1,63 +1,49 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby';
 
-const personData = {
-  persons: [
-    {
-      name: 'Vesa Jaakola',
-      title: 'Project Manager',
-      email: 'vesa.jaakola@hel.fi',
-      phone: '040 7179121',
-    },
-    {
-      name: 'Karoliina Leisti',
-      title: 'Head of Ad Agency',
-      email: 'karoliina.leisti@digitalentshelsinki.fi',
-      phone: '040 522 4296',
-    },
-    {
-      name: 'Ari Huotari',
-      title: 'Planning Officer',
-      email: 'ari.huotari@digitalentshelsinki.fi',
-      phone: 'puhelin',
-    },
-    {
-      name: 'Seppo Rouhiainen',
-      title: 'Head of ICT',
-      email: 'seppo.rouhiainen@digitalentshelsinki.fi',
-      phone: '040 4871644',
-    },
-    {
-      name: 'Veikko Hiiri',
-      title: 'Projektikoordinaattori<br>6Aika Digipore',
-      email: 'sähköposti',
-      phone: 'puhelin',
-    },
-    {
-      name: 'Tarja Kurvinen',
-      title: 'Projektikoordinaattori<br>6Aika Digipore',
-      email: 'tarja.kurvinen@hel.fi',
-      phone: '040 669 2530'
-    }
-  ]
+class PersonsAlt extends React.Component {
+  render () {
+    return (
+      <PersonsWrapper>
+        {this.props.persons.edges.map((person) => {
+          return (
+            <PersonWrapper>
+              <h2>{person.node.name}</h2>
+              <p>{person.node.title}</p>
+              <p>{person.node.email}</p>
+              <p>{person.node.phoneNumber}</p>
+            </PersonWrapper>
+          )
+        })}
+      </PersonsWrapper>
+    )
+  }
 }
 
-const Persons = () => {
-  const personItems = personData.persons.map((n, index) => (
-    <PersonWrapper>
-      <h2>{n.name}</h2>
-      <p>{n.title}</p>
-      <p>{n.email}</p>
-      <p>{n.phone}</p>
-    </PersonWrapper>
-  ))
-
-  return (
-    <PersonsWrapper>
-      {personItems}
-    </PersonsWrapper>
-  )
-}
+const Persons = () => (
+  <StaticQuery
+    query={graphql`
+      query PersonQuery {
+        allContentfulPerson(
+          filter: {node_locale: {regex: "/en-US/"}}
+        ) {
+          edges {
+            node {
+              name
+              title
+              email
+              phoneNumber
+            }
+          }
+        }
+      }
+    `}
+    render={(data) => (
+      <PersonsAlt persons={data.allContentfulPerson} />
+    )}
+  />
+)
 
 const PersonsWrapper = styled.div`
   display: flex;
