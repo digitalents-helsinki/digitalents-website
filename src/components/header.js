@@ -14,7 +14,7 @@ class Header extends React.Component {
               </LogoWrapper>
               <NavWrapper>
                 {header.node.navigationLinks.map((link) => {
-                  return <li>{link}</li>
+                  return <li><Link to="/">{link}</Link></li>
                 })}
               </NavWrapper>
               <LangWrapper>
