@@ -1,24 +1,24 @@
-import React, { Fragment } from "react"
-import { Link, StaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
+import React, { Fragment } from 'react'
+import { Link, StaticQuery, graphql } from 'gatsby'
+import styled from 'styled-components'
 
 class Header extends React.Component {
-  render () {
+  render() {
     return (
       <HeaderWrapper>
-        {this.props.header.edges.map((header) => {
+        {this.props.header.edges.map(header => {
           return (
             <Fragment>
               <LogoWrapper>
                 <img src={header.node.headerImage.file.url} alt="" />
               </LogoWrapper>
               <NavWrapper>
-                {header.node.navigationLinks.map((link) => {
+                {header.node.navigationLinks.map(link => {
                   return <li>{link}</li>
                 })}
               </NavWrapper>
               <LangWrapper>
-                {header.node.languageOptions.map((language) => {
+                {header.node.languageOptions.map(language => {
                   return <li>{language}</li>
                 })}
               </LangWrapper>
@@ -31,12 +31,10 @@ class Header extends React.Component {
 }
 
 const HeaderQuery = () => (
-  <StaticQuery 
+  <StaticQuery
     query={graphql`
       query HeaderQuery {
-        allContentfulHeader(
-          filter: {node_locale: {regex: "/en-US/"}}
-        ) {
+        allContentfulHeader(filter: { node_locale: { regex: "/en-US/" } }) {
           edges {
             node {
               headerImage {
@@ -51,9 +49,7 @@ const HeaderQuery = () => (
         }
       }
     `}
-    render={(data) => (
-      <Header header={data.allContentfulHeader} />
-    )}
+    render={data => <Header header={data.allContentfulHeader} />}
   />
 )
 
@@ -62,7 +58,8 @@ const HeaderWrapper = styled.header`
   display: flex;
   flex-direction: row;
   position: fixed;
-  width: 100vw;
+  left: 0;
+  right: 0;
   padding: 1rem;
   text-transform: uppercase;
   z-index: 10;
@@ -71,6 +68,9 @@ const HeaderWrapper = styled.header`
 
 const LogoWrapper = styled.div`
   flex: 1;
+  display: block;
+  max-width: 120px;
+  overflow: hidden;
 `
 
 const NavWrapper = styled.ul`
@@ -84,10 +84,10 @@ const NavWrapper = styled.ul`
   li {
     margin-right: 2rem;
   }
-  
+
   a {
-      text-decoration: none;
-      color: white;
+    text-decoration: none;
+    color: white;
   }
 `
 

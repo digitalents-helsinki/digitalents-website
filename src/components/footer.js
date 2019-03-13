@@ -1,53 +1,48 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import { StaticQuery } from 'gatsby';
+import { StaticQuery } from 'gatsby'
 
-const SocialButton = {
-  
-}
+const SocialButton = {}
 
 const FooterColumn = props => {
-  if(props.position === "left") {
+  if (props.position === 'left') {
     return (
-      <div>
-        {props.data.map((n) => {
+      <div className="left">
+        {props.data.map(n => {
           return <p>{n}</p>
         })}
       </div>
     )
-  }
-  else if(props.position === "middle") {
+  } else if (props.position === 'middle') {
     return (
-      <div>
-        {props.data.map((n) => {
+      <div className="middle">
+        {props.data.map(n => {
           return <p>{n}</p>
         })}
       </div>
     )
-  }
-  else if(props.position === "right") {
+  } else if (props.position === 'right') {
     return (
-      <div>
-        {props.data.map((n) => {
+      <div className="right">
+        {props.data.map(n => {
           return <p>{n}</p>
         })}
       </div>
     )
-  }
-  else return null
+  } else return null
 }
 
 class Footer extends React.Component {
-  render () {
+  render() {
     return (
       <FooterWrapper>
-        {this.props.footer.edges.map((footer) => {
+        {this.props.footer.edges.map(footer => {
           return (
-          <Fragment>
-            <FooterColumn position="left" data={footer.node.leftColumn}/>
-            <FooterColumn position="middle" data={footer.node.middleColumn} />
-            <FooterColumn position="right" data={footer.node.rightColumn} />
-          </Fragment>
+            <Fragment>
+              <FooterColumn position="left" data={footer.node.leftColumn} />
+              <FooterColumn position="middle" data={footer.node.middleColumn} />
+              <FooterColumn position="right" data={footer.node.rightColumn} />
+            </Fragment>
           )
         })}
       </FooterWrapper>
@@ -59,9 +54,7 @@ const FooterQuery = () => (
   <StaticQuery
     query={graphql`
       query footerQuery {
-        allContentfulFooter(
-          filter: {node_locale: {regex: "/en-US/"}}
-        ) {
+        allContentfulFooter(filter: { node_locale: { regex: "/en-US/" } }) {
           edges {
             node {
               leftColumn
@@ -72,17 +65,29 @@ const FooterQuery = () => (
         }
       }
     `}
-    render={(data) => (
-      <Footer footer={data.allContentfulFooter} />
-    )}
+    render={data => <Footer footer={data.allContentfulFooter} />}
   />
 )
 
 const FooterWrapper = styled.footer`
   display: flex;
+  flex-direction: column;
   background-color: #353535;
   color: white;
   justify-content: space-evenly;
+
+  @media screen and (min-width: 400px) {
+    flex-direction: row;
+  }
+
+  .left {
+  }
+
+  .middle {
+  }
+
+  .right {
+  }
 `
 
 export default FooterQuery

@@ -1,4 +1,7 @@
 import React, { Fragment } from 'react'
+
+import DefaultLayout from '../components/layout'
+
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Hero from '../components/hero'
@@ -10,15 +13,13 @@ import Sponsors from '../components/sponsors'
 
 export default () => {
   return (
-    <Fragment>
-      <Header />
-      <Hero />
+    <DefaultLayout>
+      {/* <Hero /> */}
       <Teams />
       <SomeContent />
       <Persons />
-      <Location />
+      {/* <Location /> */}
       <Sponsors />
-      <Footer />
-    </Fragment>
+    </DefaultLayout>
   )
 }
