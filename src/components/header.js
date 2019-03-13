@@ -1,27 +1,6 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { Fragment } from "react"
+import { Link, StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-
-import LogoImage from "../images/digitalents_withoutDT_white0.svg"
-
-const menuData = [
-  {
-    title: 'Etusivu',
-    link: '/'
-  },
-  {
-    title: 'Palvelut',
-    link: '/palvelut/'
-  },
-  {
-    title: 'Työpaikat',
-    link: '/tyopaikat/'
-  },
-  {
-    title: 'Yhteystiedot',
-    link: '/yhteystiedot/'
-  }
-]
 
 const langData = [
   {
@@ -35,29 +14,60 @@ const langData = [
   }
 ]
 
-const Header = () => {
-  const menuItems = menuData.map((n, index) => (
-    <li><Link to={n.link}>{n.title}</Link></li>
-  ))
-  
-  const langItems = langData.map((n, index) => (
-    <li>{n.title}</li>
-  ))
-
-  return (
-    <HeaderWrapper>
-      <LogoWrapper>
-        <img src={LogoImage} alt="" />
-      </LogoWrapper>
-      <NavWrapper>
-        {menuItems}
-      </NavWrapper>
-      <LangWrapper>
-        {langItems}
-      </LangWrapper>
-    </HeaderWrapper>
-  )
+class Header extends React.Component {
+  render () {
+    return (
+      <HeaderWrapper>
+        {this.props.header.edges.map((header) => {
+          return (
+            <Fragment>
+              <LogoWrapper>
+                <img src={header.node.headerImage.file.url} alt="" />
+              </LogoWrapper>
+              <NavWrapper>
+                {header.node.navigationLinks.map((link) => {
+                  return <li>{link}</li>
+                })}
+              </NavWrapper>
+              <LangWrapper>
+                {header.node.languageOptions.map((language) => {
+                  return <li>{language}</li>
+                })}
+              </LangWrapper>
+            </Fragment>
+          )
+        })}
+      </HeaderWrapper>
+    )
+  }
 }
+
+const HeaderQuery = () => (
+  <StaticQuery 
+    query={graphql`
+      query HeaderQuery {
+        allContentfulHeader(
+          filter: {node_locale: {regex: "/en-US/"}}
+        ) {
+          edges {
+            node {
+              headerImage {
+                file {
+                  url
+                }
+              }
+              navigationLinks
+              languageOptions
+            }
+          }
+        }
+      }
+    `}
+    render={(data) => (
+      <Header header={data.allContentfulHeader} />
+    )}
+  />
+)
 
 const HeaderWrapper = styled.header`
   background-color: rgba(0, 0, 0, 0.8);
@@ -111,4 +121,4 @@ const LangWrapper = styled.ul`
   }
 `
 
-export default Header
+export default HeaderQuery

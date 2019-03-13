@@ -4791,10 +4791,10 @@ gatsby-cli@^2.4.12:
     yargs "^11.1.0"
     yurnalist "^1.0.2"
 
-gatsby-image@^2.0.31:
-  version "2.0.31"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.31.tgz#07bc87a92b608630f50af7cac4315131be75d01b"
-  integrity sha512-UQju2WMe3B9AfEaxApP/HNjkJMS/mJaROC2KCq2qEaNyuaSPNaGGCM1YACjWnC28a5vy6tOZWrxTx9vsBThb8g==
+gatsby-image@^2.0.33:
+  version "2.0.33"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.33.tgz#f167c128e5347e17e6611b164aee731a7f05caf3"
+  integrity sha512-Vl9eARq/ZFx240KmAOnKDRU5re0kY9BP1bwHP6Sq0ZqgUN/HjWeb/Gqa1Tj8uQwhFGy989EN32nM4xgKVT+5JQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     prop-types "^15.6.1"
@@ -11322,7 +11322,7 @@ urix@^0.1.0:
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
 
-url-loader@^1.0.1:
+url-loader@^1.0.1, url-loader@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-1.1.2.tgz#b971d191b83af693c5e3fea4064be9e1f2d7f8d8"
   integrity sha512-dXHkKmw8FhPqu8asTc1puBfe3TehOCo2+RmOOev5suNCIYBcT626kxiWg1NBVkwc4rO8BGa7gP70W7VXuqHrjg==

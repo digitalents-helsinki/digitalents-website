@@ -1,46 +1,72 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import RightImageBG from '../images/Etusivu_tausta_Oikea.png'
-import LeftImageBG from '../images/Etusivu_tausta_Vasen.png'
-import LeftMaskImage from '../images/etusivu_vasen_maski.svg'
-import RightMaskImage from '../images/etusivu_oikea_maski.svg'
-
-const heroData = {
-  titleItems: [
-    {
-      title: 'Uniikki'
-    },
-    {
-      title: 'Inspiroiva'
-    },
-    {
-      title: 'Innovatiivinen'
-    }
-  ],
-  titleSlogan: 'Digitalents Helsinki on nuorten moderni ja luova yhteisö, jossa opitaan tekemällä koodaamista, pelien kehittämistä ja uutta mediaa.'
+class HeroAlt extends React.Component {
+  render () {
+    return (
+      <Fragment>
+        {this.props.heros.edges.map((hero) => {
+          return (
+            <Fragment>
+              <HeroWrapper>
+                <LeftImage>
+                  <img src={hero.node.heroLeftImage.file.url} alt="" />
+                </LeftImage>
+                <TextWrapper>
+                  {hero.node.heroText.map((text) => {
+                    return <h1>{text}</h1>
+                  })}
+                  <p>{hero.node.heroLowerText}</p>
+                </TextWrapper>
+                <RightImage>
+                  <img src={hero.node.heroRightImage.file.url} alt="" />
+                </RightImage>
+              </HeroWrapper>
+              <TextContent>
+                  <p>{hero.node.textContent.textContent}</p>
+              </TextContent>
+            </Fragment>
+          )
+        })}
+      </Fragment>
+    )
+  }
 }
 
-const Hero = () => {
-  const titleItems = heroData.titleItems.map((n, index) => (
-    <h1>{n.title}</h1>
-  ))
-
-  return (
-    <HeroWrapper>
-      <LeftImage>
-        <img src={LeftMaskImage} alt="" />
-      </LeftImage>
-      <TextWrapper>
-        {titleItems}
-        <p>{heroData.titleSlogan}</p>
-      </TextWrapper>
-      <RightImage>
-        <img src={RightMaskImage} alt="" />
-      </RightImage>
-    </HeroWrapper>
-  )
-}
+const Hero = () => (
+  <StaticQuery
+    query={graphql`
+      query HeroQuery {
+        allContentfulHero(
+          filter: {node_locale: {regex: "/en-US/"}}
+        ) {
+          edges {
+            node {
+              heroLeftImage {
+                file {
+                  url
+                }
+              }
+              heroRightImage {
+                file {
+                  url
+                }
+              }
+              heroText
+              heroLowerText
+              textContent { textContent }
+            }
+          }
+        }
+      }
+    `}
+    render={(data) => (
+      <HeroAlt heros={data.allContentfulHero} />
+    )}
+  />
+)
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -51,15 +77,17 @@ const HeroWrapper = styled.div`
 `
 
 const LeftImage = styled.div`
-  background-image: url(${LeftImageBG});
-  background-size: cover;
-  flex: 1;
+  img {
+    width: 350px;
+    height: 350px;
+  }
 `
 
 const RightImage = styled.div`
-  background-image: url(${RightImageBG});
-  background-size: cover;
-  flex: 1;
+  img {
+    width: 350px;
+    height: 350px;
+  }
 `
 
 const TextWrapper = styled.div`
@@ -68,4 +96,7 @@ const TextWrapper = styled.div`
   align-items: center;
 `
 
+const TextContent = styled.div`
+  text-align: center;
+`
 export default Hero
