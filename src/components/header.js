@@ -2,18 +2,6 @@ import React, { Fragment } from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
-const langData = [
-  {
-    title: 'FI'
-  },
-  {
-    title: 'EN'
-  },
-  {
-    title: 'SE'
-  }
-]
-
 class Header extends React.Component {
   render () {
     return (

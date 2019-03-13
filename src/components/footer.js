@@ -1,24 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
-
-const footerData ={
-  left: [
-    'Palvelut',
-    'Yhteystiedot',
-    'Työpaikat',
-    'Evästeiden käyttö: linkki',
-    'Rekisteriseloste: linkki',
-  ],
-  middle: [
-    'Lapinlahdenkatu 16, 00180 Helsinki',
-    'PL18402, 00099',
-    'Helsingin kaupunki',
-  ],
-  right: [
-    'Seuraa meitä:',
-    '#DIGITALENTSHKI',
-  ]
-}
+import { StaticQuery } from 'gatsby';
 
 const SocialButton = {
   
@@ -26,35 +8,75 @@ const SocialButton = {
 
 const FooterColumn = props => {
   if(props.position === "left") {
-    const test = footerData.left.map((n, index) => (
-      <p>{n}</p>
-    ))
-    return <div>{test}</div>
+    return (
+      <div>
+        {props.data.map((n) => {
+          return <p>{n}</p>
+        })}
+      </div>
+    )
   }
   else if(props.position === "middle") {
-    const test = footerData.middle.map((n, index) => (
-      <p>{n}</p>
-    ))
-    return <div>{test}</div>
+    return (
+      <div>
+        {props.data.map((n) => {
+          return <p>{n}</p>
+        })}
+      </div>
+    )
   }
   else if(props.position === "right") {
-    const test = footerData.right.map((n, index) => (
-      <p>{n}</p>
-    ))
-    return <div>{test}</div>
+    return (
+      <div>
+        {props.data.map((n) => {
+          return <p>{n}</p>
+        })}
+      </div>
+    )
   }
   else return null
 }
 
-const Footer = () => {
-  return (
-    <FooterWrapper>
-      <FooterColumn position="left" />
-      <FooterColumn position="middle" />
-      <FooterColumn position="right" />
-    </FooterWrapper>
-  )
+class Footer extends React.Component {
+  render () {
+    return (
+      <FooterWrapper>
+        {this.props.footer.edges.map((footer) => {
+          return (
+          <Fragment>
+            <FooterColumn position="left" data={footer.node.leftColumn}/>
+            <FooterColumn position="middle" data={footer.node.middleColumn} />
+            <FooterColumn position="right" data={footer.node.rightColumn} />
+          </Fragment>
+          )
+        })}
+      </FooterWrapper>
+    )
+  }
 }
+
+const FooterQuery = () => (
+  <StaticQuery
+    query={graphql`
+      query footerQuery {
+        allContentfulFooter(
+          filter: {node_locale: {regex: "/en-US/"}}
+        ) {
+          edges {
+            node {
+              leftColumn
+              middleColumn
+              rightColumn
+            }
+          }
+        }
+      }
+    `}
+    render={(data) => (
+      <Footer footer={data.allContentfulFooter} />
+    )}
+  />
+)
 
 const FooterWrapper = styled.footer`
   display: flex;
@@ -63,4 +85,4 @@ const FooterWrapper = styled.footer`
   justify-content: space-evenly;
 `
 
-export default Footer
+export default FooterQuery
