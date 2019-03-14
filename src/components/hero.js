@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import BGImg from 'gatsby-background-image'
 
 class HeroAlt extends React.Component {
   render () {
@@ -12,7 +13,9 @@ class HeroAlt extends React.Component {
             <Fragment>
               <HeroWrapper>
                 <LeftImage>
-                  <img src={hero.node.heroLeftImage.file.url} alt="" />
+                  <BGImg fluid={hero.node.heroLeftBackgroundImage.fluid}>
+                    <Img fluid={hero.node.heroLeftImage.fluid} />
+                  </BGImg>
                 </LeftImage>
                 <TextWrapper>
                   {hero.node.heroText.map((text) => {
@@ -21,7 +24,7 @@ class HeroAlt extends React.Component {
                   <p>{hero.node.heroLowerText}</p>
                 </TextWrapper>
                 <RightImage>
-                  <img src={hero.node.heroRightImage.file.url} alt="" />
+                  <Img fluid={hero.node.heroRightBackgroundImage.fluid} />
                 </RightImage>
               </HeroWrapper>
               <TextContent>
@@ -44,14 +47,24 @@ const Hero = () => (
         ) {
           edges {
             node {
+              heroLeftBackgroundImage {
+                fluid(maxWidth: 350) {
+                  ...GatsbyContentfulFluid
+                }
+              }
               heroLeftImage {
-                file {
-                  url
+                fluid(maxWidth: 350) {
+                  ...GatsbyContentfulFluid
+                }
+              }
+              heroRightBackgroundImage {
+                fluid(maxWidth: 350) {
+                  ...GatsbyContentfulFluid
                 }
               }
               heroRightImage {
-                file {
-                  url
+                fluid(maxWidth: 350) {
+                  ...GatsbyContentfulFluid
                 }
               }
               heroText
@@ -77,23 +90,26 @@ const HeroWrapper = styled.div`
 `
 
 const LeftImage = styled.div`
-  img {
-    width: 350px;
-    height: 350px;
-  }
+  height: 100%;
+  width: 100%;
 `
 
 const RightImage = styled.div`
-  img {
-    width: 350px;
-    height: 350px;
-  }
+  height: 100%;
+  width: 100%;
 `
 
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
 `
 
 const TextContent = styled.div`

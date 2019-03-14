@@ -13,13 +13,8 @@ class Header extends React.Component {
                 <img src={header.node.headerImage.file.url} alt="" />
               </LogoWrapper>
               <NavWrapper>
-<<<<<<< HEAD
-                {header.node.navigationLinks.map((link) => {
-                  return <li><Link to="/">{link}</Link></li>
-=======
                 {header.node.navigationLinks.map(link => {
                   return <li>{link}</li>
->>>>>>> feature/style-jesse
                 })}
               </NavWrapper>
               <LangWrapper>
