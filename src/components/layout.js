@@ -40,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
   ${reset}
 
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   body {

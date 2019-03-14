@@ -69,8 +69,10 @@ const HeaderWrapper = styled.header`
 const LogoWrapper = styled.div`
   flex: 1;
   display: block;
-  max-width: 120px;
+  max-width: 180px;
   overflow: hidden;
+  margin-left: 3rem;
+  height: 2rem;
 `
 
 const NavWrapper = styled.ul`
@@ -78,11 +80,12 @@ const NavWrapper = styled.ul`
   align-items: center;
   font-size: 0.9rem;
   flex: 2;
-  justify-content: left;
+  justify-content: center;
   list-style: none;
 
   li {
     margin-right: 2rem;
+    justify-content: left;
   }
 
   a {

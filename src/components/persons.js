@@ -57,6 +57,11 @@ const PersonsWrapper = styled.div`
   flex-flow: row wrap;
   background-color: #f4f4f4;
   padding: 2rem 0;
+
+  @media screen and (min-width: 1024px) {
+    margin-left: 20%;
+  }
+
   > *:not(:last-of-type) {
     margin-bottom: 1rem;
   }
@@ -71,9 +76,9 @@ const PersonWrapper = styled.div`
     display: flex;
     justify-content: center;
     .salmiak-point {
-      margin-top: 0.5rem;
+      margin-top: 0.7rem;
       transform-origin: center;
-      background-color: black;
+      background-color: #1f1f1f;
       width: 15px;
       height: 15px;
       transform: rotate(45deg);

@@ -14,7 +14,8 @@ import Sponsors from '../components/sponsors'
 export default () => {
   return (
     <DefaultLayout>
-      {/* <Hero /> */}
+      <Header />
+      <Hero />
       <Teams />
       <SomeContent />
       <Persons />
