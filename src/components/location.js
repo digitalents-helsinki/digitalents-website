@@ -10,19 +10,34 @@ const locationData = [
   }
 ]
 
-const Location = () => {
-  const addressItems = locationData.map((n, index) => (
-    <h3>{n.address}</h3>
-  ))
+class Location extends React.Component {
+  state = {
+    width: 0
+  }
 
-  const map = `<iframe width="1000" height="500" width="100" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=24.920006990432743%2C60.16458506908792%2C24.923367798328403%2C60.16577135278478&amp;layer=mapnik&amp;marker=60.16517821628964%2C24.92168739438057"></iframe>`
-  const html = {__html: map}
-  return (
-    <LocationWrapper>
-      {addressItems}
-      <div dangerouslySetInnerHTML={html}></div>
-    </LocationWrapper>
-  )
+  componentDidMount() {
+    this.handleWindowSizeChange()
+    window.addEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth })
+  }
+  
+  render() {
+    const map = `<iframe width=${this.state.width} height="500" width="100" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=24.920006990432743%2C60.16458506908792%2C24.923367798328403%2C60.16577135278478&amp;layer=mapnik&amp;marker=60.16517821628964%2C24.92168739438057"></iframe>`
+    const html = {__html: map}
+
+    return (
+      <LocationWrapper>
+        <div dangerouslySetInnerHTML={html}></div>
+      </LocationWrapper>
+    )
+  }
 }
 
 const LocationWrapper = styled.div`
