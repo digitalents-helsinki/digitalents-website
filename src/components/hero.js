@@ -87,7 +87,7 @@ const HeroWrapper = styled.div`
   display: flex;
   width: 100vw;
   height: 100vh;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   overflow: hidden;
 `
@@ -120,7 +120,10 @@ const RightImage = styled.div`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  position: absolute;
+  z-index: 5;
 
   h1 {
     font-size: 2rem;
@@ -128,6 +131,10 @@ const TextWrapper = styled.div`
     text-transform: uppercase;
   }
 
+  p {
+    max-width: 400px;
+    text-align: center;
+  }
 `
 
 const TextContent = styled.div`

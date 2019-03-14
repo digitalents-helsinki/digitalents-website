@@ -1,15 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const locationData = [
-  {
-    address: 'Lapinlahdenkatu 16, 00180 Helsinki'
-  },
-  {
-    address: 'PL 18402, 00099 Helsingin kaupunki'
-  }
-]
-
 class Location extends React.Component {
   state = {
     width: 0
