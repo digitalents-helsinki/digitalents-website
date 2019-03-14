@@ -14,12 +14,11 @@ import Sponsors from '../components/sponsors'
 export default () => {
   return (
     <DefaultLayout>
-      <Header />
       <Hero />
       <Teams />
       <SomeContent />
       <Persons />
-      {/* <Location /> */}
+      <Location />
       <Sponsors />
     </DefaultLayout>
   )

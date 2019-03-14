@@ -1,43 +1,57 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticQuery } from 'gatsby';
+import Img from 'gatsby-image'
 
-const SponsorData = {
-  sponsors: [
-    {
-      title: 'GamesFactory'
-    },
-    {
-      title: 'Digia'
-    },
-    {
-      title: 'Reaktor'
-    },
-    {
-      title: 'Futurice'
-    },
-    {
-      title: 'Chilicorn Foundation'
-    }
-  ]
+class Sponsors extends React.Component {
+  render() {
+    return (
+      <SponsorsWrapper>
+        {this.props.data.edges.map(sponsor => {
+          return (
+            <SponsorWrapper>
+              <Img fixed={sponsor.node.sponsorImage.fixed} alt={sponsor.node.sponsorName} className="sponsorImage" />
+            </SponsorWrapper>
+          )
+        })}
+      </SponsorsWrapper>
+    )
+  }
 }
 
-const Sponsors = () => {
-  const sponsorItems = SponsorData.sponsors.map((n, index) => (
-    <div>
-      <h3>{n.title}</h3>
-    </div>
-  ))
+const SponsorsQuery = () => (
+  <StaticQuery
+    query={graphql`
+      query SponsorsQuery {
+        allContentfulSponsor(filter: { node_locale: { regex: "/en-US/" } }) {
+          edges {
+            node {
+              sponsorName
+              sponsorImage {
+                fixed(width: 150, height: 150) {
+                  ...GatsbyContentfulFixed
+                }
+              }
+              urlLink
+            }
+          }
+        }
+      }
+    `}
+    render={data => <Sponsors data={data.allContentfulSponsor} />}
+  />
+)
 
-  return (
-    <SponsorWrapper>
-      {sponsorItems}
-    </SponsorWrapper>
-  )
-}
-
-const SponsorWrapper = styled.div`
+const SponsorsWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
 `
 
-export default Sponsors
+const SponsorWrapper = styled.div`
+  .sponsorImage {
+    height: 150px;
+    width: 150px;
+  }
+`
+
+export default SponsorsQuery
