@@ -116,6 +116,10 @@ const FooterWrapper = styled.footer`
   }
 
   .left {
+    @media screen and (max-width: 400px) {
+      text-align: center;
+    }
+    order:1;
     margin: 2rem 0;
     font-weight: bold;
     .leftUpper {
@@ -129,6 +133,12 @@ const FooterWrapper = styled.footer`
     margin: 2rem 0;
     font-weight: bold;
     text-align: center;
+    order: 2;
+
+    @media screen and (max-width: 400px) {
+      order: 3;
+    }
+
     .middleUpper {
       text-transform: uppercase;
       margin-bottom: 0.5rem;
@@ -139,6 +149,12 @@ const FooterWrapper = styled.footer`
     margin: 2rem 0;
     font-weight: bold;
     text-align: center;
+    order 3;
+
+    @media screen and (max-width: 400px) {
+      order 2;
+    }
+
     .rightUpper {
       text-transform: uppercase;
       margin-bottom: 0.5rem;

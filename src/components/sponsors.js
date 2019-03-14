@@ -28,16 +28,13 @@ const Sponsors = () => {
     </div>
   ))
 
-  return (
-    <SponsorWrapper>
-      {sponsorItems}
-    </SponsorWrapper>
-  )
+  return <SponsorWrapper>{sponsorItems}</SponsorWrapper>
 }
 
 const SponsorWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 2rem;
 `
 
 export default Sponsors

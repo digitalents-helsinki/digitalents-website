@@ -15,11 +15,11 @@ export default () => {
   return (
     <DefaultLayout>
       <Header />
-      <Hero />
+      {/* <Hero /> */}
       <Teams />
       <SomeContent />
       <Persons />
-      {/* <Location /> */}
+      <Location />
       <Sponsors />
     </DefaultLayout>
   )
