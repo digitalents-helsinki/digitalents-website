@@ -28,7 +28,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <GlobalStyle />
-        <Header siteTitle="kakkapylly" />
+        <Header />
         <main>{children}</main>
         <Footer />
       </>

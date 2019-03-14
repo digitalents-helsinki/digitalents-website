@@ -13,8 +13,8 @@ class HeroAlt extends React.Component {
             <Fragment>
               <HeroWrapper>
                 <LeftImage>
-                  <BGImg fluid={hero.node.heroLeftBackgroundImage.fluid}>
-                    <Img fluid={hero.node.heroLeftImage.fluid} />
+                  <BGImg fluid={hero.node.heroLeftBackgroundImage.fluid} className="leftImage">
+                    <img src={hero.node.heroLeftImage.file.url} alt="" className="leftTopImage" />
                   </BGImg>
                 </LeftImage>
                 <TextWrapper>
@@ -24,7 +24,9 @@ class HeroAlt extends React.Component {
                   <p>{hero.node.heroLowerText}</p>
                 </TextWrapper>
                 <RightImage>
-                  <Img fluid={hero.node.heroRightBackgroundImage.fluid} />
+                  <BGImg fluid={hero.node.heroRightBackgroundImage.fluid} className="rightImage">
+                    <img src={hero.node.heroRightImage.file.url} alt="" className="rightTopImage" />
+                  </BGImg>
                 </RightImage>
               </HeroWrapper>
               <TextContent>
@@ -53,8 +55,8 @@ const Hero = () => (
                 }
               }
               heroLeftImage {
-                fluid(maxWidth: 350) {
-                  ...GatsbyContentfulFluid
+                file {
+                  url
                 }
               }
               heroRightBackgroundImage {
@@ -63,8 +65,8 @@ const Hero = () => (
                 }
               }
               heroRightImage {
-                fluid(maxWidth: 350) {
-                  ...GatsbyContentfulFluid
+                file {
+                  url
                 }
               }
               heroText
@@ -87,16 +89,32 @@ const HeroWrapper = styled.div`
   height: 100vh;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 `
 
 const LeftImage = styled.div`
   height: 100%;
   width: 100%;
+
+  .leftImage {
+    width: 100%;
+
+    .leftTopImage {
+    }
+  }
 `
 
 const RightImage = styled.div`
   height: 100%;
   width: 100%;
+
+  .rightImage {
+    width: 100%;
+
+    .rightTopImage {
+      width: 100%;
+    }
+  }
 `
 
 const TextWrapper = styled.div`
