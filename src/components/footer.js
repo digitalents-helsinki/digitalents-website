@@ -8,25 +8,44 @@ const FooterColumn = props => {
   if (props.position === 'left') {
     return (
       <div className="left">
-        {props.data.map(n => {
-          return <p>{n}</p>
-        })}
+        <div className="leftUpper">
+          {props.upperData.map(n => {
+            return <p>{n}</p>
+          })}
+        </div>
+        <div className="leftLower">
+          {props.lowerData.map(n => {
+            return <p>{n}</p>
+          })}
+        </div>
       </div>
     )
   } else if (props.position === 'middle') {
     return (
       <div className="middle">
-        {props.data.map(n => {
-          return <p>{n}</p>
-        })}
+        <div className="middleUpper">
+          {props.upperData.map(n => {
+            return <p>{n}</p>
+          })}
+        </div>
+        <div className="middleLower">
+          {props.lowerData.map(n => {
+            return <p>{n}</p>
+          })}
+        </div>
       </div>
     )
   } else if (props.position === 'right') {
     return (
       <div className="right">
-        {props.data.map(n => {
-          return <p>{n}</p>
-        })}
+        <div className="rightUpper">
+          {props.upperData.map(n => {
+            return <p>{n}</p>
+          })}
+        </div>
+        <div className="rightLower">
+          <p>{props.lowerData}</p>
+        </div>
       </div>
     )
   } else return null
@@ -37,11 +56,24 @@ class Footer extends React.Component {
     return (
       <FooterWrapper>
         {this.props.footer.edges.map(footer => {
+          console.log(footer)
           return (
             <Fragment>
-              <FooterColumn position="left" data={footer.node.leftColumn} />
-              <FooterColumn position="middle" data={footer.node.middleColumn} />
-              <FooterColumn position="right" data={footer.node.rightColumn} />
+              <FooterColumn
+                position="left"
+                upperData={footer.node.footerLeftUpperColumn}
+                lowerData={footer.node.footerLeftLowerColumn}
+              />
+              <FooterColumn
+                position="middle"
+                upperData={footer.node.footerMiddleUpperColumn}
+                lowerData={footer.node.footerMiddleLowerColumn}
+              />
+              <FooterColumn
+                position="right"
+                upperData={footer.node.footerRightUpperText}
+                lowerData={footer.node.footerRightLowerText}
+              />
             </Fragment>
           )
         })}
@@ -57,9 +89,12 @@ const FooterQuery = () => (
         allContentfulFooter(filter: { node_locale: { regex: "/en-US/" } }) {
           edges {
             node {
-              leftColumn
-              middleColumn
-              rightColumn
+              footerLeftUpperColumn
+              footerLeftLowerColumn
+              footerMiddleUpperColumn
+              footerMiddleLowerColumn
+              footerRightUpperText
+              footerRightLowerText
             }
           }
         }
@@ -81,12 +116,33 @@ const FooterWrapper = styled.footer`
   }
 
   .left {
+    margin: 2rem 0;
+    font-weight: bold;
+    .leftUpper {
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
   }
 
   .middle {
+    margin: 2rem 0;
+    font-weight: bold;
+    text-align: center;
+    .middleUpper {
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
   }
 
   .right {
+    margin: 2rem 0;
+    font-weight: bold;
+    text-align: center;
+    .rightUpper {
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
   }
 `
 
