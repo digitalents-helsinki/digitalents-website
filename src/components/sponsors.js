@@ -10,7 +10,7 @@ class Sponsors extends React.Component {
         {this.props.data.edges.map(sponsor => {
           return (
             <SponsorWrapper>
-              <Img fixed={sponsor.node.sponsorImage.fixed} alt={sponsor.node.sponsorName} className="sponsorImage" />
+              <img src={sponsor.node.sponsorImage.file.url + "?fit=scale"} alt={sponsor.node.sponsorName} className="sponsorImage" />
             </SponsorWrapper>
           )
         })}
@@ -28,8 +28,8 @@ const SponsorsQuery = () => (
             node {
               sponsorName
               sponsorImage {
-                fixed(width: 150, height: 150) {
-                  ...GatsbyContentfulFixed
+                file {
+                  url
                 }
               }
               urlLink
@@ -49,7 +49,7 @@ const SponsorsWrapper = styled.div`
 
 const SponsorWrapper = styled.div`
   .sponsorImage {
-    height: 150px;
+    height: 100px;
     width: 150px;
   }
 `

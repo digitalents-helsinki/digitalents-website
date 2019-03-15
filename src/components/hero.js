@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import BGImg from 'gatsby-background-image'
 
-class HeroAlt extends React.Component {
+class Hero extends React.Component {
   render () {
     return (
       <Fragment>
@@ -40,7 +40,7 @@ class HeroAlt extends React.Component {
   }
 }
 
-const Hero = () => (
+const HeroQuery = () => (
   <StaticQuery
     query={graphql`
       query HeroQuery {
@@ -78,7 +78,7 @@ const Hero = () => (
       }
     `}
     render={(data) => (
-      <HeroAlt heros={data.allContentfulHero} />
+      <Hero heros={data.allContentfulHero} />
     )}
   />
 )
@@ -140,4 +140,4 @@ const TextWrapper = styled.div`
 const TextContent = styled.div`
   text-align: center;
 `
-export default Hero
+export default HeroQuery
