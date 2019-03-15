@@ -30,7 +30,7 @@ class Hero extends React.Component {
                 </RightImage>
               </HeroWrapper>
               <TextContent>
-                  <p>{hero.node.textContent.textContent}</p>
+                  <div dangerouslySetInnerHTML={{__html: hero.node.textContent.childMarkdownRemark.html}} />
               </TextContent>
             </Fragment>
           )
@@ -71,7 +71,11 @@ const HeroQuery = () => (
               }
               heroText
               heroLowerText
-              textContent { textContent }
+              textContent { 
+                childMarkdownRemark {
+                  html
+                } 
+              }
             }
           }
         }
@@ -112,7 +116,6 @@ const RightImage = styled.div`
     width: 100%;
 
     .rightTopImage {
-      width: 100%;
     }
   }
 `
