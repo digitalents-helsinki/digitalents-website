@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import BGImg from 'gatsby-background-image'
+import arrowIcon from '../images/angledown.svg'
 
 class Hero extends React.Component {
   render () {
@@ -30,6 +31,7 @@ class Hero extends React.Component {
                 </RightImage>
               </HeroWrapper>
               <TextContent>
+                <img src={arrowIcon} alt="" />
                   <div dangerouslySetInnerHTML={{__html: hero.node.textContent.childMarkdownRemark.html}} />
               </TextContent>
             </Fragment>
@@ -144,6 +146,7 @@ const TextContent = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
+  flex-direction: column;
   padding-top: 1rem;
 
   p {
