@@ -32,7 +32,7 @@ class Hero extends React.Component {
               </HeroWrapper>
               <TextContent>
                 <img src={arrowIcon} alt="" />
-                  <div dangerouslySetInnerHTML={{__html: hero.node.textContent.childMarkdownRemark.html}} />
+                <div dangerouslySetInnerHTML={{__html: hero.node.textContent.childMarkdownRemark.html}} />
               </TextContent>
             </Fragment>
           )
@@ -149,9 +149,10 @@ const TextContent = styled.div`
   flex-direction: column;
   padding-top: 1rem;
 
-  p {
-    max-width: 800px;
-    padding-bottom: 1rem;
+  div {
+    p {
+      padding-bottom: 1rem;
+    }
   }
 `
 export default HeroQuery
