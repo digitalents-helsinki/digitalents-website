@@ -141,6 +141,14 @@ const TextWrapper = styled.div`
 `
 
 const TextContent = styled.div`
+  display: flex;
+  justify-content: center;
   text-align: center;
+  padding-top: 1rem;
+
+  p {
+    max-width: 800px;
+    padding-bottom: 1rem;
+  }
 `
 export default HeroQuery
