@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "convict": "^4.4.1",
     "gatsby": "^2.1.20",
     "gatsby-background-image": "^0.2.5",

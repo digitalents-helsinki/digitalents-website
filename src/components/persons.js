@@ -1,28 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
 
-class PersonsAlt extends React.Component {
+class Persons extends React.Component {
   render() {
+    console.log(this.props)
     return (
       <Wrapper>
         <PersonsWrapper>
-          {this.props.persons.edges.map(person => {
+          {this.props.data.map(person => {
             return (
               <PersonWrapper>
                 <div className="point-wrapper">
                   <div className="salmiak-point" />
                 </div>
                 <div className="text-wrapper">
-                  <h2 className="person-name">{person.node.name}</h2>
-                  <p className="person-title">{person.node.title}</p>
+                  <h2 className="person-name">{person.name}</h2>
+                  <p className="person-title">{person.title}</p>
                   <p className="person-contact-email">
-                    <a href={`mailto:${person.node.email}`}>
-                      {person.node.email}
+                    <a href={`mailto:${person.email}`}>
+                      {person.email}
                     </a>
                   </p>
                   <p className="person-contact-phone">
-                    {person.node.phoneNumber}
+                    {person.phoneNumber}
                   </p>
                 </div>
               </PersonWrapper>
@@ -33,26 +33,6 @@ class PersonsAlt extends React.Component {
     )
   }
 }
-
-const Persons = () => (
-  <StaticQuery
-    query={graphql`
-      query PersonQuery {
-        allContentfulPerson(filter: { node_locale: { regex: "/en-US/" } }) {
-          edges {
-            node {
-              name
-              title
-              email
-              phoneNumber
-            }
-          }
-        }
-      }
-    `}
-    render={data => <PersonsAlt persons={data.allContentfulPerson} />}
-  />
-)
 
 const Wrapper = styled.div`
   background-color: #f4f4f4;

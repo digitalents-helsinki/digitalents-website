@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import BGImg from 'gatsby-background-image'
 import arrowIcon from '../images/angledown.svg'
@@ -9,85 +8,33 @@ class Hero extends React.Component {
   render () {
     return (
       <Fragment>
-        {this.props.heros.edges.map((hero) => {
-          return (
-            <Fragment>
-              <HeroWrapper>
-                <LeftImage>
-                  <BGImg fluid={hero.node.heroLeftBackgroundImage.fluid} className="leftImage">
-                    <img src={hero.node.heroLeftImage.file.url} alt="" className="leftTopImage" />
-                  </BGImg>
-                </LeftImage>
-                <TextWrapper>
-                  {hero.node.heroText.map((text) => {
-                    return <h1>{text}</h1>
-                  })}
-                  <p>{hero.node.heroLowerText}</p>
-                </TextWrapper>
-                <RightImage>
-                  <BGImg fluid={hero.node.heroRightBackgroundImage.fluid} className="rightImage">
-                    <img src={hero.node.heroRightImage.file.url} alt="" className="rightTopImage" />
-                  </BGImg>
-                </RightImage>
-              </HeroWrapper>
-              <TextContent>
-                <img src={arrowIcon} alt="" />
-                <div dangerouslySetInnerHTML={{__html: hero.node.textContent.childMarkdownRemark.html}} />
-              </TextContent>
-            </Fragment>
-          )
-        })}
+        <HeroWrapper>
+          <LeftImage>
+            <BGImg fluid={this.props.data.heroLeftBackgroundImage.fluid} className="leftImage">
+              <img src={this.props.data.heroLeftImage.file.url} alt="" className="leftTopImage" />
+            </BGImg>
+          </LeftImage>
+          <TextWrapper>
+            {this.props.data.heroText.map((text) => {
+              return <h1>{text}</h1>
+            })}
+            <p>{this.props.data.heroLowerText}</p>
+          </TextWrapper>
+          <RightImage>
+            <BGImg fluid={this.props.data.heroRightBackgroundImage.fluid} className="rightImage">
+              <img src={this.props.data.heroRightImage.file.url} alt="" className="rightTopImage" />
+            </BGImg>
+          </RightImage>
+        </HeroWrapper>
+        <TextContent>
+          <img src={arrowIcon} alt="" />
+          <div dangerouslySetInnerHTML={{__html: this.props.data.textContent.childMarkdownRemark.html}} />
+        </TextContent>
       </Fragment>
     )
   }
 }
 
-const HeroQuery = () => (
-  <StaticQuery
-    query={graphql`
-      query HeroQuery {
-        allContentfulHero(
-          filter: {node_locale: {regex: "/en-US/"}}
-        ) {
-          edges {
-            node {
-              heroLeftBackgroundImage {
-                fluid(maxWidth: 350) {
-                  ...GatsbyContentfulFluid
-                }
-              }
-              heroLeftImage {
-                file {
-                  url
-                }
-              }
-              heroRightBackgroundImage {
-                fluid(maxWidth: 350) {
-                  ...GatsbyContentfulFluid
-                }
-              }
-              heroRightImage {
-                file {
-                  url
-                }
-              }
-              heroText
-              heroLowerText
-              textContent { 
-                childMarkdownRemark {
-                  html
-                } 
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={(data) => (
-      <Hero heros={data.allContentfulHero} />
-    )}
-  />
-)
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -155,4 +102,4 @@ const TextContent = styled.div`
     }
   }
 `
-export default HeroQuery
+export default Hero

@@ -1,4 +1,5 @@
 const config = require('./config/env')
+const { BLOCKS, INLINES } = require('@contentful/rich-text-types')
 
 module.exports = {
   siteMetadata: {
@@ -35,6 +36,15 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID || config.get('contentful.spaceId'),
         accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN || config.get('contentful.accessToken')
+      }
+    },
+    {
+      resolve: `@contentful/gatsby-transformer-contentful-richtext`,
+      options: {
+        renderOptions: {
+          renderNode: {
+          }
+        }
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
