@@ -12,14 +12,14 @@ import Location from '../components/location'
 
 class indexPageTemplate extends React.Component {
   render () {
-    const { hero, personBlocks, sponsorBlocks } = this.props.data.contentfulPageTemplate
+    const { hero, someContent, personBlocks, location, sponsorBlocks } = this.props.data.contentfulPageTemplate
     return (
       <Layout>
         <Hero data={hero} />
         <Teams />
-        <SomeContent />
+        <SomeContent data={someContent} />
         <Persons data={personBlocks} />
-        <Location />
+        <Location data={location} />
         <Sponsors data={sponsorBlocks} />
       </Layout>
     )
@@ -58,11 +58,24 @@ export const pageQuery = graphql`
           }
         }
       }
+      someContent {
+        someText
+        podcasts
+        learningLinks
+      }
       personBlocks {
         name
         title
         email
         phoneNumber
+      }
+      location {
+        address
+        postAddress
+        coordinates {
+          lat
+          lon
+        }
       }
       sponsorBlocks {
         sponsorName

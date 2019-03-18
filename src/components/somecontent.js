@@ -1,35 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const someData = {
-  paragraph: 'Digitalents Helsinki on mukana teknologian, innovaatioiden ja luovan alan kehitysprojekteissa. Haluamme jakaa opittuja ja tuotettuja asioita esimerkiksi rauhanteknologiasta, robotiikasta ja tekoälystä podcastien ja oppimateriaalien kautta.',
-  subtitles: [
-    {
-      title: 'Podcastit'
-    },
-    {
-      title: 'Oppimateriaali'
-    }
-  ]
-}
-
-const SomeContent = () => {
-  const resourceItems = someData.subtitles.map((n, index) => (
-    <div>
-      <h3>{n.title}</h3>
-    </div>
-  ))
-
-  return (
-    <SomeWrapper>
-      <div>
-        <p>{someData.paragraph}</p>
-      </div>
-      <ContentWrapper>
-        {resourceItems}
-      </ContentWrapper>
-    </SomeWrapper>
-  )
+class SomeContent extends React.Component {
+  render () {
+    return (
+      <SomeWrapper>
+        <div>
+          <p>{this.props.data.someText}</p>
+        </div>
+        <ContentWrapper>
+          <div>
+            {this.props.data.podcasts.map(podcast => {
+              return <p>{podcast}</p>
+            })}
+          </div>
+          <div>
+            {this.props.data.learningLinks.map(link => {
+              return <p>{link}</p>
+            })}
+          </div>
+        </ContentWrapper>
+      </SomeWrapper>
+    )
+  }
 }
 
 const SomeWrapper = styled.div`
