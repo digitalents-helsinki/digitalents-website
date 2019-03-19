@@ -1,8 +1,13 @@
 import React from 'react';
 
-const indexPage = () => {
-  window.location = '/fi/';
-  return null;
+class indexPage extends React.Component {
+  componentDidMount() {
+    window.location = '/fi/';
+  }
+  render() {
+    return null
+  }
 }
 
 export default indexPage
+
