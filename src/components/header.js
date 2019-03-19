@@ -6,7 +6,7 @@ class Header extends React.Component {
   render() {
     return (
       <HeaderWrapper>
-        {this.props.header.edges.map(header => {
+        {this.props.data.edges.map(header => {
           return (
             <Fragment>
               <LogoWrapper>
@@ -24,6 +24,9 @@ class Header extends React.Component {
               </LangWrapper>
             </Fragment>
           )
+        })}
+        {this.props.linkData.edges.map(links => {
+          return <Link to={`/teams/`+links.node.teamSlug}>{links.node.teamSlug}</Link>
         })}
       </HeaderWrapper>
     )
@@ -47,9 +50,16 @@ const HeaderQuery = () => (
             }
           }
         }
+        allContentfulTeamTemplate (filter: { node_locale: { regex: "/en-US/" } }) {
+          edges {
+            node {
+              teamSlug
+            }
+          }
+        }
       }
     `}
-    render={data => <Header header={data.allContentfulHeader} />}
+    render={data => <Header data={data.allContentfulHeader} linkData={data.allContentfulTeamTemplate} />}
   />
 )
 
