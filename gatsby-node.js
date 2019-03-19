@@ -9,10 +9,19 @@ exports.createPages = ({ graphql, actions }) => {
     resolve(
       graphql(`
         {
-          allContentfulPageTemplate{
+          fi: allContentfulPageTemplate(filter: {node_locale: { regex: "/fi-FI/" }}) {
             edges {
               node {
                 slug
+                node_locale
+              }
+            }
+          }
+          en: allContentfulPageTemplate(filter: {node_locale: { regex: "/en-US/" }}) {
+            edges {
+              node {
+                slug
+                node_locale
               }
             }
           }
@@ -36,12 +45,23 @@ exports.createPages = ({ graphql, actions }) => {
         if (result.errors) {
           reject(result.errors)
         }
-        result.data.allContentfulPageTemplate.edges.forEach((edge) => {
+        result.data.en.edges.forEach((edge) => {
           createPage({
-            path: '/',
+            path: '/en/',
             component: indexPageTemplate,
             context: {
-              slug: edge.node.slug
+              slug: edge.node.slug,
+              node_locale: edge.node.node_locale
+            }
+          })
+        })
+        result.data.fi.edges.forEach((edge) => {
+          createPage({
+            path: '/fi/',
+            component: indexPageTemplate,
+            context: {
+              slug: edge.node.slug,
+              node_locale: edge.node.node_locale
             }
           })
         })

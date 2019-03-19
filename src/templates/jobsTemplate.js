@@ -7,7 +7,6 @@ import styled from 'styled-components'
 class jobsTemplate extends React.Component {
   render() {
     const { teamSlogan, teamDescription, teamImage, teamMaskImage, linkki } = this.props.data.contentfulJobsTemplate
-    console.log(this.props)
     return (
       <Layout>
         <h2>{teamSlogan}</h2>

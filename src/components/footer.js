@@ -56,7 +56,6 @@ class Footer extends React.Component {
     return (
       <FooterWrapper>
         {this.props.footer.edges.map(footer => {
-          console.log(footer)
           return (
             <Fragment>
               <FooterColumn

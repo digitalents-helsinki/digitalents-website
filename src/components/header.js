@@ -21,14 +21,12 @@ class Header extends React.Component {
   }
 
   setFinnish() {
-    console.log("finnish")
     this.setState(state => ({
       finnish: true
     }))
   }
 
   setEnglish() {
-    console.log("not finnish")
     this.setState(state => ({
       finnish: false
     }))

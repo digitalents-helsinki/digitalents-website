@@ -1,22 +1,20 @@
 import React from 'react'
 import Layout from '../components/layout'
-import styled from 'styled-components'
 
 import Hero from '../components/hero'
 import Persons from '../components/persons'
 import Sponsors from '../components/sponsors'
-
 import Teams from '../components/teams'
 import SomeContent from '../components/somecontent'
 import Location from '../components/location'
 
 class indexPageTemplate extends React.Component {
   render () {
-    const { hero, someContent, personBlocks, location, sponsorBlocks } = this.props.data.contentfulPageTemplate
+    const { hero, teams, someContent, personBlocks, location, sponsorBlocks } = this.props.data.contentfulPageTemplate
     return (
       <Layout>
         <Hero data={hero} />
-        <Teams />
+        <Teams data={teams} />
         <SomeContent data={someContent} />
         <Persons data={personBlocks} />
         <Location data={location} />
@@ -27,8 +25,8 @@ class indexPageTemplate extends React.Component {
 }
 
 export const pageQuery = graphql`
-  query indexPageQuery($slug: String!){
-    contentfulPageTemplate(slug: {eq: $slug}) {
+  query indexPageQuery($slug: String! $node_locale: String!){
+    contentfulPageTemplate(slug: {eq: $slug} node_locale: {eq: $node_locale}) {
       hero {
         heroText
         heroLowerText
@@ -57,6 +55,10 @@ export const pageQuery = graphql`
             html
           }
         }
+      }
+      teams {
+        teamsTitle
+        teamsText
       }
       someContent {
         someText

@@ -7,7 +7,6 @@ import styled from 'styled-components'
 class teamTemplate extends React.Component {
   render() {
     const { teamTitle, teamSlogan, teamDescription, teamImage, teamMaskImage } = this.props.data.contentfulTeamTemplate
-    console.log(this.props)
     return (
       <Layout>
         <h1>{teamTitle}</h1>
