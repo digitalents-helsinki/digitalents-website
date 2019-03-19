@@ -36,36 +36,38 @@ class Header extends React.Component {
 
   render() {
     const data = this.state.finnish ? this.props.fiData : this.props.enData
-    console.log(this.props.fiData)
-    console.log(this.props.enData)
     return (
-      <HeaderWrapper>
-        {data.edges.map(header => {
-          return (
-            <Fragment>
-              <LogoWrapper>
-                <img src={header.node.headerImage.file.url} alt="" />
-              </LogoWrapper>
-              <NavWrapper>
-                <li><Link to="/">{header.node.frontPageLink}</Link></li>
-                <li onClick={this.showTeams}>{header.node.teamLink}</li>
-                <li><Link to="/tyopaikat">{header.node.workLink}</Link></li>
-              </NavWrapper>
-              <LangWrapper>
-                <li onClick={this.setFinnish}>FI</li>
-                <li onClick={this.setEnglish}>EN</li>
-              </LangWrapper>
-            </Fragment>
-          )
-        })}
-        {this.state.teamClick ? 
-            this.props.linkData.edges.map(links => {
-              return <Link to={`/teams/`+links.node.teamSlug}>{links.node.teamSlug}</Link>
-            })
-          : 
-          null 
-        }
-      </HeaderWrapper>
+      <Fragment>
+        <HeaderWrapper>
+          {data.edges.map(header => {
+            return (
+              <Fragment>
+                <LogoWrapper>
+                  <img src={header.node.headerImage.file.url} alt="" />
+                </LogoWrapper>
+                <NavWrapper>
+                  <li><Link to="/">{header.node.frontPageLink}</Link></li>
+                  <li onClick={this.showTeams}>{header.node.teamLink}</li>
+                  <TeamsWrapper>
+                    {this.state.teamClick ? 
+                          this.props.linkData.edges.map(links => {
+                            return <Link to={`/teams/`+links.node.teamSlug}>{links.node.teamSlug}</Link>
+                          })
+                        : 
+                        null 
+                    }
+                  </TeamsWrapper>
+                  <li><Link to="/tyopaikat">{header.node.workLink}</Link></li>
+                </NavWrapper>
+                <LangWrapper>
+                  <li onClick={this.setFinnish}>FI</li>
+                  <li onClick={this.setEnglish}>EN</li>
+                </LangWrapper>
+              </Fragment>
+            )
+          })}
+        </HeaderWrapper>
+      </Fragment>
     )
   }
 }
@@ -174,6 +176,15 @@ const LangWrapper = styled.ul`
     border-left: 0.5px solid white;
     padding-left: 1rem;
   }
+`
+
+const TeamsWrapper = styled.div`
+  background-color: #4663B4
+  top: 50px;
+  position: absolute;
+  display: flex;
+  flex-flow: column wrap;
+  z-index: 15;
 `
 
 export default HeaderQuery
