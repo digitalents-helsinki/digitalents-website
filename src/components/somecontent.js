@@ -10,11 +10,13 @@ class SomeContent extends React.Component {
         </div>
         <ContentWrapper>
           <div>
+            <h3>Podcastit</h3>
             {this.props.data.podcasts.map(podcast => {
               return <p>{podcast}</p>
             })}
           </div>
           <div>
+            <h3>Oppimateriaali</h3>
             {this.props.data.learningLinks.map(link => {
               return <p>{link}</p>
             })}

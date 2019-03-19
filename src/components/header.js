@@ -3,31 +3,68 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      teamClick: false,
+      finnish: true
+    }
+    this.showTeams = this.showTeams.bind(this)
+    this.setFinnish = this.setFinnish.bind(this)
+    this.setEnglish = this.setEnglish.bind(this)
+  }
+
+  showTeams() {
+    this.setState(state => ({
+      teamClick: !state.teamClick
+    }))
+  }
+
+  setFinnish() {
+    console.log("finnish")
+    this.setState(state => ({
+      finnish: true
+    }))
+  }
+
+  setEnglish() {
+    console.log("not finnish")
+    this.setState(state => ({
+      finnish: false
+    }))
+  }
+
   render() {
+    const data = this.state.finnish ? this.props.fiData : this.props.enData
+    console.log(this.props.fiData)
+    console.log(this.props.enData)
     return (
       <HeaderWrapper>
-        {this.props.data.edges.map(header => {
+        {data.edges.map(header => {
           return (
             <Fragment>
               <LogoWrapper>
                 <img src={header.node.headerImage.file.url} alt="" />
               </LogoWrapper>
               <NavWrapper>
-                {header.node.navigationLinks.map(link => {
-                  return <li>{link}</li>
-                })}
+                <li><Link to="/">{header.node.frontPageLink}</Link></li>
+                <li onClick={this.showTeams}>{header.node.teamLink}</li>
+                <li><Link to="/tyopaikat">{header.node.workLink}</Link></li>
               </NavWrapper>
               <LangWrapper>
-                {header.node.languageOptions.map(language => {
-                  return <li>{language}</li>
-                })}
+                <li onClick={this.setFinnish}>FI</li>
+                <li onClick={this.setEnglish}>EN</li>
               </LangWrapper>
             </Fragment>
           )
         })}
-        {this.props.linkData.edges.map(links => {
-          return <Link to={`/teams/`+links.node.teamSlug}>{links.node.teamSlug}</Link>
-        })}
+        {this.state.teamClick ? 
+            this.props.linkData.edges.map(links => {
+              return <Link to={`/teams/`+links.node.teamSlug}>{links.node.teamSlug}</Link>
+            })
+          : 
+          null 
+        }
       </HeaderWrapper>
     )
   }
@@ -37,7 +74,7 @@ const HeaderQuery = () => (
   <StaticQuery
     query={graphql`
       query HeaderQuery {
-        allContentfulHeader(filter: { node_locale: { regex: "/en-US/" } }) {
+        en: allContentfulHeader(filter: { node_locale: { regex: "/en-US/" } }) {
           edges {
             node {
               headerImage {
@@ -45,7 +82,24 @@ const HeaderQuery = () => (
                   url
                 }
               }
-              navigationLinks
+              frontPageLink
+              teamLink
+              workLink
+              languageOptions
+            }
+          }
+        }
+        fi: allContentfulHeader(filter: { node_locale: { regex: "/fi-FI/" } }) {
+          edges {
+            node {
+              headerImage {
+                file {
+                  url
+                }
+              }
+              frontPageLink
+              teamLink
+              workLink
               languageOptions
             }
           }
@@ -59,7 +113,7 @@ const HeaderQuery = () => (
         }
       }
     `}
-    render={data => <Header data={data.allContentfulHeader} linkData={data.allContentfulTeamTemplate} />}
+    render={data => <Header enData={data.en} fiData={data.fi} linkData={data.allContentfulTeamTemplate} />}
   />
 )
 
