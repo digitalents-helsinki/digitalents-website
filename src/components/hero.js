@@ -14,12 +14,13 @@ class Hero extends React.Component {
               <img src={this.props.data.heroLeftImage.file.url} alt="" className="leftTopImage" />
             </BGImg>
           </LeftImage>
+          <div className="spacer">
+          </div>
           <TextWrapper>
             {this.props.data.heroText.map((text) => {
               return <h1>{text}</h1>
             })}
             <p>{this.props.data.heroLowerText}</p>
-            <img src={arrowIcon} alt="" />
           </TextWrapper>
           <RightImage>
             <BGImg fluid={this.props.data.heroRightBackgroundImage.fluid} className="rightImage">
@@ -44,8 +45,14 @@ const HeroWrapper = styled.div`
   align-items: center;
   overflow: hidden;
 
-  @media (max-width:1000px) {
+  @media screen and (max-width:1000px) {
     flex-basis: 100%;
+  }
+
+  .spacer {
+    @media screen and (min-width: 1000px) {
+      width: 100%;
+    }
   }
 `
 
@@ -120,10 +127,6 @@ const TextWrapper = styled.div`
     max-width: 400px;
     text-align: center;
   }
-
-  img {
-    padding-top: 100px;
-  }
 `
 
 const TextContent = styled.div`
@@ -134,6 +137,11 @@ const TextContent = styled.div`
   padding-top: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
+
+  @media screen and (min-width: 1000px) {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
 
   div {
     p {

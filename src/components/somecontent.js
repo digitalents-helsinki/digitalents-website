@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import stripedBG from '../images/Podcast_oppimateriaali_taustaMaski.svg'
 
 class SomeContent extends React.Component {
   render () {
@@ -30,11 +31,18 @@ class SomeContent extends React.Component {
 const SomeWrapper = styled.div`
   background-color: #353535;
   padding-top: 30px;
+  padding-bottom: 50px;
   text-align: center;
 
   .sometext {
+    padding-top: 100px;
     padding-bottom: 15px;
     color: white;
+
+    @media screen and (min-width: 1000px) {
+      padding-right: 10rem;
+      padding-left: 10rem;
+    }
   }
 `
 

@@ -42,6 +42,10 @@ const HeroWrapper = styled.div`
       position: absolute;
       z-index: 5;
 
+      @media screen and (min-width: 1000px) {
+        position: static;
+      }
+
       h1 {
         text-transform: uppercase;
         font-weight: 700;
@@ -56,7 +60,11 @@ const HeroWrapper = styled.div`
     }
 
     .imageWrapper {
-      width: 100%;
+      width: 50%;
+
+      @media screen and (min-width: 1000px) {
+        width: 50%;
+      }
 
       @media screen and (max-width: 400px) {
         min-width: 400px; 
