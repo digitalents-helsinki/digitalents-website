@@ -21,6 +21,7 @@ class Sponsors extends React.Component {
 const SponsorsWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
+  padding-bottom: 50px;
 `
 
 const SponsorWrapper = styled.div`
