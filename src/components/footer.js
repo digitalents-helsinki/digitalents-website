@@ -2,6 +2,10 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { StaticQuery } from 'gatsby'
 
+import fbIcon from '../images/facebook_logo_valkoinen.svg'
+import igIcon from '../images/instagram_logo_valkoinen.svg'
+import twIcon from '../images/twitter_logo_valkoinen.svg'
+
 const SocialButton = {}
 
 const FooterColumn = props => {
@@ -42,6 +46,11 @@ const FooterColumn = props => {
           {props.upperData.map(n => {
             return <p>{n}</p>
           })}
+        </div>
+        <div className="social-icons">
+          <img src={twIcon} alt="" />
+          <img src={igIcon} alt="" />
+          <img src={fbIcon} alt="" />
         </div>
         <div className="rightLower">
           <p>{props.lowerData}</p>
@@ -145,6 +154,12 @@ const FooterWrapper = styled.footer`
     .rightUpper {
       text-transform: uppercase;
       margin-bottom: 0.5rem;
+    }
+    .social-icons {
+      img {
+        width: 50px;
+        padding-right: 5px;
+      }
     }
   }
 `
