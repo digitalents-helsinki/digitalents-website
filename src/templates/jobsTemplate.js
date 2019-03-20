@@ -41,6 +41,8 @@ const HeroWrapper = styled.div`
       padding-left: 1rem;
       padding-top: 100px;
       flex-basis: 50%;
+      position: absolute;
+      z-index: 5;
 
       h2 {
         padding-top: 2rem;
@@ -51,12 +53,14 @@ const HeroWrapper = styled.div`
 
     .imageWrapper {
       width: 100%;
+
+      @media screen and (max-width: 400px) {
+        min-width: 400px;
+      }
     
       .team-background-image {
-        width: 100%;
     
         .team-front-image {
-          width: 100%;
           box-shadow: 0 0 0 3px white, inset 0 0 0 3px white;
         }
       }
