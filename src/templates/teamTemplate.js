@@ -9,30 +9,72 @@ class teamTemplate extends React.Component {
     const { teamTitle, teamSlogan, teamDescription, teamImage, teamMaskImage } = this.props.data.contentfulTeamTemplate
     return (
       <Layout>
-        <h1>{teamTitle}</h1>
-        <h2>{teamSlogan}</h2>
-        <ImageWrapper>
-          <BGImg fluid={teamImage.fluid} className="team-background-image">
-            <img src={teamMaskImage.file.url} alt="" className="team-front-image" />
-          </BGImg>
-        </ImageWrapper>
-        <p>{teamDescription.teamDescription}</p>
+        <HeroWrapper>
+          <div className="flexWrapper">
+            <div className="titleText">
+              <h1>{teamTitle}</h1>
+              <h2>{teamSlogan}</h2>
+            </div>
+            <div className="imageWrapper">
+              <BGImg fluid={teamImage.fluid} className="team-background-image">
+                <img src={teamMaskImage.file.url} alt="" className="team-front-image" />
+              </BGImg>
+            </div>
+          </div>
+          <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />>
+        </HeroWrapper>
       </Layout>
     )
   }
 }
 
-const ImageWrapper = styled.div`
-  width: 100%
-  height: 100%
-
-  .team-background-image {
+const HeroWrapper = styled.div`
+  .flexWrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
     width: 100%;
-    height: 100%;
 
-    .team-front-image {
+    .titleText {
+      padding-left: 1rem;
+      padding-top: 100px;
+      flex-basis: 50%;
+
+      h1 {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 2rem;
+      }
+
+      h2 {
+        padding-top: 2rem;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+    }
+
+    .imageWrapper {
       width: 100%;
-      height: 100%;
+    
+      .team-background-image {
+        width: 100%;
+    
+        .team-front-image {
+          width: 100%;
+          box-shadow: 0 0 0 3px white, inset 0 0 0 3px white;
+        }
+      }
+    }
+  }
+
+  .description {
+    padding-top: 1rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-bottom: 1rem;
+
+    p {
+      padding-top: 1rem;
     }
   }
 `
@@ -43,7 +85,9 @@ export const pageQuery = graphql`
       teamTitle
       teamSlogan
       teamDescription {
-        teamDescription
+        childMarkdownRemark {
+          html
+        }
       }
       teamImage {
         fluid(maxWidth: 350) {
