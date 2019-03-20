@@ -137,6 +137,10 @@ const LogoWrapper = styled.div`
   overflow: hidden;
   margin-left: 3rem;
   height: 2rem;
+
+  img {
+    max-width: 180px;
+  }
 `
 
 const NavWrapper = styled.ul`
