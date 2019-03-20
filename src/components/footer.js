@@ -122,6 +122,10 @@ const FooterWrapper = styled.footer`
       text-transform: uppercase;
       line-height: 1.3;
     }
+
+    @media screen and (max-width: 400px) {
+      text-align: center;
+    }
   }
 
   .middle {
