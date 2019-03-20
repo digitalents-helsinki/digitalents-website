@@ -21,7 +21,7 @@ class teamTemplate extends React.Component {
               </BGImg>
             </div>
           </div>
-          <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />>
+          <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />
         </HeroWrapper>
       </Layout>
     )
@@ -39,6 +39,8 @@ const HeroWrapper = styled.div`
       padding-left: 1rem;
       padding-top: 100px;
       flex-basis: 50%;
+      position: absolute;
+      z-index: 5;
 
       h1 {
         text-transform: uppercase;
@@ -55,12 +57,14 @@ const HeroWrapper = styled.div`
 
     .imageWrapper {
       width: 100%;
+
+      @media screen and (max-width: 400px) {
+        min-width: 400px; 
+      }
     
       .team-background-image {
-        width: 100%;
     
         .team-front-image {
-          width: 100%;
           box-shadow: 0 0 0 3px white, inset 0 0 0 3px white;
         }
       }
@@ -69,9 +73,14 @@ const HeroWrapper = styled.div`
 
   .description {
     padding-top: 1rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-bottom: 1rem;
+
+    @media screen and (min-width: 400px) {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
 
     p {
       padding-top: 1rem;
