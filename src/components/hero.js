@@ -132,6 +132,8 @@ const TextContent = styled.div`
   text-align: center;
   flex-direction: column;
   padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
   div {
     p {
