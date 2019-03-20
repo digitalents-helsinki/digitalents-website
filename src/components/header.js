@@ -167,7 +167,7 @@ const LangWrapper = styled.ul`
 
   li {
     flex: 3;
-    margin-right: 1rem;
+    margin-right: 2rem;
   }
 
   li:first-child {

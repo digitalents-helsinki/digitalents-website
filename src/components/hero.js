@@ -19,6 +19,7 @@ class Hero extends React.Component {
               return <h1>{text}</h1>
             })}
             <p>{this.props.data.heroLowerText}</p>
+            <img src={arrowIcon} alt="" />
           </TextWrapper>
           <RightImage>
             <BGImg fluid={this.props.data.heroRightBackgroundImage.fluid} className="rightImage">
@@ -27,7 +28,6 @@ class Hero extends React.Component {
           </RightImage>
         </HeroWrapper>
         <TextContent>
-          <img src={arrowIcon} alt="" />
           <div dangerouslySetInnerHTML={{__html: this.props.data.textContent.childMarkdownRemark.html}} />
         </TextContent>
       </Fragment>
@@ -43,6 +43,10 @@ const HeroWrapper = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  @media (max-width:1000px) {
+    flex-basis: 100%;
+  }
 `
 
 const LeftImage = styled.div`
@@ -55,6 +59,10 @@ const LeftImage = styled.div`
     .leftTopImage {
     }
   }
+
+  @media (max-width:1000px) {
+    display: none;
+  }
 `
 
 const RightImage = styled.div`
@@ -65,6 +73,23 @@ const RightImage = styled.div`
     width: 100%;
 
     .rightTopImage {
+      box-shadow: 0 0 0 3px white, inset 0 0 0 3px white;
+    }
+  }
+
+  @media (max-width:1000px) {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-basis: 100%;
+    justify-content: flex-end;
+
+    .rightImage {
+      width: 50%;
+      height: 100vh;
+
+      .rightTopImage {
+        height: 100vh;
+      }
     }
   }
 `
@@ -77,6 +102,13 @@ const TextWrapper = styled.div`
   position: absolute;
   z-index: 5;
 
+  @media (max-width:1000px) {
+    flex-basis: 50%;
+    justify-content: flex-start;
+    padding-top: 250px;
+    max-width: 300px;
+  }
+
   h1 {
     font-size: 2rem;
     font-weight: bold;
@@ -84,8 +116,13 @@ const TextWrapper = styled.div`
   }
 
   p {
+    padding-top: 20px;
     max-width: 400px;
     text-align: center;
+  }
+
+  img {
+    padding-top: 100px;
   }
 `
 

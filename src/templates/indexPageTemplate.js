@@ -17,8 +17,8 @@ class indexPageTemplate extends React.Component {
         <Teams data={teams} />
         <SomeContent data={someContent} />
         <Persons data={personBlocks} />
-        <Location data={location} />
-        <Sponsors data={sponsorBlocks} />
+        {/*<Location data={location} />*/}
+        {/*<Sponsors data={sponsorBlocks} />*/}
       </Layout>
     )
   }
