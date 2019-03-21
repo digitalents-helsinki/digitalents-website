@@ -1,35 +1,53 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { createGlobalStyle } from 'styled-components'
 import { reset } from 'styled-reset'
-import { StaticQuery, graphql } from 'gatsby'
+import { navigateTo } from 'gatsby'
 
 import Header from './header'
+import BurgerMenu from './burgermenu'
 import Footer from './footer'
 
-let lang = "fi"
+const Layout = ({ children }) => {
+  const [language, setLanguage] = useState('fi')
+  const [mobile, setMobile] = useState(true)
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <Fragment>
-        <GlobalStyle />
-        <Header mobile={false} lang={lang}  />
-        <main>{children}</main>
-        <Footer mobile={false} lang={lang} />
-      </Fragment>
-    )}
-  />
-)
+  useEffect(() => {
+    setView()
+    window.addEventListener('resize', setView)
+  })
+
+  const setView = () => {
+    if(window.innerWidth >= 1000) {
+      setMobile(false)
+      console.log('now in desktop mode')
+    } else {
+      setMobile(true)
+      console.log('now in mobile mode')
+    }
+  }
+
+  const handleFiClick = () => {
+    setLanguage('fi')
+    navigateTo('/fi/')
+  }
+
+  const handleEnClick = () => {
+    setLanguage('en')
+    navigateTo('/en/')
+  }
+
+  const navElement = mobile ? <BurgerMenu /> : <Header handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language}  />
+
+  return (
+    <Fragment>
+      <GlobalStyle />
+      {navElement}
+      <main>{children}</main>
+      <Footer mobile={mobile} language={language} />
+    </Fragment>
+  )
+}
 
 const GlobalStyle = createGlobalStyle`
   ${reset}

@@ -59,9 +59,10 @@ const FooterColumn = (props) => {
 }
 
 const Footer = (props) => {
+  const data = props.language === 'fi' ? props.data.fi : props.data.en
   return (
     <FooterWrapper>
-      {props.data.edges.map(footer => {
+      {data.edges.map(footer => {
         return (
           <Fragment>
             <FooterColumn
@@ -86,7 +87,7 @@ const Footer = (props) => {
   )
 }
 
-const FooterQuery = () => (
+const FooterQuery = (props) => (
   <StaticQuery
     query={graphql`
       query footerQuery {
@@ -116,7 +117,7 @@ const FooterQuery = () => (
         }
       }
     `}
-    render={data => <Footer data={data.en} />}
+    render={data => <Footer language={props.language} data={data} />}
   />
 )
 

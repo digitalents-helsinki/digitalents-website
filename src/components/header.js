@@ -4,22 +4,16 @@ import styled from 'styled-components'
 
 const Header = (props) => {
   const [teamClick, setTeamClick] = useState(false)
-  const [finnish, setFinnish] = useState(true)
+
 
   const handleTeamClick = () => {
     setTeamClick(!teamClick)
   }
 
-  const handleFiClick = () => {
-    setFinnish(true)
-  }
+  console.log(props.language)
 
-  const handleEnClick = () => {
-    setFinnish(false)
-  }
+  const data = props.language === 'fi' ? props.fiData : props.enData
 
-  const data = finnish ? props.fiData : props.enData
-  
   return (
     <Fragment>
       <HeaderWrapper>
@@ -44,8 +38,8 @@ const Header = (props) => {
                 <li><Link to="/tyopaikat">{header.node.workLink}</Link></li>
               </NavWrapper>
               <LangWrapper>
-                <li><Link to="/fi/" onClick={handleFiClick}>FI</Link></li>
-                <li><Link to="/en/" onClick={handleEnClick}>EN</Link></li>
+                <li onClick={props.handleFiClick}>FI</li>
+                <li onClick={props.handleEnClick}>EN</li>
               </LangWrapper>
             </Fragment>
           )
@@ -55,7 +49,7 @@ const Header = (props) => {
   )
 }
 
-const HeaderQuery = () => (
+const HeaderQuery = (props) => (
   <StaticQuery
     query={graphql`
       query HeaderQuery {
@@ -98,7 +92,7 @@ const HeaderQuery = () => (
         }
       }
     `}
-    render={data => <Header enData={data.en} fiData={data.fi} linkData={data.allContentfulTeamTemplate} />}
+    render={data => <Header language={props.language} handleFiClick={props.handleFiClick} handleEnClick={props.handleEnClick} enData={data.en} fiData={data.fi} linkData={data.allContentfulTeamTemplate} />}
   />
 )
 
