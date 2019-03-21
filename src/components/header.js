@@ -10,12 +10,9 @@ const Header = (props) => {
     setTeamClick(!teamClick)
   }
 
-  console.log(props.language)
-
   const data = props.language === 'fi' ? props.fiData : props.enData
 
   return (
-    <Fragment>
       <HeaderWrapper>
         {data.edges.map(header => {
           return (
@@ -45,7 +42,6 @@ const Header = (props) => {
           )
         })}
       </HeaderWrapper>
-    </Fragment>
   )
 }
 

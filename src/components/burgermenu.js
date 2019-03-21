@@ -1,6 +1,10 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 
+import fbIcon from '../images/facebook_logo_valkoinen.svg'
+import igIcon from '../images/instagram_logo_valkoinen.svg'
+import twIcon from '../images/twitter_logo_valkoinen.svg'
+
 const BurgerMenu = (props) => {
   const [visible, setVisible] = useState(false)
 
@@ -13,25 +17,32 @@ const BurgerMenu = (props) => {
     <div className="button">
       <button onClick={handleClick}>Close</button>
     </div>
-    <div className="links">
-      <ul>
-        <li>ETUSIVU</li>
-      </ul>
-      <ul>
-        <li>DT MEDIA</li>
-        <li>DT ICT</li>
-        <li>DT SOFTDEV</li>
-      </ul>
-      <ul>
-        <li>YHTEYSTIEDOT</li>
-        <li>TYÖPAIKAT</li>
-      </ul>
+    <div className="wrapper">
+      <div className="links">
+        <ul>
+          <li>ETUSIVU</li>
+        </ul>
+        <ul>
+          <li>DT MEDIA</li>
+          <li>DT ICT</li>
+          <li>DT SOFTDEV</li>
+        </ul>
+        <ul>
+          <li>YHTEYSTIEDOT</li>
+          <li>TYÖPAIKAT</li>
+        </ul>
+      </div>
+      <div className="langOptions">
+        <ul>
+          <li>FI</li>
+          <li>EN</li>
+        </ul>
+      </div>
     </div>
-    <div className="langOptions">
-      <ul>
-        <li>FI</li>
-        <li>EN</li>
-      </ul>
+    <div className="social-links">
+      <img src={twIcon} alt="" />
+      <img src={igIcon} alt="" />
+      <img src={fbIcon} alt="" />
     </div>
   </SideBar> : null
 
@@ -49,9 +60,6 @@ const BurgerButton = styled.button`
 `
 
 const SideBar = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -63,16 +71,49 @@ const SideBar = styled.div`
   .button {
   }
 
-  .links {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80%;
+    padding-right: 3rem;
     text-align: right;
+    font-weight: 700;
 
-    ul {
-      padding-bottom: 1rem;
+    .links {
+      padding-bottom: 5rem;
+      font-size: 2rem;
+
+      ul {
+        padding-bottom: 2rem;
+
+        li {
+          padding-bottom: 0.5rem;
+        }
+      }
+    }
+  
+    .langOptions {
+      padding-top: 2rem;
+
+      ul {
+        padding-bottom: 1rem;
+        font-size: 1.5rem;
+
+        li {
+          padding-bottom: 1rem;
+        }
+      }
     }
   }
 
-  .langOptions {
-    text-align: right;
+  .social-links {
+    padding-left: 2rem;
+
+    img {
+      width: 2rem;
+      padding-left: 0.5rem;
+    }
   }
 `
 

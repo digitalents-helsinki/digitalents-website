@@ -20,10 +20,8 @@ const Layout = ({ children }) => {
   const setView = () => {
     if(window.innerWidth >= 1000) {
       setMobile(false)
-      console.log('now in desktop mode')
     } else {
       setMobile(true)
-      console.log('now in mobile mode')
     }
   }
 
