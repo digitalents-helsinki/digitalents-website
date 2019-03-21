@@ -75,13 +75,14 @@ const SideBar = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 80%;
+    height: 70%;
     padding-right: 3rem;
     text-align: right;
     font-weight: 700;
+    padding-top: 5rem;
 
     .links {
-      padding-bottom: 5rem;
+      padding-bottom: 2rem;
       font-size: 2rem;
 
       ul {
@@ -94,7 +95,7 @@ const SideBar = styled.div`
     }
   
     .langOptions {
-      padding-top: 2rem;
+      padding-top: 0rem;
 
       ul {
         padding-bottom: 1rem;
