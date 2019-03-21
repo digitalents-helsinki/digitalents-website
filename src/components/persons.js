@@ -7,7 +7,7 @@ const Persons = (props) => {
       <PersonsWrapper>
         {props.data.map(person => {
           return (
-            <PersonWrapper>
+            <PersonWrapper id="persons">
               <div className="point-wrapper">
                 <div className="salmiak-point" />
               </div>

@@ -29,7 +29,7 @@ const BurgerMenu = (props) => {
           <li><Link to="/teams/softdev/">DT SOFTDEV</Link></li>
         </ul>
         <ul>
-          <li>YHTEYSTIEDOT</li>
+          <li><Link to="/fi/#persons">YHTEYSTIEDOT</Link></li>
           <li><Link to="/tyopaikat/">TYÖPAIKAT</Link></li>
         </ul>
       </div>
