@@ -26,7 +26,7 @@ const BurgerMenu = (props) => {
         <ul>
           <li><Link to="/teams/media/">DT MEDIA</Link></li>
           <li><Link to="/teams/ict/">DT ICT</Link></li>
-          <li><Link to="/teams/DT">DT SOFTDEV</Link></li>
+          <li><Link to="/teams/softdev/">DT SOFTDEV</Link></li>
         </ul>
         <ul>
           <li>YHTEYSTIEDOT</li>
@@ -69,6 +69,9 @@ const SideBar = styled.div`
   color: white;
   opacity: 80%;
 
+  * a {
+    color: white;
+  }
   .button {
   }
 
