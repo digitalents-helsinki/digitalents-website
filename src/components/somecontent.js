@@ -1,31 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
-import stripedBG from '../images/Podcast_oppimateriaali_taustaMaski.svg'
 
-class SomeContent extends React.Component {
-  render () {
-    return (
-      <SomeWrapper>
-        <div className="sometext">
-          <p>{this.props.data.someText}</p>
+const SomeContent = (props) => {
+  return (
+    <SomeWrapper>
+      <div className="sometext">
+        <p>{props.data.someText}</p>
+      </div>
+      <ContentWrapper>
+        <div className="podcasts">
+          <h3>Podcastit</h3>
+          {props.data.podcasts.map(podcast => {
+            return <p>{podcast}</p>
+          })}
         </div>
-        <ContentWrapper>
-          <div className="podcasts">
-            <h3>Podcastit</h3>
-            {this.props.data.podcasts.map(podcast => {
-              return <p>{podcast}</p>
-            })}
-          </div>
-          <div className="learning-material">
-            <h3>Oppimateriaali</h3>
-            {this.props.data.learningLinks.map(link => {
-              return <p>{link}</p>
-            })}
-          </div>
-        </ContentWrapper>
-      </SomeWrapper>
-    )
-  }
+        <div className="learning-material">
+          <h3>Oppimateriaali</h3>
+          {props.data.learningLinks.map(link => {
+            return <p>{link}</p>
+          })}
+        </div>
+      </ContentWrapper>
+    </SomeWrapper>
+  )
 }
 
 const SomeWrapper = styled.div`

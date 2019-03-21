@@ -1,6 +1,7 @@
 import React from 'react'
-import Layout from '../components/layout'
+import { graphql } from 'gatsby'
 
+import Layout from '../components/layout'
 import Hero from '../components/hero'
 import Persons from '../components/persons'
 import Sponsors from '../components/sponsors'
@@ -8,20 +9,19 @@ import Teams from '../components/teams'
 import SomeContent from '../components/somecontent'
 import Location from '../components/location'
 
-class indexPageTemplate extends React.Component {
-  render () {
-    const { hero, teams, someContent, personBlocks, location, sponsorBlocks } = this.props.data.contentfulPageTemplate
-    return (
-      <Layout>
-        <Hero data={hero} />
-        <Teams data={teams} />
-        <SomeContent data={someContent} />
-        <Persons data={personBlocks} />
-        <Location data={location} />
-        <Sponsors data={sponsorBlocks} />
-      </Layout>
-    )
-  }
+const indexPageTemplate = (props) => {
+  const { hero, teams, someContent, personBlocks, location, sponsorBlocks } = props.data.contentfulPageTemplate
+  
+  return (
+    <Layout>
+      <Hero data={hero} />
+      <Teams data={teams} />
+      <SomeContent data={someContent} />
+      <Persons data={personBlocks} />
+      <Location data={location} />
+      <Sponsors data={sponsorBlocks} />
+    </Layout>
+  )
 }
 
 export const pageQuery = graphql`

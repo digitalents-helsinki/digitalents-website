@@ -1,25 +1,23 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import { StaticQuery } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 
 import fbIcon from '../images/facebook_logo_valkoinen.svg'
 import igIcon from '../images/instagram_logo_valkoinen.svg'
 import twIcon from '../images/twitter_logo_valkoinen.svg'
 
-const SocialButton = {}
-
-const FooterColumn = props => {
+const FooterColumn = (props) => {
   if (props.position === 'left') {
     return (
       <div className="left">
         <div className="leftUpper">
           {props.upperData.map(n => {
-            return <p>{n}</p>
+            return <p key={n}>{n}</p>
           })}
         </div>
         <div className="leftLower">
           {props.lowerData.map(n => {
-            return <p>{n}</p>
+            return <p key={n}>{n}</p>
           })}
         </div>
       </div>
@@ -29,12 +27,12 @@ const FooterColumn = props => {
       <div className="middle">
         <div className="middleUpper">
           {props.upperData.map(n => {
-            return <p>{n}</p>
+            return <p key={n}>{n}</p>
           })}
         </div>
         <div className="middleLower">
           {props.lowerData.map(n => {
-            return <p>{n}</p>
+            return <p key={n}>{n}</p>
           })}
         </div>
       </div>
@@ -44,7 +42,7 @@ const FooterColumn = props => {
       <div className="right">
         <div className="rightUpper">
           {props.upperData.map(n => {
-            return <p>{n}</p>
+            return <p key={n}>{n}</p>
           })}
         </div>
         <div className="social-icons">
@@ -60,41 +58,51 @@ const FooterColumn = props => {
   } else return null
 }
 
-class Footer extends React.Component {
-  render() {
-    return (
-      <FooterWrapper>
-        {this.props.footer.edges.map(footer => {
-          return (
-            <Fragment>
-              <FooterColumn
-                position="left"
-                upperData={footer.node.footerLeftUpperColumn}
-                lowerData={footer.node.footerLeftLowerColumn}
-              />
-              <FooterColumn
-                position="middle"
-                upperData={footer.node.footerMiddleUpperColumn}
-                lowerData={footer.node.footerMiddleLowerColumn}
-              />
-              <FooterColumn
-                position="right"
-                upperData={footer.node.footerRightUpperText}
-                lowerData={footer.node.footerRightLowerText}
-              />
-            </Fragment>
-          )
-        })}
-      </FooterWrapper>
-    )
-  }
+const Footer = (props) => {
+  return (
+    <FooterWrapper>
+      {props.data.edges.map(footer => {
+        return (
+          <Fragment>
+            <FooterColumn
+              position="left"
+              upperData={footer.node.footerLeftUpperColumn}
+              lowerData={footer.node.footerLeftLowerColumn}
+            />
+            <FooterColumn
+              position="middle"
+              upperData={footer.node.footerMiddleUpperColumn}
+              lowerData={footer.node.footerMiddleLowerColumn}
+            />
+            <FooterColumn
+              position="right"
+              upperData={footer.node.footerRightUpperText}
+              lowerData={footer.node.footerRightLowerText}
+            />
+          </Fragment>
+        )
+      })}
+    </FooterWrapper>
+  )
 }
 
 const FooterQuery = () => (
   <StaticQuery
     query={graphql`
       query footerQuery {
-        allContentfulFooter(filter: { node_locale: { regex: "/en-US/" } }) {
+        en: allContentfulFooter(filter: { node_locale: { regex: "/en-US/" } }) {
+          edges {
+            node {
+              footerLeftUpperColumn
+              footerLeftLowerColumn
+              footerMiddleUpperColumn
+              footerMiddleLowerColumn
+              footerRightUpperText
+              footerRightLowerText
+            }
+          }
+        }
+        fi: allContentfulFooter(filter: { node_locale: { regex: "/fi-FI/" } }) {
           edges {
             node {
               footerLeftUpperColumn
@@ -108,7 +116,7 @@ const FooterQuery = () => (
         }
       }
     `}
-    render={data => <Footer footer={data.allContentfulFooter} />}
+    render={data => <Footer data={data.en} />}
   />
 )
 

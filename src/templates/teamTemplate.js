@@ -1,31 +1,31 @@
 import React from 'react'
+import { graphql } from 'gatsby'
+
 import Layout from '../components/layout'
-import Img from 'gatsby-image'
 import BGImg from 'gatsby-background-image'
 import styled from 'styled-components'
 
-class teamTemplate extends React.Component {
-  render() {
-    const { teamTitle, teamSlogan, teamDescription, teamImage, teamMaskImage } = this.props.data.contentfulTeamTemplate
-    return (
-      <Layout>
-        <HeroWrapper>
-          <div className="flexWrapper">
-            <div className="titleText">
-              <h1>{teamTitle}</h1>
-              <h2>{teamSlogan}</h2>
-            </div>
-            <div className="imageWrapper">
-              <BGImg fluid={teamImage.fluid} className="team-background-image">
-                <img src={teamMaskImage.file.url} alt="" className="team-front-image" />
-              </BGImg>
-            </div>
+const teamTemplate = (props) => {
+  const { teamTitle, teamSlogan, teamDescription, teamImage, teamMaskImage } = props.data.contentfulTeamTemplate
+  
+  return (
+    <Layout>
+      <HeroWrapper>
+        <div className="flexWrapper">
+          <div className="titleText">
+            <h1>{teamTitle}</h1>
+            <h2>{teamSlogan}</h2>
           </div>
-          <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />
-        </HeroWrapper>
-      </Layout>
-    )
-  }
+          <div className="imageWrapper">
+            <BGImg fluid={teamImage.fluid} className="team-background-image">
+              <img src={teamMaskImage.file.url} alt="" className="team-front-image" />
+            </BGImg>
+          </div>
+        </div>
+        <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />
+      </HeroWrapper>
+    </Layout>
+  )
 }
 
 const HeroWrapper = styled.div`

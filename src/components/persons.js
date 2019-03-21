@@ -1,36 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
 
-class Persons extends React.Component {
-  render() {
-    return (
-      <Wrapper>
-        <PersonsWrapper>
-          {this.props.data.map(person => {
-            return (
-              <PersonWrapper>
-                <div className="point-wrapper">
-                  <div className="salmiak-point" />
-                </div>
-                <div className="text-wrapper">
-                  <h2 className="person-name">{person.name}</h2>
-                  <p className="person-title">{person.title}</p>
-                  <p className="person-contact-email">
-                    <a href={`mailto:${person.email}`}>
-                      {person.email}
-                    </a>
-                  </p>
-                  <p className="person-contact-phone">
-                    {person.phoneNumber}
-                  </p>
-                </div>
-              </PersonWrapper>
-            )
-          })}
-        </PersonsWrapper>
-      </Wrapper>
-    )
-  }
+const Persons = (props) => {
+  return (
+    <Wrapper>
+      <PersonsWrapper>
+        {props.data.map(person => {
+          return (
+            <PersonWrapper>
+              <div className="point-wrapper">
+                <div className="salmiak-point" />
+              </div>
+              <div className="text-wrapper">
+                <h2 className="person-name">{person.name}</h2>
+                <p className="person-title">{person.title}</p>
+                <p className="person-contact-email">
+                  <a href={`mailto:${person.email}`}>
+                    {person.email}
+                  </a>
+                </p>
+                <p className="person-contact-phone">
+                  {person.phoneNumber}
+                </p>
+              </div>
+            </PersonWrapper>
+          )
+        })}
+      </PersonsWrapper>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.div`

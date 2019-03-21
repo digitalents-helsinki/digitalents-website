@@ -1,73 +1,58 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      teamClick: false,
-      finnish: true
-    }
-    this.showTeams = this.showTeams.bind(this)
-    this.setFinnish = this.setFinnish.bind(this)
-    this.setEnglish = this.setEnglish.bind(this)
+const Header = (props) => {
+  const [teamClick, setTeamClick] = useState(false)
+  const [finnish, setFinnish] = useState(true)
+
+  const handleTeamClick = () => {
+    setTeamClick(!teamClick)
   }
 
-  showTeams() {
-    this.setState(state => ({
-      teamClick: !state.teamClick
-    }))
+  const handleFiClick = () => {
+    setFinnish(true)
   }
 
-  setFinnish() {
-    this.setState(state => ({
-      finnish: true
-    }))
+  const handleEnClick = () => {
+    setFinnish(false)
   }
 
-  setEnglish() {
-    this.setState(state => ({
-      finnish: false
-    }))
-  }
-
-  render() {
-    const data = this.state.finnish ? this.props.fiData : this.props.enData
-    return (
-      <Fragment>
-        <HeaderWrapper>
-          {data.edges.map(header => {
-            return (
-              <Fragment>
-                <LogoWrapper>
-                  <img src={header.node.headerImage.file.url} alt="" />
-                </LogoWrapper>
-                <NavWrapper>
-                  <li><Link to="/">{header.node.frontPageLink}</Link></li>
-                  <li onClick={this.showTeams}>{header.node.teamLink}</li>
-                  <TeamsWrapper>
-                    {this.state.teamClick ? 
-                          this.props.linkData.edges.map(links => {
-                            return <Link to={`/teams/`+links.node.teamSlug}>{links.node.teamSlug}</Link>
-                          })
-                        : 
-                        null 
-                    }
-                  </TeamsWrapper>
-                  <li><Link to="/tyopaikat">{header.node.workLink}</Link></li>
-                </NavWrapper>
-                <LangWrapper>
-                  <li onClick={this.setFinnish}>FI</li>
-                  <li onClick={this.setEnglish}>EN</li>
-                </LangWrapper>
-              </Fragment>
-            )
-          })}
-        </HeaderWrapper>
-      </Fragment>
-    )
-  }
+  const data = finnish ? props.fiData : props.enData
+  
+  return (
+    <Fragment>
+      <HeaderWrapper>
+        {data.edges.map(header => {
+          return (
+            <Fragment>
+              <LogoWrapper>
+                <img src={header.node.headerImage.file.url} alt="" />
+              </LogoWrapper>
+              <NavWrapper>
+                <li><Link to="/">{header.node.frontPageLink}</Link></li>
+                <li onClick={handleTeamClick}>{header.node.teamLink}</li>
+                <TeamsWrapper>
+                  {teamClick ? 
+                    props.linkData.edges.map(links => {
+                      return <Link to={`/teams/`+links.node.teamSlug}>{links.node.teamSlug}</Link>
+                    })
+                    : 
+                    null 
+                  }
+                </TeamsWrapper>
+                <li><Link to="/tyopaikat">{header.node.workLink}</Link></li>
+              </NavWrapper>
+              <LangWrapper>
+                <li><Link to="/fi/" onClick={handleFiClick}>FI</Link></li>
+                <li><Link to="/en/" onClick={handleEnClick}>EN</Link></li>
+              </LangWrapper>
+            </Fragment>
+          )
+        })}
+      </HeaderWrapper>
+    </Fragment>
+  )
 }
 
 const HeaderQuery = () => (
@@ -177,6 +162,10 @@ const LangWrapper = styled.ul`
   li:first-child {
     border-left: 0.5px solid white;
     padding-left: 1rem;
+  }
+
+  a {
+    color: white;
   }
 `
 

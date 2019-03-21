@@ -1,11 +1,4 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { createGlobalStyle } from 'styled-components'
 import { reset } from 'styled-reset'
@@ -13,6 +6,8 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 import Footer from './footer'
+
+let lang = "fi"
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -26,12 +21,12 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <Fragment>
         <GlobalStyle />
-        <Header />
+        <Header mobile={false} lang={lang}  />
         <main>{children}</main>
-        <Footer />
-      </>
+        <Footer mobile={false} lang={lang} />
+      </Fragment>
     )}
   />
 )

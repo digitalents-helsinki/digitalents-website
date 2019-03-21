@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-class indexPage extends React.Component {
-  componentDidMount() {
-    window.location = '/fi/';
-  }
-  render() {
-    return null
-  }
+const IndexPage = () => {
+  useEffect(() => {
+    window.location = '/fi/'
+  })
+
+  return null
 }
 
-export default indexPage
+export default IndexPage
 

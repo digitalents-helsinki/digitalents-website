@@ -1,39 +1,35 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
 import BGImg from 'gatsby-background-image'
-import arrowIcon from '../images/angledown.svg'
 
-class Hero extends React.Component {
-  render () {
-    return (
-      <Fragment>
-        <HeroWrapper>
-          <LeftImage>
-            <BGImg fluid={this.props.data.heroLeftBackgroundImage.fluid} className="leftImage">
-              <img src={this.props.data.heroLeftImage.file.url} alt="" className="leftTopImage" />
-            </BGImg>
-          </LeftImage>
-          <div className="spacer">
-          </div>
-          <TextWrapper>
-            {this.props.data.heroText.map((text) => {
-              return <h1>{text}</h1>
-            })}
-            <p>{this.props.data.heroLowerText}</p>
-          </TextWrapper>
-          <RightImage>
-            <BGImg fluid={this.props.data.heroRightBackgroundImage.fluid} className="rightImage">
-              <img src={this.props.data.heroRightImage.file.url} alt="" className="rightTopImage" />
-            </BGImg>
-          </RightImage>
-        </HeroWrapper>
-        <TextContent>
-          <div dangerouslySetInnerHTML={{__html: this.props.data.textContent.childMarkdownRemark.html}} />
-        </TextContent>
-      </Fragment>
-    )
-  }
+const Hero = (props) => {
+  return (
+    <Fragment>
+      <HeroWrapper>
+        <LeftImage>
+          <BGImg fluid={props.data.heroLeftBackgroundImage.fluid} className="leftImage">
+            <img src={props.data.heroLeftImage.file.url} alt="" className="leftTopImage" />
+          </BGImg>
+        </LeftImage>
+        <div className="spacer">
+        </div>
+        <TextWrapper>
+          {props.data.heroText.map((text) => {
+            return <h1>{text}</h1>
+          })}
+          <p>{props.data.heroLowerText}</p>
+        </TextWrapper>
+        <RightImage>
+          <BGImg fluid={props.data.heroRightBackgroundImage.fluid} className="rightImage">
+            <img src={props.data.heroRightImage.file.url} alt="" className="rightTopImage" />
+          </BGImg>
+        </RightImage>
+      </HeroWrapper>
+      <TextContent>
+        <div dangerouslySetInnerHTML={{__html: props.data.textContent.childMarkdownRemark.html}} />
+      </TextContent>
+    </Fragment>
+  )
 }
 
 
