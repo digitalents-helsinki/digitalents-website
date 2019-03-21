@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 import fbIcon from '../images/facebook_logo_valkoinen.svg'
 import igIcon from '../images/instagram_logo_valkoinen.svg'
@@ -20,16 +21,16 @@ const BurgerMenu = (props) => {
     <div className="wrapper">
       <div className="links">
         <ul>
-          <li>ETUSIVU</li>
+          <li><Link to="/fi/">ETUSIVU</Link></li>
         </ul>
         <ul>
-          <li>DT MEDIA</li>
-          <li>DT ICT</li>
-          <li>DT SOFTDEV</li>
+          <li><Link to="/teams/media/">DT MEDIA</Link></li>
+          <li><Link to="/teams/ict/">DT ICT</Link></li>
+          <li><Link to="/teams/DT">DT SOFTDEV</Link></li>
         </ul>
         <ul>
           <li>YHTEYSTIEDOT</li>
-          <li>TYÖPAIKAT</li>
+          <li><Link to="/tyopaikat/">TYÖPAIKAT</Link></li>
         </ul>
       </div>
       <div className="langOptions">
