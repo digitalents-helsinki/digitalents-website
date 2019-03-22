@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
     navigateTo('/en/')
   }
 
-  const navElement = mobile ? <BurgerMenu /> : <Header handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language}  />
+  const navElement = mobile ? <BurgerMenu handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language} /> : <Header handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language}  />
 
   return (
     <Fragment>

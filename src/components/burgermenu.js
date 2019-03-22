@@ -35,15 +35,15 @@ const BurgerMenu = (props) => {
       </div>
       <div className="langOptions">
         <ul>
-          <li>FI</li>
-          <li>EN</li>
+          <li onClick={props.handleFiClick}>FI</li>
+          <li onClick={props.handleEnClick}>EN</li>
         </ul>
       </div>
     </div>
     <div className="social-links">
-      <img src={twIcon} alt="" />
-      <img src={igIcon} alt="" />
-      <img src={fbIcon} alt="" />
+      <a href="https://twitter.com/digitalentshki"><img src={twIcon} alt="" /></a>
+      <a href="https://www.instagram.com/digitalentshelsinki/"><img src={igIcon} alt="" /></a>
+      <a href="https://www.facebook.com/digitalentshelsinki/"><img src={fbIcon} alt="" /></a>
     </div>
   </SideBar> : null
 
