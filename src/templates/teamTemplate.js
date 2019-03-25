@@ -6,12 +6,14 @@ import BGImg from 'gatsby-background-image'
 import styled from 'styled-components'
 
 const teamTemplate = (props) => {
-  const { teamTitle, teamSlogan, teamDescription, teamImage, teamMaskImage } = props.data.contentfulTeamTemplate
+  const { teamTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition } = props.data.contentfulTeamTemplate
   
+  console.log(imagePosition)
+
   return (
-    <Layout>
+    <Layout language={props.pageContext.node_locale}>
       <HeroWrapper>
-        <div className="flexWrapper">
+        <FlexWrapper position={imagePosition}>
           <div className="titleText">
             <h1>{teamTitle}</h1>
             <h2>{teamSlogan}</h2>
@@ -21,7 +23,7 @@ const teamTemplate = (props) => {
               <img src={teamMaskImage.file.url} alt="" className="team-front-image" />
             </BGImg>
           </div>
-        </div>
+        </FlexWrapper>
         <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />
       </HeroWrapper>
     </Layout>
@@ -29,56 +31,6 @@ const teamTemplate = (props) => {
 }
 
 const HeroWrapper = styled.div`
-  .flexWrapper {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-    width: 100%;
-
-    .titleText {
-      padding-left: 1rem;
-      padding-top: 100px;
-      flex-basis: 50%;
-      position: absolute;
-      z-index: 5;
-
-      @media screen and (min-width: 1000px) {
-        position: static;
-      }
-
-      h1 {
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 2rem;
-      }
-
-      h2 {
-        padding-top: 2rem;
-        font-weight: 400;
-        font-size: 1rem;
-      }
-    }
-
-    .imageWrapper {
-      width: 50%;
-
-      @media screen and (min-width: 1000px) {
-        width: 50%;
-      }
-
-      @media screen and (max-width: 400px) {
-        min-width: 400px; 
-      }
-    
-      .team-background-image {
-    
-        .team-front-image {
-          box-shadow: 0 0 0 3px white, inset 0 0 0 3px white;
-        }
-      }
-    }
-  }
-
   .description {
     padding-top: 1rem;
     padding-left: 1rem;
@@ -94,6 +46,57 @@ const HeroWrapper = styled.div`
       padding-top: 1rem;
     }
   }
+`
+
+const FlexWrapper = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: ${props => props.position ? "flex-start" : "flex-end"};
+  width: 100%;
+
+  .titleText {
+    padding-left: 1rem;
+    padding-top: 100px;
+    flex-basis: 50%;
+    position: absolute;
+    z-index: 5;
+
+    @media screen and (min-width: 1000px) {
+      position: static;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    h2 {
+      padding-top: 2rem;
+      font-weight: 400;
+      font-size: 1rem;
+    }
+  }
+
+  .imageWrapper {
+    width: 50%;
+
+    @media screen and (min-width: 1000px) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 400px) {
+      min-width: 400px; 
+    }
+  
+    .team-background-image {
+  
+      .team-front-image {
+        box-shadow: 0 0 0 3px white, inset 0 0 0 3px white;
+      }
+    }
+  }
+}
 `
 
 export const pageQuery = graphql`
@@ -116,6 +119,7 @@ export const pageQuery = graphql`
           url
         }
       }
+      imagePosition
     }
   }
 `

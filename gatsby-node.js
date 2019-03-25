@@ -71,6 +71,7 @@ exports.createPages = ({ graphql, actions }) => {
             component: teamTemplate,
             context: {
               slug: edge.node.teamSlug,
+              node_locale: edge.node.node_locale
             },
           })
         })
