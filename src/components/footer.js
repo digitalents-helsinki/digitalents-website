@@ -59,7 +59,7 @@ const FooterColumn = (props) => {
 }
 
 const Footer = (props) => {
-  const data = props.language === 'fi' ? props.data.fi : props.data.en
+  const data = props.language === 'fi-FI' ? props.data.fi : props.data.en
   return (
     <FooterWrapper>
       {data.edges.map(footer => {

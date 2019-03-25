@@ -11,9 +11,8 @@ import Location from '../components/location'
 
 const indexPageTemplate = (props) => {
   const { hero, teams, someContent, personBlocks, location, sponsorBlocks } = props.data.contentfulPageTemplate
-  
   return (
-    <Layout>
+    <Layout language={props.pageContext.node_locale}>
       <Hero data={hero} />
       <Teams data={teams} />
       <SomeContent data={someContent} />

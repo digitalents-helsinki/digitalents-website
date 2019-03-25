@@ -10,7 +10,7 @@ const Header = (props) => {
     setTeamClick(!teamClick)
   }
 
-  const data = props.language === 'fi' ? props.fiData : props.enData
+  const data = props.language === 'fi-FI' ? props.fiData : props.enData
 
   return (
       <HeaderWrapper>

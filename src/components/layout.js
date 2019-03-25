@@ -8,8 +8,8 @@ import Header from './header'
 import BurgerMenu from './burgermenu'
 import Footer from './footer'
 
-const Layout = ({ children }) => {
-  const [language, setLanguage] = useState('fi')
+const Layout = (props) => {
+  const [language, setLanguage] = useState(props.language)
   const [mobile, setMobile] = useState(true)
 
   useEffect(() => {
@@ -26,12 +26,12 @@ const Layout = ({ children }) => {
   }
 
   const handleFiClick = () => {
-    setLanguage('fi')
+    setLanguage('fi-FI')
     navigateTo('/fi/')
   }
 
   const handleEnClick = () => {
-    setLanguage('en')
+    setLanguage('en-US')
     navigateTo('/en/')
   }
 
@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
     <Fragment>
       <GlobalStyle />
       {navElement}
-      <main>{children}</main>
+      <main>{props.children}</main>
       <Footer mobile={mobile} language={language} />
     </Fragment>
   )
