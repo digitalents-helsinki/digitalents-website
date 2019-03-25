@@ -16,12 +16,12 @@ const BurgerMenu = (props) => {
   const sideBarElement = visible ? 
   <SideBar>
     <div className="button">
-      <button onClick={handleClick}>Close</button>
+      <button onClick={handleClick}>{props.language === 'en' ? 'Close' : 'Sulje'}</button>
     </div>
     <div className="wrapper">
       <div className="links">
         <ul>
-          <li><Link to={props.pagePrefix}>ETUSIVU</Link></li>
+          <li><Link to={props.pagePrefix}>{props.language === 'en' ? 'FRONT PAGE' : 'ETUSIVU'}</Link></li>
         </ul>
         <ul>
           <li><Link to={`${props.pagePrefix}/media/`}>DT MEDIA</Link></li>
@@ -29,8 +29,8 @@ const BurgerMenu = (props) => {
           <li><Link to={`${props.pagePrefix}/softdev/`}>DT SOFTDEV</Link></li>
         </ul>
         <ul>
-          <li><Link to={`${props.pagePrefix}/#persons`}>YHTEYSTIEDOT</Link></li>
-          <li><Link to={`${props.pagePrefix}/tyopaikat/`}>TYÖPAIKAT</Link></li>
+          <li><Link to={`${props.pagePrefix}/#persons`}>{props.language === 'en' ? 'CONTACT' : 'YHTEYSTIEDOT'}</Link></li>
+          <li><Link to={`${props.pagePrefix}/tyopaikat/`}>{props.language === 'en' ? 'WORK' : 'TYÖPAIKAT'}</Link></li>
         </ul>
       </div>
       <div className="langOptions">
@@ -49,7 +49,7 @@ const BurgerMenu = (props) => {
 
   return (
     <header>
-      <BurgerButton onClick={handleClick}>Open</BurgerButton>
+      <BurgerButton onClick={handleClick}>{props.language === 'en' ? 'Open' : 'Avaa'}</BurgerButton>
       {sideBarElement}
     </header>
   )

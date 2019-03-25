@@ -11,9 +11,9 @@ const FooterColumn = (props) => {
     return (
       <div className="left">
         <div className="leftUpper">
-          <Link to="">PALVELUT</Link>
-          <Link to={`${props.pagePrefix}/#persons`}>YHTEYSTIEDOT</Link>
-          <Link to={`${props.pagePrefix}/tyopaikat/`}>TYÖPAIKAT</Link>
+          <Link to="">{props.language === 'en' ? 'SERVICES' : 'PALVELUT'}</Link>
+          <Link to={`${props.pagePrefix}/#persons`}>{props.language === 'en' ? 'CONTACT' : 'YHTEYSTIEDOT'}</Link>
+          <Link to={`${props.pagePrefix}/tyopaikat/`}>{props.language === 'en' ? 'WORK' : 'TYÖPAIKAT'}</Link>
         </div>
         <div className="leftLower">
           {props.lowerData.map(n => {
@@ -70,6 +70,7 @@ const Footer = (props) => {
               upperData={footer.node.footerLeftUpperColumn}
               lowerData={footer.node.footerLeftLowerColumn}
               pagePrefix={props.pagePrefix}
+              language={props.language}
             />
             <FooterColumn
               position="middle"

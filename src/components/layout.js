@@ -30,14 +30,12 @@ const Layout = (props) => {
     setLanguage('fi')
     setPagePrefix('/fi/')
     navigateTo('/fi/')
-    console.log('Fi click')
   }
 
   const handleEnClick = () => {
     setLanguage('en')
     setPagePrefix('/en/')
     navigateTo('/en/')
-    console.log('En click')
   }
 
   const navElement = mobile ? <BurgerMenu handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language} pagePrefix={pagePrefix} /> : <Header handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language} pagePrefix={pagePrefix}  />
