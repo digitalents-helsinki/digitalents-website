@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 
 import fbIcon from '../images/facebook_logo_valkoinen.svg'
 import igIcon from '../images/instagram_logo_valkoinen.svg'
@@ -11,9 +11,9 @@ const FooterColumn = (props) => {
     return (
       <div className="left">
         <div className="leftUpper">
-          {props.upperData.map(n => {
-            return <p key={n}>{n}</p>
-          })}
+          <Link to="">PALVELUT</Link>
+          <Link to={`${props.pagePrefix}/#persons`}>YHTEYSTIEDOT</Link>
+          <Link to={`${props.pagePrefix}/tyopaikat/`}>TYÖPAIKAT</Link>
         </div>
         <div className="leftLower">
           {props.lowerData.map(n => {
@@ -46,9 +46,9 @@ const FooterColumn = (props) => {
           })}
         </div>
         <div className="social-icons">
-          <img src={twIcon} alt="" />
-          <img src={igIcon} alt="" />
-          <img src={fbIcon} alt="" />
+          <a href="https://twitter.com/digitalentshki"><img src={twIcon} alt="" /></a>
+          <a href="https://www.instagram.com/digitalentshelsinki/"><img src={igIcon} alt="" /></a>
+          <a href="https://www.facebook.com/digitalentshelsinki/"><img src={fbIcon} alt="" /></a>
         </div>
         <div className="rightLower">
           <p>{props.lowerData}</p>
@@ -69,6 +69,7 @@ const Footer = (props) => {
               position="left"
               upperData={footer.node.footerLeftUpperColumn}
               lowerData={footer.node.footerLeftLowerColumn}
+              pagePrefix={props.pagePrefix}
             />
             <FooterColumn
               position="middle"
@@ -117,7 +118,7 @@ const FooterQuery = (props) => (
         }
       }
     `}
-    render={data => <Footer language={props.language} data={data} />}
+    render={data => <Footer language={props.language} data={data} pagePrefix={props.pagePrefix} />}
   />
 )
 
@@ -128,6 +129,10 @@ const FooterWrapper = styled.footer`
   color: white;
   justify-content: space-evenly;
 
+  * a {
+    color: white;
+  }
+
   @media screen and (min-width: 400px) {
     flex-direction: row;
   }
@@ -135,7 +140,10 @@ const FooterWrapper = styled.footer`
   .left {
     margin: 2rem 0;
     font-weight: bold;
+
     .leftUpper {
+      display: flex;
+      flex-direction: column;
       margin-bottom: 0.5rem;
       text-transform: uppercase;
       line-height: 1.3;
