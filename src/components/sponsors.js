@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 const Sponsors = (props) => {
   return (
@@ -7,7 +8,7 @@ const Sponsors = (props) => {
       {props.data.map((sponsor, key) => {
         return (
           <SponsorWrapper>
-            <img src={sponsor.sponsorImage.file.url + "?fit=scale"} alt={sponsor.sponsorName} className="sponsorImage" />
+            <a href={sponsor.urlLink}><img src={sponsor.sponsorImage.file.url + "?fit=scale"} alt={sponsor.sponsorName} className="sponsorImage" /></a>
           </SponsorWrapper>
         )
       })}
