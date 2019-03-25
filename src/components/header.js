@@ -10,7 +10,7 @@ const Header = (props) => {
     setTeamClick(!teamClick)
   }
 
-  const data = props.language === 'fi-FI' ? props.fiData : props.enData
+  const data = props.language === 'fi' ? props.fiData : props.enData
 
   return (
       <HeaderWrapper>
@@ -21,18 +21,18 @@ const Header = (props) => {
                 <img src={header.node.headerImage.file.url} alt="" />
               </LogoWrapper>
               <NavWrapper>
-                <li><Link to="/">{header.node.frontPageLink}</Link></li>
+                <li><Link to={props.pagePrefix}>{header.node.frontPageLink}</Link></li>
                 <li onClick={handleTeamClick}>{header.node.teamLink}</li>
                 <TeamsWrapper>
                   {teamClick ? 
                     props.linkData.edges.map(links => {
-                      return <Link to={links.node.teamSlug}>{links.node.teamSlug}</Link>
+                      return <Link to={`${props.pagePrefix}/${links.node.teamSlug}`}>{links.node.teamSlug}</Link>
                     })
                     : 
                     null 
                   }
                 </TeamsWrapper>
-                <li><Link to="/tyopaikat">{header.node.workLink}</Link></li>
+                <li><Link to={`${props.pagePrefix}/tyopaikat/`}>{header.node.workLink}</Link></li>
               </NavWrapper>
               <LangWrapper>
                 <li onClick={props.handleFiClick}>FI</li>
@@ -88,7 +88,7 @@ const HeaderQuery = (props) => (
         }
       }
     `}
-    render={data => <Header language={props.language} handleFiClick={props.handleFiClick} handleEnClick={props.handleEnClick} enData={data.en} fiData={data.fi} linkData={data.allContentfulTeamTemplate} />}
+    render={data => <Header language={props.language} handleFiClick={props.handleFiClick} handleEnClick={props.handleEnClick} enData={data.en} fiData={data.fi} linkData={data.allContentfulPageTemplate} pagePrefix={props.pagePrefix}/>}
   />
 )
 

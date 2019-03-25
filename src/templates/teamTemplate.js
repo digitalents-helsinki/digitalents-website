@@ -9,9 +9,10 @@ const teamTemplate = (props) => {
   const { teamTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition, link } = props.data.contentfulPageTemplate
 
   const language = props.pageContext.node_locale === 'en-US' ? 'en' : 'fi'
+  const pagePrefix = props.pageContext.node_locale === 'en-US' ? '/en/' : '/fi/'
 
   return (
-    <Layout language={language}>
+    <Layout language={language} pagePrefix={pagePrefix}>
       <HeroWrapper>
         <FlexWrapper position={imagePosition}>
           <div className="titleText">
