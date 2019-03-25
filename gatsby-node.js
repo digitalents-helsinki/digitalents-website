@@ -5,7 +5,6 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const indexPageTemplate = path.resolve('src/templates/indexPageTemplate.js')
     const teamTemplate = path.resolve('src/templates/teamTemplate.js')
-    const jobsTemplate = path.resolve('src/templates/jobsTemplate.js')
     resolve(
       graphql(`
         {
@@ -26,13 +25,6 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
           allContentfulTeamTemplate{
-            edges {
-              node {
-                teamSlug
-              }
-            }
-          }
-          allContentfulJobsTemplate{
             edges {
               node {
                 teamSlug
@@ -67,21 +59,12 @@ exports.createPages = ({ graphql, actions }) => {
         })
         result.data.allContentfulTeamTemplate.edges.forEach((edge) => {
           createPage({
-            path: `teams/${edge.node.teamSlug}`,
+            path: `${edge.node.teamSlug}`,
             component: teamTemplate,
             context: {
               slug: edge.node.teamSlug,
               node_locale: edge.node.node_locale
             },
-          })
-        })
-        result.data.allContentfulJobsTemplate.edges.forEach((edge) => {
-          createPage({
-            path: edge.node.teamSlug,
-            component: jobsTemplate,
-            context: {
-              slug: edge.node.teamSlug
-            }
           })
         })
         return

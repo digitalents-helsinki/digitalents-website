@@ -6,9 +6,7 @@ import BGImg from 'gatsby-background-image'
 import styled from 'styled-components'
 
 const teamTemplate = (props) => {
-  const { teamTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition } = props.data.contentfulTeamTemplate
-  
-  console.log(imagePosition)
+  const { teamTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition, link } = props.data.contentfulTeamTemplate
 
   return (
     <Layout language={props.pageContext.node_locale}>
@@ -25,6 +23,7 @@ const teamTemplate = (props) => {
           </div>
         </FlexWrapper>
         <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />
+        <a href={link}>{link}</a>
       </HeroWrapper>
     </Layout>
   )
@@ -120,6 +119,7 @@ export const pageQuery = graphql`
         }
       }
       imagePosition
+      link
     }
   }
 `

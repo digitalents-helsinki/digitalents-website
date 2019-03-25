@@ -24,9 +24,9 @@ const BurgerMenu = (props) => {
           <li><Link to="/fi/">ETUSIVU</Link></li>
         </ul>
         <ul>
-          <li><Link to="/teams/media/">DT MEDIA</Link></li>
-          <li><Link to="/teams/ict/">DT ICT</Link></li>
-          <li><Link to="/teams/softdev/">DT SOFTDEV</Link></li>
+          <li><Link to="/media/">DT MEDIA</Link></li>
+          <li><Link to="/ict/">DT ICT</Link></li>
+          <li><Link to="/softdev/">DT SOFTDEV</Link></li>
         </ul>
         <ul>
           <li><Link to="/fi/#persons">YHTEYSTIEDOT</Link></li>

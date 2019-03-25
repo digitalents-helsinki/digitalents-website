@@ -26,7 +26,7 @@ const Header = (props) => {
                 <TeamsWrapper>
                   {teamClick ? 
                     props.linkData.edges.map(links => {
-                      return <Link to={`/teams/`+links.node.teamSlug}>{links.node.teamSlug}</Link>
+                      return <Link to={links.node.teamSlug}>{links.node.teamSlug}</Link>
                     })
                     : 
                     null 
