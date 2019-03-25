@@ -21,16 +21,16 @@ const BurgerMenu = (props) => {
     <div className="wrapper">
       <div className="links">
         <ul>
-          <li><Link to="/fi/">ETUSIVU</Link></li>
+          <li><Link to={props.pagePrefix}>ETUSIVU</Link></li>
         </ul>
         <ul>
-          <li><Link to="/media/">DT MEDIA</Link></li>
-          <li><Link to="/ict/">DT ICT</Link></li>
-          <li><Link to="/softdev/">DT SOFTDEV</Link></li>
+          <li><Link to={`${props.pagePrefix}/media/`}>DT MEDIA</Link></li>
+          <li><Link to={`${props.pagePrefix}/ict/`}>DT ICT</Link></li>
+          <li><Link to={`${props.pagePrefix}/softdev/`}>DT SOFTDEV</Link></li>
         </ul>
         <ul>
-          <li><Link to="/fi/#persons">YHTEYSTIEDOT</Link></li>
-          <li><Link to="/tyopaikat/">TYÖPAIKAT</Link></li>
+          <li><Link to={`${props.pagePrefix}/#persons`}>YHTEYSTIEDOT</Link></li>
+          <li><Link to={`${props.pagePrefix}/tyopaikat/`}>TYÖPAIKAT</Link></li>
         </ul>
       </div>
       <div className="langOptions">

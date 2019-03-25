@@ -8,7 +8,7 @@ exports.createPages = ({ graphql, actions }) => {
     resolve(
       graphql(`
         {
-          fi: allContentfulPageTemplate(filter: {node_locale: { regex: "/fi-FI/" }}) {
+          indexfi: allContentfulIndexPageTemplate(filter: {node_locale: { regex: "/fi-FI/" }}) {
             edges {
               node {
                 slug
@@ -16,7 +16,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
-          en: allContentfulPageTemplate(filter: {node_locale: { regex: "/en-US/" }}) {
+          indexen: allContentfulIndexPageTemplate(filter: {node_locale: { regex: "/en-US/" }}) {
             edges {
               node {
                 slug
@@ -24,10 +24,19 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
-          allContentfulTeamTemplate{
+          otherfi: allContentfulPageTemplate(filter: {node_locale: { regex: "/fi-FI/" }}){
             edges {
               node {
                 teamSlug
+                node_locale
+              }
+            }
+          }
+          otheren: allContentfulPageTemplate(filter: {node_locale: { regex: "/en-US/" }}){
+            edges {
+              node {
+                teamSlug
+                node_locale
               }
             }
           }
@@ -37,7 +46,7 @@ exports.createPages = ({ graphql, actions }) => {
         if (result.errors) {
           reject(result.errors)
         }
-        result.data.en.edges.forEach((edge) => {
+        result.data.indexen.edges.forEach((edge) => {
           createPage({
             path: '/en/',
             component: indexPageTemplate,
@@ -47,7 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           })
         })
-        result.data.fi.edges.forEach((edge) => {
+        result.data.indexfi.edges.forEach((edge) => {
           createPage({
             path: '/fi/',
             component: indexPageTemplate,
@@ -57,9 +66,19 @@ exports.createPages = ({ graphql, actions }) => {
             }
           })
         })
-        result.data.allContentfulTeamTemplate.edges.forEach((edge) => {
+        result.data.otheren.edges.forEach((edge) => {
           createPage({
-            path: `${edge.node.teamSlug}`,
+            path: `/en/${edge.node.teamSlug}`,
+            component: teamTemplate,
+            context: {
+              slug: edge.node.teamSlug,
+              node_locale: edge.node.node_locale
+            },
+          })
+        })
+        result.data.otherfi.edges.forEach((edge) => {
+          createPage({
+            path: `/fi/${edge.node.teamSlug}`,
             component: teamTemplate,
             context: {
               slug: edge.node.teamSlug,

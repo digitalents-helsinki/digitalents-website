@@ -10,9 +10,13 @@ import SomeContent from '../components/somecontent'
 import Location from '../components/location'
 
 const indexPageTemplate = (props) => {
-  const { hero, teams, someContent, personBlocks, location, sponsorBlocks } = props.data.contentfulPageTemplate
+  const { hero, teams, someContent, personBlocks, location, sponsorBlocks } = props.data.contentfulIndexPageTemplate
+
+  const language = props.pageContext.node_locale === 'en-US' ? 'en' : 'fi'
+  const pagePrefix = props.pageContext.node_locale === 'en-US' ? '/en/' : '/fi/'
+
   return (
-    <Layout language={props.pageContext.node_locale}>
+    <Layout language={language} pagePrefix={pagePrefix}>
       <Hero data={hero} />
       <Teams data={teams} />
       <SomeContent data={someContent} />
@@ -25,7 +29,7 @@ const indexPageTemplate = (props) => {
 
 export const pageQuery = graphql`
   query indexPageQuery($slug: String! $node_locale: String!){
-    contentfulPageTemplate(slug: {eq: $slug} node_locale: {eq: $node_locale}) {
+    contentfulIndexPageTemplate(slug: {eq: $slug} node_locale: {eq: $node_locale}) {
       hero {
         heroText
         heroLowerText

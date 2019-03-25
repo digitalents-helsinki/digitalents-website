@@ -10,6 +10,7 @@ import Footer from './footer'
 
 const Layout = (props) => {
   const [language, setLanguage] = useState(props.language)
+  const [pagePrefix, setPagePrefix] = useState(props.pagePrefix)
   const [mobile, setMobile] = useState(true)
 
   useEffect(() => {
@@ -26,23 +27,27 @@ const Layout = (props) => {
   }
 
   const handleFiClick = () => {
-    setLanguage('fi-FI')
+    setLanguage('fi')
+    setPagePrefix('/fi/')
     navigateTo('/fi/')
+    console.log('Fi click')
   }
 
   const handleEnClick = () => {
-    setLanguage('en-US')
+    setLanguage('en')
+    setPagePrefix('/en/')
     navigateTo('/en/')
+    console.log('En click')
   }
 
-  const navElement = mobile ? <BurgerMenu handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language} /> : <Header handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language}  />
+  const navElement = mobile ? <BurgerMenu handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language} pagePrefix={pagePrefix} /> : <Header handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language} pagePrefix={pagePrefix}  />
 
   return (
     <Fragment>
       <GlobalStyle />
       {navElement}
       <main>{props.children}</main>
-      <Footer mobile={mobile} language={language} />
+      <Footer mobile={mobile} language={language} pagePrefix={pagePrefix} />
     </Fragment>
   )
 }

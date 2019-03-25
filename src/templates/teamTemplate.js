@@ -6,10 +6,12 @@ import BGImg from 'gatsby-background-image'
 import styled from 'styled-components'
 
 const teamTemplate = (props) => {
-  const { teamTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition, link } = props.data.contentfulTeamTemplate
+  const { teamTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition, link } = props.data.contentfulPageTemplate
+
+  const language = props.pageContext.node_locale === 'en-US' ? 'en' : 'fi'
 
   return (
-    <Layout language={props.pageContext.node_locale}>
+    <Layout language={language}>
       <HeroWrapper>
         <FlexWrapper position={imagePosition}>
           <div className="titleText">
@@ -23,7 +25,9 @@ const teamTemplate = (props) => {
           </div>
         </FlexWrapper>
         <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />
-        <a href={link}>{link}</a>
+        <div className="link">
+          <a href={link}>{link}</a>
+        </div>
       </HeroWrapper>
     </Layout>
   )
@@ -40,10 +44,10 @@ const HeroWrapper = styled.div`
       padding-left: 5rem;
       padding-right: 5rem;
     }
+  }
 
-    p {
-      padding-top: 1rem;
-    }
+  .link {
+    text-align: center;
   }
 `
 
@@ -99,8 +103,8 @@ const FlexWrapper = styled.div`
 `
 
 export const pageQuery = graphql`
-  query teamTemplateQuery($slug: String!){
-    contentfulTeamTemplate(teamSlug: {eq: $slug}) {
+  query teamTemplateQuery($slug: String! $node_locale: String!){
+    contentfulPageTemplate(teamSlug: {eq: $slug} node_locale: {eq: $node_locale}) {
       teamTitle
       teamSlogan
       teamDescription {

@@ -79,7 +79,7 @@ const HeaderQuery = (props) => (
             }
           }
         }
-        allContentfulTeamTemplate (filter: { node_locale: { regex: "/en-US/" } }) {
+        allContentfulPageTemplate (filter: { node_locale: { regex: "/en-US/" } }) {
           edges {
             node {
               teamSlug
