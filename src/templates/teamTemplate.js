@@ -56,7 +56,7 @@ const FlexWrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: ${props => props.position ? "flex-start" : "flex-end"};
-  width: 100%;
+  width: 100vw;
 
   .titleText {
     text-align: center;

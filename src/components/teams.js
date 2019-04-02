@@ -56,6 +56,20 @@ const TeamsWrapper = styled.div`
       transform: translateY(16rem);
     }
 
+    @media screen and (max-width: 500px) {
+      h4:nth-child(1) {
+        transform: translate(-4rem, -0.5rem);
+      }
+
+      h4:nth-child(2) {
+        transform: translate(4rem, -0.5rem);
+      }
+
+      h4:nth-child(3) {
+        transform: translateY(6.5rem);
+      }
+    }
+
   }
 
   .images {
@@ -68,11 +82,25 @@ const TeamsWrapper = styled.div`
       height: 150px;
       object-fit: none;
       object-position: center;
+
     }
 
     img:nth-child(2) {
       transform: rotate(45deg) translate(100px, 100px);
     }
+
+    @media screen and (max-width: 500px) {
+
+      img {
+        width: 75px;
+        height: 75px;
+      }
+
+      img:nth-child(2) {
+        transform: rotate(45deg) translate(50px, 50px);
+      }
+    }
+
   }
 `
 

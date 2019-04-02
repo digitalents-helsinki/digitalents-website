@@ -47,7 +47,7 @@ const HeroWrapper = styled.div`
 
   .spacer {
     @media screen and (min-width: 1000px) {
-      width: 100%;
+      width: 100vw;
     }
   }
 `
@@ -60,6 +60,7 @@ const LeftImage = styled.div`
     width: 100%;
 
     .leftTopImage {
+      box-shadow: 0 0 0 3px white, inset 0 0 0 3px white;
     }
   }
 
@@ -88,10 +89,10 @@ const RightImage = styled.div`
 
     .rightImage {
       width: 50%;
-      height: 100vh;
+      height: 100%;
 
       .rightTopImage {
-        height: 100vh;
+        height: 100%;
       }
     }
   }
