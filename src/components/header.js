@@ -24,10 +24,12 @@ const Header = (props) => {
                 <li><Link to={props.pagePrefix}>{header.node.frontPageLink}</Link></li>
                 <li onClick={handleTeamClick}>{header.node.teamLink}</li>
                 <TeamsWrapper>
-                  {teamClick ? 
-                    props.linkData.edges.map(links => {
-                      return <Link to={`${props.pagePrefix}/${links.node.teamSlug}`}>{links.node.teamSlug}</Link>
-                    })
+                  {teamClick ?
+                    <Fragment> 
+                      <Link to={`${props.pagePrefix}/media`}>Media</Link>
+                      <Link to={`${props.pagePrefix}/ict`}>ICT</Link>
+                      <Link to={`${props.pagePrefix}/softdev`}>SoftDev</Link>
+                    </Fragment>
                     : 
                     null 
                   }

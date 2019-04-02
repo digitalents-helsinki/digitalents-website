@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import StripedIMG from '../images/Podcast_oppimateriaali_taustaMaski.svg'
 
 const SomeContent = (props) => {
   return (
@@ -27,9 +28,19 @@ const SomeContent = (props) => {
 
 const SomeWrapper = styled.div`
   background-color: #353535;
-  padding-top: 30px;
-  padding-bottom: 50px;
+  background-image: url(${StripedIMG});
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: 1000px) {
+  }
 
   .sometext {
     padding-top: 100px;
@@ -48,6 +59,10 @@ const ContentWrapper = styled.div`
   flex-basis: 100%;
   flex-flow: row nowrap;
   padding-bottom: 50px;
+
+  @media screen and (min-width: 1000px) {
+    
+  }
 
   .podcasts {
     flex-basis: 50%;

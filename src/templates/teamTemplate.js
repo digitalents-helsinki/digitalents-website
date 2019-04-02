@@ -6,7 +6,7 @@ import BGImg from 'gatsby-background-image'
 import styled from 'styled-components'
 
 const teamTemplate = (props) => {
-  const { teamTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition, link } = props.data.contentfulPageTemplate
+  const { teamTitle, showPageTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition, link } = props.data.contentfulPageTemplate
 
   const language = props.pageContext.node_locale === 'en-US' ? 'en' : 'fi'
   const pagePrefix = props.pageContext.node_locale === 'en-US' ? '/en/' : '/fi/'
@@ -16,7 +16,7 @@ const teamTemplate = (props) => {
       <HeroWrapper>
         <FlexWrapper position={imagePosition}>
           <div className="titleText">
-            <h1>{teamTitle}</h1>
+            {showPageTitle ? <h1>{teamTitle}</h1> : null}
             <h2>{teamSlogan}</h2>
           </div>
           <div className="imageWrapper">
@@ -59,11 +59,15 @@ const FlexWrapper = styled.div`
   width: 100%;
 
   .titleText {
+    text-align: center;
     padding-left: 1rem;
     padding-top: 100px;
     flex-basis: 50%;
     position: absolute;
     z-index: 5;
+    max-width: 500px;
+    left: ${props => props.position ? "50%" : "0"};
+
 
     @media screen and (min-width: 1000px) {
       position: static;
@@ -107,6 +111,7 @@ export const pageQuery = graphql`
   query teamTemplateQuery($slug: String! $node_locale: String!){
     contentfulPageTemplate(teamSlug: {eq: $slug} node_locale: {eq: $node_locale}) {
       teamTitle
+      showPageTitle
       teamSlogan
       teamDescription {
         childMarkdownRemark {

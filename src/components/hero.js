@@ -133,6 +133,8 @@ const TextContent = styled.div`
   padding-top: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-bottom: 3rem;
+
 
   @media screen and (min-width: 1000px) {
     padding-left: 10rem;
@@ -142,6 +144,9 @@ const TextContent = styled.div`
   div {
     p {
       padding-bottom: 1rem;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
     }
   }
 `

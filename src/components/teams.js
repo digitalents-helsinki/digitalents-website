@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby'
 
 const Teams = (props) => {
   return (
@@ -7,8 +8,15 @@ const Teams = (props) => {
       <h3>{props.data.teamsTitle}</h3>
       <div className="teams">
       {props.data.teamsText.map(text => {
-        return <h4>{text}</h4>
+        return (
+            <h4>{text}</h4>
+        )
       })}
+      </div>
+      <div className="images">
+        <img src={props.media.teamImage.file.url} alt="" />
+        <img src={props.softdev.teamImage.file.url} alt="" />
+        <img src={props.ict.teamImage.file.url} alt="" />
       </div>
     </TeamsWrapper>
   )
@@ -16,7 +24,7 @@ const Teams = (props) => {
 
 const TeamsWrapper = styled.div`
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 8rem;
 
   h3 {
     text-transform: uppercase;
@@ -27,6 +35,7 @@ const TeamsWrapper = styled.div`
   .teams {
     display: flex;
     flex-flow: row wrap;
+    padding-top: 4rem;
 
     h4 {
       text-transform: uppercase;
@@ -34,11 +43,68 @@ const TeamsWrapper = styled.div`
       flex-basis: 50%;
     }
 
-    h4:last-child {
+    h4:nth-child(1) {
+      transform: translate(-4rem, 1.5rem);
+    }
+
+    h4:nth-child(2) {
+      transform: translate(4rem, 1.5rem);
+    }
+
+    h4:nth-child(3) {
       flex-basis: 100%;
-      padding-top: 50px;
+      transform: translateY(16rem);
+    }
+
+  }
+
+  .images {
+    position: relative;
+    top: -4rem;
+
+    img {
+      transform: rotate(45deg);
+      width: 150px;
+      height: 150px;
+      object-fit: none;
+      object-position: center;
+    }
+
+    img:nth-child(2) {
+      transform: rotate(45deg) translate(100px, 100px);
     }
   }
 `
 
-export default Teams
+const TeamsQuery = (props) => (
+  <StaticQuery
+    query={graphql`
+      query teamsQuery {
+        media: contentfulPageTemplate(teamSlug: {eq: "media"}) {
+          teamImage {
+            file {
+              url
+            }
+          }
+        }
+        ict: contentfulPageTemplate(teamSlug: {eq: "ict"}) {
+          teamImage {
+            file {
+              url
+            }
+          }
+        }
+        softdev: contentfulPageTemplate(teamSlug: {eq: "softdev"}) {
+          teamImage {
+            file {
+              url
+            }
+          }
+        }
+      }
+    `}
+    render={data => <Teams media={data.media} ict={data.ict} softdev={data.softdev} data={props.data} /> }
+  />
+)
+
+export default TeamsQuery
