@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import StripedIMG from '../images/Podcast_oppimateriaali_taustaMaski.svg'
+import StripedIMG from '../images/podcast_henkilot_bg.svg'
 
 const SomeContent = (props) => {
   return (
@@ -29,10 +29,9 @@ const SomeContent = (props) => {
 const SomeWrapper = styled.div`
   background-color: #353535;
   background-image: url(${StripedIMG});
-  background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  background-size: 100% 100%;
+  height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;

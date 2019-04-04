@@ -81,7 +81,7 @@ const TeamsWrapper = styled.div`
       width: 150px;
       height: 150px;
       object-fit: none;
-      object-position: center;
+      object-position: top;
 
     }
 
