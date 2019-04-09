@@ -7,6 +7,7 @@ import { navigateTo } from 'gatsby'
 import Header from './header'
 import BurgerMenu from './burgermenu'
 import Footer from './footer'
+import MobileFooter from './mobilefooter'
 
 const Layout = (props) => {
   const [language, setLanguage] = useState(props.language)
@@ -39,13 +40,14 @@ const Layout = (props) => {
   }
 
   const navElement = mobile ? <BurgerMenu handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language} pagePrefix={pagePrefix} /> : <Header handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language} pagePrefix={pagePrefix}  />
+  const footerElement = mobile ? <MobileFooter language={language} pagePrefix={pagePrefix} /> : <Footer language={language} pagePrefix={pagePrefix} />
 
   return (
     <Fragment>
       <GlobalStyle />
       {navElement}
       <main>{props.children}</main>
-      <Footer mobile={mobile} language={language} pagePrefix={pagePrefix} />
+      {footerElement}
     </Fragment>
   )
 }
@@ -55,12 +57,13 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 18px;
+
   }
 
   body {
-    font-size: 1rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    font-weight: 400;
   }
 
   a {

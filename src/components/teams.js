@@ -25,6 +25,7 @@ const Teams = (props) => {
 const TeamsWrapper = styled.div`
   text-align: center;
   padding-bottom: 8rem;
+  font-family: futura-pt-bold, sans-serif;
 
   h3 {
     text-transform: uppercase;

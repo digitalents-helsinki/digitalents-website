@@ -31,8 +31,11 @@ const LocationWrapper = styled.div`
 
   p {
     text-transform: uppercase;
+    font-family: futura-pt-bold, sans-serif;
     font-weight: 700;
     padding-bottom: 25px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .map {

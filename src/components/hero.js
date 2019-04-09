@@ -117,6 +117,7 @@ const TextWrapper = styled.div`
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
+    font-family: futura-pt-bold;
   }
 
   p {
