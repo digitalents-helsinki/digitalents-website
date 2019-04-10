@@ -64,6 +64,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: futura-pt, sans-serif;
     font-style: normal;
     font-weight: 400;
+    font-display: fallback;
   }
 
   a {

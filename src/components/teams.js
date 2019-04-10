@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
+import mediaImg from '../images/Media_ilman_kuviota.png'
+import ictImg from '../images/ICT_ilman_kuviota.png'
+import softdevImg from '../images/Softdev_ilman_kuviota.png'
 
 const Teams = (props) => {
   return (
@@ -14,9 +17,9 @@ const Teams = (props) => {
       })}
       </div>
       <div className="images">
-        <img src={props.media.teamImage.file.url} alt="" />
-        <img src={props.softdev.teamImage.file.url} alt="" />
-        <img src={props.ict.teamImage.file.url} alt="" />
+        <img src={mediaImg} alt="" />
+        <img src={softdevImg} alt="" />
+        <img src={ictImg} alt="" />
       </div>
     </TeamsWrapper>
   )
@@ -82,8 +85,6 @@ const TeamsWrapper = styled.div`
       width: 150px;
       height: 150px;
       object-fit: none;
-      object-position: top;
-
     }
 
     img:nth-child(2) {
