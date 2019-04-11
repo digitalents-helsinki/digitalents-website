@@ -1,40 +1,57 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-class Header extends React.Component {
-  render() {
-    return (
+const Header = (props) => {
+  const [teamClick, setTeamClick] = useState(false)
+
+
+  const handleTeamClick = () => {
+    setTeamClick(!teamClick)
+  }
+
+  const data = props.language === 'fi' ? props.fiData : props.enData
+
+  return (
       <HeaderWrapper>
-        {this.props.header.edges.map(header => {
+        {data.edges.map(header => {
           return (
             <Fragment>
               <LogoWrapper>
                 <img src={header.node.headerImage.file.url} alt="" />
               </LogoWrapper>
               <NavWrapper>
-                {header.node.navigationLinks.map(link => {
-                  return <li>{link}</li>
-                })}
+                <li><Link to={props.pagePrefix}>{header.node.frontPageLink}</Link></li>
+                <li onClick={handleTeamClick}>{header.node.teamLink}</li>
+                <TeamsWrapper>
+                  {teamClick ?
+                    <Fragment> 
+                      <Link to={`${props.pagePrefix}/media`}>Media</Link>
+                      <Link to={`${props.pagePrefix}/ict`}>ICT</Link>
+                      <Link to={`${props.pagePrefix}/softdev`}>SoftDev</Link>
+                    </Fragment>
+                    : 
+                    null 
+                  }
+                </TeamsWrapper>
+                <li><Link to={`${props.pagePrefix}/tyopaikat/`}>{header.node.workLink}</Link></li>
               </NavWrapper>
               <LangWrapper>
-                {header.node.languageOptions.map(language => {
-                  return <li>{language}</li>
-                })}
+                <li onClick={props.handleFiClick}>FI</li>
+                <li onClick={props.handleEnClick}>EN</li>
               </LangWrapper>
             </Fragment>
           )
         })}
       </HeaderWrapper>
-    )
-  }
+  )
 }
 
-const HeaderQuery = () => (
+const HeaderQuery = (props) => (
   <StaticQuery
     query={graphql`
       query HeaderQuery {
-        allContentfulHeader(filter: { node_locale: { regex: "/en-US/" } }) {
+        en: allContentfulHeader(filter: { node_locale: { regex: "/en-US/" } }) {
           edges {
             node {
               headerImage {
@@ -42,14 +59,38 @@ const HeaderQuery = () => (
                   url
                 }
               }
-              navigationLinks
+              frontPageLink
+              teamLink
+              workLink
               languageOptions
+            }
+          }
+        }
+        fi: allContentfulHeader(filter: { node_locale: { regex: "/fi-FI/" } }) {
+          edges {
+            node {
+              headerImage {
+                file {
+                  url
+                }
+              }
+              frontPageLink
+              teamLink
+              workLink
+              languageOptions
+            }
+          }
+        }
+        allContentfulPageTemplate (filter: { node_locale: { regex: "/en-US/" } }) {
+          edges {
+            node {
+              teamSlug
             }
           }
         }
       }
     `}
-    render={data => <Header header={data.allContentfulHeader} />}
+    render={data => <Header language={props.language} handleFiClick={props.handleFiClick} handleEnClick={props.handleEnClick} enData={data.en} fiData={data.fi} linkData={data.allContentfulPageTemplate} pagePrefix={props.pagePrefix}/>}
   />
 )
 
@@ -73,6 +114,10 @@ const LogoWrapper = styled.div`
   overflow: hidden;
   margin-left: 3rem;
   height: 2rem;
+
+  img {
+    max-width: 180px;
+  }
 `
 
 const NavWrapper = styled.ul`
@@ -103,13 +148,26 @@ const LangWrapper = styled.ul`
 
   li {
     flex: 3;
-    margin-right: 1rem;
+    margin-right: 2rem;
   }
 
   li:first-child {
     border-left: 0.5px solid white;
     padding-left: 1rem;
   }
+
+  a {
+    color: white;
+  }
+`
+
+const TeamsWrapper = styled.div`
+  background-color: #4663B4
+  top: 50px;
+  position: absolute;
+  display: flex;
+  flex-flow: column wrap;
+  z-index: 15;
 `
 
 export default HeaderQuery

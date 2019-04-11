@@ -1,9 +1,10 @@
 const config = require('./config/env')
+const { BLOCKS, INLINES } = require('@contentful/rich-text-types')
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Digitalents Helsinki`,
+    description: `No description needed.`,
     author: `@digitalentsHKI`
   },
   plugins: [
@@ -35,6 +36,15 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID || config.get('contentful.spaceId'),
         accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN || config.get('contentful.accessToken')
+      }
+    },
+    {
+      resolve: `@contentful/gatsby-transformer-contentful-richtext`,
+      options: {
+        renderOptions: {
+          renderNode: {
+          }
+        }
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
