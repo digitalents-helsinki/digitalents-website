@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import StripedIMG from '../images/podcast_henkilot_bg.svg'
 
-const SomeContent = (props) => {
+const SomeContent = props => {
   return (
     <SomeWrapper>
       <div className="sometext">
@@ -37,6 +37,7 @@ const SomeWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 45px;
 
   @media screen and (min-width: 1000px) {
   }
@@ -45,6 +46,8 @@ const SomeWrapper = styled.div`
     padding-top: 100px;
     padding-bottom: 15px;
     color: white;
+    font-size: 20px;
+    font-weight: 400;
 
     @media screen and (min-width: 1000px) {
       padding-right: 10rem;
@@ -60,24 +63,26 @@ const ContentWrapper = styled.div`
   padding-bottom: 50px;
 
   @media screen and (min-width: 1000px) {
-    
   }
 
   .podcasts {
     flex-basis: 50%;
     text-align: right;
     padding-right: 5px;
-    border-right: solid 2px #8F8F8F;
+    border-right: solid 2px #8f8f8f;
 
     h3 {
       text-transform: uppercase;
-      color: #8F8F8F;
+      color: #8f8f8f;
       padding-bottom: 5px;
+      font-size: 20px;
+      font-weight: 400;
     }
 
     p {
       color: white;
       text-decoration: underline;
+      font-size: 20px;
     }
   }
 
@@ -88,13 +93,16 @@ const ContentWrapper = styled.div`
 
     h3 {
       text-transform: uppercase;
-      color: #8F8F8F;
+      color: #8f8f8f;
       padding-bottom: 5px;
+      font-size: 20px;
+      font-weight: 400;
     }
 
     p {
       color: white;
       text-decoration: underline;
+      font-size: 20px;
     }
   }
 `

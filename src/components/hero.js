@@ -21,9 +21,9 @@ const Hero = props => {
         <div className="spacer" />
         <TextWrapper>
           {props.data.heroText.map(text => {
-            return <h1>{text}</h1>
+            return <h1 className="heroh1">{text}</h1>
           })}
-          <p>{props.data.heroLowerText}</p>
+          <p className="embed">{props.data.heroLowerText}</p>
         </TextWrapper>
         <RightImage>
           <BGImg
@@ -63,8 +63,18 @@ const HeroWrapper = styled.div`
 
   .spacer {
     @media screen and (min-width: 1000px) {
-      width: 131vw;
+      width: 130vw;
     }
+  }
+
+  .heroh1 {
+    font-size: 3.8rem;
+    line-height: 1.2;
+  }
+  .embed {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 22px;
   }
 `
 
@@ -121,6 +131,7 @@ const TextWrapper = styled.div`
   align-items: center;
   position: absolute;
   z-index: 5;
+  margin-top: 230px;
 
   @media (max-width: 1000px) {
     flex-basis: 50%;
@@ -138,7 +149,7 @@ const TextWrapper = styled.div`
 
   p {
     padding-top: 20px;
-    max-width: 400px;
+    max-width: 650px;
     text-align: center;
   }
 `
@@ -164,6 +175,8 @@ const TextContent = styled.div`
       text-align: center;
       max-width: 600px;
       margin: 0 auto;
+      font-size: 20px;
+      font-weight: 400;
     }
   }
 `

@@ -6,14 +6,18 @@ import fbIcon from '../images/facebook_logo_valkoinen.svg'
 import igIcon from '../images/instagram_logo_valkoinen.svg'
 import twIcon from '../images/twitter_logo_valkoinen.svg'
 
-const FooterColumn = (props) => {
+const FooterColumn = props => {
   if (props.position === 'left') {
     return (
       <div className="left">
         <div className="leftUpper">
           <Link to="">{props.language === 'en' ? 'SERVICES' : 'PALVELUT'}</Link>
-          <Link to={`${props.pagePrefix}/#persons`}>{props.language === 'en' ? 'CONTACT' : 'YHTEYSTIEDOT'}</Link>
-          <Link to={`${props.pagePrefix}/tyopaikat/`}>{props.language === 'en' ? 'WORK' : 'TYÖPAIKAT'}</Link>
+          <Link to={`${props.pagePrefix}/#persons`}>
+            {props.language === 'en' ? 'CONTACT' : 'YHTEYSTIEDOT'}
+          </Link>
+          <Link to={`${props.pagePrefix}/tyopaikat/`}>
+            {props.language === 'en' ? 'WORK' : 'TYÖPAIKAT'}
+          </Link>
         </div>
         <div className="leftLower">
           {props.lowerData.map(n => {
@@ -46,9 +50,15 @@ const FooterColumn = (props) => {
           })}
         </div>
         <div className="social-icons">
-          <a href="https://twitter.com/digitalentshki"><img src={twIcon} alt="" /></a>
-          <a href="https://www.instagram.com/digitalentshelsinki/"><img src={igIcon} alt="" /></a>
-          <a href="https://www.facebook.com/digitalentshelsinki/"><img src={fbIcon} alt="" /></a>
+          <a href="https://twitter.com/digitalentshki">
+            <img src={twIcon} alt="" />
+          </a>
+          <a href="https://www.instagram.com/digitalentshelsinki/">
+            <img src={igIcon} alt="" />
+          </a>
+          <a href="https://www.facebook.com/digitalentshelsinki/">
+            <img src={fbIcon} alt="" />
+          </a>
         </div>
         <div className="rightLower">
           <p>{props.lowerData}</p>
@@ -58,7 +68,7 @@ const FooterColumn = (props) => {
   } else return null
 }
 
-const Footer = (props) => {
+const Footer = props => {
   const data = props.language === 'fi' ? props.data.fi : props.data.en
   return (
     <FooterWrapper>
@@ -89,7 +99,7 @@ const Footer = (props) => {
   )
 }
 
-const FooterQuery = (props) => (
+const FooterQuery = props => (
   <StaticQuery
     query={graphql`
       query footerQuery {
@@ -119,7 +129,13 @@ const FooterQuery = (props) => (
         }
       }
     `}
-    render={data => <Footer language={props.language} data={data} pagePrefix={props.pagePrefix} />}
+    render={data => (
+      <Footer
+        language={props.language}
+        data={data}
+        pagePrefix={props.pagePrefix}
+      />
+    )}
   />
 )
 
@@ -144,7 +160,8 @@ const FooterWrapper = styled.footer`
     }
     order:1;
     margin: 2rem 0;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 24px;
 
     .leftUpper {
       display: flex;
@@ -164,6 +181,8 @@ const FooterWrapper = styled.footer`
     font-weight: bold;
     text-align: center;
     order: 2;
+    font-size: 24px;
+    font-weight: 500;
 
     @media screen and (max-width: 400px) {
       order: 3;
@@ -177,9 +196,11 @@ const FooterWrapper = styled.footer`
 
   .right {
     margin: 2rem 0;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 20px;
     text-align: center;
     order 3;
+
 
     @media screen and (max-width: 400px) {
       order 2;
@@ -188,6 +209,7 @@ const FooterWrapper = styled.footer`
     .rightUpper {
       text-transform: uppercase;
       margin-bottom: 0.5rem;
+      font-weight: bold;
     }
     .social-icons {
       img {
