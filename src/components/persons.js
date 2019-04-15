@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Persons = (props) => {
+const Persons = props => {
   return (
     <Wrapper>
       <PersonsWrapper>
@@ -15,13 +15,9 @@ const Persons = (props) => {
                 <h2 className="person-name">{person.name}</h2>
                 <p className="person-title">{person.title}</p>
                 <p className="person-contact-email">
-                  <a href={`mailto:${person.email}`}>
-                    {person.email}
-                  </a>
+                  <a href={`mailto:${person.email}`}>{person.email}</a>
                 </p>
-                <p className="person-contact-phone">
-                  {person.phoneNumber}
-                </p>
+                <p className="person-contact-phone">{person.phoneNumber}</p>
               </div>
             </PersonWrapper>
           )
@@ -58,11 +54,12 @@ const PersonWrapper = styled.div`
     display: flex;
     justify-content: center;
     .salmiak-point {
-      margin-top: 0.7rem;
+      margin-top: 1.4rem;
+      margin-right: 5px;
       transform-origin: center;
       background-color: #1f1f1f;
-      width: 15px;
-      height: 15px;
+      width: 17px;
+      height: 17px;
       transform: rotate(45deg);
     }
   }
@@ -71,16 +68,18 @@ const PersonWrapper = styled.div`
     flex: 1;
 
     .person-name {
-      font-size: 1.3rem;
+      font-size: 39px;
       font-weight: bold;
       line-height: 1.8;
     }
     .person-title {
       margin-bottom: 1rem;
+      font-size: 26px;
     }
     .person-contact-email,
     .person-contact-phone {
       line-height: 1.5;
+      font-size: 26px;
     }
   }
 `

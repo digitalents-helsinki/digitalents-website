@@ -9,7 +9,7 @@ import BurgerMenu from './burgermenu'
 import Footer from './footer'
 import MobileFooter from './mobilefooter'
 
-const Layout = (props) => {
+const Layout = props => {
   const [language, setLanguage] = useState(props.language)
   const [pagePrefix, setPagePrefix] = useState(props.pagePrefix)
   const [mobile, setMobile] = useState(true)
@@ -20,7 +20,7 @@ const Layout = (props) => {
   })
 
   const setView = () => {
-    if(window.innerWidth >= 1000) {
+    if (window.innerWidth >= 1000) {
       setMobile(false)
     } else {
       setMobile(true)
@@ -39,8 +39,26 @@ const Layout = (props) => {
     navigateTo('/en/')
   }
 
-  const navElement = mobile ? <BurgerMenu handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language} pagePrefix={pagePrefix} /> : <Header handleFiClick={handleFiClick} handleEnClick={handleEnClick} language={language} pagePrefix={pagePrefix}  />
-  const footerElement = mobile ? <MobileFooter language={language} pagePrefix={pagePrefix} /> : <Footer language={language} pagePrefix={pagePrefix} />
+  const navElement = mobile ? (
+    <BurgerMenu
+      handleFiClick={handleFiClick}
+      handleEnClick={handleEnClick}
+      language={language}
+      pagePrefix={pagePrefix}
+    />
+  ) : (
+    <Header
+      handleFiClick={handleFiClick}
+      handleEnClick={handleEnClick}
+      language={language}
+      pagePrefix={pagePrefix}
+    />
+  )
+  const footerElement = mobile ? (
+    <MobileFooter language={language} pagePrefix={pagePrefix} />
+  ) : (
+    <Footer language={language} pagePrefix={pagePrefix} />
+  )
 
   return (
     <Fragment>
@@ -57,7 +75,6 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 18px;
-
   }
 
   body {

@@ -2,9 +2,8 @@ import React, { Fragment, useState } from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-const Header = (props) => {
+const Header = props => {
   const [teamClick, setTeamClick] = useState(false)
-
 
   const handleTeamClick = () => {
     setTeamClick(!teamClick)
@@ -13,41 +12,45 @@ const Header = (props) => {
   const data = props.language === 'fi' ? props.fiData : props.enData
 
   return (
-      <HeaderWrapper>
-        {data.edges.map(header => {
-          return (
-            <Fragment>
-              <LogoWrapper>
-                <img src={header.node.headerImage.file.url} alt="" />
-              </LogoWrapper>
-              <NavWrapper>
-                <li><Link to={props.pagePrefix}>{header.node.frontPageLink}</Link></li>
-                <li onClick={handleTeamClick}>{header.node.teamLink}</li>
-                <TeamsWrapper>
-                  {teamClick ?
-                    <Fragment> 
-                      <Link to={`${props.pagePrefix}/media`}>Media</Link>
-                      <Link to={`${props.pagePrefix}/ict`}>ICT</Link>
-                      <Link to={`${props.pagePrefix}/softdev`}>SoftDev</Link>
-                    </Fragment>
-                    : 
-                    null 
-                  }
-                </TeamsWrapper>
-                <li><Link to={`${props.pagePrefix}/tyopaikat/`}>{header.node.workLink}</Link></li>
-              </NavWrapper>
-              <LangWrapper>
-                <li onClick={props.handleFiClick}>FI</li>
-                <li onClick={props.handleEnClick}>EN</li>
-              </LangWrapper>
-            </Fragment>
-          )
-        })}
-      </HeaderWrapper>
+    <HeaderWrapper>
+      {data.edges.map(header => {
+        return (
+          <Fragment>
+            <LogoWrapper>
+              <img src={header.node.headerImage.file.url} alt="" />
+            </LogoWrapper>
+            <NavWrapper>
+              <li>
+                <Link to={props.pagePrefix}>{header.node.frontPageLink}</Link>
+              </li>
+              <li onClick={handleTeamClick}>{header.node.teamLink}</li>
+              <TeamsWrapper>
+                {teamClick ? (
+                  <Fragment>
+                    <Link to={`${props.pagePrefix}/media`}>Media</Link>
+                    <Link to={`${props.pagePrefix}/ict`}>ICT</Link>
+                    <Link to={`${props.pagePrefix}/softdev`}>SoftDev</Link>
+                  </Fragment>
+                ) : null}
+              </TeamsWrapper>
+              <li>
+                <Link to={`${props.pagePrefix}/tyopaikat/`}>
+                  {header.node.workLink}
+                </Link>
+              </li>
+            </NavWrapper>
+            <LangWrapper>
+              <li onClick={props.handleFiClick}>FI</li>
+              <li onClick={props.handleEnClick}>EN</li>
+            </LangWrapper>
+          </Fragment>
+        )
+      })}
+    </HeaderWrapper>
   )
 }
 
-const HeaderQuery = (props) => (
+const HeaderQuery = props => (
   <StaticQuery
     query={graphql`
       query HeaderQuery {
@@ -81,7 +84,9 @@ const HeaderQuery = (props) => (
             }
           }
         }
-        allContentfulPageTemplate (filter: { node_locale: { regex: "/en-US/" } }) {
+        allContentfulPageTemplate(
+          filter: { node_locale: { regex: "/en-US/" } }
+        ) {
           edges {
             node {
               teamSlug
@@ -90,7 +95,17 @@ const HeaderQuery = (props) => (
         }
       }
     `}
-    render={data => <Header language={props.language} handleFiClick={props.handleFiClick} handleEnClick={props.handleEnClick} enData={data.en} fiData={data.fi} linkData={data.allContentfulPageTemplate} pagePrefix={props.pagePrefix}/>}
+    render={data => (
+      <Header
+        language={props.language}
+        handleFiClick={props.handleFiClick}
+        handleEnClick={props.handleEnClick}
+        enData={data.en}
+        fiData={data.fi}
+        linkData={data.allContentfulPageTemplate}
+        pagePrefix={props.pagePrefix}
+      />
+    )}
   />
 )
 
@@ -123,7 +138,8 @@ const LogoWrapper = styled.div`
 const NavWrapper = styled.ul`
   display: flex;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 20px;
+  font-weight: 400;
   flex: 2;
   justify-content: center;
   list-style: none;
@@ -143,7 +159,8 @@ const LangWrapper = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 20px;
+  font-weight: 400;
   list-style: none;
 
   li {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 
 const IndexPage = () => {
   useEffect(() => {
@@ -9,4 +9,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-

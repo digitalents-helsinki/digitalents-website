@@ -2,36 +2,52 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import BGImg from 'gatsby-background-image'
 
-const Hero = (props) => {
+const Hero = props => {
   return (
     <Fragment>
       <HeroWrapper>
         <LeftImage>
-          <BGImg fluid={props.data.heroLeftBackgroundImage.fluid} className="leftImage">
-            <img src={props.data.heroLeftImage.file.url} alt="" className="leftTopImage" />
+          <BGImg
+            fluid={props.data.heroLeftBackgroundImage.fluid}
+            className="leftImage"
+          >
+            <img
+              src={props.data.heroLeftImage.file.url}
+              alt=""
+              className="leftTopImage"
+            />
           </BGImg>
         </LeftImage>
-        <div className="spacer">
-        </div>
+        <div className="spacer" />
         <TextWrapper>
-          {props.data.heroText.map((text) => {
-            return <h1>{text}</h1>
+          {props.data.heroText.map(text => {
+            return <h1 className="heroh1">{text}</h1>
           })}
-          <p>{props.data.heroLowerText}</p>
+          <p className="embed">{props.data.heroLowerText}</p>
         </TextWrapper>
         <RightImage>
-          <BGImg fluid={props.data.heroRightBackgroundImage.fluid} className="rightImage">
-            <img src={props.data.heroRightImage.file.url} alt="" className="rightTopImage" />
+          <BGImg
+            fluid={props.data.heroRightBackgroundImage.fluid}
+            className="rightImage"
+          >
+            <img
+              src={props.data.heroRightImage.file.url}
+              alt=""
+              className="rightTopImage"
+            />
           </BGImg>
         </RightImage>
       </HeroWrapper>
       <TextContent>
-        <div dangerouslySetInnerHTML={{__html: props.data.textContent.childMarkdownRemark.html}} />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: props.data.textContent.childMarkdownRemark.html
+          }}
+        />
       </TextContent>
     </Fragment>
   )
 }
-
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -41,14 +57,24 @@ const HeroWrapper = styled.div`
   align-items: center;
   overflow: hidden;
 
-  @media screen and (max-width:1000px) {
+  @media screen and (max-width: 1000px) {
     flex-basis: 100%;
   }
 
   .spacer {
     @media screen and (min-width: 1000px) {
-      width: 100vw;
+      width: 130vw;
     }
+  }
+
+  .heroh1 {
+    font-size: 3.8rem;
+    line-height: 1.2;
+  }
+  .embed {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 22px;
   }
 `
 
@@ -64,7 +90,7 @@ const LeftImage = styled.div`
     }
   }
 
-  @media (max-width:1000px) {
+  @media (max-width: 1000px) {
     display: none;
   }
 `
@@ -81,7 +107,7 @@ const RightImage = styled.div`
     }
   }
 
-  @media (max-width:1000px) {
+  @media (max-width: 1000px) {
     display: flex;
     flex-flow: row nowrap;
     flex-basis: 100%;
@@ -105,8 +131,9 @@ const TextWrapper = styled.div`
   align-items: center;
   position: absolute;
   z-index: 5;
+  margin-top: 230px;
 
-  @media (max-width:1000px) {
+  @media (max-width: 1000px) {
     flex-basis: 50%;
     justify-content: flex-start;
     padding-top: 250px;
@@ -122,7 +149,7 @@ const TextWrapper = styled.div`
 
   p {
     padding-top: 20px;
-    max-width: 400px;
+    max-width: 650px;
     text-align: center;
   }
 `
@@ -137,7 +164,6 @@ const TextContent = styled.div`
   padding-right: 2rem;
   padding-bottom: 3rem;
 
-
   @media screen and (min-width: 1000px) {
     padding-left: 10rem;
     padding-right: 10rem;
@@ -149,6 +175,8 @@ const TextContent = styled.div`
       text-align: center;
       max-width: 600px;
       margin: 0 auto;
+      font-size: 20px;
+      font-weight: 400;
     }
   }
 `

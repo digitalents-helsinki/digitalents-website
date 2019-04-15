@@ -2,13 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-const Sponsors = (props) => {
+const Sponsors = props => {
   return (
     <SponsorsWrapper>
       {props.data.map((sponsor, key) => {
         return (
           <SponsorWrapper>
-            <a href={sponsor.urlLink}><img src={sponsor.sponsorImage.file.url + "?fit=scale"} alt={sponsor.sponsorName} className="sponsorImage" /></a>
+            <a href={sponsor.urlLink}>
+              <img
+                src={sponsor.sponsorImage.file.url + '?fit=scale'}
+                alt={sponsor.sponsorName}
+                className="sponsorImage"
+              />
+            </a>
           </SponsorWrapper>
         )
       })}
@@ -29,7 +35,7 @@ const SponsorsWrapper = styled.div`
 `
 
 const SponsorWrapper = styled.div`
-  padding-top: 5px;  
+  padding-top: 5px;
   padding-bottom: 5px;
   .sponsorImage {
     height: 100px;
