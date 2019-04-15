@@ -147,6 +147,7 @@ const NavWrapper = styled.ul`
   li {
     margin-right: 2rem;
     justify-content: left;
+    font-size: 17px;
   }
 
   a {
@@ -166,6 +167,7 @@ const LangWrapper = styled.ul`
   li {
     flex: 3;
     margin-right: 2rem;
+    font-size: 17px;
   }
 
   li:first-child {

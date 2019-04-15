@@ -69,17 +69,29 @@ const PersonWrapper = styled.div`
 
     .person-name {
       font-size: 39px;
-      font-weight: bold;
+      font-weight: 700;
       line-height: 1.8;
+
+      @media screen and (max-width: 1000px) {
+        font-size: 17px;
+      }
     }
     .person-title {
       margin-bottom: 1rem;
       font-size: 26px;
+
+      @media screen and (max-width: 1000px) {
+        font-size: 17px;
+      }
     }
     .person-contact-email,
     .person-contact-phone {
       line-height: 1.5;
       font-size: 26px;
+
+      @media screen and (max-width: 1000px) {
+        font-size: 17px;
+      }
     }
   }
 `

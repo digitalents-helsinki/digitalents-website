@@ -37,6 +37,10 @@ const LocationWrapper = styled.div`
     padding-bottom: 25px;
     padding-left: 1rem;
     padding-right: 1rem;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 17px;
+    }
   }
 
   .map {

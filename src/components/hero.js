@@ -159,12 +159,13 @@ const TextContent = styled.div`
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  padding-top: 1rem;
+  padding-top: 10rem;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 3rem;
 
   @media screen and (min-width: 1000px) {
+    padding-top: 2rem;
     padding-left: 10rem;
     padding-right: 10rem;
   }

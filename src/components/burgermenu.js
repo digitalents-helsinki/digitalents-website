@@ -87,7 +87,9 @@ const SideBar = styled.div`
 
     .links {
       padding-bottom: 2rem;
-      font-size: 2rem;
+      font-family: futura-pt-bold;
+      font-weight: 700;
+      font-size: 21px;
 
       ul {
         padding-bottom: 2rem;
@@ -103,7 +105,9 @@ const SideBar = styled.div`
 
       ul {
         padding-bottom: 1rem;
-        font-size: 1.5rem;
+        font-family: futura-pt-bold;
+        font-weight: 700;
+        font-size: 15px;
 
         li {
           padding-bottom: 1rem;
@@ -114,6 +118,7 @@ const SideBar = styled.div`
 
   .social-links {
     padding-left: 2rem;
+    font-size: 20px;
 
     img {
       width: 2rem;

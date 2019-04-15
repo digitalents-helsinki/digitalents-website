@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
-import mediaImg from '../images/Media_ilman_kuviota.png'
-import ictImg from '../images/ICT_ilman_kuviota.png'
-import softdevImg from '../images/Softdev_ilman_kuviota.png'
+import mediaImg from '../images/Media_kuva.png'
+import ictImg from '../images/ICT_kuva.png'
+import softdevImg from '../images/Softdev_kuva.png'
 
 const Teams = props => {
   return (
@@ -45,7 +45,10 @@ const TeamsWrapper = styled.div`
       text-transform: uppercase;
       font-weight: 700;
       flex-basis: 50%;
-      padding-bottom: ;
+
+      @media screen and (max-width: 1000px) {
+        font-size: 20px;
+      }
     }
 
     h4:nth-child(1) {

@@ -52,6 +52,7 @@ const SomeWrapper = styled.div`
     @media screen and (min-width: 1000px) {
       padding-right: 10rem;
       padding-left: 10rem;
+      font-size: 16px;
     }
   }
 `
@@ -83,6 +84,10 @@ const ContentWrapper = styled.div`
       color: white;
       text-decoration: underline;
       font-size: 20px;
+
+      @media screen and (max-width: 1000px) {
+        font-size: 17px;
+      }
     }
   }
 
@@ -103,6 +108,10 @@ const ContentWrapper = styled.div`
       color: white;
       text-decoration: underline;
       font-size: 20px;
+
+      @media screen and (max-width: 1000px) {
+        font-size: 17px;
+      }
     }
   }
 `
