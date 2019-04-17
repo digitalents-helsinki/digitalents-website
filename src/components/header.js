@@ -27,9 +27,15 @@ const Header = props => {
               <TeamsWrapper>
                 {teamClick ? (
                   <Fragment>
-                    <Link to={`${props.pagePrefix}/media`}>Media</Link>
-                    <Link to={`${props.pagePrefix}/ict`}>ICT</Link>
-                    <Link to={`${props.pagePrefix}/softdev`}>SoftDev</Link>
+                    <div className="teamlink">
+                      <Link to={`${props.pagePrefix}/media`}>Media</Link>
+                    </div>
+                    <div className="teamlink">
+                      <Link to={`${props.pagePrefix}/ict`}>ICT</Link>
+                    </div>
+                    <div className="teamlink">
+                      <Link to={`${props.pagePrefix}/softdev`}>SoftDev</Link>
+                    </div>
                   </Fragment>
                 ) : null}
               </TeamsWrapper>
@@ -116,7 +122,7 @@ const HeaderWrapper = styled.header`
   position: fixed;
   left: 0;
   right: 0;
-  padding: 1rem;
+  height: 100px;
   text-transform: uppercase;
   z-index: 10;
   color: white;
@@ -128,9 +134,9 @@ const LogoWrapper = styled.div`
   max-width: 180px;
   overflow: hidden;
   margin-left: 3rem;
-  height: 2rem;
 
   img {
+    height: 100px;
     max-width: 180px;
   }
 `
@@ -147,12 +153,13 @@ const NavWrapper = styled.ul`
   li {
     margin-right: 2rem;
     justify-content: left;
-    font-size: 17px;
+    font-size: 20px;
   }
 
   a {
     text-decoration: none;
     color: white;
+    font-size: 20px;
   }
 `
 
@@ -181,12 +188,22 @@ const LangWrapper = styled.ul`
 `
 
 const TeamsWrapper = styled.div`
-  background-color: #4663B4
-  top: 50px;
   position: absolute;
+  top: 70px;
   display: flex;
   flex-flow: column wrap;
   z-index: 15;
+
+  div {
+    background-color: #86899B;
+    padding: 5px;
+  }
+
+  div:hover {
+    background-color: #4663B4;
+  }
+  
+}
 `
 
 export default HeaderQuery
