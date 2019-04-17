@@ -49,6 +49,11 @@ const PersonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-basis: 50%;
+
+  @media screen and (max-width: 600px) {
+    flex-basis: 100%;
+  }
+
   .point-wrapper {
     width: 40px;
     display: flex;
