@@ -36,10 +36,10 @@ const teamTemplate = (props) => {
 
 const HeroWrapper = styled.div`
   .description {
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 3rem;
 
     @media screen and (min-width: 400px) {
       padding-left: 5rem;
@@ -71,12 +71,14 @@ const FlexWrapper = styled.div`
 
     @media screen and (min-width: 1000px) {
       position: static;
+      top: 5rem;
     }
 
     h1 {
       text-transform: uppercase;
       font-weight: 700;
       font-size: 2rem;
+      font-family: futura-pt-bold;
     }
 
     h2 {
