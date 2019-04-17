@@ -61,7 +61,7 @@ const FlexWrapper = styled.div`
   .titleText {
     text-align: center;
     padding-left: 1rem;
-    padding-top: 100px;
+    padding-top: 5rem;
     flex-basis: 50%;
     position: absolute;
     z-index: 5;
@@ -70,8 +70,7 @@ const FlexWrapper = styled.div`
 
 
     @media screen and (min-width: 1000px) {
-      position: static;
-      top: 5rem;
+      padding-top: 10rem;
     }
 
     h1 {
@@ -92,11 +91,7 @@ const FlexWrapper = styled.div`
     width: 50%;
 
     @media screen and (min-width: 1000px) {
-      width: 50%;
-    }
-
-    @media screen and (max-width: 400px) {
-      min-width: 400px; 
+      width: 35%;
     }
   
     .team-background-image {
