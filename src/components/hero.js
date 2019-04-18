@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import BGImg from 'gatsby-background-image'
+import angleIcon from '../images/angledown.svg'
 
 const Hero = props => {
   return (
@@ -24,6 +25,7 @@ const Hero = props => {
             return <h1 className="heroh1">{text}</h1>
           })}
           <p className="embed">{props.data.heroLowerText}</p>
+          <img src={angleIcon} alt="" />
         </TextWrapper>
         <RightImage>
           <BGImg
@@ -62,7 +64,7 @@ const HeroWrapper = styled.div`
 
   .spacer {
     @media screen and (min-width: 1000px) {
-      width: 130vw;
+      width: 145vw;
     }
   }
 
@@ -75,6 +77,7 @@ const HeroWrapper = styled.div`
     }
   }
   .embed {
+    padding-top: 4rem;
     font-size: 24px;
     font-weight: 500;
     margin-top: 22px;
@@ -134,6 +137,7 @@ const TextWrapper = styled.div`
   align-items: center;
   position: absolute;
   z-index: 5;
+  padding-top: 25rem;
 
   @media (max-width: 1000px) {
     flex-basis: 50%;
@@ -151,8 +155,13 @@ const TextWrapper = styled.div`
 
   p {
     padding-top: 20px;
-    max-width: 650px;
+    max-width: 800px;
     text-align: center;
+  }
+
+  img {
+    padding-top: 4rem;
+    width: 50px;
   }
 `
 
@@ -174,9 +183,9 @@ const TextContent = styled.div`
 
   div {
     p {
-      padding-bottom: 1rem;
+      padding-bottom: 1.5rem;
       text-align: center;
-      max-width: 600px;
+      max-width: 1100px;
       margin: 0 auto;
       font-size: 20px;
       font-weight: 400;

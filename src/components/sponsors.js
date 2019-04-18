@@ -26,7 +26,11 @@ const SponsorsWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  padding-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  padding-left: 7rem;
+  padding-right: 7rem;
+
 
   @media screen and (max-width: 400px) {
     flex-flow: column wrap;

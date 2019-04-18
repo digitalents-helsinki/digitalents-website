@@ -55,17 +55,22 @@ const PersonWrapper = styled.div`
   }
 
   .point-wrapper {
-    width: 40px;
+    width: 50x;
     display: flex;
     justify-content: center;
     .salmiak-point {
       margin-top: 1.4rem;
-      margin-right: 5px;
+      margin-right: 15px;
       transform-origin: center;
       background-color: #1f1f1f;
-      width: 17px;
-      height: 17px;
+      width: 35px;
+      height: 35px;
       transform: rotate(45deg);
+      border-radius: 3px;
+
+      @media screen and (max-width: 600px) {
+        margin-left: 15px;
+      }
     }
   }
 
@@ -73,15 +78,17 @@ const PersonWrapper = styled.div`
     flex: 1;
 
     .person-name {
+      font-family: futura-pt-bold;
       font-size: 39px;
       font-weight: 700;
-      line-height: 1.8;
+      line-height: 1;
 
       @media screen and (max-width: 1000px) {
         font-size: 17px;
       }
     }
     .person-title {
+      margin-top: 0.5rem;
       margin-bottom: 1rem;
       font-size: 26px;
 

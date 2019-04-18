@@ -52,11 +52,11 @@ const TeamsWrapper = styled.div`
     }
 
     h4:nth-child(1) {
-      transform: translate(-4rem, 1.5rem);
+      transform: translate(150px, 43px);
     }
 
     h4:nth-child(2) {
-      transform: translate(4rem, 1.5rem);
+      transform: translate(-160px, 43px);
     }
 
     h4:nth-child(3) {
@@ -66,11 +66,11 @@ const TeamsWrapper = styled.div`
 
     @media screen and (max-width: 500px) {
       h4:nth-child(1) {
-        transform: translate(-4rem, -0.5rem);
+        transform: translate(-2rem, 0.5rem);
       }
 
       h4:nth-child(2) {
-        transform: translate(4rem, -0.5rem);
+        transform: translate(1rem, 0.5rem);
       }
 
       h4:nth-child(3) {
@@ -90,8 +90,16 @@ const TeamsWrapper = styled.div`
       object-fit: none;
     }
 
+    img:nth-child(1) {
+      transform: rotate(45deg) translate(25px, -30px);
+    }
+
     img:nth-child(2) {
-      transform: rotate(45deg) translate(100px, 100px);
+      transform: rotate(45deg) translate(75px, 75px);
+    }
+
+    img:nth-child(3) {
+      transform: rotate(45deg) translate(-30px, 25px);
     }
 
     @media screen and (max-width: 500px) {
@@ -100,8 +108,16 @@ const TeamsWrapper = styled.div`
         height: 75px;
       }
 
+      img:nth-child(1) {
+        transform: rotate(45deg) translate(25px, -3px);
+      }
+
       img:nth-child(2) {
         transform: rotate(45deg) translate(50px, 50px);
+      }
+
+      img:nth-child(3) {
+        transform: rotate(45deg) translate(-3px, 25px);
       }
     }
   }

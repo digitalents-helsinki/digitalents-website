@@ -44,11 +44,17 @@ const SomeWrapper = styled.div`
 
   .sometext {
     padding-top: 100px;
-    padding-bottom: 15px;
+    padding-bottom: 3rem;
     color: white;
-    font-size: 20px;
-    font-weight: 400;
+    max-width: 800px;
 
+    p {
+      font-family: futura-pt, sans-serif;
+      font-style: normal;
+      font-size: 20px;
+      font-weight: 400;
+  
+    }
     @media screen and (min-width: 1000px) {
       padding-right: 10rem;
       padding-left: 10rem;
@@ -61,7 +67,7 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-basis: 100%;
   flex-flow: row nowrap;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 
   @media screen and (min-width: 1000px) {
   }

@@ -40,6 +40,11 @@ const Header = props => {
                 ) : null}
               </TeamsWrapper>
               <li>
+                <Link to={`${props.pagePrefix}/#persons`}>
+                  { props.language === 'fi' ? 'yhteystiedot' : 'contact' }
+                </Link>
+              </li>
+              <li>
                 <Link to={`${props.pagePrefix}/tyopaikat/`}>
                   {header.node.workLink}
                 </Link>
@@ -119,6 +124,7 @@ const HeaderWrapper = styled.header`
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   position: fixed;
   left: 0;
   right: 0;
@@ -129,15 +135,13 @@ const HeaderWrapper = styled.header`
 `
 
 const LogoWrapper = styled.div`
-  flex: 1;
+  margin-left: 7rem;
   display: block;
-  max-width: 180px;
   overflow: hidden;
-  margin-left: 3rem;
 
   img {
-    height: 100px;
-    max-width: 180px;
+    padding-top: 10px;
+    height: 70px;
   }
 `
 
@@ -145,15 +149,19 @@ const NavWrapper = styled.ul`
   display: flex;
   align-items: center;
   font-size: 20px;
-  font-weight: 400;
-  flex: 2;
+  font-weight: 700;
   justify-content: center;
   list-style: none;
 
   li {
     margin-right: 2rem;
+    margin-left: 2rem;
     justify-content: left;
     font-size: 20px;
+  }
+
+  li:first-child {
+    margin-left: 0;
   }
 
   a {
@@ -168,17 +176,17 @@ const LangWrapper = styled.ul`
   justify-content: center;
   align-items: center;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 700;
   list-style: none;
+  padding-right: 7rem;
 
   li {
-    flex: 3;
     margin-right: 2rem;
-    font-size: 17px;
+    font-size: 20px;
   }
 
   li:first-child {
-    border-left: 0.5px solid white;
+    border-left: 3px solid white;
     padding-left: 1rem;
   }
 
