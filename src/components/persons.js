@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import stripedIMG from '../images/podcast_henkilot_bg_ilman_yläkulmaa.svg'
 
 const Persons = props => {
   return (
@@ -29,6 +30,11 @@ const Persons = props => {
 
 const Wrapper = styled.div`
   background-color: #f4f4f4;
+  background-image: url(${stripedIMG});
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 `
 
 const PersonsWrapper = styled.div`
