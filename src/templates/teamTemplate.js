@@ -25,7 +25,9 @@ const teamTemplate = (props) => {
             </BGImg>
           </div>
         </FlexWrapper>
-        <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />
+        <div class="wrapper">
+          <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />
+        </div>
         <div className="link">
           <a href={link}>{link}</a>
         </div>
@@ -35,15 +37,25 @@ const teamTemplate = (props) => {
 }
 
 const HeroWrapper = styled.div`
-  .description {
-    padding-top: 3rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 3rem;
+  .wrapper {
+    display: flex;
+    justify-content: center;
 
-    @media screen and (min-width: 400px) {
-      padding-left: 5rem;
-      padding-right: 5rem;
+    .description {
+      padding-top: 3rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-bottom: 3rem;
+      max-width: 800px;
+
+      p {
+        padding-top: 1rem;
+      }
+
+      @media screen and (min-width: 400px) {
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
     }
   }
 
@@ -59,13 +71,12 @@ const FlexWrapper = styled.div`
   width: 100vw;
 
   .titleText {
-    text-align: center;
-    padding-left: 1rem;
+    padding-left: 3rem;
     padding-top: 5rem;
     flex-basis: 50%;
     position: absolute;
     z-index: 5;
-    max-width: 500px;
+    max-width: 700px;
     left: ${props => props.position ? "50%" : "0"};
 
 
@@ -76,14 +87,14 @@ const FlexWrapper = styled.div`
     h1 {
       text-transform: uppercase;
       font-weight: 700;
-      font-size: 2rem;
+      font-size: 3rem;
       font-family: futura-pt-bold;
     }
 
     h2 {
       padding-top: 2rem;
       font-weight: 400;
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
   }
 
@@ -91,7 +102,7 @@ const FlexWrapper = styled.div`
     width: 50%;
 
     @media screen and (min-width: 1000px) {
-      width: 35%;
+      width: 50%;
     }
   
     .team-background-image {
