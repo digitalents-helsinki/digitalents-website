@@ -24,7 +24,7 @@ const Sponsors = props => {
 
 const SponsorsWrapper = styled.div`
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: space-evenly;
   padding-top: 50px;
   padding-bottom: 100px;

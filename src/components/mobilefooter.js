@@ -14,8 +14,8 @@ const MobileFooter = (props) => {
         <Link to={`${props.pagePrefix}/media`}>DT MEDIA</Link>
         <Link to={`${props.pagePrefix}/ict`}>DT ICT</Link>
         <Link to={`${props.pagePrefix}/softdev`}>DT SOFTDEV</Link>
-        <Link to={`${props.pagePrefix}/#persons`}>YHTEYSTIEDOT</Link>
-        <Link to={`${props.pagePrefix}/tyopaikat`}>TYÖPAIKAT</Link>
+        <Link to={`${props.pagePrefix}/#persons`}>{props.language === 'en' ? 'CONTACT' : 'YHTEYSTIEDOT' }</Link>
+        <Link to={`${props.pagePrefix}/tyopaikat`}>{props.language === 'en' ? 'WORK' : 'TYÖPAIKAT'}</Link>
       </div>
       <div className="social-icons">
         <a href="https://twitter.com/digitalentshki"><img src={twIcon} alt="" /></a>
