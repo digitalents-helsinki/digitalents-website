@@ -11,8 +11,8 @@ const SomeContent = props => {
       <ContentWrapper>
         <div className="podcasts">
           <h3>Podcastit</h3>
-          {props.data.podcastLinks.map(podcast => {
-            return <p>{podcast.linkText}</p>
+          {props.data.podcastLinks.map(link => {
+            return <a href={link.linkURL}>{link.linkText}</a>
           })}
         </div>
         <div className="learning-material">
@@ -86,7 +86,7 @@ const ContentWrapper = styled.div`
       font-weight: 400;
     }
 
-    p {
+    a {
       color: white;
       text-decoration: underline;
       font-size: 20px;

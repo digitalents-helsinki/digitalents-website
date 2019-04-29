@@ -5,6 +5,7 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 import fbIcon from '../images/facebook_logo_valkoinen.svg'
 import igIcon from '../images/instagram_logo_valkoinen.svg'
 import twIcon from '../images/twitter_logo_valkoinen.svg'
+import HelLogo from '../images/HELSINKI_Tunnus_VALKOINEN.png'
 
 const FooterColumn = props => {
   if (props.position === 'left') {
@@ -24,6 +25,7 @@ const FooterColumn = props => {
             return <p key={n}>{n}</p>
           })}
         </div>
+        <img src={HelLogo} alt="" />
       </div>
     )
   } else if (props.position === 'middle') {
@@ -145,7 +147,6 @@ const FooterWrapper = styled.footer`
   background-color: #353535;
   color: white;
   justify-content: space-evenly;
-  height: 350px;
 
   * a {
     color: white;
@@ -175,6 +176,11 @@ const FooterWrapper = styled.footer`
 
     @media screen and (max-width: 400px) {
       text-align: center;
+    }
+
+    img {
+      padding-top: 1rem;
+      width: 200px;
     }
   }
 
