@@ -180,11 +180,12 @@ const PortfolioWrapper = styled.div`
     flex-flow: column nowrap;
 
     .left {
+      display: flex;
       padding-right: 0;
-      padding-bottom: 5%;
+      padding-bottom: 15%;
 
       a:nth-child(2) div {
-        transform: translateX(75px) rotate(45deg);
+        transform: translateY(75px) rotate(45deg);
       }
     }
 
@@ -193,20 +194,21 @@ const PortfolioWrapper = styled.div`
       flex-flow: column nowrap;
 
       a:nth-child(2) div {
-        transform: translateX(75px) rotate(45deg);
+        transform: translateX(-75px) rotate(45deg);
       }
 
       a:nth-child(4) div {
-        transform: translateX(-75px) rotate(45deg);
+        transform: translateX(75px) rotate(45deg);
       }
     }
 
     .right {
+      display: flex;
       padding-left: 0;
-      padding-top: 5%;
+      padding-top: 15%;
 
       a:nth-child(2) div {
-        transform: translateX(-75px) rotate(45deg);
+        transform: translateY(-75px) rotate(45deg);
       }
     }
   }
