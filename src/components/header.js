@@ -123,7 +123,7 @@ const HeaderQuery = props => (
 const HeaderWrapper = styled.header`
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: space-between;
   position: fixed;
   left: 0;
@@ -196,15 +196,16 @@ const LangWrapper = styled.ul`
 `
 
 const TeamsWrapper = styled.div`
-  position: absolute;
-  top: 70px;
-  display: flex;
-  flex-flow: column wrap;
+  position: relative;
+  top: 60px;
+  left: -120px;
   z-index: 15;
+  width: 0;
 
   div {
     background-color: #86899B;
     padding: 5px;
+    width: 80px;
   }
 
   div:hover {

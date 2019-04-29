@@ -66,11 +66,11 @@ const TeamsWrapper = styled.div`
 
     @media screen and (max-width: 1000px) {
       h4:nth-child(1) {
-        transform: translate(-2rem, 0.5rem);
+        transform: translate(-2rem, 30px);
       }
 
       h4:nth-child(2) {
-        transform: translate(1rem, 0.5rem);
+        transform: translate(1rem, 30px);
       }
 
       h4:nth-child(3) {
