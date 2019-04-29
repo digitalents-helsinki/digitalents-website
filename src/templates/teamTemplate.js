@@ -37,12 +37,12 @@ const teamTemplate = (props) => {
         <>
           <div className="left">
             <Diamond />
-            <a to="https://vimeo.com/294134648"><Diamond /></a>
+            <a href="https://vimeo.com/294134648"><Diamond /></a>
             <Diamond />
           </div>
           <div className="middle">
             <Diamond />
-            <a to="https://www.youtube.com/watch?v=iZOI_A7uYoI"><Diamond /></a>
+            <a href="https://www.youtube.com/watch?v=iZOI_A7uYoI"><Diamond /></a>
             <Diamond />
             <a href="https://www.youtube.com/watch?v=tkWuwdB2K3k"><Diamond /></a>
             <Diamond />
