@@ -1,12 +1,12 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import BGImg from 'gatsby-background-image'
 import styled from 'styled-components'
 
 const teamTemplate = (props) => {
-  const { teamTitle, showPageTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition, link } = props.data.contentfulPageTemplate
+  const { teamTitle, showPageTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition, link, portfolioEnabled } = props.data.contentfulPageTemplate
 
   const language = props.pageContext.node_locale === 'en-US' ? 'en' : 'fi'
   const pagePrefix = props.pageContext.node_locale === 'en-US' ? '/en/' : '/fi/'
@@ -32,6 +32,29 @@ const teamTemplate = (props) => {
           <a href={link}>{link}</a>
         </div>
       </HeroWrapper>
+      <PortfolioWrapper>
+        {portfolioEnabled ?
+        <>
+          <div className="left">
+            <Diamond />
+            <a to="https://vimeo.com/294134648"><Diamond /></a>
+            <Diamond />
+          </div>
+          <div className="middle">
+            <Diamond />
+            <a to="https://www.youtube.com/watch?v=iZOI_A7uYoI"><Diamond /></a>
+            <Diamond />
+            <a href="https://www.youtube.com/watch?v=tkWuwdB2K3k"><Diamond /></a>
+            <Diamond />
+          </div>
+          <div className="right">
+            <Diamond />
+            <a href="https://www.youtube.com/watch?v=eMIrofxQtKo"><Diamond /></a>
+            <Diamond />
+          </div>
+        </>
+        : null}
+      </PortfolioWrapper>
     </Layout>
   )
 }
@@ -115,6 +138,55 @@ const FlexWrapper = styled.div`
 }
 `
 
+const PortfolioWrapper = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+
+  .left {
+    padding-right: 15%;
+    a:nth-child(2) div {
+      transform: translateX(150px) rotate(45deg);
+      background-color: red;
+    }
+  }
+
+  .middle {
+    display: flex;
+    a:nth-child(2) div {
+      transform: translateY(150px) rotate(45deg);
+      background-color: red;
+    }
+
+    a:nth-child(4) div {
+      transform: translateY(-150px) rotate(45deg);
+      background-color: red;
+    }
+  }
+
+  .right {
+    padding-left: 15%;
+    a:nth-child(2) div {
+      transform: translateX(-150px) rotate(45deg);
+      background-color: red;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+`
+
+const Diamond = styled.div`
+  width: 150px;
+  height: 150px;
+  background-color: black;
+  transform: rotate(45deg);
+`
+
 export const pageQuery = graphql`
   query teamTemplateQuery($slug: String! $node_locale: String!){
     contentfulPageTemplate(teamSlug: {eq: $slug} node_locale: {eq: $node_locale}) {
@@ -138,6 +210,7 @@ export const pageQuery = graphql`
       }
       imagePosition
       link
+      portfolioEnabled
     }
   }
 `
