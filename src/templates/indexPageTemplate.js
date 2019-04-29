@@ -18,7 +18,7 @@ const indexPageTemplate = (props) => {
   return (
     <Layout language={language} pagePrefix={pagePrefix}>
       <Hero data={hero} />
-      <Teams data={teams} />
+      <Teams pagePrefix={pagePrefix} data={teams} />
       <SomeContent data={someContent} />
       <Persons data={personBlocks} />
       <Location data={location} />

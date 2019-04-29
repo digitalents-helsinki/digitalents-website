@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import mediaImg from '../images/Media_kuva.png'
 import ictImg from '../images/ICT_kuva.png'
 import softdevImg from '../images/Softdev_kuva.png'
@@ -15,9 +15,9 @@ const Teams = props => {
         })}
       </div>
       <div className="images">
-        <img src={mediaImg} alt="" />
-        <img src={softdevImg} alt="" />
-        <img src={ictImg} alt="" />
+        <Link to={`${props.pagePrefix}/media`}><img src={mediaImg} alt="" /></Link>
+        <Link to={`${props.pagePrefix}/softdev`}><img src={softdevImg} alt="" /></Link>
+        <Link to={`${props.pagePrefix}/ict`}><img src={ictImg} alt="" /></Link>
       </div>
     </TeamsWrapper>
   )
@@ -64,6 +64,20 @@ const TeamsWrapper = styled.div`
       transform: translateY(16rem);
     }
 
+    @media screen and (max-width: 1000px) {
+      h4:nth-child(1) {
+        transform: translate(-2rem, 0.5rem);
+      }
+
+      h4:nth-child(2) {
+        transform: translate(1rem, 0.5rem);
+      }
+
+      h4:nth-child(3) {
+        transform: translateY(15rem);
+      }
+    }
+
     @media screen and (max-width: 500px) {
       h4:nth-child(1) {
         transform: translate(-2rem, 0.5rem);
@@ -88,17 +102,18 @@ const TeamsWrapper = styled.div`
       width: 150px;
       height: 150px;
       object-fit: none;
+      display: inline-block;
     }
 
-    img:nth-child(1) {
+    a:nth-child(1) img {
       transform: rotate(45deg) translate(25px, -30px);
     }
 
-    img:nth-child(2) {
+    a:nth-child(2) img {
       transform: rotate(45deg) translate(75px, 75px);
     }
 
-    img:nth-child(3) {
+    a:nth-child(3) img {
       transform: rotate(45deg) translate(-30px, 25px);
     }
 
@@ -108,15 +123,15 @@ const TeamsWrapper = styled.div`
         height: 75px;
       }
 
-      img:nth-child(1) {
+      a:nth-child(1) img {
         transform: rotate(45deg) translate(25px, -3px);
       }
 
-      img:nth-child(2) {
+      a:nth-child(2) img {
         transform: rotate(45deg) translate(50px, 50px);
       }
 
-      img:nth-child(3) {
+      a:nth-child(3) img {
         transform: rotate(45deg) translate(-3px, 25px);
       }
     }
@@ -156,6 +171,7 @@ const TeamsQuery = props => (
         ict={data.ict}
         softdev={data.softdev}
         data={props.data}
+        pagePrefix={props.pagePrefix}
       />
     )}
   />
