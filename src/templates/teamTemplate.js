@@ -169,6 +169,7 @@ const PortfolioWrapper = styled.div`
 
   .right {
     padding-left: 15%;
+
     a:nth-child(2) div {
       transform: translateX(-150px) rotate(45deg);
       background-color: red;
@@ -176,7 +177,38 @@ const PortfolioWrapper = styled.div`
   }
 
   @media screen and (max-width: 1000px) {
-    display: none;
+    flex-flow: column nowrap;
+
+    .left {
+      padding-right: 0;
+      padding-bottom: 5%;
+
+      a:nth-child(2) div {
+        transform: translateX(75px) rotate(45deg);
+      }
+    }
+
+    .middle {
+      display: flex;
+      flex-flow: column nowrap;
+
+      a:nth-child(2) div {
+        transform: translateX(75px) rotate(45deg);
+      }
+
+      a:nth-child(4) div {
+        transform: translateX(-75px) rotate(45deg);
+      }
+    }
+
+    .right {
+      padding-left: 0;
+      padding-top: 5%;
+
+      a:nth-child(2) div {
+        transform: translateX(-75px) rotate(45deg);
+      }
+    }
   }
 `
 
@@ -185,6 +217,11 @@ const Diamond = styled.div`
   height: 150px;
   background-color: black;
   transform: rotate(45deg);
+
+  @media screen and (max-width: 1000px) {
+    width: 75px;
+    height: 75px;
+  }
 `
 
 export const pageQuery = graphql`
