@@ -65,8 +65,14 @@ export const pageQuery = graphql`
       }
       someContent {
         someText
-        podcasts
-        learningLinks
+        podcastLinks {
+          linkText
+          linkURL
+        }
+        learningLinks {
+          linkText
+          linkURL
+        }
       }
       personBlocks {
         name

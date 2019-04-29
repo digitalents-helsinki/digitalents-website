@@ -11,14 +11,14 @@ const SomeContent = props => {
       <ContentWrapper>
         <div className="podcasts">
           <h3>Podcastit</h3>
-          {props.data.podcasts.map(podcast => {
-            return <p>{podcast}</p>
+          {props.data.podcastLinks.map(podcast => {
+            return <p>{podcast.linkText}</p>
           })}
         </div>
         <div className="learning-material">
           <h3>Oppimateriaali</h3>
           {props.data.learningLinks.map(link => {
-            return <p>{link}</p>
+            return <a href={link.linkURL}>{link.linkText}</a>
           })}
         </div>
       </ContentWrapper>
@@ -31,7 +31,7 @@ const SomeWrapper = styled.div`
   background-image: url(${StripedIMG});
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  height: 100%;
+  height: 50vh;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -110,7 +110,7 @@ const ContentWrapper = styled.div`
       font-weight: 400;
     }
 
-    p {
+    a {
       color: white;
       text-decoration: underline;
       font-size: 20px;
