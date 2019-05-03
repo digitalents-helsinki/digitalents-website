@@ -140,11 +140,11 @@ const TextWrapper = styled.div`
   z-index: 5;
   padding-top: 25rem;
   padding-bottom: 10rem;
+  height: 100vh;
 
   @media (max-width: 1000px) {
-    flex-basis: 50%;
-    justify-content: flex-start;
-    padding-top: 250px;
+    padding-top: 20%;
+    justify-content: flex-end;
     max-width: 300px;
   }
 
@@ -156,7 +156,6 @@ const TextWrapper = styled.div`
   }
 
   p {
-    padding-top: 20px;
     max-width: 800px;
     text-align: center;
   }
@@ -164,6 +163,10 @@ const TextWrapper = styled.div`
   img {
     padding-top: 4rem;
     width: 50px;
+
+    @media (min-width: 1000px) {
+      padding-top: 10rem;
+    }
   }
 `
 
