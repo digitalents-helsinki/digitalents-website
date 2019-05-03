@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import StripedIMG from '../images/podcast_henkilot_bg_Kulmat_ylhäällä_ja_alhaalla.svg'
+import StripedIMG from '../images/some-bg.svg'
 
 const SomeContent = props => {
   return (
@@ -31,7 +31,7 @@ const SomeWrapper = styled.div`
   background-image: url(${StripedIMG});
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  height: 50vh;
+  height: 100vh;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -43,7 +43,7 @@ const SomeWrapper = styled.div`
   }
 
   .sometext {
-    padding-top: 100px;
+    padding-top: 40%;
     padding-bottom: 3rem;
     color: white;
     max-width: 800px;
@@ -55,7 +55,9 @@ const SomeWrapper = styled.div`
       font-weight: 400;
   
     }
+
     @media screen and (min-width: 1000px) {
+      padding-top: 20%;
       padding-right: 10rem;
       padding-left: 10rem;
       font-size: 16px;
@@ -70,6 +72,7 @@ const ContentWrapper = styled.div`
   padding-bottom: 100px;
 
   @media screen and (min-width: 1000px) {
+    width: 800px;
   }
 
   .podcasts {

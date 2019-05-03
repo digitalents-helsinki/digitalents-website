@@ -123,7 +123,7 @@ const TextWrapper = styled.div`
   align-items: center;
   position: absolute;
   z-index: 5;
-  padding-top: 25rem;
+  padding-top: 35rem;
   padding-bottom: 10rem;
   height: 100vh;
 
