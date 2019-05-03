@@ -68,21 +68,6 @@ const HeroWrapper = styled.div`
       width: 145vw;
     }
   }
-
-  .heroh1 {
-    font-size: 3.8rem;
-    line-height: 1.2;
-
-    @media screen and (max-width: 1000px) {
-      font-size: 1.5rem;
-    }
-  }
-  .embed {
-    padding-top: 4rem;
-    font-size: 24px;
-    font-weight: 500;
-    margin-top: 22px;
-  }
 `
 
 const LeftImage = styled.div`
@@ -143,9 +128,11 @@ const TextWrapper = styled.div`
   height: 100vh;
 
   @media (max-width: 1000px) {
-    padding-top: 20%;
+    padding-top: 40%;
+    padding-bottom: 0;
     justify-content: flex-end;
     max-width: 300px;
+    height: 50%;
   }
 
   h1 {
@@ -158,6 +145,13 @@ const TextWrapper = styled.div`
   p {
     max-width: 800px;
     text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    padding-top: 4rem;
+
+    @media screen and (max-width: 1000px) {
+      padding-top: 1rem;
+    }
   }
 
   img {
