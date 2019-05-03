@@ -5,6 +5,8 @@ import Layout from '../components/layout'
 import BGImg from 'gatsby-background-image'
 import styled from 'styled-components'
 
+import portfolioBG from '../images/media_alakuva2.png'
+
 const teamTemplate = (props) => {
   const { teamTitle, showPageTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition, link, portfolioEnabled } = props.data.contentfulPageTemplate
 
@@ -25,7 +27,7 @@ const teamTemplate = (props) => {
             </BGImg>
           </div>
         </FlexWrapper>
-        <div class="wrapper">
+        <div className="wrapper">
           <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />
         </div>
         <div className="link">
@@ -72,12 +74,24 @@ const HeroWrapper = styled.div`
       max-width: 800px;
 
       p {
+        font-size: 20px;
         padding-top: 1rem;
+      
+        @media screen and (min-width: 2000px) {
+          font-size: 30px;
+          padding-top: 2rem;
+        }
       }
 
       @media screen and (min-width: 400px) {
         padding-left: 5rem;
         padding-right: 5rem;
+      }
+
+      @media screen and (min-width: 2000px) {
+        max-width: 1200px;
+        padding-top: 10rem;
+        padding-bottom: 10rem;
       }
     }
   }
@@ -92,6 +106,7 @@ const FlexWrapper = styled.div`
   flex-flow: row nowrap;
   justify-content: ${props => props.position ? "flex-start" : "flex-end"};
   width: 100vw;
+  heigth: 100vh;
 
   .titleText {
     padding-left: 3rem;
@@ -101,11 +116,6 @@ const FlexWrapper = styled.div`
     z-index: 5;
     max-width: 700px;
     left: ${props => props.position ? "50%" : "0"};
-
-
-    @media screen and (min-width: 1000px) {
-      padding-top: 10rem;
-    }
 
     h1 {
       text-transform: uppercase;
@@ -119,19 +129,33 @@ const FlexWrapper = styled.div`
       font-weight: 400;
       font-size: 1.25rem;
     }
+
+    @media screen and (min-width: 1000px) {
+      padding-top: 10rem;
+    }
+
+    @media screen and (min-width: 2000px) {
+      max-width: 1400px;
+
+      h1 {
+        font-size: 6rem;
+      }
+
+      h2 {
+        padding-top: 4rem;
+        font-size: 2rem;
+      }
+    }
   }
 
   .imageWrapper {
-    width: 50%;
-
-    @media screen and (min-width: 1000px) {
-      width: 50%;
-    }
+    width: 65%;
   
     .team-background-image {
+      width: 100%;
   
       .team-front-image {
-        box-shadow: 0 0 0 3px white, inset 0 0 0 3px white;
+        box-shadow: 0 0 50px white;
       }
     }
   }
@@ -145,9 +169,13 @@ const PortfolioWrapper = styled.div`
   align-items: center;
   padding-top: 5%;
   padding-bottom: 5%;
+  background-image: url(${portfolioBG});
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 
   .left {
-    padding-right: 15%;
+    padding-right: 250px;
     a:nth-child(2) div {
       transform: translateX(150px) rotate(45deg);
       background-color: red;
@@ -168,7 +196,7 @@ const PortfolioWrapper = styled.div`
   }
 
   .right {
-    padding-left: 15%;
+    padding-left: 250px;
 
     a:nth-child(2) div {
       transform: translateX(-150px) rotate(45deg);
@@ -212,6 +240,34 @@ const PortfolioWrapper = styled.div`
       }
     }
   }
+
+  @media screen and (min-width: 2000px) {
+    .left {
+      padding-right: 350px;
+
+      a:nth-child(2) div {
+        transform: translateX(210px) rotate(45deg);
+      }
+    }
+
+    .middle {
+      a:nth-child(2) div {
+        transform: translateY(180px) rotate(45deg);
+      }
+  
+      a:nth-child(4) div {
+        transform: translateY(-170px) rotate(45deg);
+      }
+    }
+
+    .right {
+      padding-left: 300px;
+
+      a:nth-child(2) div {
+        transform: translateX(-175px) rotate(45deg);
+      }
+    }
+  }
 `
 
 const Diamond = styled.div`
@@ -223,6 +279,11 @@ const Diamond = styled.div`
   @media screen and (max-width: 1000px) {
     width: 75px;
     height: 75px;
+  }
+
+  @media screen and (min-width: 2000px) {
+    width: 200px;
+    height: 200px;
   }
 `
 
