@@ -5,6 +5,7 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 import fbIcon from '../images/facebook_logo_valkoinen.svg'
 import igIcon from '../images/instagram_logo_valkoinen.svg'
 import twIcon from '../images/twitter_logo_valkoinen.svg'
+import liIcon from '../images/Linkedin_logo.svg'
 import HelLogo from '../images/HELSINKI_Tunnus_VALKOINEN.png'
 
 const FooterColumn = props => {
@@ -60,6 +61,9 @@ const FooterColumn = props => {
           </a>
           <a href="https://www.facebook.com/digitalentshelsinki/">
             <img src={fbIcon} alt="" />
+          </a>
+          <a href="https://www.linkedin.com/company/digitalents-helsinki/">
+            <img src={liIcon} alt="" />
           </a>
         </div>
         <div className="rightLower">

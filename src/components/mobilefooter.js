@@ -5,6 +5,7 @@ import { Link } from 'gatsby'
 import fbIcon from '../images/facebook_logo_valkoinen.svg'
 import igIcon from '../images/instagram_logo_valkoinen.svg'
 import twIcon from '../images/twitter_logo_valkoinen.svg'
+import liIcon from '../images/Linkedin_logo.svg'
 import helLogo from '../images/HELSINKI_Tunnus_VALKOINEN.png'
 
 const MobileFooter = (props) => {
@@ -18,9 +19,19 @@ const MobileFooter = (props) => {
         <Link to={`${props.pagePrefix}/tyopaikat`}>{props.language === 'en' ? 'WORK' : 'TYÖPAIKAT'}</Link>
       </div>
       <div className="social-icons">
-        <a href="https://twitter.com/digitalentshki"><img src={twIcon} alt="" /></a>
-        <a href="https://www.instagram.com/digitalentshelsinki/"><img src={igIcon} alt="" /></a>
-        <a href="https://www.facebook.com/digitalentshelsinki/"><img src={fbIcon} alt="" /></a>
+        <h3>SEURAA MEITÄ:</h3>
+        <a href="https://twitter.com/digitalentshki">
+          <img src={twIcon} alt="" />
+        </a>
+        <a href="https://www.instagram.com/digitalentshelsinki/">
+          <img src={igIcon} alt="" />
+        </a>
+        <a href="https://www.facebook.com/digitalentshelsinki/">
+          <img src={fbIcon} alt="" />
+          </a>
+        <a href="https://www.linkedin.com/company/digitalents-helsinki/">
+          <img src={liIcon} alt="" />
+        </a>
         <p>#DIGITALENTSHKI</p>
       </div>
       <div className="location">
@@ -62,13 +73,13 @@ const FooterWrapper = styled.footer`
   }
 
   .social-icons {
-
+    padding-top: 1rem;
     img {
       width: 50px;
       padding: 0.5rem;
     }
 
-    p {
+    p, h3 {
       font-weight: 700;
       font-size: 1.2rem;
       font-family: futura-pt-bold, sans-serif;
@@ -76,11 +87,8 @@ const FooterWrapper = styled.footer`
   }
 
   .location {
-    font-family: futura-pt-bold, sans-serif;
-    padding-top: 4rem;
-    padding-bottom: 2rem;
-    font-weight: 700;
-    font-size: 1.2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 
     .address {
       text-transform: uppercase;
@@ -88,7 +96,7 @@ const FooterWrapper = styled.footer`
     }
 
     img {
-      padding-top: 1rem;
+      padding-top: 2rem;
       width: 200px;
     }
   }
