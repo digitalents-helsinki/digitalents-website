@@ -5,10 +5,8 @@ import Layout from '../components/layout'
 import BGImg from 'gatsby-background-image'
 import styled from 'styled-components'
 
-import portfolioBG from '../images/media_alakuva2.png'
-
 const teamTemplate = (props) => {
-  const { teamTitle, showPageTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition, link, portfolioEnabled } = props.data.contentfulPageTemplate
+  const { teamTitle, showPageTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition, link, portfolioEnabled, portfolioBG } = props.data.contentfulPageTemplate
 
   const language = props.pageContext.node_locale === 'en-US' ? 'en' : 'fi'
   const pagePrefix = props.pageContext.node_locale === 'en-US' ? '/en/' : '/fi/'
@@ -36,25 +34,27 @@ const teamTemplate = (props) => {
       </HeroWrapper>
       <PortfolioWrapper>
         {portfolioEnabled ?
-        <>
-          <div className="left">
-            <Diamond />
-            <a href="https://vimeo.com/294134648"><Diamond /></a>
-            <Diamond />
+        <BGImg fluid={portfolioBG.fluid}>
+          <div className="flex-div">
+            <div className="left">
+              <Diamond />
+              <a href="https://vimeo.com/294134648"><Diamond /></a>
+              <Diamond />
+            </div>
+            <div className="middle">
+              <Diamond />
+              <a href="https://www.youtube.com/watch?v=iZOI_A7uYoI"><Diamond /></a>
+              <Diamond />
+              <a href="https://www.youtube.com/watch?v=tkWuwdB2K3k"><Diamond /></a>
+              <Diamond />
+            </div>
+            <div className="right">
+              <Diamond />
+              <a href="https://www.youtube.com/watch?v=eMIrofxQtKo"><Diamond /></a>
+              <Diamond />
+            </div>
           </div>
-          <div className="middle">
-            <Diamond />
-            <a href="https://www.youtube.com/watch?v=iZOI_A7uYoI"><Diamond /></a>
-            <Diamond />
-            <a href="https://www.youtube.com/watch?v=tkWuwdB2K3k"><Diamond /></a>
-            <Diamond />
-          </div>
-          <div className="right">
-            <Diamond />
-            <a href="https://www.youtube.com/watch?v=eMIrofxQtKo"><Diamond /></a>
-            <Diamond />
-          </div>
-        </>
+        </BGImg>
         : null}
       </PortfolioWrapper>
     </Layout>
@@ -163,108 +163,107 @@ const FlexWrapper = styled.div`
 `
 
 const PortfolioWrapper = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  background-image: url(${portfolioBG});
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-
-  .left {
-    padding-right: 250px;
-    a:nth-child(2) div {
-      transform: translateX(150px) rotate(45deg);
-      background-color: red;
-    }
-  }
-
-  .middle {
+  .flex-div {
     display: flex;
-    a:nth-child(2) div {
-      transform: translateY(150px) rotate(45deg);
-      background-color: red;
-    }
-
-    a:nth-child(4) div {
-      transform: translateY(-150px) rotate(45deg);
-      background-color: red;
-    }
-  }
-
-  .right {
-    padding-left: 250px;
-
-    a:nth-child(2) div {
-      transform: translateX(-150px) rotate(45deg);
-      background-color: red;
-    }
-  }
-
-  @media screen and (max-width: 1000px) {
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    height: 100vh;
 
     .left {
-      display: flex;
-      padding-right: 0;
-      padding-bottom: 15%;
-
+      padding-right: 250px;
       a:nth-child(2) div {
-        transform: translateY(75px) rotate(45deg);
+        transform: translateX(150px) rotate(45deg);
+        background-color: red;
       }
     }
 
     .middle {
       display: flex;
+      a:nth-child(2) div {
+        transform: translateY(150px) rotate(45deg);
+        background-color: red;
+      }
+
+      a:nth-child(4) div {
+        transform: translateY(-150px) rotate(45deg);
+        background-color: red;
+      }
+    }
+
+    .right {
+      padding-left: 250px;
+
+      a:nth-child(2) div {
+        transform: translateX(-150px) rotate(45deg);
+        background-color: red;
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
       flex-flow: column nowrap;
 
-      a:nth-child(2) div {
-        transform: translateX(-75px) rotate(45deg);
+      .left {
+        display: flex;
+        padding-right: 0;
+        padding-bottom: 15%;
+
+        a:nth-child(2) div {
+          transform: translateY(75px) rotate(45deg);
+        }
       }
 
-      a:nth-child(4) div {
-        transform: translateX(75px) rotate(45deg);
+      .middle {
+        display: flex;
+        flex-flow: column nowrap;
+
+        a:nth-child(2) div {
+          transform: translateX(-75px) rotate(45deg);
+        }
+
+        a:nth-child(4) div {
+          transform: translateX(75px) rotate(45deg);
+        }
       }
-    }
 
-    .right {
-      display: flex;
-      padding-left: 0;
-      padding-top: 15%;
+      .right {
+        display: flex;
+        padding-left: 0;
+        padding-top: 15%;
 
-      a:nth-child(2) div {
-        transform: translateY(-75px) rotate(45deg);
-      }
-    }
-  }
-
-  @media screen and (min-width: 2000px) {
-    .left {
-      padding-right: 350px;
-
-      a:nth-child(2) div {
-        transform: translateX(210px) rotate(45deg);
-      }
-    }
-
-    .middle {
-      a:nth-child(2) div {
-        transform: translateY(180px) rotate(45deg);
-      }
-  
-      a:nth-child(4) div {
-        transform: translateY(-170px) rotate(45deg);
+        a:nth-child(2) div {
+          transform: translateY(-75px) rotate(45deg);
+        }
       }
     }
 
-    .right {
-      padding-left: 300px;
+    @media screen and (min-width: 2000px) {
+      .left {
+        padding-right: 350px;
 
-      a:nth-child(2) div {
-        transform: translateX(-175px) rotate(45deg);
+        a:nth-child(2) div {
+          transform: translateX(210px) rotate(45deg);
+        }
+      }
+
+      .middle {
+        a:nth-child(2) div {
+          transform: translateY(180px) rotate(45deg);
+        }
+    
+        a:nth-child(4) div {
+          transform: translateY(-170px) rotate(45deg);
+        }
+      }
+
+      .right {
+        padding-left: 300px;
+
+        a:nth-child(2) div {
+          transform: translateX(-175px) rotate(45deg);
+        }
       }
     }
   }
@@ -311,6 +310,11 @@ export const pageQuery = graphql`
       imagePosition
       link
       portfolioEnabled
+      portfolioBG {
+        fluid(maxWidth: 350) {
+          ...GatsbyContentfulFluid
+        }
+      }
     }
   }
 `
