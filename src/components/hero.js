@@ -57,6 +57,7 @@ const HeroWrapper = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
   @media screen and (max-width: 1000px) {
     flex-basis: 100%;
@@ -138,6 +139,7 @@ const TextWrapper = styled.div`
   position: absolute;
   z-index: 5;
   padding-top: 25rem;
+  padding-bottom: 10rem;
 
   @media (max-width: 1000px) {
     flex-basis: 50%;
