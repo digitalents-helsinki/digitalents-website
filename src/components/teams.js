@@ -5,19 +5,25 @@ import mediaImg from '../images/Media_kuva.png'
 import ictImg from '../images/ICT_kuva.png'
 import softdevImg from '../images/Softdev_kuva.png'
 
-const Teams = props => {
-  return (
-    <TeamsWrapper>
-      <h3>{props.data.teamsTitle}</h3>
+/*
       <div className="teams">
         {props.data.teamsText.map(text => {
           return <h4>{text}</h4>
         })}
       </div>
+*/
+
+const Teams = props => {
+  return (
+    <TeamsWrapper>
+      <h3>{props.data.teamsTitle}</h3>
       <div className="images">
-        <Link to={`${props.pagePrefix}/media`}><img src={mediaImg} alt="" /></Link>
-        <Link to={`${props.pagePrefix}/softdev`}><img src={softdevImg} alt="" /></Link>
-        <Link to={`${props.pagePrefix}/ict`}><img src={ictImg} alt="" /></Link>
+        <h3>MEDIA</h3>
+        <Link to={`${props.pagePrefix}media`}><img src={mediaImg} alt="" /></Link>
+        <h3>SOFTDEV</h3>
+        <Link to={`${props.pagePrefix}softdev`}><img src={softdevImg} alt="" /></Link>
+        <h3>ICT</h3>
+        <Link to={`${props.pagePrefix}ict`}><img src={ictImg} alt="" /></Link>
       </div>
     </TeamsWrapper>
   )
@@ -35,104 +41,73 @@ const TeamsWrapper = styled.div`
     font-size: 30px;
   }
 
-  .teams {
-    display: flex;
-    flex-flow: row wrap;
-    padding-top: 4rem;
-    font-size: 30px;
-
-    h4 {
-      text-transform: uppercase;
-      font-weight: 700;
-      flex-basis: 50%;
-
-      @media screen and (max-width: 1000px) {
-        font-size: 20px;
-      }
-    }
-
-    h4:nth-child(1) {
-      transform: translate(150px, 43px);
-    }
-
-    h4:nth-child(2) {
-      transform: translate(-160px, 43px);
-    }
-
-    h4:nth-child(3) {
-      flex-basis: 100%;
-      transform: translateY(16rem);
-    }
-
-    @media screen and (max-width: 1000px) {
-      h4:nth-child(1) {
-        transform: translate(-2rem, 30px);
-      }
-
-      h4:nth-child(2) {
-        transform: translate(1rem, 30px);
-      }
-
-      h4:nth-child(3) {
-        transform: translateY(15rem);
-      }
-    }
-
-    @media screen and (max-width: 500px) {
-      h4:nth-child(1) {
-        transform: translate(-2rem, 0.5rem);
-      }
-
-      h4:nth-child(2) {
-        transform: translate(1rem, 0.5rem);
-      }
-
-      h4:nth-child(3) {
-        transform: translateY(6.5rem);
-      }
-    }
-  }
-
   .images {
-    position: relative;
-    top: -4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
 
     img {
-      transform: rotate(45deg);
       width: 150px;
       height: 150px;
       object-fit: none;
       display: inline-block;
     }
 
-    a:nth-child(1) img {
-      transform: rotate(45deg) translate(25px, -30px);
+    a:nth-of-type(1) img {
+      transform: translate(75px, 0px) rotate(45deg);
     }
 
-    a:nth-child(2) img {
-      transform: rotate(45deg) translate(75px, 75px);
+    h3:nth-of-type(1) {
+      transform: translate(25px, 10px);
     }
 
-    a:nth-child(3) img {
-      transform: rotate(45deg) translate(-30px, 25px);
+    a:nth-of-type(2) img {
+      transform: translate(-75px, 120px) rotate(45deg);
     }
 
-    @media screen and (max-width: 500px) {
+    h3:nth-of-type(2) {
+      transform: translate(55px, 260px);
+    }
+
+    a:nth-of-type(3) img {
+      transform: translate(-135px, 0px) rotate(45deg);
+    }
+
+    h3:nth-of-type(3) {
+      transform: translate(110px, 10px);
+    }
+
+    @media screen and (max-width: 750px) {
+      padding-left: 25px;
+
       img {
         width: 75px;
         height: 75px;
       }
 
-      a:nth-child(1) img {
-        transform: rotate(45deg) translate(25px, -3px);
+      a:nth-of-type(1) img {
+        transform: translate(40px, 0px) rotate(45deg);
       }
 
-      a:nth-child(2) img {
-        transform: rotate(45deg) translate(50px, 50px);
+      h3:nth-of-type(1) {
+        transform: translate(0px, 10px);
       }
 
-      a:nth-child(3) img {
-        transform: rotate(45deg) translate(-3px, 25px);
+      a:nth-of-type(2) img {
+        transform: translate(-100px, 60px) rotate(45deg);
+      }
+
+      h3:nth-of-type(2) {
+        transform: translate(0px, 150px);
+      }
+
+      a:nth-of-type(3) img {
+        transform: translate(-155px, 0px) rotate(45deg);
+      }
+
+      h3:nth-of-type(3) {
+        transform: translate(0px, 10px);
       }
     }
   }
