@@ -32,31 +32,31 @@ const teamTemplate = (props) => {
           <a href={link}>{link}</a>
         </div>
       </HeroWrapper>
-      <PortfolioWrapper>
-        {portfolioEnabled ?
-        <BGImg fluid={portfolioBG.fluid}>
-          <div className="flex-div">
-            <div className="left">
-              <Diamond />
-              <a href="https://vimeo.com/294134648"><Diamond /></a>
-              <Diamond />
+      {portfolioEnabled ?
+        <PortfolioWrapper>
+          <BGImg fluid={portfolioBG.fluid}>
+            <div className="flex-div">
+              <div className="left">
+                <Diamond />
+                <a href="https://vimeo.com/294134648"><Diamond /></a>
+                <Diamond />
+              </div>
+              <div className="middle">
+                <Diamond />
+                <a href="https://www.youtube.com/watch?v=iZOI_A7uYoI"><Diamond /></a>
+                <Diamond />
+                <a href="https://www.youtube.com/watch?v=tkWuwdB2K3k"><Diamond /></a>
+                <Diamond />
+              </div>
+              <div className="right">
+                <Diamond />
+                <a href="https://www.youtube.com/watch?v=eMIrofxQtKo"><Diamond /></a>
+                <Diamond />
+              </div>
             </div>
-            <div className="middle">
-              <Diamond />
-              <a href="https://www.youtube.com/watch?v=iZOI_A7uYoI"><Diamond /></a>
-              <Diamond />
-              <a href="https://www.youtube.com/watch?v=tkWuwdB2K3k"><Diamond /></a>
-              <Diamond />
-            </div>
-            <div className="right">
-              <Diamond />
-              <a href="https://www.youtube.com/watch?v=eMIrofxQtKo"><Diamond /></a>
-              <Diamond />
-            </div>
-          </div>
-        </BGImg>
-        : null}
-      </PortfolioWrapper>
+          </BGImg>
+        </PortfolioWrapper>
+      : null}
     </Layout>
   )
 }
