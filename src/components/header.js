@@ -28,13 +28,13 @@ const Header = props => {
                 {teamClick ? (
                   <Fragment>
                     <div className="teamlink">
-                      <Link to={`${props.pagePrefix}/media`}>Media</Link>
+                      <Link to={`${props.pagePrefix}/media/`}>Media</Link>
                     </div>
                     <div className="teamlink">
-                      <Link to={`${props.pagePrefix}/ict`}>ICT</Link>
+                      <Link to={`${props.pagePrefix}/ict/`}>ICT</Link>
                     </div>
                     <div className="teamlink">
-                      <Link to={`${props.pagePrefix}/softdev`}>SoftDev</Link>
+                      <Link to={`${props.pagePrefix}/softdev/`}>SoftDev</Link>
                     </div>
                   </Fragment>
                 ) : null}
