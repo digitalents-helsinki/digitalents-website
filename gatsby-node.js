@@ -68,7 +68,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
         result.data.otheren.edges.forEach((edge) => {
           createPage({
-            path: `/en/${edge.node.teamSlug}/`,
+            path: `/en/${edge.node.teamSlug}`,
             component: teamTemplate,
             context: {
               slug: edge.node.teamSlug,
@@ -78,7 +78,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
         result.data.otherfi.edges.forEach((edge) => {
           createPage({
-            path: `/fi/${edge.node.teamSlug}/`,
+            path: `/fi/${edge.node.teamSlug}`,
             component: teamTemplate,
             context: {
               slug: edge.node.teamSlug,
