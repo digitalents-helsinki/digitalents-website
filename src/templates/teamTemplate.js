@@ -155,7 +155,7 @@ const FlexWrapper = styled.div`
       width: 100%;
   
       .team-front-image {
-        box-shadow: 0 0 50px white;
+        box-shadow: 0 0 0 3px white, inset 0 0 0 3px white;
       }
     }
   }
