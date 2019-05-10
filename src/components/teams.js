@@ -55,7 +55,7 @@ const TeamsWrapper = styled.div`
     }
 
     a:nth-of-type(1) img {
-      transform: translate(75px, 0px) rotate(45deg);
+      transform: translate(80px, 0px) rotate(45deg);
     }
 
     h3:nth-of-type(1) {
@@ -71,7 +71,7 @@ const TeamsWrapper = styled.div`
     }
 
     a:nth-of-type(3) img {
-      transform: translate(-135px, 0px) rotate(45deg);
+      transform: translate(-145px, 0px) rotate(45deg);
     }
 
     h3:nth-of-type(3) {

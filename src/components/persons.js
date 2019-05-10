@@ -41,6 +41,7 @@ const PersonsWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
   padding: 2rem 0;
+  margin-left: 5%;
 
   @media screen and (min-width: 1024px) {
     margin-left: 20%;
@@ -55,9 +56,11 @@ const PersonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-basis: 50%;
+  max-width: 50%;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     flex-basis: 100%;
+    max-width: 100%;
   }
 
   .point-wrapper {
