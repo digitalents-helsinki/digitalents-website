@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import stripedIMG from '../images/podcast_henkilot_bg_ilman_yläkulmaa.svg'
+import stripedIMG from '../images/persons_bg.svg'
 
 const Persons = props => {
   return (
