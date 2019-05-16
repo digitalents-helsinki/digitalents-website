@@ -25,7 +25,6 @@ const Hero = props => {
             return <h1 className="heroh1">{text}</h1>
           })}
           <p className="embed">{props.data.heroLowerText}</p>
-          <img src={angleIcon} alt="" />
         </TextWrapper>
         <RightImage>
           <BGImg
@@ -41,6 +40,7 @@ const Hero = props => {
         </RightImage>
       </HeroWrapper>
       <TextContent>
+        <img src={angleIcon} alt="" />
         <div
           dangerouslySetInnerHTML={{
             __html: props.data.textContent.childMarkdownRemark.html
@@ -123,11 +123,9 @@ const TextWrapper = styled.div`
   align-items: center;
   position: absolute;
   z-index: 5;
-  padding-top: 35rem;
-  padding-bottom: 10rem;
   height: 100vh;
 
-  @media (max-width: 1000px) {
+  @media screen and (max-width: 1000px) {
     padding-top: 40%;
     padding-bottom: 0;
     justify-content: flex-end;
@@ -136,10 +134,14 @@ const TextWrapper = styled.div`
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 3.5rem;
     font-weight: bold;
     text-transform: uppercase;
     font-family: futura-pt-bold;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 2rem;
+    }
   }
 
   p {
@@ -153,31 +155,28 @@ const TextWrapper = styled.div`
       padding-top: 1rem;
     }
   }
-
-  img {
-    padding-top: 4rem;
-    width: 50px;
-
-    @media (min-width: 1000px) {
-      padding-top: 10rem;
-    }
-  }
 `
 
 const TextContent = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
+  align-items: center;
   flex-direction: column;
-  padding-top: 10rem;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 3rem;
 
   @media screen and (min-width: 1000px) {
-    padding-top: 2rem;
     padding-left: 10rem;
     padding-right: 10rem;
+  }
+
+  img {
+    width: 50px;
+    padding-bottom: 1rem;
+    position: relative;
+    top: -2rem;
   }
 
   div {
