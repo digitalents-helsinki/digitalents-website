@@ -60,7 +60,7 @@ const HeroWrapper = styled.div`
   overflow: hidden;
 
   @media screen and (max-width: 1000px) {
-    align-items: flex-start;
+    flex-basis: 100%;
   }
 
   .spacer {
@@ -102,13 +102,15 @@ const RightImage = styled.div`
   @media (max-width: 1000px) {
     display: flex;
     flex-flow: row nowrap;
+    flex-basis: 100%;
     justify-content: flex-end;
-    height: 650px;
 
     .rightImage {
-      width: 75%;
+      width: 50%;
+      height: 100%;
 
       .rightTopImage {
+        height: 100%;
       }
     }
   }
@@ -126,8 +128,9 @@ const TextWrapper = styled.div`
   height: 100vh;
 
   @media (max-width: 1000px) {
+    padding-top: 40%;
     padding-bottom: 0;
-    align-self: flex-end;
+    justify-content: flex-end;
     max-width: 300px;
     height: 50%;
   }
@@ -152,7 +155,7 @@ const TextWrapper = styled.div`
   }
 
   img {
-    padding-top: 1rem;
+    padding-top: 4rem;
     width: 50px;
 
     @media (min-width: 1000px) {
@@ -166,6 +169,7 @@ const TextContent = styled.div`
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  padding-top: 10rem;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 3rem;

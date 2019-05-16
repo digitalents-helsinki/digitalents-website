@@ -42,7 +42,6 @@ const PersonsWrapper = styled.div`
   flex-flow: row wrap;
   padding: 2rem 0;
   margin-left: 5%;
-  margin-bottom: 5rem;
 
   @media screen and (min-width: 1024px) {
     margin-left: 20%;
