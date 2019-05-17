@@ -146,7 +146,7 @@ const FlexWrapper = styled.div`
 
       h2 {
         text-align: center;
-        padding-top: 30rem;
+        padding-top: 20rem;
       }
     }
 
@@ -188,7 +188,7 @@ const FlexWrapper = styled.div`
       width: 50px;
       position: absolute;
       top: 85%;
-      left: 50%;
+      left: 45%;
     }
   }
 }
