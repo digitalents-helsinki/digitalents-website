@@ -146,7 +146,7 @@ const FlexWrapper = styled.div`
       h2 {
         font-size: 1rem;
         text-align: center;
-        padding-top: 20rem;
+        padding-top: 50vh;
       }
     }
 
