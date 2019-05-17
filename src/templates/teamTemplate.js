@@ -69,7 +69,7 @@ const HeroWrapper = styled.div`
     justify-content: center;
 
     .description {
-      padding-top: 5rem;
+      padding-top: 0rem;
       padding-left: 2rem;
       padding-right: 2rem;
       padding-bottom: 3rem;
@@ -146,7 +146,7 @@ const FlexWrapper = styled.div`
       h2 {
         font-size: 1rem;
         text-align: center;
-        padding-top: 15rem;
+        padding-top: 20rem;
       }
     }
 
@@ -187,7 +187,7 @@ const FlexWrapper = styled.div`
       display: inline-block;
       width: 50px;
       position: absolute;
-      top: 85%;
+      top: 90%;
       left: 45%;
     }
   }
