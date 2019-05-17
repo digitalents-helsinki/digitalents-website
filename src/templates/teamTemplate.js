@@ -235,14 +235,14 @@ const PortfolioWrapper = styled.div`
     }
 
     @media screen and (max-width: 1000px) {
+      padding-top: 15%;
+      padding-bottom: 0;
       flex-flow: column nowrap;
-      padding-bottom: 20%;
 
       .left {
-        padding-top: 15%;
         display: flex;
         padding-right: 0;
-        flex: 1;
+        flex-basis: 40%;
 
         a:nth-child(2) div {
           transform: translateY(75px) rotate(45deg);
@@ -252,7 +252,7 @@ const PortfolioWrapper = styled.div`
       .middle {
         display: flex;
         flex-flow: column nowrap;
-        flex: 2.5;
+        flex-basis: 100%;
 
         a:nth-child(2) div {
           transform: translateX(-75px) rotate(45deg);
@@ -266,7 +266,7 @@ const PortfolioWrapper = styled.div`
       .right {
         display: flex;
         padding-left: 0;
-        flex: 0;
+        flex-basis: 50%;
 
         a:nth-child(2) div {
           transform: translateY(-75px) rotate(45deg);
