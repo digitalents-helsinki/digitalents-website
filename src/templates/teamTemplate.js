@@ -106,7 +106,7 @@ const FlexWrapper = styled.div`
   flex-flow: row nowrap;
   justify-content: ${props => props.position ? "flex-start" : "flex-end"};
   width: 100vw;
-  heigth: 100vh;
+  height: 100vh;
 
   .titleText {
     padding-left: 3rem;
@@ -132,15 +132,18 @@ const FlexWrapper = styled.div`
     }
 
     @media screen and (max-width: 800px) {
+      left: 0;
       padding-left: 0;
 
       h1 {
         font-size: 1.5rem;
+        position: absolute;
+        left: 40%;
       }
 
       h2 {
         text-align: center;
-        padding-top: 10rem;
+        padding-top: 20rem;
       }
     }
 
@@ -163,7 +166,7 @@ const FlexWrapper = styled.div`
   }
 
   .imageWrapper {
-    width: 65%;
+    width: 100%;
   
     .team-background-image {
       width: 100%;
