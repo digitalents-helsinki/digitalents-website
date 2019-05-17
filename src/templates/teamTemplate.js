@@ -5,6 +5,8 @@ import Layout from '../components/layout'
 import BGImg from 'gatsby-background-image'
 import styled from 'styled-components'
 
+import arrIcon from '../images/angledown.svg'
+
 const teamTemplate = (props) => {
   const { teamTitle, showPageTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition, link, portfolioEnabled, portfolioBG } = props.data.contentfulPageTemplate
 
@@ -24,6 +26,7 @@ const teamTemplate = (props) => {
               <img src={teamMaskImage.file.url} alt="" className="team-front-image" />
             </BGImg>
           </div>
+          <img src={arrIcon} alt="" className="arrIcon" />
         </FlexWrapper>
         <div className="wrapper">
           <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />
@@ -138,12 +141,12 @@ const FlexWrapper = styled.div`
       h1 {
         font-size: 1.5rem;
         position: absolute;
-        left: 40%;
+        left: ${props => props.position ?  "40%" : "0"};
       }
 
       h2 {
         text-align: center;
-        padding-top: 20rem;
+        padding-top: 30rem;
       }
     }
 
@@ -174,6 +177,18 @@ const FlexWrapper = styled.div`
       .team-front-image {
         box-shadow: 0 0 0 3px white, inset 0 0 0 3px white;
       }
+    }
+  }
+
+  .arrIcon {
+    display: none;
+
+    @media screen and (max-width: 600px) {
+      display: inline-block;
+      width: 50px;
+      position: absolute;
+      top: 85%;
+      left: 50%;
     }
   }
 }
@@ -221,11 +236,13 @@ const PortfolioWrapper = styled.div`
 
     @media screen and (max-width: 1000px) {
       flex-flow: column nowrap;
+      padding-bottom: 20%;
 
       .left {
+        padding-top: 15%;
         display: flex;
         padding-right: 0;
-        padding-bottom: 15%;
+        flex: 1;
 
         a:nth-child(2) div {
           transform: translateY(75px) rotate(45deg);
@@ -235,6 +252,7 @@ const PortfolioWrapper = styled.div`
       .middle {
         display: flex;
         flex-flow: column nowrap;
+        flex: 2.5;
 
         a:nth-child(2) div {
           transform: translateX(-75px) rotate(45deg);
@@ -248,7 +266,7 @@ const PortfolioWrapper = styled.div`
       .right {
         display: flex;
         padding-left: 0;
-        padding-top: 15%;
+        flex: 0;
 
         a:nth-child(2) div {
           transform: translateY(-75px) rotate(45deg);
