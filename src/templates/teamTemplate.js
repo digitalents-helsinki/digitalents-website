@@ -67,7 +67,7 @@ const HeroWrapper = styled.div`
     justify-content: center;
 
     .description {
-      padding-top: 3rem;
+      padding-top: 5rem;
       padding-left: 2rem;
       padding-right: 2rem;
       padding-bottom: 3rem;
@@ -118,6 +118,7 @@ const FlexWrapper = styled.div`
     left: ${props => props.position ? "50%" : "0"};
 
     h1 {
+      padding-left: 1rem;
       text-transform: uppercase;
       font-weight: 700;
       font-size: 3rem;
@@ -128,6 +129,19 @@ const FlexWrapper = styled.div`
       padding-top: 2rem;
       font-weight: 400;
       font-size: 1.25rem;
+    }
+
+    @media screen and (max-width: 800px) {
+      padding-left: 0;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        text-align: center;
+        padding-top: 10rem;
+      }
     }
 
     @media screen and (min-width: 1000px) {
