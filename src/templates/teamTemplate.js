@@ -1,10 +1,9 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
-
-import Layout from '../components/layout'
+import { graphql } from 'gatsby'
 import BGImg from 'gatsby-background-image'
 import styled from 'styled-components'
 
+import Layout from '../components/layout'
 import arrIcon from '../images/angledown.svg'
 
 const teamTemplate = (props) => {
@@ -141,12 +140,13 @@ const FlexWrapper = styled.div`
       h1 {
         font-size: 1.5rem;
         position: absolute;
-        left: ${props => props.position ?  "40%" : "0"};
+        left: ${props => props.position ?  "20%" : "0"};
       }
 
       h2 {
+        font-size: 1rem;
         text-align: center;
-        padding-top: 20rem;
+        padding-top: 15rem;
       }
     }
 
