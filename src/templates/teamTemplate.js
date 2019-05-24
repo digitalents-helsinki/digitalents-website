@@ -173,6 +173,7 @@ const FlexWrapper = styled.div`
 
   .imageWrapper {
     width: 100vw;
+    overflow: hidden;
   
     .team-background-image {
       width: 100vw;
@@ -185,7 +186,6 @@ const FlexWrapper = styled.div`
 
     @media screen and (max-width: 725px) {
       height: 70vh;
-      overflow: hidden;
 
       .team-background-image {
         position: relative !important;
