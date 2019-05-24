@@ -46,6 +46,7 @@ const LocationWrapper = styled.div`
   .map {
     padding-top: 25px;
     padding-bottom: 50px;
+    pointer-events: none;
   }
 `
 

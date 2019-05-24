@@ -67,6 +67,7 @@ const HeroWrapper = styled.div`
   .wrapper {
     display: flex;
     justify-content: center;
+    width: 100vw;
 
     .description {
       padding-top: 0rem;
@@ -74,6 +75,8 @@ const HeroWrapper = styled.div`
       padding-right: 2rem;
       padding-bottom: 3rem;
       max-width: 800px;
+      z-index: 10;
+      background-color: white;
 
       p {
         font-size: 20px;
@@ -146,7 +149,7 @@ const FlexWrapper = styled.div`
       h2 {
         font-size: 1rem;
         text-align: center;
-        padding-top: 50vh;
+        padding-top: 60vh;
       }
     }
 
@@ -169,13 +172,23 @@ const FlexWrapper = styled.div`
   }
 
   .imageWrapper {
-    width: 100%;
+    width: 100vw;
   
     .team-background-image {
-      width: 100%;
+      width: 100vw;
   
       .team-front-image {
         box-shadow: 0 0 0 3px white, inset 0 0 0 3px white;
+      }
+      position: static !important;
+    }
+
+    @media screen and (max-width: 725px) {
+      height: 70vh;
+      overflow: hidden;
+
+      .team-background-image {
+        position: relative !important;
       }
     }
   }
