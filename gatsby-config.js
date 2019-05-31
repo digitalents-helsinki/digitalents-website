@@ -1,13 +1,15 @@
 const config = require('./config/env')
+const { BLOCKS, INLINES } = require('@contentful/rich-text-types')
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Digitalents Helsinki`,
+    description: `No description needed.`,
     author: `@digitalentsHKI`
   },
   plugins: [
     'gatsby-transformer-remark',
+    'gatsby-plugin-netlify',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
@@ -21,8 +23,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `digitalents-website`,
+        short_name: `digitalents`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -33,8 +35,23 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: config.get('contentful.spaceId'),
-        accessToken: config.get('contentful.accessToken')
+        spaceId: process.env.CONTENTFUL_SPACE_ID || config.get('contentful.spaceId'),
+        accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN || config.get('contentful.accessToken')
+      }
+    },
+    {
+      resolve: `@contentful/gatsby-transformer-contentful-richtext`,
+      options: {
+        renderOptions: {
+          renderNode: {
+          }
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
