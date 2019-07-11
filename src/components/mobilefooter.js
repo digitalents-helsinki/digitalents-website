@@ -16,10 +16,10 @@ const MobileFooter = (props) => {
         <Link to={`${props.pagePrefix}/ict`}>DT ICT</Link>
         <Link to={`${props.pagePrefix}/softdev`}>DT SOFTDEV</Link>
         <Link to={`${props.pagePrefix}/#persons`}>{props.language === 'en' ? 'CONTACT' : 'YHTEYSTIEDOT' }</Link>
-        <Link to={`${props.pagePrefix}/tyopaikat`}>{props.language === 'en' ? 'WORK' : 'TYÖPAIKAT'}</Link>
+        <Link to={`${props.pagePrefix}/tyopaikat`}>{props.language === 'en' ? 'WORK PLACES' : 'TYÖPAIKAT'}</Link>
       </div>
       <div className="social-icons">
-        <h3>SEURAA MEITÄ:</h3>
+        <h3>{props.language === 'fi' ? 'SEURAA MEITÄ:' : 'FOLLOW US:'}</h3>
         <a href="https://twitter.com/digitalentshki">
           <img src={twIcon} alt="" />
         </a>
@@ -41,7 +41,7 @@ const MobileFooter = (props) => {
         </div>
         <div className="postaddress">
           <p>PL18402, 00099</p>
-          <p>Helsingin kaupunki</p>
+          <p>{props.language === 'fi' ? 'Helsingin kaupunki' : 'City of Helsinki'}</p>
         </div>
         <img src={helLogo} alt="" />
       </div>

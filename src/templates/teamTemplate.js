@@ -21,9 +21,7 @@ const teamTemplate = (props) => {
             <h2>{teamSlogan}</h2>
           </div>
           <div className="imageWrapper">
-            <BGImg fluid={teamImage.fluid} className="team-background-image">
-              <img src={teamMaskImage.file.url} alt="" className="team-front-image" />
-            </BGImg>
+            <img src={teamImage.file.url} alt="" />
           </div>
           <img src={arrIcon} alt="" className="arrIcon" />
         </FlexWrapper>
@@ -172,24 +170,13 @@ const FlexWrapper = styled.div`
   }
 
   .imageWrapper {
-    width: 100vw;
-    overflow: hidden;
-  
-    .team-background-image {
-      width: 100vw;
-  
-      .team-front-image {
-        box-shadow: 0 0 0 3px white, inset 0 0 0 3px white;
-      }
-      position: static !important;
-    }
+    img {
+      height: 100vh;
 
-    @media screen and (max-width: 725px) {
-      height: 70vh;
-
-      .team-background-image {
-        position: relative !important;
-      }
+      @media screen and (max-width: 500px) {
+        height: 50vh;
+        width: 50vh;
+      } 
     }
   }
 
@@ -346,8 +333,8 @@ export const pageQuery = graphql`
         }
       }
       teamImage {
-        fluid(maxWidth: 350) {
-          ...GatsbyContentfulFluid
+        file {
+          url
         }
       }
       teamMaskImage {
