@@ -73,7 +73,6 @@ const HeroWrapper = styled.div`
       padding-right: 2rem;
       padding-bottom: 3rem;
       max-width: 800px;
-      z-index: 10;
       background-color: white;
 
       p {
