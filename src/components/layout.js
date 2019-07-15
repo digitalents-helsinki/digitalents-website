@@ -20,7 +20,7 @@ const Layout = props => {
   })
 
   const setView = () => {
-    if (window.innerWidth >= 1000) {
+    if (window.innerWidth >= 1200) {
       setMobile(false)
     } else {
       setMobile(true)
