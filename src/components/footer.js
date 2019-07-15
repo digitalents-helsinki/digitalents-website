@@ -21,11 +21,6 @@ const FooterColumn = props => {
             {props.language === 'en' ? 'JOBS' : 'TYÖPAIKAT'}
           </Link>
         </div>
-        <div className="leftLower">
-          {props.lowerData.map(n => {
-            return <p key={n}>{n}</p>
-          })}
-        </div>
         <img src={HelLogo} alt="" />
       </div>
     )
