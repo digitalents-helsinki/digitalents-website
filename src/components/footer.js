@@ -18,7 +18,7 @@ const FooterColumn = props => {
             {props.language === 'en' ? 'CONTACT' : 'YHTEYSTIEDOT'}
           </Link>
           <Link to={`${props.pagePrefix}/tyopaikat/`}>
-            {props.language === 'en' ? 'WORK' : 'TYÖPAIKAT'}
+            {props.language === 'en' ? 'JOBS' : 'TYÖPAIKAT'}
           </Link>
         </div>
         <div className="leftLower">

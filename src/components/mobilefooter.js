@@ -16,7 +16,7 @@ const MobileFooter = (props) => {
         <Link to={`${props.pagePrefix}/ict`}>DT ICT</Link>
         <Link to={`${props.pagePrefix}/softdev`}>DT SOFTDEV</Link>
         <Link to={`${props.pagePrefix}/#persons`}>{props.language === 'en' ? 'CONTACT' : 'YHTEYSTIEDOT' }</Link>
-        <Link to={`${props.pagePrefix}/tyopaikat`}>{props.language === 'en' ? 'WORK PLACES' : 'TYÖPAIKAT'}</Link>
+        <Link to={`${props.pagePrefix}/tyopaikat`}>{props.language === 'en' ? 'JOBS' : 'TYÖPAIKAT'}</Link>
       </div>
       <div className="social-icons">
         <h3>{props.language === 'fi' ? 'SEURAA MEITÄ:' : 'FOLLOW US:'}</h3>

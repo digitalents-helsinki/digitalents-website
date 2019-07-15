@@ -30,7 +30,7 @@ const BurgerMenu = (props) => {
         </ul>
         <ul>
           <li><Link to={`${props.pagePrefix}/#persons`}>{props.language === 'en' ? 'CONTACT' : 'YHTEYSTIEDOT'}</Link></li>
-          <li><Link to={`${props.pagePrefix}/tyopaikat/`}>{props.language === 'en' ? 'WORK' : 'TYÖPAIKAT'}</Link></li>
+          <li><Link to={`${props.pagePrefix}/tyopaikat/`}>{props.language === 'en' ? 'JOBS' : 'TYÖPAIKAT'}</Link></li>
         </ul>
       </div>
       <div className="langOptions">
