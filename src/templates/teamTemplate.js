@@ -29,7 +29,7 @@ const teamTemplate = (props) => {
           <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />
         </div>
         <div className="link">
-          <a href={link}>{link}</a>
+          <a href={link} target="_blank" rel="noopener noreferrer">{link}</a>
         </div>
       </HeroWrapper>
       {portfolioEnabled ?
