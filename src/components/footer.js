@@ -21,6 +21,10 @@ const FooterColumn = props => {
             {props.language === 'en' ? 'JOBS' : 'TYÖPAIKAT'}
           </Link>
         </div>
+        <div className="leftLower">
+          <p onClick={props.handleRegisterClick}>{props.language === 'en' ? 'REGISTER' : 'REKISTERISELOSTE'}</p>
+          <p onClick={props.handleCookieClick}>{props.language === 'en' ? 'COOKIES': 'EVÄSTEET'}</p>
+        </div>
         <img src={HelLogo} alt="" />
       </div>
     )
@@ -80,6 +84,8 @@ const Footer = props => {
               lowerData={footer.node.footerLeftLowerColumn}
               pagePrefix={props.pagePrefix}
               language={props.language}
+              handleRegisterClick={props.handleRegisterClick}
+              handleCookieClick={props.handleCookieClick}
             />
             <FooterColumn
               position="middle"
@@ -135,6 +141,8 @@ const FooterQuery = props => (
         language={props.language}
         data={data}
         pagePrefix={props.pagePrefix}
+        handleRegisterClick={props.handleRegisterClick}
+        handleCookieClick={props.handleCookieClick}
       />
     )}
   />
