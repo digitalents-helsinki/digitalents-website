@@ -10,13 +10,13 @@ const SomeContent = props => {
       </div>
       <ContentWrapper>
         <div className="podcasts">
-          <h3>Podcastit</h3>
+          <h3>{props.language === 'fi' ? 'Podcastit' : 'Podcasts'}</h3>
           {props.data.podcastLinks.map(link => {
             return <a href={link.linkURL}>{link.linkText}</a>
           })}
         </div>
         <div className="learning-material">
-          <h3>Oppimateriaali</h3>
+          <h3>{props.language === 'fi' ? 'Oppimateriaali' : 'Learning material'}</h3>
           {props.data.learningLinks.map(link => {
             return <a href={link.linkURL}>{link.linkText}</a>
           })}
@@ -70,6 +70,7 @@ const ContentWrapper = styled.div`
   flex-basis: 100%;
   flex-flow: row nowrap;
   padding-bottom: 100px;
+  width: 400px;
 
   @media screen and (min-width: 1000px) {
     width: 800px;

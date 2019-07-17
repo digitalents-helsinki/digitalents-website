@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { createGlobalStyle } from 'styled-components'
 import { reset } from 'styled-reset'
 import { navigateTo } from 'gatsby'
+import styled from 'styled-components'
 
 import Header from './header'
 import BurgerMenu from './burgermenu'
@@ -13,6 +14,8 @@ const Layout = props => {
   const [language, setLanguage] = useState(props.language)
   const [pagePrefix, setPagePrefix] = useState(props.pagePrefix)
   const [mobile, setMobile] = useState(true)
+  const [registerVisible, setRegisterVisible] = useState(false)
+  const [cookieVisible, setCookieVisible] = useState(false)
 
   useEffect(() => {
     setView()
@@ -20,7 +23,7 @@ const Layout = props => {
   })
 
   const setView = () => {
-    if (window.innerWidth >= 1000) {
+    if (window.innerWidth >= 1200) {
       setMobile(false)
     } else {
       setMobile(true)
@@ -39,6 +42,14 @@ const Layout = props => {
     navigateTo('/en/')
   }
 
+  const handleRegisterClick = () => {
+    setRegisterVisible(!registerVisible)
+    console.log('test')
+  }
+
+  const handleCookieClick = () => {
+    setCookieVisible(!cookieVisible)
+  }
   const navElement = mobile ? (
     <BurgerMenu
       handleFiClick={handleFiClick}
@@ -57,18 +68,38 @@ const Layout = props => {
   const footerElement = mobile ? (
     <MobileFooter language={language} pagePrefix={pagePrefix} />
   ) : (
-    <Footer language={language} pagePrefix={pagePrefix} />
+    <Footer language={language} pagePrefix={pagePrefix} handleRegisterClick={handleRegisterClick} handleCookieClick={handleCookieClick} />
   )
 
   return (
     <Fragment>
       <GlobalStyle />
       {navElement}
+      {cookieVisible ? <Cookie><p>{language === 'en' ? 'This site use cookies to improve user experience.' : 'Tällä sivustolla käytetään evästeitä käyttäjäkokemuksen parantamiseksi.'}</p><button onClick={handleCookieClick}>{language === 'en' ? 'Close' : 'Sulje'}</button></Cookie> : null}
+      {registerVisible ? <Register><p>{language === 'fi' ? 'Digitalents Helsinki ei kerää tämän sivuston kautta mitään henkilötietoja eikä muutakaan dataa kävijöistä. Sivusto on informatiivinen, jolla esitellään Digitalents Helsinki toimintaa. Kysymykset sivustosta voidaan ohjata Digitalents Helsinki osoitteeseen.' : 'Digitalents Helsinki do not collect any personal information nor other data on those visiting the site. Pages are informative presenting Digitalents Helsinki. If you have any questions concerning site practises you can address your questions to Digitalents Helsinki.'}</p><button onClick={handleRegisterClick}>{language === 'en' ? 'Close' : 'Sulje'}</button></Register> : null}
       <main>{props.children}</main>
       {footerElement}
     </Fragment>
   )
 }
+
+const Cookie = styled.div`
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+`
+
+const Register = styled.div`
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+`
 
 const GlobalStyle = createGlobalStyle`
   ${reset}

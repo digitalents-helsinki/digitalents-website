@@ -135,13 +135,23 @@ const HeaderWrapper = styled.header`
 `
 
 const LogoWrapper = styled.div`
-  margin-left: 7rem;
   display: block;
   overflow: hidden;
+  display: flex;
+  padding-left: 7rem;
+
+  @media screen and (max-width: 1400px) {
+    padding-left: 4rem;
+  }
 
   img {
     padding-top: 10px;
     height: 70px;
+  
+    @media screen and (max-width: 1400px) {
+      align-self: center;
+      height: 50px;
+    }
   }
 `
 

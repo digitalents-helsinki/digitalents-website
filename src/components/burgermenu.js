@@ -5,18 +5,22 @@ import { Link } from 'gatsby'
 import fbIcon from '../images/facebook_logo_valkoinen.svg'
 import igIcon from '../images/instagram_logo_valkoinen.svg'
 import twIcon from '../images/twitter_logo_valkoinen.svg'
+import openIcon from '../images/ham-nav.png'
+import closeIcon from '../images/exit-cross.png'
 
 const BurgerMenu = (props) => {
   const [visible, setVisible] = useState(false)
+  const [iconVisible, setIconVisible] = useState(true)
 
   const handleClick = () => {
     setVisible(!visible)
+    setIconVisible(!iconVisible)
   }
   
   const sideBarElement = visible ? 
   <SideBar>
     <div className="button">
-      <button onClick={handleClick}>{props.language === 'en' ? 'Close' : 'Sulje'}</button>
+      <img img src={closeIcon} alt="" onClick={handleClick} />
     </div>
     <div className="wrapper">
       <div className="links">
@@ -30,7 +34,7 @@ const BurgerMenu = (props) => {
         </ul>
         <ul>
           <li><Link to={`${props.pagePrefix}/#persons`}>{props.language === 'en' ? 'CONTACT' : 'YHTEYSTIEDOT'}</Link></li>
-          <li><Link to={`${props.pagePrefix}/tyopaikat/`}>{props.language === 'en' ? 'WORK' : 'TYÖPAIKAT'}</Link></li>
+          <li><Link to={`${props.pagePrefix}/tyopaikat/`}>{props.language === 'en' ? 'JOBS' : 'TYÖPAIKAT'}</Link></li>
         </ul>
       </div>
       <div className="langOptions">
@@ -49,15 +53,23 @@ const BurgerMenu = (props) => {
 
   return (
     <header>
-      <BurgerButton onClick={handleClick}>{props.language === 'en' ? 'Open' : 'Avaa'}</BurgerButton>
+      {iconVisible ?
+      <BurgerButton>
+        <img src={openIcon} alt="" onClick={handleClick} />
+      </BurgerButton> : null}
       {sideBarElement}
     </header>
   )
 }
 
-const BurgerButton = styled.button`
+const BurgerButton = styled.div`
   position: fixed;
   z-index: 9;
+  padding-left: 5vw;
+  padding-top: 5vh;
+  img {
+    height: 50px;
+  }
 `
 
 const SideBar = styled.div`
@@ -73,6 +85,16 @@ const SideBar = styled.div`
     color: white;
   }
   .button {
+
+    img {
+      padding-left: 5vw;
+      padding-top: 5vh;
+      height: 50px;
+
+      @media screen and (max-width: 600px) {
+        height: 20px;
+      }
+    }
   }
 
   .wrapper {

@@ -19,7 +19,7 @@ const indexPageTemplate = (props) => {
     <Layout language={language} pagePrefix={pagePrefix}>
       <Hero data={hero} />
       <Teams pagePrefix={pagePrefix} data={teams} />
-      <SomeContent data={someContent} />
+      <SomeContent language={language} data={someContent} />
       <Persons data={personBlocks} />
       <Location data={location} />
       <Sponsors data={sponsorBlocks} />

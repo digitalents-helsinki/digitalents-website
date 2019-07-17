@@ -13,18 +13,17 @@ const FooterColumn = props => {
     return (
       <div className="left">
         <div className="leftUpper">
-          <Link to="">{props.language === 'en' ? 'SERVICES' : 'PALVELUT'}</Link>
+          <p>{props.language === 'en' ? 'SERVICES' : 'PALVELUT'}</p>
           <Link to={`${props.pagePrefix}/#persons`}>
             {props.language === 'en' ? 'CONTACT' : 'YHTEYSTIEDOT'}
           </Link>
           <Link to={`${props.pagePrefix}/tyopaikat/`}>
-            {props.language === 'en' ? 'WORK' : 'TYÖPAIKAT'}
+            {props.language === 'en' ? 'JOBS' : 'TYÖPAIKAT'}
           </Link>
         </div>
         <div className="leftLower">
-          {props.lowerData.map(n => {
-            return <p key={n}>{n}</p>
-          })}
+          <p onClick={props.handleRegisterClick}>{props.language === 'en' ? 'REGISTER' : 'REKISTERISELOSTE'}</p>
+          <p onClick={props.handleCookieClick}>{props.language === 'en' ? 'COOKIES': 'EVÄSTEET'}</p>
         </div>
         <img src={HelLogo} alt="" />
       </div>
@@ -48,9 +47,7 @@ const FooterColumn = props => {
     return (
       <div className="right">
         <div className="rightUpper">
-          {props.upperData.map(n => {
-            return <p key={n}>{n}</p>
-          })}
+          <p>{props.language === 'en' ? 'Follow us' : 'Seuraa meitä'}</p>
         </div>
         <div className="social-icons">
           <a href="https://twitter.com/digitalentshki">
@@ -67,7 +64,7 @@ const FooterColumn = props => {
           </a>
         </div>
         <div className="rightLower">
-          <p>{props.lowerData}</p>
+          <p>#DIGITALENTSHKI</p>
         </div>
       </div>
     )
@@ -87,14 +84,18 @@ const Footer = props => {
               lowerData={footer.node.footerLeftLowerColumn}
               pagePrefix={props.pagePrefix}
               language={props.language}
+              handleRegisterClick={props.handleRegisterClick}
+              handleCookieClick={props.handleCookieClick}
             />
             <FooterColumn
               position="middle"
+              language={props.language}
               upperData={footer.node.footerMiddleUpperColumn}
               lowerData={footer.node.footerMiddleLowerColumn}
             />
             <FooterColumn
               position="right"
+              language={props.language}
               upperData={footer.node.footerRightUpperText}
               lowerData={footer.node.footerRightLowerText}
             />
@@ -140,6 +141,8 @@ const FooterQuery = props => (
         language={props.language}
         data={data}
         pagePrefix={props.pagePrefix}
+        handleRegisterClick={props.handleRegisterClick}
+        handleCookieClick={props.handleCookieClick}
       />
     )}
   />
@@ -197,10 +200,6 @@ const FooterWrapper = styled.footer`
     font-weight: 500;
     padding-top: 3rem;
 
-    @media screen and (max-width: 400px) {
-      order: 3;
-    }
-
     .middleUpper {
       text-transform: uppercase;
       margin-bottom: 1rem;
@@ -214,11 +213,6 @@ const FooterWrapper = styled.footer`
     text-align: center;
     order 3;
     padding-top: 3rem;
-
-
-    @media screen and (max-width: 400px) {
-      order 2;
-    }
 
     .rightUpper {
       text-transform: uppercase;
