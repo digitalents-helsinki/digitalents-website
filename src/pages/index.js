@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 const IndexPage = () => {
   useEffect(() => {
-    window.location = '/fi/'
+    window.location.href = 'http://digitalents.munstadi.fi/fi/'
   })
 
   return null
