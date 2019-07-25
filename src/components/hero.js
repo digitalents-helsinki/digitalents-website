@@ -144,11 +144,16 @@ const TextWrapper = styled.div`
     justify-content: space-between;
     width: 70vw;
 
+    @media screen and (max-width: 1024px) {
+      width: 80vw;
+    }
+
     h1 {
       font-size: 3.5rem;
       font-weight: bold;
       text-transform: uppercase;
       font-family: futura-pt-bold;
+      margin-right: 1rem;
   
       @media screen and (max-width: 1000px) {
         font-size: 2rem;
