@@ -12,7 +12,7 @@ const Header = props => {
   const data = props.language === 'fi' ? props.fiData : props.enData
 
   return (
-    <HeaderWrapper>
+    <HeaderWrapper color={props.headerLight}>
       {data.edges.map(header => {
         return (
           <Fragment>
@@ -115,23 +115,25 @@ const HeaderQuery = props => (
         fiData={data.fi}
         linkData={data.allContentfulPageTemplate}
         pagePrefix={props.pagePrefix}
+        headerLight={props.headerLight}
       />
     )}
   />
 )
 
 const HeaderWrapper = styled.header`
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: ${props => props.color ? "rgba(0, 0, 0, 0.6)" : "rgba(0, 0, 0, 0)"};
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  position: fixed;
+  position: ${props => props.color ? 'fixed' : 'absolute'};
   left: 0;
   right: 0;
   height: 100px;
   text-transform: uppercase;
   z-index: 10;
   color: white;
+  transition: background-color 0.5s;
 `
 
 const LogoWrapper = styled.div`
@@ -146,7 +148,8 @@ const LogoWrapper = styled.div`
 
   img {
     padding-top: 10px;
-    height: 70px;
+    height: 50px;
+    align-self: center;
   
     @media screen and (max-width: 1400px) {
       align-self: center;
@@ -158,7 +161,9 @@ const LogoWrapper = styled.div`
 const NavWrapper = styled.ul`
   display: flex;
   align-items: center;
-  font-size: 20px;
+  font-size: 17px;
+  font-family: futura-pt, sans-serif;
+  font-style: normal;
   font-weight: 700;
   justify-content: center;
   list-style: none;
@@ -167,7 +172,6 @@ const NavWrapper = styled.ul`
     margin-right: 2rem;
     margin-left: 2rem;
     justify-content: left;
-    font-size: 20px;
   }
 
   li:first-child {
@@ -177,7 +181,6 @@ const NavWrapper = styled.ul`
   a {
     text-decoration: none;
     color: white;
-    font-size: 20px;
   }
 `
 
@@ -185,14 +188,15 @@ const LangWrapper = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 700;
   list-style: none;
   padding-right: 7rem;
+  font-family: futura-pt, sans-serif;
+  font-style: normal;
 
   li {
     margin-right: 2rem;
-    font-size: 20px;
   }
 
   li:first-child {

@@ -15,6 +15,11 @@ const indexPageTemplate = (props) => {
   const language = props.pageContext.node_locale === 'en-US' ? 'en' : 'fi'
   const pagePrefix = props.pageContext.node_locale === 'en-US' ? '/en/' : '/fi/'
 
+  if (typeof window !== "undefined") {
+    // eslint-disable-next-line global-require
+    require("smooth-scroll")('a[href*="#"]')
+  }
+
   return (
     <Layout language={language} pagePrefix={pagePrefix}>
       <Hero data={hero} />

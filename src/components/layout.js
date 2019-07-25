@@ -16,10 +16,12 @@ const Layout = props => {
   const [mobile, setMobile] = useState(true)
   const [registerVisible, setRegisterVisible] = useState(false)
   const [cookieVisible, setCookieVisible] = useState(false)
+  const [headerLight, setHeaderLight] = useState(false)
 
   useEffect(() => {
     setView()
     window.addEventListener('resize', setView)
+    window.addEventListener('scroll', setScroll)
   })
 
   const setView = () => {
@@ -27,6 +29,14 @@ const Layout = props => {
       setMobile(false)
     } else {
       setMobile(true)
+    }
+  }
+
+  const setScroll = () => {
+    if (window.scrollY >= window.innerHeight) {
+      setHeaderLight(true)
+    } else {
+      setHeaderLight(false)
     }
   }
 
@@ -44,7 +54,6 @@ const Layout = props => {
 
   const handleRegisterClick = () => {
     setRegisterVisible(!registerVisible)
-    console.log('test')
   }
 
   const handleCookieClick = () => {
@@ -63,6 +72,7 @@ const Layout = props => {
       handleEnClick={handleEnClick}
       language={language}
       pagePrefix={pagePrefix}
+      headerLight={headerLight}
     />
   )
   const footerElement = mobile ? (
@@ -106,6 +116,9 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 18px;
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    font-weight: 400;
   }
 
   body {

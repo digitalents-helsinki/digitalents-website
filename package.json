@@ -24,10 +24,14 @@
     "lodash": "^4.17.11",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-transition-group": "^4.2.1",
+    "smooth-scroll": "^16.1.0",
     "styled-components": "^4.2.0",
-    "styled-reset": "^2.0.10"
+    "styled-reset": "^2.0.10",
+    "video-react": "^0.14.0"
   },
   "devDependencies": {
     "prettier": "^1.17.0",
