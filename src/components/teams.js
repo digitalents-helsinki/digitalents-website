@@ -15,8 +15,7 @@ import softdevImg from '../images/Softdev_kuva.png'
 
 const Teams = props => {
   return (
-    <TeamsWrapper>
-      <h3>{props.data.teamsTitle}</h3>
+    <TeamsWrapper id="teams">
       <div className="images">
         <h3>MEDIA</h3>
         <Link to={`${props.pagePrefix}media`}><img src={mediaImg} alt="" /></Link>
@@ -33,6 +32,10 @@ const TeamsWrapper = styled.div`
   text-align: center;
   padding-bottom: 8rem;
   font-family: futura-pt-bold, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   h3 {
     text-transform: uppercase;

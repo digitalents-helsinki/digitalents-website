@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import angleIcon from '../images/angledown.svg'
+import angleBlack from '../images/angledown-black.svg'
 import Video from '../components/video'
 
 export default class Hero extends React.Component {
@@ -43,6 +44,7 @@ export default class Hero extends React.Component {
               __html: this.props.data.textContent.childMarkdownRemark.html
             }}
           />
+          <a href="#teams"><img className="angleIcon" src={angleBlack} alt="" /></a>
         </TextContent>
       </Fragment>
     )
@@ -85,7 +87,7 @@ const HeroWrapper = styled.div`
     z-index: 100;
     width: 30px;
     top: 92vh;
-    left: 47vw;
+    left: calc(50vw - 15px);
     animation: floating-arrow 1.6s infinite ease-in-out 0s;
 
     @keyframes floating-arrow {
@@ -192,6 +194,27 @@ const TextContent = styled.div`
       margin: 0 auto;
       font-size: 20px;
       font-weight: 400;
+    }
+  }
+
+  .angleIcon {
+    position: absolute;
+    z-index: 100;
+    width: 30px;
+    top: 192vh;
+    left: calc(50vw - 15px);
+    animation: floating-arrow 1.6s infinite ease-in-out 0s;
+
+    @keyframes floating-arrow {
+      0% {
+        transform: translateY(0);
+      }
+      65% {
+        transform: translateY(11px);
+      }
+      100% {
+        transform: translateY(0);
+      }
     }
   }
 `
