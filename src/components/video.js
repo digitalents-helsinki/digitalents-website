@@ -38,7 +38,7 @@ export default class Video extends Component {
           muted
           ref={player => {this.player = player}}
         >
-          <source src="http://videos.ctfassets.net/j3k0lvclv8r6/7Cp7UlcG1TnTr1BNc2M5Sv/1a1de03f3b383227e292e4b70194b0e8/DT_PROMO_sound_200519_v2.mp4" />
+          <source src="http://videos.ctfassets.net/j3k0lvclv8r6/2NkTD7B2rd8IJJTsWbyA5d/41f0df3079f9cccf9dd9a7431aebe273/19_07_24_TRAILER_WEBSITE.mp4" />
         </Player>
       </Fragment>
     )
