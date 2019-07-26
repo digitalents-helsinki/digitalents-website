@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import Hero from '../components/hero'
 import Persons from '../components/persons'
 import Sponsors from '../components/sponsors'
-import Teams from '../components/teams'
+import Teams from '../components/teams-alt'
 import SomeContent from '../components/somecontent'
 import Location from '../components/location'
 
