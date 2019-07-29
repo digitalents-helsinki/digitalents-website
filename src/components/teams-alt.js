@@ -104,9 +104,9 @@ const TeamsWrapper = styled.div`
   }
 
   .arrow {
-    animation: floating-arrow 1.6s infinite ease-in-out 0s;
+    animation: floating-hor-arrow 1.6s infinite ease-in-out 0s;
 
-    @keyframes floating-arrow {
+    @keyframes floating-hor-arrow {
       0% {
         transform: translateX(0);
       }
