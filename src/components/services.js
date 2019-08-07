@@ -1,0 +1,87 @@
+import React from 'react'
+import styled from 'styled-components'
+import Img from '../images/annie-spratt-qckxruozjrg-unsplash.jpg'
+import rightArrow from '../images/right-arrow.svg'
+
+const Services = () => {
+  return (
+    <ServicesWrapper>
+      <div className="services-heading">
+        <h2>Palvelumme</h2>
+      </div>
+      <div className="services-content">
+      <img src={Img} alt="" className="services-image" />
+        <div className="services-text">
+          <h3>Lets plan your next project</h3>
+          <p>Digitalents Helsingin keskiössä on ajatus jatkuvasta oppimisesta. Tarjoamme ympäristön, jossa ennakkoluuloton kokeileminen ei ole vain sallittua, vaan myös kannustettavaa. Nuoret osaajat, hyvät resurssit ja laajat verkostot kohtaavat meillä, luoden otollisen alustan innovaatioille.</p>
+          <button>Lue lisää palveluistamme <img src={rightArrow} alt="" className="arrow" /></button>
+        </div>
+      </div>
+    </ServicesWrapper>
+  )
+}
+
+const ServicesWrapper = styled.div`
+  height: 100vh;
+
+  .services-heading {
+    background: #000000;
+    width: 304px;
+    height: 104px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    left: 50%;
+    top: 5%;
+
+    h2 {
+      font-family: futura-pt-bold;
+      font-size: 32px;
+      line-height: 150%;
+      color: white;
+    }
+  }
+
+  .services-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    .services-image {
+      height: 600px;
+    }
+  
+    .services-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25%;
+      height: 30vh;
+
+      h3 {
+        font-family: futura-pt-bold;
+        font-size: 32px;
+        line-height: 43px;
+        font-weigth: 700;
+      }
+
+      button {
+        background: #ffffff;
+        border: 1px solid #000000;
+        width: 300px;
+        height: 50px;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+  }
+
+`
+
+export default Services

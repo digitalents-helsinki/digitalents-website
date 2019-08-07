@@ -6,6 +6,7 @@ import Hero from '../components/hero'
 import Sponsors from '../components/sponsors'
 import Teams from '../components/teams-alt'
 import Portfolio from '../components/portfolio'
+import Services from '../components/services'
 
 const indexPageTemplate = (props) => {
   const { hero, teams, someContent, personBlocks, location, sponsorBlocks } = props.data.contentfulIndexPageTemplate
@@ -23,6 +24,7 @@ const indexPageTemplate = (props) => {
       <Hero data={hero} />
       <Teams pagePrefix={pagePrefix} data={teams} />
       <Portfolio />
+      <Services />
       <Sponsors data={sponsorBlocks} />
     </Layout>
   )
