@@ -122,7 +122,7 @@ const HeaderQuery = props => (
 )
 
 const HeaderWrapper = styled.header`
-  background-color: ${props => props.color ? "rgba(0, 0, 0, 0.6)" : "rgba(0, 0, 0, 0)"};
+  background-color: ${props => props.color ? "rgba(0, 0, 0, 0.8)" : "rgba(0, 0, 0, 0)"};
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;

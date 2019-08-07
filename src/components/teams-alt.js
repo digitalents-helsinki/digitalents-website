@@ -1,33 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
 import rightArrow from '../images/right-arrow.svg'
+import BGImg from '../images/annie-spratt-QckxruozjRg-unsplash.jpg'
 
 const TeamsAlt = () => {
   return (
-    <TeamsWrapper id="teams">
+    <TeamsWrapper>
+      <img src={BGImg} alt="" className="BGImg" />
       <div className="teams-heading">
-        <h2>Digitalents Tiimit</h2>
-        <p>Digitalents Helsinki on ajatus jatkuvasta oppimisesta. Tarjoamme ympäristön, jossa ennakkoluuloton kokeileminen ei ole vain
- sallittua, vaan myös kannustettavaa. Nuoret osaajat, hyvät resurssit ja laajat verkostot kohtaavat meillä, luoden otollisen alustan innovaatioille.</p>
+        <h2>Digitalents tiimimme</h2>
       </div>
-      <div className="teams-wrapper">
+      <div className="teams">
         <div className="team">
           <h4>Digitalents</h4>
           <div><h3>Media</h3><img className="arrow" src={rightArrow} alt="" /></div>
-          <p>Digitalents Helsinki mahdollistaa
-nuorille innostavan</p>
+          <p>We are a group of experts who have grown up with digital media, brought together by an interest in building a shared future</p>
         </div>
         <div className="team">
           <h4>Digitalents</h4>
           <div><h3>SoftDev</h3><img className="arrow" src={rightArrow} alt="" /></div>
-          <p>Digitalents Helsinki mahdollistaa
-nuorille innostavan</p>
+          <p>Machine learning, mobile platforms, neural networks, augmented reality and virtual reality applications. Groundbreaking technological leaps are made constantly, and as software developers we have the responsibility to utilize them for good.</p>
         </div>
         <div className="team">
           <h4>Digitalents</h4>
           <div><h3>ICT</h3><img className="arrow" src={rightArrow} alt="" /></div>
-          <p>Digitalents Helsinki mahdollistaa
-nuorille innostavan</p>
+          <p>A digitized world stands upon various information systems and the ease of daily life is often dependent on their reliable operation. We design, develop and maintain these systems.</p>
         </div>
       </div>
     </TeamsWrapper>
@@ -36,36 +33,42 @@ nuorille innostavan</p>
 
 const TeamsWrapper = styled.div`
   height: 100vh;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-content: center;
-  width: 60vw;
-  margin-left: 10vw;
+
+  .BGImg {
+    height: 40vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: -1;
+    position: relative;
+    display: block;
+    object-fit: cover;
+  }
 
   .teams-heading {
+    margin-top: -10vh;
+    width: 555px;
+    height: 170px;
+    background: #000000;
     display: flex;
-    flex-flow: column nowrap;
-    margin-bottom: 6rem;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15vw;
 
     h2 {
-      text-transform: uppercase;
+      color: #FFFFFF;
       font-size: 32px;
-      font-weight: bold;
+      font-weight: 700;
       font-family: futura-pt-bold;
-      margin-bottom: 2rem;
-    }
-
-    p {
-      font-size: 18px;
-      width: 28rem;
+      font-size: 32px;
+      line-height: 43px;
     }
   }
 
-  .teams-wrapper {
+  .teams {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 10vh;
   }
 
   .team {

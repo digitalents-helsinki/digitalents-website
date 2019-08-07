@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import angleIcon from '../images/angledown.svg'
-import angleBlack from '../images/angledown-black.svg'
+import rightArrow from '../images/right-arrow.svg'
 import Video from '../components/video'
 
 export default class Hero extends React.Component {
@@ -39,12 +39,9 @@ export default class Hero extends React.Component {
           <a href="#text"><img className="angleIcon" src={angleIcon} alt="" /></a>
         </HeroWrapper>
         <TextContent id="text">
-          <div 
-            dangerouslySetInnerHTML={{
-              __html: this.props.data.textContent.childMarkdownRemark.html
-            }}
-          />
-          <a href="#teams"><img className="angleIcon" src={angleBlack} alt="" /></a>
+          <h2>Meistä</h2>
+          <p>Digitalents Helsingin keskiössä on ajatus jatkuvasta oppimisesta. Tarjoamme ympäristön, jossa ennakkoluuloton kokeileminen ei ole vain sallittua, vaan myös kannustettavaa. Nuoret osaajat, hyvät resurssit ja laajat verkostot kohtaavat meillä, luoden otollisen alustan innovaatioille.</p>
+          <button>Lue lisää meistä <img className="arrow" src={rightArrow} alt="" /></button>
         </TextContent>
       </Fragment>
     )
@@ -177,49 +174,38 @@ const TextWrapper = styled.div`
 
 const TextContent = styled.div`
   display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
   flex-direction: column;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 3rem;
-  height: 100vh;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  height: 50vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 
-  @media screen and (min-width: 1000px) {
-    padding-left: 10rem;
-    padding-right: 10rem;
+  h2 {
+    font-size: 32px;
+    line-height: 150%;
+    font-family: futura-pt-bold;
+    font-weight: 700;
   }
 
-  div {
-    p {
-      padding-bottom: 1.5rem;
-      text-align: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      font-size: 20px;
-      font-weight: 400;
-    }
+  p {
+    max-width: 900px;
+    font-family: Asap;
+    font-size: 16px;
+    line-height: 150%;
   }
 
-  .angleIcon {
-    position: absolute;
-    z-index: 100;
-    width: 30px;
-    top: 192vh;
-    left: calc(50vw - 15px);
-    animation: floating-arrow 1.6s infinite ease-in-out 0s;
-
-    @keyframes floating-arrow {
-      0% {
-        transform: translateY(0);
-      }
-      65% {
-        transform: translateY(11px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
+  button {
+    background: #ffffff;
+    border: 1px solid #000000;
+    width: 240px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 `

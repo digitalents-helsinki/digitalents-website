@@ -96,7 +96,7 @@ const Layout = props => {
 const Cookie = styled.div`
   position: fixed;
   z-index: 100;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: black;
   color: white;
