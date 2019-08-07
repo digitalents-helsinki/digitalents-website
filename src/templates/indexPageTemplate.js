@@ -3,11 +3,9 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import Hero from '../components/hero'
-import Persons from '../components/persons'
 import Sponsors from '../components/sponsors'
 import Teams from '../components/teams-alt'
-import SomeContent from '../components/somecontent'
-import Location from '../components/location'
+import Portfolio from '../components/portfolio'
 
 const indexPageTemplate = (props) => {
   const { hero, teams, someContent, personBlocks, location, sponsorBlocks } = props.data.contentfulIndexPageTemplate
@@ -24,6 +22,7 @@ const indexPageTemplate = (props) => {
     <Layout language={language} pagePrefix={pagePrefix}>
       <Hero data={hero} />
       <Teams pagePrefix={pagePrefix} data={teams} />
+      <Portfolio />
       <Sponsors data={sponsorBlocks} />
     </Layout>
   )

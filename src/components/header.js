@@ -21,33 +21,16 @@ const Header = props => {
             </LogoWrapper>
             <NavWrapper>
               <li>
-                <Link to={props.pagePrefix}>{header.node.frontPageLink}</Link>
-              </li>
-              <li onClick={handleTeamClick}>{header.node.teamLink}</li>
-              <TeamsWrapper>
-                {teamClick ? (
-                  <Fragment>
-                    <div className="teamlink">
-                      <Link to={`${props.pagePrefix}/media/`}>Media</Link>
-                    </div>
-                    <div className="teamlink">
-                      <Link to={`${props.pagePrefix}/ict/`}>ICT</Link>
-                    </div>
-                    <div className="teamlink">
-                      <Link to={`${props.pagePrefix}/softdev/`}>SoftDev</Link>
-                    </div>
-                  </Fragment>
-                ) : null}
-              </TeamsWrapper>
-              <li>
-                <Link to={`${props.pagePrefix}/#persons`}>
-                  { props.language === 'fi' ? 'yhteystiedot' : 'contact' }
-                </Link>
+                <a href="#">Meistä</a>
               </li>
               <li>
-                <Link to={`${props.pagePrefix}/tyopaikat/`}>
-                  {header.node.workLink}
-                </Link>
+                <a href="#">Töitämme</a>
+              </li>
+              <li>
+                <a href="#">Palvelut</a>
+              </li>
+              <li>
+                <a href="#">Työpaikka</a>
               </li>
             </NavWrapper>
             <LangWrapper>
@@ -172,15 +155,16 @@ const NavWrapper = styled.ul`
     margin-right: 2rem;
     margin-left: 2rem;
     justify-content: left;
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-family: futura-pt-bold;
+    }
   }
 
   li:first-child {
     margin-left: 0;
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
   }
 `
 
