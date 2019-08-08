@@ -79,12 +79,12 @@ const TeamsWrapper = styled.div`
       display: flex;
       flex-flow: row nowrap;
       align-content: center;
-      justify-content: space-between;
 
       img {
         height: 15px;
-        padding-top: 0.5rem;
+        padding-top: 6px;
         margin-right: 6rem;
+        padding-left: 1rem;
       }
     }
 

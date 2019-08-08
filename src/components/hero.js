@@ -198,8 +198,8 @@ const TextContent = styled.div`
 
   button {
     background: #ffffff;
-    border: 1px solid #000000;
-    width: 240px;
+    border: 0px solid #000000;
+    width: 200px;
     height: 50px;
     font-size: 18px;
     line-height: 24px;
@@ -207,5 +207,21 @@ const TextContent = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+  }
+
+  .arrow {
+    animation: floating-hor-arrow 1.6s infinite ease-in-out 0s;
+
+    @keyframes floating-hor-arrow {
+      0% {
+        transform: translateX(0);
+      }
+      65% {
+        transform: translateX(11px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
   }
 `
