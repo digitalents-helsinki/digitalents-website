@@ -100,8 +100,6 @@ const HeroWrapper = styled.div`
     }
   }
 
-  
-
   .playButton {
     position: absolute;
     z-index: 10;
@@ -122,7 +120,7 @@ const TextWrapper = styled.div`
     opacity: 0;
     transition: opacity 0.5s;
   }
-  
+
   .fadeIn {
     opacity: 1;
     transition: opacity 0.5s;
@@ -151,7 +149,7 @@ const TextWrapper = styled.div`
       text-transform: uppercase;
       font-family: futura-pt-bold;
       margin-right: 1rem;
-  
+
       @media screen and (max-width: 1000px) {
         font-size: 2rem;
       }
@@ -168,6 +166,13 @@ const TextWrapper = styled.div`
 
     @media screen and (max-width: 1000px) {
       padding-top: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .title-texts {
+      flex-direction: column;
+      text-align: center;
     }
   }
 `

@@ -22,8 +22,6 @@ const Services = () => {
 }
 
 const ServicesWrapper = styled.div`
-  height: 100vh;
-
   .services-heading {
     background: #000000;
     width: 304px;
@@ -58,7 +56,6 @@ const ServicesWrapper = styled.div`
       flex-direction: column;
       justify-content: space-between;
       width: 25%;
-      height: 30vh;
 
       h3 {
         font-family: futura-pt-bold;
@@ -98,6 +95,25 @@ const ServicesWrapper = styled.div`
     }
   }
 
+  @media screen and (max-width: 1200px) {
+    .services-heading {
+      position: static;
+    }
+
+    .services-content {
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    height: 100vh;
+
+    .services-content {
+      .services-text {
+        height: 30vh;
+      }
+    }
+  }
 `
 
 export default Services

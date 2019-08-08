@@ -32,8 +32,6 @@ const TeamsAlt = () => {
 }
 
 const TeamsWrapper = styled.div`
-  height: 100vh;
-
   .top-img {
     height: 40vh;
     width: 100vw;
@@ -69,6 +67,7 @@ const TeamsWrapper = styled.div`
     flex-flow: row nowrap;
     justify-content: space-around;
     margin-top: 10vh;
+    }
   }
 
   .team {
@@ -120,6 +119,21 @@ const TeamsWrapper = styled.div`
         transform: translateX(0);
       }
     }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .teams-heading {
+      width: 200px;
+      height: 100px;
+      margin: 0;
+    }
+    .teams {
+      flex-flow column nowrap;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    height: 100vh;
   }
 `
 

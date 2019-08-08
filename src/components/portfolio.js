@@ -27,9 +27,6 @@ const Portfolio = () => {
 }
 
 const PortfolioWrapper = styled.div`
-  height: 100vh;
-  padding: 0 10vw;
-
   .portfolio-heading {
     background: #000000;
     width: 304px;
@@ -75,6 +72,17 @@ const PortfolioWrapper = styled.div`
         line-weight: 130%;
       }
     }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .portfolio-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    height: 100vh;
   }
 `
 
