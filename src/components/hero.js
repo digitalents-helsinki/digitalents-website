@@ -224,4 +224,14 @@ const TextContent = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 600px) {
+    height: 100vh;
+    justify-content: center;
+    padding: 0 1rem;
+    
+    p {
+      margin: 3rem 0;
+    }
+  }
 `
