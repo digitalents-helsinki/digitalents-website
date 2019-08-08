@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import rightArrow from '../images/right-arrow.svg'
-import BGImg from '../images/annie-spratt-qckxruozjrg-unsplash.jpg'
+import TopImg from '../images/annie-spratt-qckxruozjrg-unsplash.jpg'
 
 const TeamsAlt = () => {
   return (
     <TeamsWrapper>
-      <img src={BGImg} alt="" className="BGImg" />
+      <img src={TopImg} alt="" className="top-img" />
       <div className="teams-heading">
         <h2>Digitalents tiimimme</h2>
       </div>
@@ -34,7 +34,7 @@ const TeamsAlt = () => {
 const TeamsWrapper = styled.div`
   height: 100vh;
 
-  .BGImg {
+  .top-img {
     height: 40vh;
     width: 100vw;
     overflow: hidden;

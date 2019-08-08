@@ -7,9 +7,10 @@ import Sponsors from '../components/sponsors'
 import Teams from '../components/teams-alt'
 import Portfolio from '../components/portfolio'
 import Services from '../components/services'
+import Jobs from '../components/jobs'
 
 const indexPageTemplate = (props) => {
-  const { hero, teams, someContent, personBlocks, location, sponsorBlocks } = props.data.contentfulIndexPageTemplate
+  const { hero, teams, sponsorBlocks } = props.data.contentfulIndexPageTemplate
 
   const language = props.pageContext.node_locale === 'en-US' ? 'en' : 'fi'
   const pagePrefix = props.pageContext.node_locale === 'en-US' ? '/en/' : '/fi/'
@@ -25,6 +26,7 @@ const indexPageTemplate = (props) => {
       <Teams pagePrefix={pagePrefix} data={teams} />
       <Portfolio />
       <Services />
+      <Jobs />
       <Sponsors data={sponsorBlocks} />
     </Layout>
   )
