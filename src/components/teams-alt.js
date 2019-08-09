@@ -14,17 +14,19 @@ const TeamsAlt = () => {
         <div className="team">
           <h4>Digitalents</h4>
           <div><h3>Media</h3><img className="arrow" src={rightArrow} alt="" /></div>
-          <p>We are a group of experts who have grown up with digital media, brought together by an interest in building a shared future</p>
+          <p>Digitalents Media tuottaa monipuolista digitaalista mediaa, 2D- ja 3D-animointia sekä sosiaalisen median sisältöjä.
+</p>
         </div>
         <div className="team">
           <h4>Digitalents</h4>
           <div><h3>SoftDev</h3><img className="arrow" src={rightArrow} alt="" /></div>
-          <p>Machine learning, mobile platforms, neural networks, augmented reality and virtual reality applications. Groundbreaking technological leaps are made constantly, and as software developers we have the responsibility to utilize them for good.</p>
+          <p>Digitalents ohjelmistotiimi kehittää ohjelmistoja sekä sivustoja moderneilla alustoilla ja välineillä.
+</p>
         </div>
         <div className="team">
           <h4>Digitalents</h4>
           <div><h3>ICT</h3><img className="arrow" src={rightArrow} alt="" /></div>
-          <p>A digitized world stands upon various information systems and the ease of daily life is often dependent on their reliable operation. We design, develop and maintain these systems.</p>
+          <p>Digitalents ICT toteuttaa ylläpito-, asennus- ja tukipalveluita sekä sisäisiä tuotantopalveluita.</p>
         </div>
       </div>
     </TeamsWrapper>

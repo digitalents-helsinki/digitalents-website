@@ -7,7 +7,7 @@ const Portfolio = () => {
       <div className="portfolio-heading">
         <h2>Töitämme</h2>
       </div>
-      <p className="portfolio-text">Inspiroidu töistämme. Jokainen tekemämme tilaustyö on tarkoin toteutettu asiakkaan toiveiden mukaisesti. Inspiroidu töistämme. Jokainen tekemämme tilaustyö on tarkoin toteutettu asiakkaan toiveiden mukaisesti. Inspiroidu töistämme. Jokainen tekemämme tilaustyö on tarkoin toteutettu asiakkaan toiveiden mukaisesti.</p>
+      <h3 className="portfolio-text">Inspiroidu töistämme.</h3>
       <div className="portfolio-cards">
         <div className="portfolio-card">
           <h4 className="card-heading">Projektin nimi</h4>
@@ -34,6 +34,7 @@ const PortfolioWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 4rem;
 
     h2 {
       font-family: futura-pt-bold;
@@ -43,14 +44,21 @@ const PortfolioWrapper = styled.div`
     }
   }
 
+  h3 {
+    font-family: futura-pt-bold;
+    font-size: 32px;
+    line-height: 43px;
+  }
+
   .portfolio-text {
-    margin: 40px 0;
+    margin: 40px 0 40px 6rem;
     width: 60%;
   }
 
   .portfolio-cards {
     display: flex;
     justify-content: space-between;
+    margin: 0 10vh;
 
     .portfolio-card {
       width: 400px;

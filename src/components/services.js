@@ -12,8 +12,7 @@ const Services = () => {
       <div className="services-content">
       <img src={Img} alt="" className="services-image" />
         <div className="services-text">
-          <h3>Lets plan your next project</h3>
-          <p>Digitalents Helsingin keskiössä on ajatus jatkuvasta oppimisesta. Tarjoamme ympäristön, jossa ennakkoluuloton kokeileminen ei ole vain sallittua, vaan myös kannustettavaa. Nuoret osaajat, hyvät resurssit ja laajat verkostot kohtaavat meillä, luoden otollisen alustan innovaatioille.</p>
+          <h3>Suunnitellaan seuraava projektisi!</h3>
           <button>Lue lisää palveluistamme <img src={rightArrow} alt="" className="arrow" /></button>
         </div>
       </div>
