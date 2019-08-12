@@ -85,7 +85,7 @@ const PortfolioWrapper = styled.div`
 
   .satakolkyt {
     background-image: url("${satakolkyt}") !important;
-    background-size: cover;
+    background-size: cover !important;
 
     .card-heading {
     }
