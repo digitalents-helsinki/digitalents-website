@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import satakolkyt from '../images/satakolkyt.png'
 
 const Portfolio = () => {
   return (
@@ -9,9 +10,9 @@ const Portfolio = () => {
       </div>
       <h3 className="portfolio-text">Inspiroidu töistämme.</h3>
       <div className="portfolio-cards">
-        <div className="portfolio-card">
-          <h4 className="card-heading">Projektin nimi</h4>
-          <p className="card-text">Leipätekstiä projektista, siitä kuinka huikeeta sitä oli toteuttaa palapala</p>
+        <div className="portfolio-card satakolkyt">
+          <h4 className="card-heading"></h4>
+          <p className="card-text"></p>
         </div>
         <div className="portfolio-card">
           <h4 className="card-heading">Projektin nimi</h4>
@@ -62,7 +63,7 @@ const PortfolioWrapper = styled.div`
 
     .portfolio-card {
       width: 400px;
-      height: 500px;
+      height: 600px;
       background: gray;
 
       .card-heading {
@@ -79,6 +80,14 @@ const PortfolioWrapper = styled.div`
         font-size: 14px;
         line-weight: 130%;
       }
+    }
+  }
+
+  .satakolkyt {
+    background-image: url("${satakolkyt}") !important;
+    background-size: cover;
+
+    .card-heading {
     }
   }
 
