@@ -21,16 +21,16 @@ const Header = props => {
             </LogoWrapper>
             <NavWrapper>
               <li>
-                <a href="#">Meistä</a>
+                <a href="/fi/about">Meistä</a>
               </li>
               <li>
-                <a href="#">Töitämme</a>
+                <a href="/fi/portfolio">Töitämme</a>
               </li>
               <li>
-                <a href="#">Palvelut</a>
+                <a href="/fi/services">Palvelut</a>
               </li>
               <li>
-                <a href="#">Työpaikka</a>
+                <a href="/fi/jobs">Työpaikka</a>
               </li>
             </NavWrapper>
             <LangWrapper>

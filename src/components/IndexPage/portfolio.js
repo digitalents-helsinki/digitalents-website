@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import satakolkyt from '../images/satakolkyt.png'
+import satakolkyt from '../../images/satakolkyt.png'
 
 const Portfolio = () => {
   return (

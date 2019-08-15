@@ -2,11 +2,11 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-import fbIcon from '../images/facebook_logo_valkoinen.svg'
-import igIcon from '../images/instagram_logo_valkoinen.svg'
-import twIcon from '../images/twitter_logo_valkoinen.svg'
-import openIcon from '../images/ham-nav.png'
-import closeIcon from '../images/exit-cross.png'
+import fbIcon from '../../images/facebook_logo_valkoinen.svg'
+import igIcon from '../../images/instagram_logo_valkoinen.svg'
+import twIcon from '../../images/twitter_logo_valkoinen.svg'
+import openIcon from '../../images/ham-nav.png'
+import closeIcon from '../../images/exit-cross.png'
 
 const BurgerMenu = (props) => {
   const [visible, setVisible] = useState(false)

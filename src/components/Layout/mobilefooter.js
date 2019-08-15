@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-import fbIcon from '../images/facebook_logo_valkoinen.svg'
-import igIcon from '../images/instagram_logo_valkoinen.svg'
-import twIcon from '../images/twitter_logo_valkoinen.svg'
-import liIcon from '../images/Linkedin_logo.svg'
-import helLogo from '../images/HELSINKI_Tunnus_VALKOINEN.png'
+import fbIcon from '../../images/facebook_logo_valkoinen.svg'
+import igIcon from '../../images/instagram_logo_valkoinen.svg'
+import twIcon from '../../images/twitter_logo_valkoinen.svg'
+import liIcon from '../../images/Linkedin_logo.svg'
+import helLogo from '../../images/HELSINKI_Tunnus_VALKOINEN.png'
 
 const MobileFooter = (props) => {
   return (

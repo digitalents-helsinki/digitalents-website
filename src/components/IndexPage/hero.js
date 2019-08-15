@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import angleIcon from '../images/angledown.svg'
-import rightArrow from '../images/right-arrow.svg'
-import Video from '../components/video'
+import angleIcon from '../../images/angledown.svg'
+import rightArrow from '../../images/right-arrow.svg'
+import Video from './video'
 
 export default class Hero extends React.Component {
   constructor(props) {

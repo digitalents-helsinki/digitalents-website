@@ -1,13 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/layout'
-import Hero from '../components/hero'
-import Sponsors from '../components/sponsors'
-import Teams from '../components/teams-alt'
-import Portfolio from '../components/portfolio'
-import Services from '../components/services'
-import Jobs from '../components/jobs'
+import Layout from '../components/Layout/layout'
+import Hero from '../components/IndexPage/hero'
+import Sponsors from '../components/IndexPage/sponsors'
+import Teams from '../components/IndexPage/teams'
+import Portfolio from '../components/IndexPage/portfolio'
+import Services from '../components/IndexPage/services'
+import Jobs from '../components/IndexPage/jobs'
 
 const indexPageTemplate = (props) => {
   const { hero, teams, sponsorBlocks } = props.data.contentfulIndexPageTemplate

@@ -3,11 +3,11 @@ import { graphql } from 'gatsby'
 import BGImg from 'gatsby-background-image'
 import styled from 'styled-components'
 
-import Layout from '../components/layout'
+import Layout from '../components/Layout/layout'
 import arrIcon from '../images/angledown.svg'
 
 const teamTemplate = (props) => {
-  const { teamTitle, showPageTitle, teamSlogan, teamDescription, teamImage, teamMaskImage, imagePosition, link, portfolioEnabled, portfolioBG } = props.data.contentfulPageTemplate
+  const { teamTitle, showPageTitle, teamSlogan, teamDescription, teamImage, imagePosition, link, portfolioEnabled, portfolioBG } = props.data.contentfulPageTemplate
 
   const language = props.pageContext.node_locale === 'en-US' ? 'en' : 'fi'
   const pagePrefix = props.pageContext.node_locale === 'en-US' ? '/en/' : '/fi/'

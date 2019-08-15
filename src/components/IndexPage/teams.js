@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import rightArrow from '../images/right-arrow.svg'
-import TopImg from '../images/annie-spratt-qckxruozjrg-unsplash.jpg'
+import rightArrow from '../../images/right-arrow.svg'
+import TopImg from '../../images/annie-spratt-qckxruozjrg-unsplash.jpg'
 
 const TeamsAlt = () => {
   return (

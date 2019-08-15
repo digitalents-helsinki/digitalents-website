@@ -2,11 +2,11 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby'
 
-import fbIcon from '../images/facebook_logo_valkoinen.svg'
-import igIcon from '../images/instagram_logo_valkoinen.svg'
-import twIcon from '../images/twitter_logo_valkoinen.svg'
-import liIcon from '../images/Linkedin_logo.svg'
-import HelLogo from '../images/HELSINKI_Tunnus_VALKOINEN.png'
+import fbIcon from '../../images/facebook_logo_valkoinen.svg'
+import igIcon from '../../images/instagram_logo_valkoinen.svg'
+import twIcon from '../../images/twitter_logo_valkoinen.svg'
+import liIcon from '../../images/Linkedin_logo.svg'
+import HelLogo from '../../images/HELSINKI_Tunnus_VALKOINEN.png'
 
 const FooterColumn = props => {
   if (props.position === 'left') {

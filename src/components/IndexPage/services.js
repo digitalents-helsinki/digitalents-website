@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Img from '../images/annie-spratt-qckxruozjrg-unsplash.jpg'
-import rightArrow from '../images/right-arrow.svg'
+import Img from '../../images/annie-spratt-qckxruozjrg-unsplash.jpg'
+import rightArrow from '../../images/right-arrow.svg'
 
 const Services = () => {
   return (
