@@ -109,7 +109,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  position: ${props => props.color ? 'fixed' : 'absolute'};
+  position: ${props => props.color ? 'fixed' : 'fixed'};
   left: 0;
   right: 0;
   height: 100px;
