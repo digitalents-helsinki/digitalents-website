@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Layout from '../components/Layout/layout'
 
 const teamTemplate = (props) => {
-  const { teamTitle, showPageTitle, teamSlogan, teamDescription, teamImage, imagePosition, link, portfolioEnabled, portfolioBG } = props.data.contentfulPageTemplate
+  const { teamTitle, teamDescription, teamImage} = props.data.contentfulPageTemplate
 
   const language = props.pageContext.node_locale === 'en-US' ? 'en' : 'fi'
   const pagePrefix = props.pageContext.node_locale === 'en-US' ? '/en/' : '/fi/'
@@ -67,14 +67,6 @@ export const pageQuery = graphql`
       teamMaskImage {
         file {
           url
-        }
-      }
-      imagePosition
-      link
-      portfolioEnabled
-      portfolioBG {
-        fluid(maxWidth: 350) {
-          ...GatsbyContentfulFluid
         }
       }
     }
