@@ -1,3 +1,4 @@
+
 import React from 'react'
 import styled from 'styled-components'
 import Layout from '../../components/Layout/layout'
@@ -7,8 +8,6 @@ import ohjaamo from '../../images/ohjaamo.png'
 /*
 <iframe width="600" height="450" frameborder="0" style="border:0"
 src="https://www.google.com/maps/embed/v1/place?q=redrikinkatu%2048%2C%2000101%20Helsinki&key=..." allowfullscreen></iframe>
-
-
 */
 
 const JobsPage = () => {
@@ -52,7 +51,6 @@ const StyleWrapper = styled.div`
     font-size: 24px;
     font-weight: 400;
     padding-top: 3rem;
-
     @media screen and (max-width: 1000px) {
       padding-top: 1rem;
     }
@@ -60,8 +58,6 @@ const StyleWrapper = styled.div`
   img{
     height: 250px;
   }
-
-
   button {
     border: 1px solid black;
     background: #ffffff;
@@ -74,11 +70,22 @@ const StyleWrapper = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     .arrow{
       height: 15px;
-    }
+      animation: floating-hor-arrow 1.6s infinite ease-in-out 0s;
 
+      @keyframes floating-hor-arrow {
+        0% {
+          transform: translateX(0);
+        }
+        65% {
+          transform: translateX(11px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    }
   }
   .addressContainer {
     display:flex;
@@ -107,9 +114,7 @@ const StyleWrapper = styled.div`
         pointer-events: none;
         }
 }
-
 }
-
 `
 
 export default JobsPage
