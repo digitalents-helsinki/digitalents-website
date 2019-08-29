@@ -25,8 +25,6 @@ export default class Hero extends React.Component {
     return (
       <Fragment>
         <HeroWrapper>
-          <Video playMovie={this.handleClick}
-          />
           <div className="video-overlay"></div>
           <TextWrapper>
             <div className={this.state.textVisible ? 'title-texts fadeIn' : 'title-texts fadeOut'}>
