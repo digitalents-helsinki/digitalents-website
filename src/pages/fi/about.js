@@ -12,28 +12,7 @@ const AboutPage = () => {
   return (
     <Layout>
       <StyleWrapper>
-        <img src={books} alt="" className="top-img" />
-        <div className="text">
-          <h2>Meistä</h2>
-          <p>Digitalents Helsingin keskiössä on ajatus jatkuvasta oppimisesta. Tarjoamme ympäristön, jossa ennakkoluuloton kokeileminen ei ole vain sallittua, vaan myös kannustettavaa. Nuoret osaajat, hyvät resurssit ja laajat verkostot kohtaavat meillä, luoden otollisen alustan innovaatioille.</p>
-        </div>
-        <div class="TextContainer">
-          <p class="TextContainer_Text">Taustalla on malli San Franciscon alueen kultakaudesta, jolloin Stanfordin ja Berkeleyn yliopistojen sekä autotalliyritysten kokeilut loivat digitaalisen alan suurimman kehityksen. Yritysten kuten Googlen, Applen ja Intelin perusteet luotiin tuolloin. Tänäkin päivänä voidaan luoda uutta yhdistämällä erilaisia ihmisiä, kokeilukulttuuria ja yhteisöllisyyttä.</p>
-          <p class="TextContainer_Text">Maailmamme on jatkuvassa liikkeessä. Tulevaisuudessa tämä tulee korostumaan entisestään, teknologian kiihtyvän kehityksen tuodessa mukanaan uusien tilaisuuksien lisäksi yhä enemmän ennennäkemättömiä haasteita. Me pystymme reagoimaan näihin haasteisiin nopeasti, sillä yhteisömme on suunniteltu alusta alkaen ketteräksi.</p>
-          <p class="TextContainer_Text">Sen lisäksi, että teemme asiakastöitä erilaisille yrityksille ja yhteistyökumppaneille, tarjoamme työntekijöillemme mahdollisuuden kehittää taitojaan myös henkilökohtaisten projektien kautta. Meillä nuoret oppivat ideoimaan ja kehittämään taitojaan oma-aloitteisesti. Tämä avaa uusia ovia sekä työelämässä että sen ulkopuolella.</p>
-          <p class="TextContainer_Text">Mielestämme onnistuneen työn tärkein elementti on luottamus asiakkaan ja meidän välillä. Tämä on mahdollista, sillä toimintamme perustuu avoimuuteen ja rehellisyyteen. Yhteisymmärrys on meille kaikki kaikessa.</p>
-        </div>
-        <div className="ImagesContainer">
-          <div className="ImagesContainer_Media">
-            <h2>Media</h2>
-          </div>
-          <div className="ImagesContainer_ICT">
-            <h2>ICT</h2>
-          </div>
-          <div className="ImagesContainer_SoftDev">
-            <h2>SoftDev</h2>
-          </div>
-        </div>
+        
 
 
   <img src={books}  className="top-img" />
@@ -44,6 +23,8 @@ const AboutPage = () => {
         <h1>Meistä</h1>
         <p>Digitalents Helsingin keskiössä on ajatus jatkuvasta oppimisesta. Tarjoamme ympäristön, jossa ennakkoluuloton kokeileminen ei ole vain sallittua, vaan myös kannustettavaa. Nuoret osaajat, hyvät resurssit ja laajat verkostot kohtaavat meillä, luoden otollisen alustan innovaatioille.</p>
       </div>
+
+  
 
   <div class="viiva_yla"></div>
 
@@ -140,18 +121,20 @@ const StyleWrapper = styled.div`
 }
 
 .viiva_yla {
+  margin-left:47vw;
   margin-top: 10vh;
   margin-bottom: 10vh;
-  margin-left: 48%;
-  width: 80px;
+  width: 4vw;
+  min-width: 30px;
   border: 0.5px solid black;
 }
 
 .viiva_ala {
-  margin-top: 5px;
+  margin-top: 5vh;
   margin-bottom: 15vh;
-  margin-left: 48%;
-  width: 80px;
+  margin-left: 47vw;
+  width: 4vw;
+  min-width: 30px;
   border: 0.5px solid black;
 }
 
@@ -161,7 +144,7 @@ const StyleWrapper = styled.div`
   align-items: center;
   text-align: center;
   justify-content: space-around;
-  height: 40vh;
+  height: auto;
 
   h1 {
     font-size: 64px;
@@ -227,7 +210,7 @@ const StyleWrapper = styled.div`
     align-items: center;
 
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 900px) {
       flex-direction: column;
     }
 
@@ -247,8 +230,7 @@ const StyleWrapper = styled.div`
       align-items: center;
       align-text: center;
       background-size: cover;
-      margin-right: 5vw;
-      margin-left: 5vw;
+      margin: 5vw;
       flex-shrink: 1;
     }
     
