@@ -74,8 +74,10 @@ const StyleWrapper = styled.div`
         font-weight: 400;
         width: 45%;
         @media screen and (max-width: 1000px) {
+          width: 55%;
           padding-top: 1rem;
-          text-align: justify;
+          text-align: center;
+          margin: auto;
         }
       }
   }
