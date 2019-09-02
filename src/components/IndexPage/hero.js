@@ -26,6 +26,7 @@ export default class Hero extends React.Component {
       <Fragment>
         <HeroWrapper>
           <div className="video-overlay"></div>
+          <Video />
           <TextWrapper>
             <div className={this.state.textVisible ? 'title-texts fadeIn' : 'title-texts fadeOut'}>
               {this.props.data.heroText.map(text => {
@@ -56,6 +57,11 @@ const HeroWrapper = styled.div`
 
   @media screen and (max-width: 1000px) {
     flex-basis: 100%;
+  }
+
+  .video-react {
+    position: fixed;
+    z-index: -10;
   }
 
   .video-overlay {
@@ -184,6 +190,7 @@ const TextContent = styled.div`
   height: 50vh;
   padding-top: 10vh;
   padding-bottom: 10vh;
+  background: white;
 
   h2 {
     font-size: 32px;
