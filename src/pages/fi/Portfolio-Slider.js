@@ -77,7 +77,16 @@ const StyleWrapper = styled.div`
   	      flex-direction: row;
   	      flex-wrap: wrap;
           width: 70vw;
+          justify-content: center;
           margin: 0 auto;
+
+          @media screen and (max-width: 1400px) {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 90vw;
+          }
           @media screen and (max-width: 1000px) {
             flex-direction: row;
             justify-content: center;
@@ -86,9 +95,8 @@ const StyleWrapper = styled.div`
             width: 100vw;
           }
           .Container_Img_Images{
-            border: 4px solid white;
-            
-            height: 22vh;
+            border: 4px solid white;          
+            height: 40vh;
             width: 22vw;
             background-size: cover;
             background-image: url(${PortfolioSliderPhoto});
@@ -96,7 +104,7 @@ const StyleWrapper = styled.div`
               height: 20vh;
               width: 30vw;
               flex-direction: row;
-              justify-content: space-between;
+              justify-content: center;
               align-items: center;
               
             }

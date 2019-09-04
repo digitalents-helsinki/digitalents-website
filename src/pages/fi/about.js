@@ -90,7 +90,7 @@ const StyleWrapper = styled.div`
 }
 
 .parallax-header {
-  margin-top: 28vh;
+  margin-top: 18vh;
   h1 {
     margin-top: 18vh;
     font-size: 64px;
