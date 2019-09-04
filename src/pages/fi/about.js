@@ -15,12 +15,14 @@ const AboutPage = () => {
         
 
 <div class="parallax-wrapper">
-  <img src={books}  className="top-img" />
+  <div class="parallax-header">
+    <h1>Meistä</h1>
+  </div>
 </div>
+
   <div class="ilmaa"></div>
 
       <div className="text">
-        <h1>Meistä</h1>
         <p>Digitalents Helsingin keskiössä on ajatus jatkuvasta oppimisesta. Tarjoamme ympäristön, jossa ennakkoluuloton kokeileminen ei ole vain sallittua, vaan myös kannustettavaa. Nuoret osaajat, hyvät resurssit ja laajat verkostot kohtaavat meillä, luoden otollisen alustan innovaatioille.</p>
       </div>
 
@@ -71,14 +73,36 @@ const StyleWrapper = styled.div`
   }
 }
 
-/* On screens that are 600px wide or less, the background color is olive */
+
 .parallax-wrapper {
   width: 100vw;
-  height:100vh;
-  padding-top: 20vh;
+  height: 40vh;
+  padding-top: 0vh;
   box-sizing: border-box;
+  background-image: url(${books});
+  background-attachment: fixed;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  object-fit: cover;
+  align-items: center;
+  text-align: center; 
 }
 
+.parallax-header {
+  margin-top: 28vh;
+  h1 {
+    margin-top: 18vh;
+    font-size: 64px;
+    line-height: 150%;
+    font-family: futura-pt-bold;
+    font-weight: 700;
+    margin-top: 20px;
+    color: white;
+  }
+}
+
+/*
 .top-img {
   height: 40vh;
   width: 100vw;
@@ -86,11 +110,11 @@ const StyleWrapper = styled.div`
   position: relative;
   display: block;
   object-fit: cover;
-  
 }
+*/
 
 .ilmaa {
-  padding: 20vh;
+  padding: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
