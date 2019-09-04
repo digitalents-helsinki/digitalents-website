@@ -69,7 +69,8 @@ const TeamsWrapper = styled.div`
     flex-flow: row nowrap;
     justify-content: space-around;
     margin-top: 10vh;
-    }
+    background: white;
+    padding: 2rem 0;
   }
 
   .team {
