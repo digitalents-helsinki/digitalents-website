@@ -10,6 +10,7 @@ const PortfolioSlider = () => {
       <div className="Container">
         <p>Inspiroidu töistämme. Jokainen tekemämme tilaustyö on tarkoin toteutettu asiakkaan toiveiden mukaisesti.</p>
       </div>
+
       <div className="Container_Img">
         <div className="Container_Img_Images">
         </div>
@@ -29,30 +30,16 @@ const PortfolioSlider = () => {
         </div>
         <div className="Container_Img_Images">
         </div>
-        <div className="Container_Img_Images">
-        </div>
-        <div className="Container_Img_Images">
-        </div>
-        <div className="Container_Img_Images">
-        </div>
-        <div className="Container_Img_Images">
-        </div>
-        <div className="Container_Img_Images">
-        </div>
-        <div className="Container_Img_Images">
-        </div>
-        <div className="Container_Img_Images">
-        </div>
-        <div className="Container_Img_Images">
-        </div>
-        <div className="Container_Img_Images">
-        </div>
-        <div className="BottomText">
-          <p className='BottomText_First'>kuten mitä näet?</p>
-          <p className='BottomText_Second'>Suunnitellaan projekti</p>
-
-        </div>
       </div>
+      
+       
+      
+        <div className="BottomText">
+          <p className='BottomText_First'>Placeholder</p>
+          <p className='BottomText_Second'>Suunnitellaan projekti</p>
+        </div>
+        
+      
       </StyleWrapper>
     </Layout>
   )
@@ -77,7 +64,11 @@ const StyleWrapper = styled.div`
           width: 55%;
           padding-top: 1rem;
           text-align: center;
-          margin: auto;
+          margin: auto;          
+          text-align: center;
+          font-size: 1.5rem;
+          font-weight: 400;
+          width: 85%;
         }
       }
   }
@@ -85,26 +76,29 @@ const StyleWrapper = styled.div`
           display: flex;
   	      flex-direction: row;
   	      flex-wrap: wrap;
-          width: 65%;
+          width: 70vw;
           margin: 0 auto;
           @media screen and (max-width: 1000px) {
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
             margin: auto;
+            width: 100vw;
           }
           .Container_Img_Images{
-            border: 1px solid yellow;
-            margin: .5rem .5rem .5rem auto;
-            height: 20rem;
-            width: 20rem;
+            border: 4px solid white;
+            
+            height: 22vh;
+            width: 22vw;
             background-size: cover;
             background-image: url(${PortfolioSliderPhoto});
             @media screen and (max-width: 1000px) {
-              flex-direction: column;
-              justify-content: center;
+              height: 20vh;
+              width: 30vw;
+              flex-direction: row;
+              justify-content: space-between;
               align-items: center;
-              margin: .3rem auto .3rem auto;
+              
             }
           }
         }

@@ -37,7 +37,7 @@ const Portfolio2 = () => {
 const StyleWrapper = styled.div`
       height: auto;
       justify-content: center;
-      .Container{
+      .Container {
       display: flex;
       width: 80%;
       margin: auto;
@@ -60,23 +60,24 @@ const StyleWrapper = styled.div`
         }
       }
       .Container_Client{
-      margin-top: 5rem;
-      display: flex;
-      width: 80%;
-      @media screen and (max-width: 1000px) {
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 3rem;
-      }
-      p{
-        font-size: 35px;
-        font-weight: 400;
+        margin-top: 5rem;
+        margin-bottom 10rem;
+        display: flex;
+        width: 50%;
+        @media screen and (max-width: 1000px) {
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 3rem;
+        }
+      p {
+        font-size: 22px;
+        font-weight: bold;
         @media screen and (max-width: 1000px) {
           margin-top: 3rem;
         }
       }
-      }
+    }
   }
         .Photo{
           margin: 5rem auto;

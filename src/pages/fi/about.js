@@ -14,9 +14,9 @@ const AboutPage = () => {
       <StyleWrapper>
         
 
-
+<div class="parallax-wrapper">
   <img src={books}  className="top-img" />
-
+</div>
   <div class="ilmaa"></div>
 
       <div className="text">
@@ -72,6 +72,12 @@ const StyleWrapper = styled.div`
 }
 
 /* On screens that are 600px wide or less, the background color is olive */
+.parallax-wrapper {
+  width: 100vw;
+  height:100vh;
+  padding-top: 20vh;
+  box-sizing: border-box;
+}
 
 .top-img {
   height: 40vh;
