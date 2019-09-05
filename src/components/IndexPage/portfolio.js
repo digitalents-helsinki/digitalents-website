@@ -35,7 +35,10 @@ const PortfolioWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 4rem;
+    margin-left: 8rem;
+    margin-top: 16rem;
+    position: relative;
+    z-index: 1;
 
     h2 {
       font-family: futura-pt-bold;
@@ -52,14 +55,16 @@ const PortfolioWrapper = styled.div`
   }
 
   .portfolio-text {
-    margin: 40px 0 40px 6rem;
+    margin: 40px 0 40px 8rem;
     width: 60%;
   }
 
   .portfolio-cards {
     display: flex;
     justify-content: space-between;
-    margin: 0 10vh;
+    margin: -17vh 0vh;
+    background: white;
+    padding: 10%;
 
     .portfolio-card {
       width: 400px;

@@ -10,11 +10,15 @@ import rightArrow from '../../images/right-arrow.svg'
 const ServicesPage = () => {
   return (
     <Layout>
-      <StyleWrapper>
-        <img src={accounts} alt="" className="top-img" />
+      <StyleWrapper>       
+        <div class="parallax-wrapper">
+          <div class="parallax-header">
+            <h1>Digitalents palvelut</h1>
+          </div>
+        </div>
           <div className="text">
-            <h2>Digitalents palvelut</h2>
             <p>Toteutamme monipuolisesti digitaalisia tuotantoja, ohjelmistokehitystä sekä IT-alan palveluita. Ota meihin rohkeasti yhteyttä niin suunnitellaan seuraava projektisi!</p>
+            <h2>Placeholder</h2>
           </div>
           <div className="ImagesContainer">
             <div className="ImagesContainer_ICT">
@@ -30,7 +34,7 @@ const ServicesPage = () => {
             <form className="ContactContainer_Form" method="post">
               <input type="text" placeholder="Nimesi" />
               <input type="text" placeholder="Sähköpostisi" />
-              <input type="text" placeholder="Viesti" />
+              <textarea rows="8"  placeholder="Viesti"></textarea>
             </form>
             <button>Send <img className="arrow" src={rightArrow} alt="" /></button>
           </div>
@@ -41,6 +45,36 @@ const ServicesPage = () => {
 }
 
 const StyleWrapper = styled.div`
+.parallax-wrapper {
+  width: 100vw;
+  height: 40vh;
+  padding-top: 0vh;
+  box-sizing: border-box;
+  background-image: url(${accounts});
+  background-attachment: fixed;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  object-fit: cover;
+  align-items: center;
+  text-align: center; 
+}
+
+.parallax-header {
+  margin-top: 18vh;
+  h1 {
+    margin-top: 18vh;
+    font-size: 64px;
+    -webkit-text-stroke-width: 0px; 
+    -webkit-text-stroke-color: black; 
+    line-height: 150%;
+    font-family: futura-pt-bold;
+    font-weight: 700;
+    margin-top: 20px;
+    color: white;
+  }
+}
+
 .top-img {
   height: 40vh;
   width: 100%;
@@ -49,27 +83,29 @@ const StyleWrapper = styled.div`
   display: block;
   object-fit: cover;
 }
-.text{
+
+.text {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: space-around;
-  height: 50vh;
+  height: auto;
   padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-bottom: 5vh;
 
   h2 {
     font-size: 32px;
     line-height: 150%;
     font-family: futura-pt-bold;
     font-weight: 700;
+    padding: 15vh;
   }
 
   p {
     max-width: 900px;
     font-family: Asap;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 150%;
   }
 
@@ -83,7 +119,7 @@ const StyleWrapper = styled.div`
     }
   }
 }
-.ImagesContainer{
+.ImagesContainer {
   display: flex;
   margin: auto;
   height: 40vh;
@@ -96,16 +132,16 @@ const StyleWrapper = styled.div`
     align-items: center;
   }
 
-  .ImagesContainer_ICT{
+  .ImagesContainer_ICT {
     background-image: url(${ict});
   }
-  .ImagesContainer_STACK{
+  .ImagesContainer_STACK {
     background-image: url(${stack});
   }
-  .ImagesContainer_DIGI{
+  .ImagesContainer_DIGI {
     background-image: url(${digi});
   }
-  .ImagesContainer_ICT, .ImagesContainer_STACK, .ImagesContainer_DIGI{
+  .ImagesContainer_ICT, .ImagesContainer_STACK, .ImagesContainer_DIGI {
     display: flex;
     width: 320px;
     height: 250px;
@@ -117,7 +153,7 @@ const StyleWrapper = styled.div`
       margin: 10px 0;
       padding-bottom: 30px;
     }
-    h2{
+    h2 {
       text-align: center;
       margin: auto;
       padding-top: 15rem;
@@ -131,7 +167,7 @@ const StyleWrapper = styled.div`
 
   }
   }
-  .ContactContainer{
+  .ContactContainer {
     display: flex;
     flex-direction: column;
     width: 61%;
@@ -141,14 +177,23 @@ const StyleWrapper = styled.div`
     @media screen and (max-width: 1000px) {
       margin-top: 22rem;
     }
-    form{
+
+    textarea {
+      width: 99%;
+      font-size: 20px;
+      margin-top: 25px;
+      border: 2px solid;
+    }
+
+    form {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding-top: 3rem;
       width: 60%;
-    input{
+      
+      input {
         width: 100%;
         height: 3rem;
         border: none;
@@ -156,6 +201,8 @@ const StyleWrapper = styled.div`
         margin-top: .8rem;
         font-size: 20px;
 
+        
+        
         &::placeholder {
           color: black;
           font-size: 20px;
@@ -163,14 +210,14 @@ const StyleWrapper = styled.div`
         }
       }
     }
-    h1{
+    h1 {
       font-size: 27px;
       line-height: 150%;
       font-family: futura-pt-bold;
       font-weight: 700;
       text-decoration: underline;
     }
-    p{
+    p {
       text-align: center;
       padding-top: 2rem;
       margin-top: 25px;

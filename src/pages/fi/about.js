@@ -41,18 +41,18 @@ const AboutPage = () => {
 
   <div className="ImagesContainer">
     <div className="ImagesContainer_Media">
-      <h2>Media</h2>
+      <h2>Digitalents Media</h2>
     </div>
     <div className="ImagesContainer_ICT">
-      <h2>ICT</h2>
+      <h2>Digitalents ICT</h2>
     </div>
     <div className="ImagesContainer_SoftDev">
-      <h2>SoftDev</h2>
+      <h2>Digitalents SoftDev</h2>
     </div>
   </div>
 
   <div className="ilmaa">
-    <p>kuten mitä näet?</p>
+    <p>Placeholder</p>
     <h1>Suunnitellaan projekti</h1>
     <div class="ilmaa">
       <button>Lue palveluistamme <img className="arrow" src={rightArrow} alt="" /></button>
@@ -66,12 +66,6 @@ const AboutPage = () => {
  
 const StyleWrapper = styled.div`
 
-@media screen and (max-width: 992px) {
-  body {
-    background-color: blue;
-    color: white;
-  }
-}
 
 
 .parallax-wrapper {
@@ -114,7 +108,7 @@ const StyleWrapper = styled.div`
 */
 
 .ilmaa {
-  padding: 10vh;
+  padding: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -206,7 +200,7 @@ const StyleWrapper = styled.div`
   .TextContainer{
     display: flex;
     flex-wrap: wrap;
-    width: 90vw;
+    width: 100vw;
     margin: auto;
     margin-top: 0;
     align-items: center;
@@ -215,8 +209,8 @@ const StyleWrapper = styled.div`
     .TextContainer_Text{
       margin-top: 20px;
       margin-bottom 20px;
-      margin-left: 70px;
-      margin-right: 70px;
+      margin-left: 10%;
+      margin-right: 10%;
       height: 300px;
       width: 500px;
       font-family: Asap;
@@ -250,7 +244,7 @@ const StyleWrapper = styled.div`
       font-weight: bold;
       max-width: 217px;
       min-width: 217px;
-      font-size: 29px;
+      font-size: 28px;
       line-height: 34px;
       height: 230px;
       color: #ffffff;

@@ -25,7 +25,8 @@ const FooterColumn = props => {
           <p onClick={props.handleRegisterClick}>{props.language === 'en' ? 'REGISTER' : 'REKISTERISELOSTE'}</p>
           <p onClick={props.handleCookieClick}>{props.language === 'en' ? 'COOKIES': 'EVÄSTEET'}</p>
         </div>
-        <img src={HelLogo} alt="" />
+        
+        
       </div>
     )
   } else if (props.position === 'middle') {
@@ -40,6 +41,8 @@ const FooterColumn = props => {
           {props.lowerData.map(n => {
             return <p key={n}>{n}</p>
           })}
+          <img className="logohelsinki" src={HelLogo} alt="" />
+          <p className="copyright">Copyright 2019 © Digitalents Helsinki. All Rights Reserved.</p>
         </div>
       </div>
     )
@@ -191,6 +194,11 @@ const FooterWrapper = styled.footer`
     }
   }
 
+  .logohelsinki {
+    margin-top: 20px;
+    height: 100px;
+  }
+
   .middle {
     margin: 2rem 0;
     font-weight: bold;
@@ -199,7 +207,9 @@ const FooterWrapper = styled.footer`
     font-size: 30px;
     font-weight: 500;
     padding-top: 3rem;
-
+    .copyright {
+      margin-top: 4rem;
+    }
     .middleUpper {
       text-transform: uppercase;
       margin-bottom: 1rem;

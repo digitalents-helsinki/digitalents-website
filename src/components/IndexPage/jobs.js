@@ -22,6 +22,8 @@ const Jobs = () => {
 const JobsWrapper = styled.div`
   height: 100vh;
 
+  
+
   .top-img {
     height: 40vh;
     width: 100vw;
@@ -33,7 +35,7 @@ const JobsWrapper = styled.div`
   }
 
   .jobs-heading {
-    margin-top: -8vh;
+    margin-top: -4vh;
     width: 350px;
     height: 150px;
     background: #000000;
@@ -41,6 +43,8 @@ const JobsWrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin-left: calc(50vw - 175px);
+    position: relative;
+    z-index: 1;
 
     h2 {
       color: #FFFFFF;
@@ -58,6 +62,10 @@ const JobsWrapper = styled.div`
     justify-content: center;
     align-items: center;
     height: 50%;
+    width: 50%;
+    background: white;
+    margin: auto;
+    margin-top: -4rem;
 
     h3 {
       font-family: futura-pt-bold;
@@ -76,7 +84,7 @@ const JobsWrapper = styled.div`
     button {
       margin-top: 6rem;
       background: #ffffff;
-      border: 0px solid #000000;
+      border: 1px solid #000000;
       width: 180px;
       height: 50px;
       font-size: 18px;

@@ -23,6 +23,7 @@ const Services = () => {
 const ServicesWrapper = styled.div`
   .services-heading {
     background: #000000;
+    margin-top: 60vh;
     width: 304px;
     height: 104px;
     display: flex;
@@ -42,9 +43,11 @@ const ServicesWrapper = styled.div`
   }
 
   .services-content {
+    margin-top: 0vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background: white;
     
     .services-image {
       height: 600px;

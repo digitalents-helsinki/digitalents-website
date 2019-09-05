@@ -64,6 +64,7 @@ const BurgerMenu = (props) => {
 
 const BurgerButton = styled.div`
   position: fixed;
+  margin-left:70vw;
   z-index: 9;
   padding-left: 5vw;
   padding-top: 5vh;

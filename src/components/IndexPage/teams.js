@@ -45,7 +45,7 @@ const TeamsWrapper = styled.div`
   }
 
   .teams-heading {
-    margin-top: -10vh;
+    margin-top: 10vh;
     width: 555px;
     height: 170px;
     background: #000000;
@@ -53,6 +53,8 @@ const TeamsWrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin-left: 15vw;
+    position: relative;
+    z-index: 1;
 
     h2 {
       color: #FFFFFF;
@@ -65,12 +67,14 @@ const TeamsWrapper = styled.div`
   }
 
   .teams {
+
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    margin-top: 10vh;
+    margin-top: -6vh;
     background: white;
-    padding: 2rem 0;
+    padding: 8rem 0;
+    
   }
 
   .team {

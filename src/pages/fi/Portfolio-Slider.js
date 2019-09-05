@@ -46,8 +46,8 @@ const PortfolioSlider = () => {
 }
 
 const StyleWrapper = styled.div`
-      height: auto;
-      .Container{
+    height: auto;
+    .Container{
       display: flex;
       width: 80%;
       margin: auto;
@@ -71,7 +71,7 @@ const StyleWrapper = styled.div`
           width: 85%;
         }
       }
-  }
+    }
         .Container_Img{
           display: flex;
   	      flex-direction: row;
@@ -79,7 +79,6 @@ const StyleWrapper = styled.div`
           width: 70vw;
           justify-content: center;
           margin: 0 auto;
-
           @media screen and (max-width: 1400px) {
             flex-direction: row;
             justify-content: center;
@@ -118,6 +117,7 @@ const StyleWrapper = styled.div`
           width: 80%;
           margin: auto;
           padding: 15vh 0;
+        }
         .BottomText_First{
           font-family: Asap;
           font-size: 16px;
