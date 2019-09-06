@@ -36,7 +36,7 @@ const PortfolioWrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin-left: 8rem;
-    margin-top: 16rem;
+    margin-top: 8rem;
     position: relative;
     z-index: 1;
 
@@ -68,7 +68,7 @@ const PortfolioWrapper = styled.div`
 
     .portfolio-card {
       width: 400px;
-      height: 600px;
+      height: 500px;
       background: gray;
 
       .card-heading {

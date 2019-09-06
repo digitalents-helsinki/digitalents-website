@@ -35,7 +35,7 @@ const JobsWrapper = styled.div`
   }
 
   .jobs-heading {
-    margin-top: -4vh;
+    margin-top: -15vh;
     width: 350px;
     height: 150px;
     background: #000000;
