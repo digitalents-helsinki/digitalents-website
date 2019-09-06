@@ -20,16 +20,17 @@ const Jobs = () => {
 }
 
 const JobsWrapper = styled.div`
-  height: 100vh;
+  height: 120vh;
 
   
 
   .top-img {
     height: 40vh;
-    width: 100vw;
+    width: 49.5vw;
     overflow: hidden;
     z-index: -1;
     position: relative;
+    margin: auto;
     display: block;
     object-fit: cover;
   }

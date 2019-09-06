@@ -36,7 +36,7 @@ const PortfolioWrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin-left: 8rem;
-    margin-top: 8rem;
+    margin-top: 0rem;
     position: relative;
     z-index: 1;
 

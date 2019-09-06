@@ -61,16 +61,16 @@ const HeroWrapper = styled.div`
 
   .video-react {
     position: fixed;
-    z-index: -10;
+    z-index: -2;
   }
 
   .video-overlay {
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: -1;
     background-color: rgba(40, 50, 70, 0.6);
   }
 

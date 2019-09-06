@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import rightArrow from '../../images/right-arrow.svg'
-import TopImg from '../../images/annie-spratt-qckxruozjrg-unsplash.jpg'
+
 
 const TeamsAlt = () => {
   return (
     <TeamsWrapper>
-      <img src={TopImg} alt="" className="top-img" />
+     
       <div className="teams-heading">
         <h2>Digitalents tiimimme</h2>
       </div>
@@ -35,6 +35,7 @@ const TeamsAlt = () => {
 
 const TeamsWrapper = styled.div`
   .top-img {
+    display:hidden;
     height: 40vh;
     width: 100vw;
     overflow: hidden;
@@ -45,7 +46,7 @@ const TeamsWrapper = styled.div`
   }
 
   .teams-heading {
-    margin-top: -15vh;
+    margin-top: 15vh;
     width: 555px;
     height: 170px;
     background: #000000;
@@ -73,7 +74,7 @@ const TeamsWrapper = styled.div`
     justify-content: space-around;
     margin-top: -6vh;
     background: white;
-    padding: 8rem 0;
+    padding: 12rem 0;
     
   }
 
