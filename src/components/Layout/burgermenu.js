@@ -55,7 +55,9 @@ const BurgerMenu = (props) => {
     <header>
       {iconVisible ?
       <BurgerButton>
-        <img src={openIcon} alt="" onClick={handleClick} />
+        <div class="burgercontainer">
+          <img src={openIcon} alt="" onClick={handleClick} />
+        </div>
       </BurgerButton> : null}
       {sideBarElement}
     </header>
@@ -63,14 +65,20 @@ const BurgerMenu = (props) => {
 }
 
 const BurgerButton = styled.div`
+.burgercontainer{
+  width: 100vw;
+  background-color: ${props => props.color ? "rgba(0, 0, 0, 0.8)" : "rgba(0, 0, 0, 0.8)"};
   position: fixed;
-  margin-left:70vw;
+  margin-left:0vw;
   z-index: 9;
-  padding-left: 5vw;
-  padding-top: 5vh;
+  padding:1rem;
+}
+
   img {
     height: 50px;
   }
+
+ 
 `
 
 const SideBar = styled.div`
@@ -86,7 +94,7 @@ const SideBar = styled.div`
     color: white;
   }
   .button {
-
+    
     img {
       padding-left: 5vw;
       padding-top: 5vh;

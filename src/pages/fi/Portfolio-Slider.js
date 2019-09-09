@@ -94,9 +94,9 @@ const StyleWrapper = styled.div`
             width: 100vw;
           }
           .Container_Img_Images{
-            border: 4px solid white;          
+            border: 12px solid white;          
             height: 40vh;
-            width: 22vw;
+            width: 18vw;
             background-size: cover;
             background-image: url(${PortfolioSliderPhoto});
             @media screen and (max-width: 1000px) {

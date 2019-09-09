@@ -22,6 +22,7 @@ const Services = () => {
 
 const ServicesWrapper = styled.div`
   .services-heading {
+    margin-left: 10vw;
     background: #000000;
     margin-top: 20vh;
     width: 304px;
@@ -69,9 +70,10 @@ const ServicesWrapper = styled.div`
 
       button {
         background: #ffffff;
-        border: 0px solid #000000;
-        width: 260px;
+        border: 1px solid #000000;
+        width: 320px;
         height: 50px;
+        padding: px;
         font-size: 18px;
         line-height: 24px;
         font-weight: 700;

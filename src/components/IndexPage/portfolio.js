@@ -35,7 +35,7 @@ const PortfolioWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 8rem;
+    margin-left: 26rem;
     margin-top: 0rem;
     position: relative;
     z-index: 1;
@@ -55,7 +55,7 @@ const PortfolioWrapper = styled.div`
   }
 
   .portfolio-text {
-    margin: 40px 0 40px 8rem;
+    margin: 40px 0 40px 26rem;
     width: 60%;
   }
 

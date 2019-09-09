@@ -26,8 +26,9 @@ const SponsorsWrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
-  padding-top: 50px;
-  padding-bottom: 100px;
+  background: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
   padding-left: 7rem;
   padding-right: 7rem;
 

@@ -22,8 +22,9 @@ const JobsPage = () => {
 
             <div className="addressContainer">
               <p>Address: Fredrikinkatu 48, 00101 Helsinki</p>
-              <p>Phone: 040 7046818</p>
               <p>Open: 12.00PM - 17:00PM</p>
+              <p>Phone: 040 7046818</p>
+              
             </div>
             <button>Ohjaamo <img className="arrow" src={rightArrow} alt="" /></button>
               <div className="mapContainer">
@@ -49,7 +50,7 @@ const StyleWrapper = styled.div`
     align-items: center;
     text-align: left;
     p {
-      text-align: left;
+      text-align: center;
       max-width: 800px;
       font-size: 24px;
       font-weight: 400;
