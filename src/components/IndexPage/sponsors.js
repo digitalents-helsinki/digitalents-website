@@ -33,7 +33,7 @@ const SponsorsWrapper = styled.div`
   padding-right: 7rem;
 
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 800px) {
     flex-flow: column wrap;
     align-items: center;
     @media screen and (max-width: 1200px) {
