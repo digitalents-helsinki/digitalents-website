@@ -27,25 +27,28 @@ const JobsWrapper = styled.div`
   
 
   .top-img {
+    
     height: 40vh;
     width: 49.5vw;
     overflow: hidden;
     z-index: -1;
     position: relative;
     margin: auto;
+    margin-top: 8rem;
     display: block;
     object-fit: cover;
   }
 
   .jobs-heading {
-    margin-top: -15vh;
+    
     width: 350px;
     height: 150px;
     background: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: calc(50vw - 175px);
+    margin: auto;
+    margin-top: -4rem;
     position: relative;
     z-index: 1;
     
@@ -73,10 +76,10 @@ const JobsWrapper = styled.div`
     @media screen and (max-width: 1200px) {
       justify-content: center;
       align-items: center;
-      margin-top: 3rem;
+      margin-top: -4rem;
       margin-bottom: 3rem;
-      width: 80vw;
-      padding:20px;
+      width: 70vw;
+      padding:3rem;
     }
 
     h3 {
@@ -84,7 +87,8 @@ const JobsWrapper = styled.div`
       font-size: 32px;
       line-heigth: 150%;
       font-weight: 700;
-      margin-bottom: 2rem;
+      margin-top: 8rem;
+      margin-bottom: 5rem;
     }
 
     span {
@@ -94,7 +98,7 @@ const JobsWrapper = styled.div`
     }
     
     button {
-      margin-top: 6rem;
+      margin-top: 4rem;
       background: #ffffff;
       border: 1px solid #000000;
       width: 180px;

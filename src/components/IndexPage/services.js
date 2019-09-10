@@ -24,16 +24,16 @@ const ServicesWrapper = styled.div`
   .services-heading {
     margin-left: 10vw;
     background: #000000;
-    margin-top: 20vh;
+    margin-top: 8rem;
     width: 304px;
     height: 104px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 1;
-    left: 50%;
-    top: 5%;
+    z-index: 4;
+    left: 57%;
+    top: 14rem;
 
     h2 {
       font-family: futura-pt-bold;
@@ -44,25 +44,28 @@ const ServicesWrapper = styled.div`
   }
 
   .services-content {
-    margin-top: 0vh;
+    margin-top: 3rem;
+    padding: 3rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     background: white;
+    z-index: -5;
     
     
     .services-image {
       width: 50vw;
       margin-left: -14vw
       margin: 2rem;
-      padding: 1rem;
+      padding: 2rem;
     }
   
     .services-text {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 25%;
+      width: 18rem;
+      
       @media screen and (max-width: 1200px) {
         justify-content: center;
         align-items: center;
@@ -76,14 +79,16 @@ const ServicesWrapper = styled.div`
         font-size: 32px;
         line-height: 43px;
         font-weigth: 700;
+        margin-bottom:3rem;
+        margin-top:3rem;
       }
 
       button {
         background: #ffffff;
         border: 1px solid #000000;
         width: 320px;
-        height: 50px;
-        padding: px;
+        height: 3rem;
+        padding: 1rem;
         font-size: 18px;
         line-height: 24px;
         font-weight: 700;

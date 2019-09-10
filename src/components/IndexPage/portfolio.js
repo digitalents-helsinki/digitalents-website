@@ -36,11 +36,11 @@ const PortfolioWrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin-left: 22vw;
-    margin-top: 0rem;
+    margin-top: 8rem;
     position: relative;
     z-index: 1;
     @media screen and (max-width: 1200px) {
-      margin-left: 0vw;
+      margin-left: 5vw;
       justify-content: center;
       align-items: center;
       margin-top: 3rem;
@@ -65,7 +65,7 @@ const PortfolioWrapper = styled.div`
   }
 
   .portfolio-text {
-    margin: 40px 0 40px 22vw;
+    margin: 1rem 0 1rem 22vw;
     width: 60%;
   }
 
@@ -78,7 +78,7 @@ const PortfolioWrapper = styled.div`
     @media screen and (max-width: 1200px) {
       justify-content: center;
       align-items: center;
-      margin-top: 3rem;
+      margin: -22vh 0vh;
       width:80vw;
       
     } 
@@ -90,7 +90,7 @@ const PortfolioWrapper = styled.div`
       @media screen and (max-width: 1200px) {
         justify-content: center;
         align-items: center;
-        margin-top: 3rem;
+        margin-top: 8rem;
         width:80vw;
         
       } 

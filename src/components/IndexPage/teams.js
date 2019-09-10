@@ -48,7 +48,7 @@ const TeamsWrapper = styled.div`
 
   .teams-heading {
     margin-top: 15vh;
-    width: 555px;
+    width: 26rem;
     height: 170px;
     background: #000000;
     display: flex;
@@ -57,6 +57,13 @@ const TeamsWrapper = styled.div`
     margin-left: 15vw;
     position: relative;
     z-index: 1;
+    @media screen and (max-width: 1200px) {
+      justify-content: center;
+      align-items: center;
+      margin-top: 15rem;
+      width: 50vw;
+      margin-left: 5vw;
+    }
     
     
   } 
@@ -82,8 +89,8 @@ const TeamsWrapper = styled.div`
     @media screen and (max-width: 1200px) {
       justify-content: center;
       align-items: center;
-      margin-top: 3rem;
-      width: 80vw;
+      margin-top: -5rem;
+      width: 100vw;
     }
     
   }
@@ -94,7 +101,8 @@ const TeamsWrapper = styled.div`
     @media screen and (max-width: 1200px) {
       justify-content: center;
       align-items: center;
-      margin-top: 3rem;
+      margin-top: 0rem;
+      margin-bottom: 2rem;
       width: 80vw;
     }
 
@@ -105,7 +113,8 @@ const TeamsWrapper = styled.div`
       @media screen and (max-width: 1200px) {
         justify-content: center;
         align-items: center;
-        margin-top: 3rem;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
         width: 80vw;
       }
 
@@ -157,7 +166,7 @@ const TeamsWrapper = styled.div`
     .teams-heading {
       width: 80vw;
       height: 8rem;
-      margin: 2vh;
+      
       padding: 20px;
       justify-content: center;
       align-items: center;
