@@ -50,9 +50,12 @@ const ServicesWrapper = styled.div`
     justify-content: space-evenly;
     background: white;
     
+    
     .services-image {
       width: 50vw;
       margin-left: -14vw
+      margin: 2rem;
+      padding: 1rem;
     }
   
     .services-text {
@@ -60,6 +63,13 @@ const ServicesWrapper = styled.div`
       flex-direction: column;
       justify-content: space-between;
       width: 25%;
+      @media screen and (max-width: 1200px) {
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
+        width: 80vw;
+        padding:20px;
+      }
 
       h3 {
         font-family: futura-pt-bold;
@@ -80,6 +90,11 @@ const ServicesWrapper = styled.div`
         display: flex;
         justify-content: space-around;
         align-items: center;
+        margin-bottom:3rem;
+        margin-top:3rem;
+
+       
+        
       }
     }
   }
@@ -103,19 +118,24 @@ const ServicesWrapper = styled.div`
   @media screen and (max-width: 1200px) {
     .services-heading {
       position: static;
+      
     }
 
     .services-content {
       flex-direction: column;
+      
     }
   }
 
   @media screen and (min-width: 1200px) {
     height: 100vh;
+    margin-bottom:3rem;
+    
 
     .services-content {
       .services-text {
         height: 30vh;
+        
       }
     }
   }

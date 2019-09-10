@@ -35,10 +35,19 @@ const PortfolioWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 26rem;
+    margin-left: 22vw;
     margin-top: 0rem;
     position: relative;
     z-index: 1;
+    @media screen and (max-width: 1200px) {
+      margin-left: 0vw;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+      width: 80vw;
+      padding:20px;
+      
+    }
 
     h2 {
       font-family: futura-pt-bold;
@@ -52,10 +61,11 @@ const PortfolioWrapper = styled.div`
     font-family: futura-pt-bold;
     font-size: 32px;
     line-height: 43px;
+    
   }
 
   .portfolio-text {
-    margin: 40px 0 40px 26rem;
+    margin: 40px 0 40px 22vw;
     width: 60%;
   }
 
@@ -65,11 +75,25 @@ const PortfolioWrapper = styled.div`
     margin: -17vh 0vh;
     background: white;
     padding: 10%;
+    @media screen and (max-width: 1200px) {
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+      width:80vw;
+      
+    } 
 
     .portfolio-card {
       width: 400px;
       height: 500px;
       background: gray;
+      @media screen and (max-width: 1200px) {
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
+        width:80vw;
+        
+      } 
 
       .card-heading {
         padding: 25px;

@@ -21,6 +21,8 @@ const Jobs = () => {
 
 const JobsWrapper = styled.div`
   height: 120vh;
+ 
+
 
   
 
@@ -46,6 +48,7 @@ const JobsWrapper = styled.div`
     margin-left: calc(50vw - 175px);
     position: relative;
     z-index: 1;
+    
 
     h2 {
       color: #FFFFFF;
@@ -67,6 +70,14 @@ const JobsWrapper = styled.div`
     background: white;
     margin: auto;
     margin-top: -4rem;
+    @media screen and (max-width: 1200px) {
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      width: 80vw;
+      padding:20px;
+    }
 
     h3 {
       font-family: futura-pt-bold;

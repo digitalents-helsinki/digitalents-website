@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import angleIcon from '../../images/angledown.svg'
 import rightArrow from '../../images/right-arrow.svg'
 import Video from './video'
+import annie from '../../images/annie-spratt-qckxruozjrg-unsplash.jpg'
 
 export default class Hero extends React.Component {
   constructor(props) {
@@ -61,7 +62,13 @@ const HeroWrapper = styled.div`
 
   .video-react {
     position: fixed;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
     z-index: -2;
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
   }
 
   .video-overlay {
@@ -72,8 +79,15 @@ const HeroWrapper = styled.div`
     left: 0;
     z-index: -1;
     background-color: rgba(40, 50, 70, 0.6);
+    @media screen and (max-width: 1200px) {
+      background-image: url(${annie});
+      object-fit: fill;
+      position: fixed;
+      
+    }
   }
 
+  
   .transition-appear {
     opacity: 0.01;
   }
@@ -191,9 +205,10 @@ const TextContent = styled.div`
   padding-top: 10vh;
   padding-bottom: 10vh;
   background: white;
+  
 
   h2 {
-    font-size: 32px;
+    font-size: 42px;
     line-height: 150%;
     font-family: futura-pt-bold;
     font-weight: 700;
@@ -202,21 +217,28 @@ const TextContent = styled.div`
   p {
     max-width: 900px;
     font-family: Asap;
-    font-size: 16px;
+    font-size: 26px;
     line-height: 150%;
+    @media screen and (max-width: 600px) {
+      font-size: 22px;
+      padding:1rem;
+    }
   }
 
   button {
     background: #ffffff;
-    border: 0px solid #000000;
-    width: 200px;
-    height: 50px;
+    border: 1px solid #000000;
+    width: 260px;
+    height: 80px;
     font-size: 18px;
     line-height: 24px;
     font-weight: 700;
     display: flex;
+    padding:10px;
     justify-content: space-around;
     align-items: center;
+    margin-bottom:3rem;
+    margin-top:3rem;
   }
 
   .arrow {
@@ -238,7 +260,7 @@ const TextContent = styled.div`
   @media screen and (max-width: 600px) {
     height: 100vh;
     justify-content: center;
-    padding: 0 1rem;
+    
     
     p {
       margin: 3rem 0;

@@ -36,6 +36,10 @@ const SponsorsWrapper = styled.div`
   @media screen and (max-width: 400px) {
     flex-flow: column wrap;
     align-items: center;
+    @media screen and (max-width: 1200px) {
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
   }
 `
 

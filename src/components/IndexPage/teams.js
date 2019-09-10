@@ -12,20 +12,20 @@ const TeamsAlt = () => {
       </div>
       <div className="teams">
         <div className="team">
-          <h4>Digitalents</h4>
-          <div><h3>Media</h3><img className="arrow" src={rightArrow} alt="" /></div>
+          <h4></h4>
+          <div><h3>Digitalents Media</h3><img className="arrow" src={rightArrow} alt="" /></div>
           <p>Digitalents Media tuottaa monipuolista digitaalista mediaa, 2D- ja 3D-animointia sekä sosiaalisen median sisältöjä.
 </p>
         </div>
         <div className="team">
-          <h4>Digitalents</h4>
-          <div><h3>SoftDev</h3><img className="arrow" src={rightArrow} alt="" /></div>
+          <h4></h4>
+          <div><h3>Digitalents SoftDev</h3><img className="arrow" src={rightArrow} alt="" /></div>
           <p>Digitalents ohjelmistotiimi kehittää ohjelmistoja sekä sivustoja moderneilla alustoilla ja välineillä.
 </p>
         </div>
         <div className="team">
-          <h4>Digitalents</h4>
-          <div><h3>ICT</h3><img className="arrow" src={rightArrow} alt="" /></div>
+          <h4></h4>
+          <div><h3>Digitalents ICT</h3><img className="arrow" src={rightArrow} alt="" /></div>
           <p>Digitalents ICT toteuttaa ylläpito-, asennus- ja tukipalveluita sekä sisäisiä tuotantopalveluita.</p>
         </div>
       </div>
@@ -43,6 +43,7 @@ const TeamsWrapper = styled.div`
     position: relative;
     display: block;
     object-fit: cover;
+    
   }
 
   .teams-heading {
@@ -56,6 +57,9 @@ const TeamsWrapper = styled.div`
     margin-left: 15vw;
     position: relative;
     z-index: 1;
+    
+    
+  } 
 
     h2 {
       color: #FFFFFF;
@@ -75,17 +79,35 @@ const TeamsWrapper = styled.div`
     margin-top: -6vh;
     background: white;
     padding: 12rem 0;
+    @media screen and (max-width: 1200px) {
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+      width: 80vw;
+    }
     
   }
 
   .team {
     display: flex;
     flex-flow: column nowrap;
+    @media screen and (max-width: 1200px) {
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+      width: 80vw;
+    }
 
     div {
       display: flex;
       flex-flow: row nowrap;
       align-content: center;
+      @media screen and (max-width: 1200px) {
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
+        width: 80vw;
+      }
 
       img {
         height: 15px;
@@ -101,14 +123,16 @@ const TeamsWrapper = styled.div`
     }
 
     h3 {
-      font-size: 29px;
-      margin-bottom: 2rem;
+      font-size: 32px;
+      margin: 2rem;
+      padding:
       font-family: futura-pt-bold;
       font-weight: bold;
+      
     }
 
     p {
-      font-size: 18px;
+      font-size: 26px;
       width: 14rem;
     }
   }
@@ -131,9 +155,12 @@ const TeamsWrapper = styled.div`
 
   @media screen and (max-width: 1200px) {
     .teams-heading {
-      width: 200px;
-      height: 100px;
-      margin: 0;
+      width: 80vw;
+      height: 8rem;
+      margin: 2vh;
+      padding: 20px;
+      justify-content: center;
+      align-items: center;
     }
     .teams {
       flex-flow column nowrap;
@@ -142,6 +169,8 @@ const TeamsWrapper = styled.div`
 
   @media screen and (min-width: 1200px) {
     height: 100vh;
+    justify-content: center;
+        align-items: center;
   }
 `
 

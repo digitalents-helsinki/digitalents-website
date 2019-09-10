@@ -5,7 +5,8 @@ import { Link } from 'gatsby'
 import fbIcon from '../../images/facebook_logo_valkoinen.svg'
 import igIcon from '../../images/instagram_logo_valkoinen.svg'
 import twIcon from '../../images/twitter_logo_valkoinen.svg'
-import openIcon from '../../images/ham-nav.png'
+import openIcon from '../../images/burger-nav.svg'
+import DTLogo from '../../images/DT_logo.svg'
 import closeIcon from '../../images/exit-cross.png'
 
 const BurgerMenu = (props) => {
@@ -56,7 +57,10 @@ const BurgerMenu = (props) => {
       {iconVisible ?
       <BurgerButton>
         <div class="burgercontainer">
-          <img src={openIcon} alt="" onClick={handleClick} />
+          <a href="/fi/">
+            <img src={DTLogo} alt="" onClick={handleClick} />
+          </a>
+          <img class="burger" src={openIcon} alt="" onClick={handleClick} />
         </div>
       </BurgerButton> : null}
       {sideBarElement}
@@ -66,6 +70,8 @@ const BurgerMenu = (props) => {
 
 const BurgerButton = styled.div`
 .burgercontainer{
+  display: inline-flex;
+  justify-content: space-between;
   width: 100vw;
   background-color: ${props => props.color ? "rgba(0, 0, 0, 0.8)" : "rgba(0, 0, 0, 0.8)"};
   position: fixed;
@@ -76,6 +82,12 @@ const BurgerButton = styled.div`
 
   img {
     height: 50px;
+
+    
+  }
+  .burger {
+    margin-right: 0vw;
+    
   }
 
  
@@ -96,7 +108,7 @@ const SideBar = styled.div`
   .button {
     
     img {
-      padding-left: 5vw;
+      padding-left: 85vw;
       padding-top: 5vh;
       height: 50px;
 
