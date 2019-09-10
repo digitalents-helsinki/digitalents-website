@@ -71,7 +71,7 @@ const BurgerMenu = (props) => {
 const BurgerButton = styled.div`
 .burgercontainer{
   display: inline-flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100vw;
   background-color: ${props => props.color ? "rgba(0, 0, 0, 0.8)" : "rgba(0, 0, 0, 0.8)"};
   position: fixed;
@@ -81,12 +81,12 @@ const BurgerButton = styled.div`
 }
 
   img {
-    height: 50px;
+    height: 1.4rem;
 
     
   }
   .burger {
-    margin-right: 0vw;
+    margin-left: 2vw;
     
   }
 
