@@ -35,7 +35,7 @@ const PortfolioSlider = () => {
        
       
         <div className="BottomText">
-          <p className='BottomText_First'>Placeholder</p>
+          <p className='BottomText_First'> Onko sinulla Idea?</p>
           <p className='BottomText_Second'>Suunnitellaan projekti</p>
         </div>
         

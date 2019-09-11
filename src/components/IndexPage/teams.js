@@ -13,19 +13,21 @@ const TeamsAlt = () => {
       <div className="teams">
         <div className="team">
           <h4></h4>
-          <div><h3>Digitalents Media</h3><img className="arrow" src={rightArrow} alt="" /></div>
-          <p>Digitalents Media tuottaa monipuolista digitaalista mediaa, 2D- ja 3D-animointia sekä sosiaalisen median sisältöjä.
-</p>
+          
+          <button>Digitalents Media<img src={rightArrow} alt="" className="arrow" /></button>
+          
+          <p>Digitalents Media tuottaa monipuolista digitaalista mediaa, 2D- ja 3D-animointia sekä sosiaalisen median sisältöjä.</p>
         </div>
         <div className="team">
           <h4></h4>
-          <div><h3>Digitalents SoftDev</h3><img className="arrow" src={rightArrow} alt="" /></div>
-          <p>Digitalents ohjelmistotiimi kehittää ohjelmistoja sekä sivustoja moderneilla alustoilla ja välineillä.
-</p>
+          <button>Digitalents SoftDev<img src={rightArrow} alt="" className="arrow" /></button>
+          
+          <p>Digitalents ohjelmistotiimi kehittää ohjelmistoja sekä sivustoja moderneilla alustoilla ja välineillä.</p>
         </div>
         <div className="team">
           <h4></h4>
-          <div><h3>Digitalents ICT</h3><img className="arrow" src={rightArrow} alt="" /></div>
+          <button>Digitalents ICT<img src={rightArrow} alt="" className="arrow" /></button>
+          
           <p>Digitalents ICT toteuttaa ylläpito-, asennus- ja tukipalveluita sekä sisäisiä tuotantopalveluita.</p>
         </div>
       </div>
@@ -60,8 +62,8 @@ const TeamsWrapper = styled.div`
     @media screen and (max-width: 1200px) {
       justify-content: center;
       align-items: center;
-      margin-top: 15rem;
-      width: 50vw;
+      margin-top: 12rem;
+      width: 18rem;
       margin-left: 5vw;
     }
     
@@ -85,12 +87,13 @@ const TeamsWrapper = styled.div`
     justify-content: space-around;
     margin-top: -6vh;
     background: white;
-    padding: 12rem 0;
+    padding: 1rem 0;
     @media screen and (max-width: 1200px) {
-      justify-content: center;
-      align-items: center;
-      margin-top: -5rem;
+      justify-content: left;
+      align-items: left;
+      margin-top: 1rem;
       width: 100vw;
+      flex-flow: column nowrap;
     }
     
   }
@@ -98,24 +101,42 @@ const TeamsWrapper = styled.div`
   .team {
     display: flex;
     flex-flow: column nowrap;
+    width: 20rem;
+    height: 12rem;
     @media screen and (max-width: 1200px) {
-      justify-content: center;
-      align-items: center;
+      justify-content: left;
+      align-items: left;
+      margin-left:1rem;
       margin-top: 0rem;
       margin-bottom: 2rem;
       width: 80vw;
+      
     }
+    p {
+
+      font-size: 26px;
+      
+    }
+
+    button {
+      background: #ffffff;
+      border: 0px solid #000000;
+      width: 25rem;
+      height: 3rem;
+      
+      font-size: 24px;
+      line-height: 24px;
+      font-weight: 700;
+      display: flex;
+      justify-content: left;
+      align-items:left;
+      margin-bottom:3rem;
+      margin-top:3rem;
 
     div {
       display: flex;
       flex-flow: row nowrap;
-      align-content: center;
-      @media screen and (max-width: 1200px) {
-        justify-content: center;
-        align-items: center;
-        margin-top: 0rem;
-        margin-bottom: 0rem;
-        width: 80vw;
+      align-content: left;
       }
 
       img {
@@ -126,15 +147,10 @@ const TeamsWrapper = styled.div`
       }
     }
 
-    h4 {
-      font-size: 14px;
-      margin-bottom: 0.3rem;
-    }
 
     h3 {
       font-size: 32px;
       margin: 2rem;
-      padding:
       font-family: futura-pt-bold;
       font-weight: bold;
       
@@ -142,7 +158,7 @@ const TeamsWrapper = styled.div`
 
     p {
       font-size: 26px;
-      width: 14rem;
+      
     }
   }
 

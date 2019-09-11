@@ -12,6 +12,7 @@ const Services = () => {
       <div className="services-content">
       <img src={Img} alt="" className="services-image" />
         <div className="services-text">
+          <p>Onko sinulla Idea?</p>
           <h3>Suunnitellaan seuraava projektisi!</h3>
           <button>Lue lisää palveluistamme <img src={rightArrow} alt="" className="arrow" /></button>
         </div>
@@ -58,12 +59,14 @@ const ServicesWrapper = styled.div`
       margin-left: -14vw
       margin: 2rem;
       padding: 2rem;
+      @media screen and (max-width: 1200px) {
+        display:none;
     }
   
     .services-text {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       width: 18rem;
       
       @media screen and (max-width: 1200px) {
@@ -74,13 +77,20 @@ const ServicesWrapper = styled.div`
         padding:20px;
       }
 
+      p {
+        font-family: Asap;
+        font-size: 18px;
+        line-height: 150%;
+        margin-top:3rem;
+      }
+
       h3 {
         font-family: futura-pt-bold;
         font-size: 32px;
         line-height: 43px;
         font-weigth: 700;
-        margin-bottom:3rem;
-        margin-top:3rem;
+        margin-bottom: 3rem;
+        margin-top: 1rem;       
       }
 
       button {

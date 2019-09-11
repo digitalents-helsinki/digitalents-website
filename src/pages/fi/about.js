@@ -52,7 +52,7 @@ const AboutPage = () => {
   </div>
 
   <div className="ilmaa">
-    <p>Placeholder</p>
+    <p>Onko sinulla Idea?</p>
     <h1>Suunnitellaan projekti</h1>
     <div class="ilmaa">
       <button>Lue palveluistamme <img className="arrow" src={rightArrow} alt="" /></button>

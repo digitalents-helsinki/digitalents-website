@@ -30,8 +30,8 @@ const Portfolio = () => {
 const PortfolioWrapper = styled.div`
   .portfolio-heading {
     background: #000000;
-    width: 304px;
-    height: 104px;
+    width: 26rem;
+    height: 9rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,6 +48,7 @@ const PortfolioWrapper = styled.div`
       padding:20px;
       
     }
+   
 
     h2 {
       font-family: futura-pt-bold;
