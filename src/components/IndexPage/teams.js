@@ -10,26 +10,20 @@ const TeamsAlt = () => {
       <div className="teams-heading">
         <h2>Digitalents tiimimme</h2>
       </div>
+
       <div className="teams">
         <div className="team">
-          <h4></h4>
-          
-          <button>Digitalents Media<img src={rightArrow} alt="" className="arrow" /></button>
-          
+          <button>Digitalents Media<img src={rightArrow} alt="" className="arrow" /></button>         
           <p>Digitalents Media tuottaa monipuolista digitaalista mediaa, 2D- ja 3D-animointia sekä sosiaalisen median sisältöjä.</p>
         </div>
-        <div className="team">
-          <h4></h4>
-          <button>Digitalents SoftDev<img src={rightArrow} alt="" className="arrow" /></button>
-          
+
+        <div className="team">          
+          <button>Digitalents SoftDev<img src={rightArrow} alt="" className="arrow" /></button>         
           <p>Digitalents ohjelmistotiimi kehittää ohjelmistoja sekä sivustoja moderneilla alustoilla ja välineillä.</p>
         </div>
+
         <div className="team">
-          <h4></h4>
-          <button>Digitalents ICT<img src={rightArrow} alt="" className="arrow" />
-          
-          </button>
-          
+          <button>Digitalents ICT<img src={rightArrow} alt="" className="arrow" /></button>         
           <p>Digitalents ICT toteuttaa ylläpito-, asennus- ja tukipalveluita sekä sisäisiä tuotantopalveluita.</p>
         </div>
       </div>
@@ -39,8 +33,8 @@ const TeamsAlt = () => {
 
 const TeamsWrapper = styled.div`
   .top-img {
-    display:hidden;
-    height: 40vh;
+    display: hidden;
+    height: 30vh;
     width: 100vw;
     overflow: hidden;
     z-index: -1;
@@ -83,7 +77,7 @@ const TeamsWrapper = styled.div`
   }
 
   .teams {
-
+    height: 20rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -116,17 +110,16 @@ const TeamsWrapper = styled.div`
     }
     p {
 
-      font-size: 26px;
+      font-size: 32px;
       
     }
 
     button {
       background: #ffffff;
       border: 0px solid #000000;
-      width: 18rem;
       height: 3rem;
       
-      font-size: 24px;
+      font-size: 32px;
       line-height: 24px;
       font-weight: 700;
       display: flex;
@@ -159,7 +152,7 @@ const TeamsWrapper = styled.div`
     p {
       margin-top:-50px;
       padding: 6px;
-      font-size: 26px;
+      font-size: 28px;
       
     }
   }

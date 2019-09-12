@@ -37,6 +37,9 @@ const JobsWrapper = styled.div`
     margin-top: 8rem;
     display: block;
     object-fit: cover;
+    @media screen and (max-width: 1200px) {
+      display:none;
+    }
   }
 
   .jobs-heading {
@@ -51,6 +54,10 @@ const JobsWrapper = styled.div`
     margin-top: -4rem;
     position: relative;
     z-index: 1;
+    @media screen and (max-width: 1200px) {
+      margin-top: 4rem;
+    }
+    
     
 
     h2 {

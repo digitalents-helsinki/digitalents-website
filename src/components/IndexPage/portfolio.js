@@ -36,7 +36,7 @@ const PortfolioWrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin-left: 22vw;
-    margin-top: 8rem;
+    margin-top: 3rem;
     position: relative;
     z-index: 1;
     @media screen and (max-width: 1200px) {
@@ -45,8 +45,7 @@ const PortfolioWrapper = styled.div`
       align-items: center;
       margin-top: 3rem;
       width: 80vw;
-      padding:20px;
-      
+      padding: 20px;
     }
    
 
@@ -62,7 +61,6 @@ const PortfolioWrapper = styled.div`
     font-family: futura-pt-bold;
     font-size: 32px;
     line-height: 43px;
-    
   }
 
   .portfolio-text {
@@ -80,6 +78,7 @@ const PortfolioWrapper = styled.div`
       justify-content: center;
       align-items: center;
       margin: -22vh 0vh;
+      margin-bottom: 8rem;
       width:80vw;
       
     } 
@@ -92,8 +91,7 @@ const PortfolioWrapper = styled.div`
         justify-content: center;
         align-items: center;
         margin-top: 8rem;
-        width:80vw;
-        
+        width: 80vw;      
       } 
 
       .card-heading {

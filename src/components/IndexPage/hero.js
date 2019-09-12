@@ -263,7 +263,7 @@ const TextContent = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    height: 100vh;
+    height: 90vh;
     justify-content: center;
     
     
