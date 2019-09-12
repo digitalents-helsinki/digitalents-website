@@ -26,7 +26,9 @@ const TeamsAlt = () => {
         </div>
         <div className="team">
           <h4></h4>
-          <button>Digitalents ICT<img src={rightArrow} alt="" className="arrow" /></button>
+          <button>Digitalents ICT<img src={rightArrow} alt="" className="arrow" />
+          
+          </button>
           
           <p>Digitalents ICT toteuttaa ylläpito-, asennus- ja tukipalveluita sekä sisäisiä tuotantopalveluita.</p>
         </div>
@@ -87,7 +89,7 @@ const TeamsWrapper = styled.div`
     justify-content: space-around;
     margin-top: -6vh;
     background: white;
-    padding: 1rem 0;
+    padding: 6rem 0;
     @media screen and (max-width: 1200px) {
       justify-content: left;
       align-items: left;
@@ -121,7 +123,7 @@ const TeamsWrapper = styled.div`
     button {
       background: #ffffff;
       border: 0px solid #000000;
-      width: 25rem;
+      width: 18rem;
       height: 3rem;
       
       font-size: 24px;
@@ -141,8 +143,6 @@ const TeamsWrapper = styled.div`
 
       img {
         height: 15px;
-        padding-top: 6px;
-        margin-right: 6rem;
         padding-left: 1rem;
       }
     }
@@ -157,6 +157,8 @@ const TeamsWrapper = styled.div`
     }
 
     p {
+      margin-top:-50px;
+      padding: 6px;
       font-size: 26px;
       
     }

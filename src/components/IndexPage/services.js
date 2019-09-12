@@ -22,19 +22,26 @@ const Services = () => {
 }
 
 const ServicesWrapper = styled.div`
-  .services-heading {
-    margin-left: 10vw;
-    background: #000000;
-    margin-top: 8rem;
-    width: 304px;
-    height: 104px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 4;
-    left: 57%;
-    top: 14rem;
+ 
+
+    .services-heading {
+      margin-top: 15vh;
+      width: 26rem;
+      height: 170px;
+      background: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 15vw;
+      position: relative;
+      z-index: 1;
+      @media screen and (max-width: 1200px) {
+        justify-content: center;
+        align-items: center;
+        margin-top: 12rem;
+        width: 18rem;
+        margin-left: 5vw;
+      }
 
     h2 {
       font-family: futura-pt-bold;

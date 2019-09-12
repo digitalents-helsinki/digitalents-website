@@ -66,7 +66,7 @@ const HeroWrapper = styled.div`
     width: 100vw;
     height: 100vh;
     z-index: -2;
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1420px) {
       display: none;
     }
   }
@@ -80,13 +80,18 @@ const HeroWrapper = styled.div`
     z-index: -1;
     background-color: rgba(40, 50, 70, 0.6);
     @media screen and (max-width: 1200px) {
-      background-image: url(${annie});
-      object-fit: fill;
-      position: fixed;
-      
+      display:none;
     }
+    
   }
 
+  .parallax-mobile {
+    @media screen and (max-width: 1200px) {
+      background-image: url(${annie});
+      object-fit: fill;
+      position: fixed; 
+    }
+  }
   
   .transition-appear {
     opacity: 0.01;

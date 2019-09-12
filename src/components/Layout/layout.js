@@ -126,6 +126,7 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-weight: 400;
     font-display: fallback;
+    background: green;
   }
 
   a {
