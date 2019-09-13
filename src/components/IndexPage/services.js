@@ -61,6 +61,7 @@ const ServicesWrapper = styled.div`
     margin-top: -2rem;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background: white;
     position: relative;
     z-index: 0;
@@ -77,10 +78,11 @@ const ServicesWrapper = styled.div`
         align-items: center;
         justify-content: center;
         width: 50vw;
-        height: 32rem;
+        height: 34rem;
         margin-left: -14vw
         margin: 2rem;
         padding: 0rem;   
+        object-fit: cover;
         @media screen and (max-width: 1200px) {
           display:none;
         }

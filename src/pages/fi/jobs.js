@@ -23,9 +23,9 @@ const JobsPage = () => {
             <div className="addressContainer">
               <p>Address: Fredrikinkatu 48, 00101 Helsinki</p>
               <p>Open: 12.00PM - 17:00PM</p>
-              <p>Phone: 040 7046818</p>
-              
+              <p>Phone: 040 7046818</p>             
             </div>
+            
             <button>Ohjaamo <img className="arrow" src={rightArrow} alt="" /></button>
               <div className="mapContainer">
               <a class="mappi" href="https://www.openstreetmap.org/?mlat=60.16512&amp;mlon=24.92169#map=17/60.16512/24.92169">
@@ -36,7 +36,7 @@ const JobsPage = () => {
                         marginwidth="0" 
                         src="https://www.openstreetmap.org/export/embed.html?bbox=24.914610385894775%2C60.16286895186937%2C24.92877244949341%2C60.16737390200942&amp;layer=mapnik&amp;marker=60.16512150414045%2C24.921691417694092" >
                 </iframe>       
-             </a>
+              </a>
                         
                 </div>
        </div>
