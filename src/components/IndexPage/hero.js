@@ -72,26 +72,22 @@ const HeroWrapper = styled.div`
   }
 
   .video-overlay {
-    width: 100vw;
-    height: 100vh;
+    width: 200vw;
+    height: 200vh;
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
     background-color: rgba(40, 50, 70, 0.6);
-    @media screen and (max-width: 1200px) {
-      display:none;
+    @media screen and (max-width: 1400px) {
+      background-image: url(${annie});
+      object-fit: cover;
+      position: fixed; 
     }
     
   }
 
-  .parallax-mobile {
-    @media screen and (max-width: 1200px) {
-      background-image: url(${annie});
-      object-fit: fill;
-      position: fixed; 
-    }
-  }
+ 
   
   .transition-appear {
     opacity: 0.01;

@@ -85,6 +85,7 @@ const TeamsWrapper = styled.div`
     background: white;
     padding: 6rem 0;
     @media screen and (max-width: 1200px) {
+      height:auto;
       justify-content: left;
       align-items: left;
       margin-top: 1rem;
@@ -99,26 +100,21 @@ const TeamsWrapper = styled.div`
     flex-flow: column nowrap;
     width: 20rem;
     height: 12rem;
-    @media screen and (max-width: 1200px) {
-      justify-content: left;
-      align-items: left;
-      margin-left:1rem;
-      margin-top: 0rem;
-      margin-bottom: 2rem;
-      width: 80vw;
-      
-    }
-    p {
+      @media screen and (max-width: 1200px) {
+        justify-content: left;
+        align-items: left;
+        margin-left:1rem;
+        margin-top: 0rem;
+        margin-bottom: 2rem;
+        width: 80vw;     
+      }
 
-      font-size: 32px;
-      
-    }
+    
 
     button {
       background: #ffffff;
       border: 0px solid #000000;
-      height: 3rem;
-      
+      height: 3rem;     
       font-size: 32px;
       line-height: 24px;
       font-weight: 700;
@@ -127,6 +123,15 @@ const TeamsWrapper = styled.div`
       align-items:left;
       margin-bottom:3rem;
       margin-top:3rem;
+      @media screen and (max-width: 1200px) {
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 700;
+      }
+      p {
+        font-size: 32px;
+        
+      }
 
     div {
       display: flex;
@@ -152,7 +157,11 @@ const TeamsWrapper = styled.div`
     p {
       margin-top:-50px;
       padding: 6px;
-      font-size: 28px;
+      font-size: 22px;
+      @media screen and (max-width: 1200px) {
+        font-size: 20px;
+        line-height: 24px;
+      }
       
     }
   }
@@ -176,8 +185,7 @@ const TeamsWrapper = styled.div`
   @media screen and (max-width: 1200px) {
     .teams-heading {
       width: 80vw;
-      height: 8rem;
-      
+      height: 8rem;     
       padding: 20px;
       justify-content: center;
       align-items: center;
