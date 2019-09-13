@@ -6,7 +6,7 @@ const Portfolio = () => {
   return (
     <PortfolioWrapper>
       <div className="portfolio-heading">
-        <h2>Töitämme</h2>
+        <h2>Portfolio</h2>
       </div>
       <h3 className="portfolio-text">Inspiroidu töistämme.</h3>
       <div className="portfolio-cards">
@@ -44,6 +44,7 @@ const PortfolioWrapper = styled.div`
       justify-content: center;
       align-items: center;
       margin-top: 3rem;
+      margin-bottom: 2rem;
       width: 80vw;
       padding: 20px;
     }
@@ -64,8 +65,11 @@ const PortfolioWrapper = styled.div`
   }
 
   .portfolio-text {
-    margin: 1rem 0 1rem 22vw;
-    width: 60%;
+    justify-content: space-around;
+    margin: auto;
+    font-size: 26px;
+    width: 80%;
+    
   }
 
   .portfolio-cards {
@@ -79,7 +83,10 @@ const PortfolioWrapper = styled.div`
       align-items: center;
       margin: -22vh 0vh;
       margin-bottom: 8rem;
-      width:80vw;
+      width: 80vw;
+      padding-top: rem;
+      
+
       
     } 
 

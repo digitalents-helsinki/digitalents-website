@@ -109,14 +109,17 @@ const JobsWrapper = styled.div`
       margin-top: 4rem;
       background: #ffffff;
       border: 1px solid #000000;
-      width: 180px;
-      height: 50px;
+      width: 260px;
+      height: 80px;
       font-size: 18px;
       line-height: 24px;
       font-weight: 700;
       display: flex;
+      padding:10px;
       justify-content: space-around;
       align-items: center;
+      margin-bottom:3rem;
+      margin-top:3rem;
     }
   }
 

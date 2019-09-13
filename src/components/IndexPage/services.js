@@ -57,7 +57,7 @@ const ServicesWrapper = styled.div`
   }
 
   .services-content {
-    height: 32rem;
+    height: auto;
     margin-top: -2rem;
     display: flex;
     justify-content: space-around;
@@ -74,6 +74,8 @@ const ServicesWrapper = styled.div`
       }
 
       .services-image {
+        align-items: center;
+        justify-content: center;
         width: 50vw;
         height: 32rem;
         margin-left: -14vw
@@ -89,6 +91,7 @@ const ServicesWrapper = styled.div`
         flex-direction: column;
         justify-content: center;
         width: 80vw;
+        padding: 2rem;
 
         p {
           font-family: Asap;

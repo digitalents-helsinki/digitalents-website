@@ -62,18 +62,18 @@ const TeamsWrapper = styled.div`
       width: 18rem;
       margin-left: 5vw;
     }
-    
-    
-  } 
 
     h2 {
       color: #FFFFFF;
-      font-size: 32px;
       font-weight: 700;
       font-family: futura-pt-bold;
-      font-size: 32px;
+      font-size: 28px;
       line-height: 43px;
     }
+    
+  } 
+
+    
   }
 
   .teams {
@@ -81,14 +81,14 @@ const TeamsWrapper = styled.div`
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    margin-top: -6vh;
+    margin-top: -1rem;
     background: white;
     padding: 6rem 0;
     @media screen and (max-width: 1200px) {
       height:auto;
       justify-content: left;
       align-items: left;
-      margin-top: 1rem;
+      margin-top: -2rem;
       width: 100vw;
       flex-flow: column nowrap;
     }
@@ -123,7 +123,7 @@ const TeamsWrapper = styled.div`
       align-items:left;
       margin-bottom:3rem;
       margin-top:3rem;
-      @media screen and (max-width: 1200px) {
+      @media screen and (max-width: 600px) {
         font-size: 24px;
         line-height: 24px;
         font-weight: 700;
@@ -155,9 +155,12 @@ const TeamsWrapper = styled.div`
     }
 
     p {
+      width: 25vw;
       margin-top:-50px;
       padding: 6px;
       font-size: 22px;
+      position: relative;
+      align-content: center;
       @media screen and (max-width: 1200px) {
         font-size: 20px;
         line-height: 24px;

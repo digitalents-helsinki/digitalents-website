@@ -28,8 +28,16 @@ const JobsPage = () => {
             </div>
             <button>Ohjaamo <img className="arrow" src={rightArrow} alt="" /></button>
               <div className="mapContainer">
-
-                <iframe class="mappi" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox=24.92110133171082%2C60.16673876279075%2C24.935263395309452%2C60.17165409991959&amp;layer=mapnik"></iframe>
+              <a class="mappi" href="https://www.openstreetmap.org/?mlat=60.16512&amp;mlon=24.92169#map=17/60.16512/24.92169">
+                <iframe class="mappi"                       
+                        frameborder="0" 
+                        scrolling="yes" 
+                        marginheight="0" 
+                        marginwidth="0" 
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=24.914610385894775%2C60.16286895186937%2C24.92877244949341%2C60.16737390200942&amp;layer=mapnik&amp;marker=60.16512150414045%2C24.921691417694092" >
+                </iframe>       
+             </a>
+                        
                 </div>
        </div>
       </StyleWrapper>
@@ -116,7 +124,7 @@ const StyleWrapper = styled.div`
         width: 100%;
         height: 600px;
         border: 1px solid black;
-        pointer-events: none;
+        
         }
   }
 }
