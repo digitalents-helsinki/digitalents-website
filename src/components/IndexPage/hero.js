@@ -3,16 +3,19 @@ import styled from 'styled-components'
 import angleIcon from '../../images/angledown.svg'
 import rightArrow from '../../images/right-arrow.svg'
 import Video from './video'
+import Cat from '../../images/funny-cat.png'
 
 export default class Hero extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      textVisible: true
+      textVisible: true,
+      hover: false
     }
 
     this.handleClick = this.handleClick.bind(this)
+    this.handleHover = this.handleHover.bind(this)
   }
 
   handleClick() {
@@ -21,10 +24,16 @@ export default class Hero extends React.Component {
     }))
   }
 
+  handleHover() {
+    this.setState(state => ({
+      hover: !state.hover
+    }))
+  }
+
   render() {
     return (
       <Fragment>
-        <HeroWrapper>
+        <HeroWrapper onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
           <div className="video-overlay"></div>
           <Video />
           <TextWrapper>
@@ -36,6 +45,7 @@ export default class Hero extends React.Component {
             <p className={this.state.textVisible ? 'embed fadeIn' : 'embed fadeOut'}>{this.props.data.heroLowerText}</p>
           </TextWrapper>
           <a href="#text"><img className="angleIcon" src={angleIcon} alt="" /></a>
+          <img className={this.state.hover ? 'cat' : 'noCat'} src={Cat} alt="" />
         </HeroWrapper>
         <TextContent id="text">
           <h2>Meistä</h2>
@@ -59,6 +69,93 @@ const HeroWrapper = styled.div`
     flex-basis: 100%;
   }
 
+  .noCat {
+    position: absolute;
+    bottom: 200vh;
+  }
+
+  .cat {
+    position: absolute;
+    animation: cat-anim 2.5s linear;
+    animation-iteration-count: infinite;
+  }
+
+  .cat-transparent {
+    animation: cat-trans 2.5s linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes cat-anim {
+    100%,0%{
+      bottom: -80vh;
+    }
+    50%{
+      bottom: -5vh;
+    }
+  }
+
+  @keyframes: cat-trans {
+    100%,0%{
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+  }
+
+  @keyframes rainbow-bg{
+		100%,0%{
+			background-color: rgba(255,0,0,0.6);
+		}
+		8%{
+			background-color: rgba(255,127,0,0.6);
+		}
+		16%{
+			background-color: rgba(255,255,0,0.6);
+		}
+		25%{
+			background-color: rgba(127,255,0,0.6);
+		}
+		33%{
+			background-color: rgba(0,255,0,0.6);
+		}
+		41%{
+			background-color: rgba(0,255,127,0.6);
+		}
+		50%{
+			background-color: rgba(0,255,255,0.6);
+		}
+		58%{
+			background-color: rgba(0,127,255,0.6);
+		}
+		66%{
+			background-color: rgba(0,0,255,0.6);
+		}
+		75%{
+			background-color: rgba(127,0,255,0.6);
+		}
+		83%{
+			background-color: rgba(255,0,255,0.6);
+		}
+		91%{
+			background-color: rgba(255,0,127,0.6);
+		}
+  }
+
+  @keyframes bigsmall {
+    0%,100%{
+      font-size: 4rem;
+    }
+    50%{
+      font-size: 2rem;
+    }
+  }
+
+  .rainbow{
+      animation: rainbow 2.5s linear;
+      animation-iteration-count: infinite;
+  }
+
   .video-react {
     position: fixed;
     z-index: -10;
@@ -71,7 +168,8 @@ const HeroWrapper = styled.div`
     top: 0;
     left: 0;
     z-index: 3;
-    background-color: rgba(40, 50, 70, 0.6);
+		animation: rainbow-bg 2.5s linear;
+		animation-iteration-count: infinite;
   }
 
   .transition-appear {
@@ -148,7 +246,8 @@ const TextWrapper = styled.div`
     }
 
     h1 {
-      font-size: 3.5rem;
+      animation: bigsmall 2s linear;
+      animation-iteration-count: infinite;
       font-weight: bold;
       text-transform: uppercase;
       font-family: futura-pt-bold;
