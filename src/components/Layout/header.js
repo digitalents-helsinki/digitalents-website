@@ -35,6 +35,9 @@ const Header = props => {
               <li>
                 <a href="/fi/jobs">Työpaikka</a>
               </li>
+              <li>
+                <a href="/fi/contact">Yhteystiedot</a>
+              </li>
             </NavWrapper>
             <LangWrapper>
               <li onClick={props.handleFiClick}>FI</li>

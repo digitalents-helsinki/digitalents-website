@@ -44,28 +44,36 @@ const JobsWrapper = styled.div`
 
   .jobs-heading {
     
-    width: 350px;
-    height: 150px;
+    width: 22rem;
+    height: 10rem;
     background: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: -4rem;
+    margin-top: -10rem;
     position: relative;
     z-index: 1;
     @media screen and (max-width: 1200px) {
+      margin-left: auto;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+      margin-bottom: -2rem;
+      width: 15rem;
+      height: 6rem;
+      padding: 0px;
       margin-top: 4rem;
+      
     }
     
     
 
     h2 {
       color: #FFFFFF;
-      font-size: 32px;
       font-weight: 700;
       font-family: futura-pt-bold;
-      font-size: 32px;
+      font-size: 2rem;
       line-height: 43px;
     }
   }
@@ -83,16 +91,16 @@ const JobsWrapper = styled.div`
     @media screen and (max-width: 1200px) {
       justify-content: center;
       align-items: center;
-      margin-top: -4rem;
+      margin-top: -3rem;
       margin-bottom: 3rem;
       width: 70vw;
-      padding: 3rem;
+      padding: 10vw;
       padding-bottom: 6rem;
     }
 
     h3 {
       font-family: futura-pt-bold;
-      font-size: 32px;
+      font-size: 1.6rem;
       line-heigth: 150%;
       font-weight: 700;
       margin-top: 8rem;
@@ -101,7 +109,7 @@ const JobsWrapper = styled.div`
 
     span {
       font-family: Asap;
-      font-size: 16px;
+      font-size: 1rem;
       line-height: 150%;
     }
     
@@ -109,8 +117,8 @@ const JobsWrapper = styled.div`
       margin-top: 4rem;
       background: #ffffff;
       border: 1px solid #000000;
-      width: 260px;
-      height: 80px;
+      width: 8rem;
+      height: 3rem;
       font-size: 18px;
       line-height: 24px;
       font-weight: 700;

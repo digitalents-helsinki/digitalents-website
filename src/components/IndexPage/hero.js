@@ -72,8 +72,8 @@ const HeroWrapper = styled.div`
   }
 
   .video-overlay {
-    width: 200vw;
-    height: 200vh;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
@@ -100,23 +100,10 @@ const HeroWrapper = styled.div`
 
   .angleIcon {
     position: absolute;
-    z-index: 100;
+    z-index: 2;
     width: 30px;
     top: 92vh;
     left: calc(50vw - 15px);
-    animation: floating-arrow 1.6s infinite ease-in-out 0s;
-
-    @keyframes floating-arrow {
-      0% {
-        transform: translateY(0);
-      }
-      65% {
-        transform: translateY(11px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
   }
 
   .playButton {
@@ -135,6 +122,8 @@ const TextWrapper = styled.div`
   z-index: 5;
   color: white;
 
+  
+
   .fadeOut {
     opacity: 0;
     transition: opacity 0.5s;
@@ -148,7 +137,7 @@ const TextWrapper = styled.div`
   @media screen and (max-width: 1000px) {
     padding-bottom: 0;
     justify-content: flex-end;
-    max-width: 300px;
+    max-width: 5rem;
     height: 50%;
   }
 
@@ -160,6 +149,7 @@ const TextWrapper = styled.div`
 
     @media screen and (max-width: 1024px) {
       width: 80vw;
+      
     }
 
     h1 {
@@ -170,21 +160,29 @@ const TextWrapper = styled.div`
       margin-right: 1rem;
 
       @media screen and (max-width: 1000px) {
-        font-size: 2rem;
+        font-size: 1.5rem;       
+      }
+      @media screen and (min-width: 3400px) {
+        font-size: 7rem;     
       }
     }
   }
 
 
   p {
-    max-width: 800px;
+    width: 70vw;
     text-align: center;
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: 500;
     padding-top: 4rem;
 
     @media screen and (max-width: 1000px) {
-      padding-top: 1rem;
+      padding-top: vh;
+      font-size: 1.3rem;     0
+    }
+    @media screen and (min-width: 3000px) {
+      padding-top: 10vh;
+      font-size: 4rem;     
     }
   }
 
@@ -203,35 +201,42 @@ const TextContent = styled.div`
   text-align: center;
   justify-content: space-around;
   height: 50vh;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-top: 9rem;
+  padding-bottom: 8rem;
   background: white;
+  @media screen and (max-width: 600px) {
+    margin: auto;
+  }
   
 
   h2 {
-    font-size: 42px;
+    font-size: 2.5rem;
     line-height: 150%;
     font-family: futura-pt-bold;
     font-weight: 700;
   }
 
   p {
-    max-width: 900px;
+    max-width: 50rem;
     font-family: Asap;
-    font-size: 26px;
+    font-size: 1.4rem;
     line-height: 150%;
     @media screen and (max-width: 600px) {
-      font-size: 22px;
-      padding:1rem;
+      margin: auto;
+      justify-content: space-around;
+      max-width: 80vw;
+      font-size: 1rem;
+      padding:0rem;
+      
     }
   }
 
   button {
     background: #ffffff;
     border: 1px solid #000000;
-    width: 260px;
-    height: 80px;
-    font-size: 18px;
+    width: 15rem;
+    height: 4rem;
+    font-size: 1rem;
     line-height: 24px;
     font-weight: 700;
     display: flex;

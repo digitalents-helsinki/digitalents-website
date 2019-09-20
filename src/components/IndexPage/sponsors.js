@@ -31,14 +31,20 @@ const SponsorsWrapper = styled.div`
   padding-bottom: 30px;
   padding-left: 7rem;
   padding-right: 7rem;
+  margin: auto;
 
 
   @media screen and (max-width: 800px) {
     flex-flow: column wrap;
     align-items: center;
+    margin: auto;
+    padding:0;
+    padding: 2rem 0;
+  }
     @media screen and (max-width: 1200px) {
       justify-content: center;
       align-items: center;
+      margin: auto;
       margin-top: 3rem;
   }
 `

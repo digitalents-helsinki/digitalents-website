@@ -8,8 +8,14 @@ const Portfolio = () => {
       <div className="portfolio-heading">
         <h2>Portfolio</h2>
       </div>
-      <h3 className="portfolio-text">Inspiroidu töistämme.</h3>
-      <div className="portfolio-cards">
+      
+        <div class="portfolio-container">
+          <div class="ilmaa">
+          
+          </div>
+          <h3 className="portfolio-text">Inspiroidu töistämme.</h3>
+        </div>
+        <div className="portfolio-cards">
         <div className="portfolio-card satakolkyt">
           <h4 className="card-heading"></h4>
           <p className="card-text"></p>
@@ -30,29 +36,31 @@ const Portfolio = () => {
 const PortfolioWrapper = styled.div`
   .portfolio-heading {
     background: #000000;
-    width: 26rem;
-    height: 9rem;
+    margin-bottom: 0rem;
+    width: 22rem;
+    height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 22vw;
-    margin-top: 3rem;
+    margin-top: 4rem;
     position: relative;
     z-index: 1;
     @media screen and (max-width: 1200px) {
-      margin-left: 5vw;
       justify-content: center;
       align-items: center;
+      margin: auto;
       margin-top: 3rem;
-      margin-bottom: 2rem;
-      width: 80vw;
-      padding: 20px;
+      margin-bottom: 0rem;
+      width: 15rem;
+      height: 8rem;
+      padding: 0px;
     }
    
 
     h2 {
       font-family: futura-pt-bold;
-      font-size: 32px;
+      font-size: 2rem;
       line-height: 150%;
       color: white;
     }
@@ -64,31 +72,50 @@ const PortfolioWrapper = styled.div`
     line-height: 43px;
   }
 
+  .ilmaa{
+    height:5rem;
+  }
+
   .portfolio-text {
-    justify-content: space-around;
-    margin: auto;
+    padding-left: 30vw;
+    position: relative;
     font-size: 26px;
     width: 80%;
-    
+    @media screen and (max-width: 1200px) {
+      padding-left: 1rem;
+      margin: auto;
+    }
   }
+
+
 
   .portfolio-cards {
     display: flex;
     justify-content: space-between;
-    margin: -17vh 0vh;
+    margin:auto;
+    margin-top: -10rem;
     background: white;
-    padding: 10%;
-    @media screen and (max-width: 1200px) {
-      justify-content: center;
-      align-items: center;
-      margin: -22vh 0vh;
-      margin-bottom: 8rem;
-      width: 80vw;
-      padding-top: rem;
-      
+    padding-top: 15%;
+    padding-bottom: 15%;
+
+    .portfolio-text {
+      padding-left: 30vw;
+      margin-top: 5rem;
+      position: relative;
+      font-size: 2rem;
+      width: 80%;
+      @media screen and (max-width: 1200px) {
+        margin:auto;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+        margin-top: -2rem 0vh;
+        margin-bottom: 8rem;
+        width: 80vw;
+      }
+    }
 
       
-    } 
 
     .portfolio-card {
       width: 400px;
@@ -133,9 +160,7 @@ const PortfolioWrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 1200px) {
-    height: 100vh;
-  }
+
 `
 
 export default Portfolio

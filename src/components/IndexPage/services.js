@@ -12,15 +12,7 @@ const Services = () => {
       <div className="services-content">
       <img src={Img} alt="" className="services-image" />
         <div className="services-text">
-          <h3>Digitalents media</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quasi veniam, magni asperiores autem, porro cupiditate laborum deserunt incidunt neque non sit nam rerum quo, deleniti assumenda natus reiciendis accusamus.</p>
-          
-          <h3>Digitalents ICT</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quasi veniam, magni asperiores autem, porro cupiditate laborum deserunt incidunt neque non sit nam rerum quo, deleniti assumenda natus reiciendis accusamus.</p>
-          
-          <h3>Digitalents SoftDev</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quasi veniam, magni asperiores autem, porro cupiditate laborum deserunt incidunt neque non sit nam rerum quo, deleniti assumenda natus reiciendis accusamus.</p>
-          
+         
           <div class="prompt">
             <p>Onko sinulla Idea?</p>
             <h3 className="prompt">Suunnitellaan seuraava projektisi!</h3>
@@ -35,22 +27,30 @@ const ServicesWrapper = styled.div`
 
  
 .services-heading { 
-  width: 350px;
-  height: 150px;
+  width: 22rem;
+  height: 10rem;
   background: #000000;
   display: flex;
   justify-content: center;
   align-items: center; 
-  margin-top: 10rem;
-  margin-left: 65vw;
+  margin-top: 14rem;
+  margin-left: 63vw;
   position: relative;
   z-index: 1;
   @media screen and (max-width: 1200px) {
-    margin: auto;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+    width: 15rem;
+    height: 6rem;
+    padding: 0px;
   }
+
     h2 {
       font-family: futura-pt-bold;
-      font-size: 32px;
+      font-size: 2rem;
       line-height: 150%;
       color: white;
     }
@@ -72,6 +72,9 @@ const ServicesWrapper = styled.div`
         margin-top: -1rem;
         height: auto;
         width: 100vw;
+        padding-top:4rem;
+        padding-bottom:4rem;
+
       }
 
       .services-image {
@@ -89,37 +92,29 @@ const ServicesWrapper = styled.div`
       }
       
       .services-text {
-        display: flex;
-        flex-direction: column;
+        margin: auto;
         justify-content: center;
+        justify-items: center;
         width: 80vw;
-        padding: 2rem;
 
         p {
           font-family: Asap;
-          font-size: 18px;
+          font-size: 1rem;
           line-height: 150%;
           margin-top: 1rem;
         }
 
-        .prompt {
-          align-content: center;
-          justify-content: center;
-          margin-top: 0.5rem;
-          padding-bottom: 1rem;
-          p {
-            padding-top: 2rem;
-          }
-
-        }
   
         h3 {
+          justify-items: center;
+          justify-content: center;
           font-family: futura-pt-bold;
-          font-size: 28px;
-          line-height: 43px;
+          font-size: 1.4rem;         
           font-weigth: 700;
+          margin: auto;
           margin-bottom: 1rem;
-          margin-top: 2rem;       
+          margin-top: 2rem;    
+           
         }
       }      
     }

@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from "react"
-import { Player } from "video-react"
+import { Player, ControlBar } from "video-react"
 import "video-react/dist/video-react.css"
 
 export default class Video extends Component {
@@ -39,6 +39,7 @@ export default class Video extends Component {
           ref={player => {this.player = player}}
         >
           <source src="http://videos.ctfassets.net/j3k0lvclv8r6/2NkTD7B2rd8IJJTsWbyA5d/41f0df3079f9cccf9dd9a7431aebe273/19_07_24_TRAILER_WEBSITE.mp4" />
+        <ControlBar disabled />
         </Player>
       </Fragment>
     )

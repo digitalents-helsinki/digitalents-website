@@ -17,9 +17,8 @@ const teamTemplate = (props) => {
         <div className="container">
           <h1>{teamTitle}</h1>
           <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />
-        <div className="container_ImgBtn">
-
-          <div className="container_Img">
+          <div className="container_ImgBtn">
+            <div className="container_Img">
           </div>
           <div className="container_Btn">
             <p>Katso missä olemme olleet mukana</p>
@@ -27,8 +26,6 @@ const teamTemplate = (props) => {
           </div>
         </div>
       </div>
-
-
       </StyleWrapper>
     </Layout>
   )
@@ -49,7 +46,7 @@ const StyleWrapper = styled.div`
     width: 100vw;
 
     h1 {
-      font-size: 64px;
+      font-size: 3rem;
       font-family: futura-pt-bold;
     }
 
@@ -58,6 +55,7 @@ const StyleWrapper = styled.div`
       margin: 3rem auto;
     }
   }
+  
   .container_ImgBtn{
     display: flex;
     justify-content: flex-start;
