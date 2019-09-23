@@ -65,7 +65,7 @@ const StyleWrapper = styled.div`
 
 
   .OhjaamoLogo {
-    margin-top: 150px;
+    margin-top: 10vh;
   }
 
   .jobs_container {
@@ -77,7 +77,7 @@ const StyleWrapper = styled.div`
     text-align: left;
     p {
       text-align: center;
-      max-width: 800px;
+      max-width: 80vw;
       font-size: 24px;
       font-weight: 400;
       padding-top: 4rem;
@@ -135,7 +135,7 @@ const StyleWrapper = styled.div`
     margin-bottom: 3rem;
     display: flex;
     width: 100%;
-    height: 8rem;
+    height: auto;
     justify-content: center;
     align-items: center;
     @media screen and (max-width: 1000px) {
