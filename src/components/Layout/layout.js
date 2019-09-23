@@ -115,7 +115,7 @@ const GlobalStyle = createGlobalStyle`
   ${reset}
 
   html {
-    font-size: 18px;
+    font-size: 1rem;
     font-family: futura-pt, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -131,6 +131,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: black;
 
     :hover {
       text-decoration: underline;

@@ -41,7 +41,9 @@ export default class Hero extends React.Component {
         <TextContent id="text">
           <h2>Meistä</h2>
           <p>Digitalents Helsingin keskiössä on ajatus jatkuvasta oppimisesta. Tarjoamme ympäristön, jossa ennakkoluuloton kokeileminen ei ole vain sallittua, vaan myös kannustettavaa. Nuoret osaajat, hyvät resurssit ja laajat verkostot kohtaavat meillä, luoden otollisen alustan innovaatioille.</p>
-          <button>Lue lisää meistä <img className="arrow" src={rightArrow} alt="" /></button>
+          <a href="/fi/about"> 
+            <button>Lue lisää meistä <img className="arrow" src={rightArrow} alt="" /></button>
+          </a>
         </TextContent>
       </Fragment>
     )
@@ -148,8 +150,7 @@ const TextWrapper = styled.div`
     width: 70vw;
 
     @media screen and (max-width: 1024px) {
-      width: 80vw;
-      
+      width: 80vw;     
     }
 
     h1 {
@@ -160,6 +161,9 @@ const TextWrapper = styled.div`
       margin-right: 1rem;
 
       @media screen and (max-width: 1000px) {
+        font-size: 2.5rem;       
+      }
+      @media screen and (max-width: 600px) {
         font-size: 1.5rem;       
       }
       @media screen and (min-width: 3400px) {
@@ -204,7 +208,7 @@ const TextContent = styled.div`
   padding-top: 9rem;
   padding-bottom: 8rem;
   background: white;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1025px) {
     margin: auto;
   }
   
@@ -226,7 +230,7 @@ const TextContent = styled.div`
       justify-content: space-around;
       max-width: 80vw;
       font-size: 1rem;
-      padding:0rem;
+      padding: 5vw;
       
     }
   }

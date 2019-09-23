@@ -21,12 +21,10 @@ const AboutPage = () => {
 </div>
 
   <div class="ilmaa"></div>
-
+  
       <div className="text">
         <p>Digitalents Helsingin keskiössä on ajatus jatkuvasta oppimisesta. Tarjoamme ympäristön, jossa ennakkoluuloton kokeileminen ei ole vain sallittua, vaan myös kannustettavaa. Nuoret osaajat, hyvät resurssit ja laajat verkostot kohtaavat meillä, luoden otollisen alustan innovaatioille.</p>
       </div>
-
-  
 
   <div class="viiva_yla"></div>
 
@@ -40,22 +38,33 @@ const AboutPage = () => {
   <div class="viiva_ala"></div>
 
   <div className="ImagesContainer">
-    <div className="ImagesContainer_Media">
-      <h2>Digitalents Media</h2>
-    </div>
-    <div className="ImagesContainer_ICT">
-      <h2>Digitalents ICT</h2>
-    </div>
-    <div className="ImagesContainer_SoftDev">
-      <h2>Digitalents SoftDev</h2>
-    </div>
+    <a href="/fi/media">
+      <div className="ImagesContainer_Media">
+        <h2>Digitalents Media</h2>     
+      </div>
+    </a>
+    <a href="/fi/ict">
+      <div className="ImagesContainer_ICT">     
+        <h2>Digitalents ICT</h2>
+      </div>
+    </a>
+    <a href="/fi/softdev">
+      <div className="ImagesContainer_SoftDev">
+        <h2>Digitalents SoftDev</h2>
+      </div>
+    </a>
   </div>
 
   <div className="ilmaa">
-    <p>Onko sinulla Idea?</p>
-    <h1>Suunnitellaan projekti</h1>
+    <a href="/fi/contact">
+      <p>Onko sinulla Idea?</p>
+      <h1>Suunnitellaan projekti</h1>
+      </a>
+    <a href="/fi/softdev"></a>
     <div class="ilmaa">
-      <button>Lue palveluistamme <img className="arrow" src={rightArrow} alt="" /></button>
+      <a href="/fi/services">
+        <button>Lue palveluistamme <img className="arrow" src={rightArrow} alt="" /></button>
+      </a>
     </div>
   </div>
  
@@ -126,7 +135,7 @@ const StyleWrapper = styled.div`
   }
 
   h1 {
-    font-size: 64px;
+    font-size: 2.5rem;
     line-height: 150%;
     font-family: futura-pt-bold;
     font-weight: 700;
@@ -134,7 +143,7 @@ const StyleWrapper = styled.div`
 
     @media screen and (max-width: 600px) {
       
-        font-size: 32px;
+        font-size: 2rem;
         line-height: 150%;
         font-family: futura-pt-bold;
         font-weight: 700;

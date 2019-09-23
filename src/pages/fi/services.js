@@ -18,7 +18,6 @@ const ServicesPage = () => {
         </div>
           <div className="text">
             <p>Toteutamme monipuolisesti digitaalisia tuotantoja, ohjelmistokehitystä sekä IT-alan palveluita. Ota meihin rohkeasti yhteyttä niin suunnitellaan seuraava projektisi!</p>
-            <h2>Placeholder</h2>
           </div>
           <div className="ImagesContainer">
             <div className="ImagesContainer_ICT">
@@ -141,39 +140,38 @@ const StyleWrapper = styled.div`
   .ImagesContainer_DIGI {
     background-image: url(${digi});
   }
-  .ImagesContainer_ICT, .ImagesContainer_STACK, .ImagesContainer_DIGI {
-    display: flex;
-    width: 320px;
-    height: 250px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    justify-content: center;
-    margin-right: 40px;
-    @media screen and (max-width: 1000px) {
-      margin: 10px 0;
-      padding-bottom: 30px;
-    }
-    h2 {
-      text-align: center;
-      margin: auto;
-      padding-top: 15rem;
-      font-size: 20px;
-      line-height: 150%;
-      font-family: futura-pt-bold;
+    .ImagesContainer_ICT, .ImagesContainer_STACK, .ImagesContainer_DIGI {
+      display: flex;
+      width: 320px;
+      height: 250px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      justify-content: center;
+      margin-right: 40px;
       @media screen and (max-width: 1000px) {
-        margin: .1rem 0;
+        margin: 10px 0;
+        padding-bottom: 30px;
+      }
+      h2 {
+        text-align: center;
+        margin: auto;
+        padding-top: 15rem;
+        font-size: 20px;
+        line-height: 150%;
+        font-family: futura-pt-bold;
+        @media screen and (max-width: 1000px) {
+          margin: .1rem 0;
+        }
       }
     }
-
-  }
   }
   .ContactContainer {
     display: flex;
     flex-direction: column;
-    width: 61%;
+    width: 60vw;
     justify-content: center;
     align-items: center;
-    margin: 15vh auto;
+    margin: 10vh auto;
     @media screen and (max-width: 1000px) {
       margin-top: 22rem;
     }
@@ -220,8 +218,8 @@ const StyleWrapper = styled.div`
     p {
       text-align: center;
       padding-top: 2rem;
-      margin-top: 25px;
-      font-size: 25px;
+      margin-top: 1rem;
+      font-size: 1rem;
     }
     button {
       border: 1px solid black;

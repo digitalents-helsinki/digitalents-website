@@ -88,8 +88,7 @@ const BurgerButton = styled.div`
   }
   .burger {
     position: fixed;
-         right: 15vw;
-        
+         right: 15vw;    
   }
 
  

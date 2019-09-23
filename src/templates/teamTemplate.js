@@ -14,8 +14,8 @@ const teamTemplate = (props) => {
   return (
     <Layout language={language} pagePrefix={pagePrefix}>
       <StyleWrapper image={teamImage.file.url}>
-        <div className="container">
-          <h1>{teamTitle}</h1>
+      <h1>{teamTitle}</h1>
+        <div className="container">         
           <div className="description" dangerouslySetInnerHTML={{__html: teamDescription.childMarkdownRemark.html}} />
           <div className="container_ImgBtn">
             <div className="container_Img">
@@ -36,23 +36,47 @@ const StyleWrapper = styled.div`
   flex-direction: column;
   background-image: url(${props => props.image});
   background-size: cover;
+  background-attachment: fixed;
   text-align: center;
 
+  h1 {
+    margin-top: 15rem;
+    font-size: 3rem;
+    font-family: futura-pt-bold;
+    padding-bottom: 5rem;
+    color:white;
+    @media screen and (max-width: 600px) {
+      font-size: 2.5rem;     
+    }
+  }
+
   .container {
-    margin-top: 350px;
-    padding-top: 200px;
+    margin-top: 5rem;
+    padding-top: 4rem;
     background: white;
     height: auto;
     width: 100vw;
+    @media screen and (max-width: 600px) {
+      text-align:left;     
+    }
+
 
     h1 {
+      margin-top: 5rem;
       font-size: 3rem;
       font-family: futura-pt-bold;
+      padding-bottom: 5rem;
     }
 
     .description {
       width: 60vw;
       margin: 3rem auto;
+      font-size: 2rem;
+      @media screen and (max-width: 600px) {
+        font-size: 1.2rem;
+        width: 80vw;
+        
+      }
     }
   }
   
@@ -60,7 +84,7 @@ const StyleWrapper = styled.div`
     display: flex;
     justify-content: flex-start;
     width: 60%;
-    margin: 2rem auto;
+    margin: 5rem auto;
     @media screen and (max-width: 1000px) {
         width: 90%;
         flex-direction: column;
@@ -71,11 +95,12 @@ const StyleWrapper = styled.div`
       width: 50%;
       height: 18rem;
       background-size: cover;
-      margin: 1rem 1rem;
+      margin: 5rem 1rem;
       background-image: url(${gray});
       @media screen and (max-width: 1000px) {
          align-items: center;
          margin: 1rem auto;
+         width: 80vw;
       }
     }
     .container_Btn{
@@ -89,6 +114,12 @@ const StyleWrapper = styled.div`
         font-size: 1.3rem;
         font-weight: bold;
         font-family: futura-pt-bold;
+        text-align: center;
+        margin: 3rem;
+         @media screen and (max-width: 600px) {
+          width: 80vw;
+          
+         }
       }
       button {
         margin-top: .9rem;

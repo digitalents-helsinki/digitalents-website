@@ -2,6 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Layout from '../../components/Layout/layout'
+import doors from '../../images/Job_page_png.png'
 import rightArrow from '../../images/right-arrow.svg'
 import ohjaamo from '../../images/ohjaamo.png'
 
@@ -14,38 +15,55 @@ const JobsPage = () => {
   return (
     <Layout>
       <StyleWrapper>
-      <div className='jobs_container'>
-        <img className="OhjaamoLogo" src={ohjaamo} alt="" />
-        <p>Mediatiimiläisiltä odotamme vähintään toisen asteen koulutusta alalta. ICT- ja ohjelmistokehitystiimeihimme palkkaamme myös itseoppineita taitureita.</p>
-        <p>Hae meille töihin Helsingin kaupungin nuorten työllisyyspalvelut / Ohjaamon kautta. Meillä on jatkuvasti paikkoja avoinna.</p>
-        
-
-            <div className="addressContainer">
-              <p>Address: Fredrikinkatu 48, 00101 Helsinki</p>
-              <p>Open: 12.00PM - 17:00PM</p>
-              <p>Phone: 040 7046818</p>             
-            </div>
-            
+        <div class="parallax-wrapper">
+        </div>
+        <div className='jobs_container'>    
+          <img className="OhjaamoLogo" src={ohjaamo} alt="" />
+          <p>Mediatiimiläisiltä odotamme vähintään toisen asteen koulutusta alalta. ICT- ja ohjelmistokehitystiimeihimme palkkaamme myös itseoppineita taitureita.</p>
+          <p>Hae meille töihin Helsingin kaupungin nuorten työllisyyspalvelut / Ohjaamon kautta. Meillä on jatkuvasti paikkoja avoinna.</p>
+          <a href="https://ohjaamo.hel.fi/">    
             <button>Ohjaamo <img className="arrow" src={rightArrow} alt="" /></button>
-              <div className="mapContainer">
-              <a class="mappi" href="https://www.openstreetmap.org/?mlat=60.16512&amp;mlon=24.92169#map=17/60.16512/24.92169">
-                <iframe class="mappi"                       
-                        frameborder="0" 
-                        scrolling="yes" 
-                        marginheight="0" 
-                        marginwidth="0" 
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=24.914610385894775%2C60.16286895186937%2C24.92877244949341%2C60.16737390200942&amp;layer=mapnik&amp;marker=60.16512150414045%2C24.921691417694092" >
-                </iframe>       
-              </a>
-                        
-                </div>
-       </div>
+          </a>
+          <div className="addressContainer">
+            <p>Address: Fredrikinkatu 48, 00101 Helsinki</p>
+            <p>Open: 12.00PM - 17:00PM</p>
+            <p>Phone: 040 7046818</p>             
+          </div>
+           <div className="mapContainer">
+            <a class="mappi" href="https://www.openstreetmap.org/?mlat=60.16512&amp;mlon=24.92169#map=17/60.16512/24.92169">
+              <iframe class="mappi"                       
+                          frameborder="0" 
+                          scrolling="yes" 
+                          marginheight="0" 
+                          marginwidth="0" 
+                          src="https://www.openstreetmap.org/export/embed.html?bbox=24.914610385894775%2C60.16286895186937%2C24.92877244949341%2C60.16737390200942&amp;layer=mapnik&amp;marker=60.16512150414045%2C24.921691417694092" >
+              </iframe>       
+            </a>            
+          </div>
+        </div>
       </StyleWrapper>
     </Layout>
   )
 }
 
 const StyleWrapper = styled.div`
+
+.parallax-wrapper {
+  width: 100vw;
+  height: 40vh;
+  padding-top: 0vh;
+  box-sizing: border-box;
+  background-image: url(${doors});
+  background-attachment: fixed;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  object-fit: cover;
+  align-items: center;
+  text-align: center; 
+}
+
+
   .OhjaamoLogo {
     margin-top: 150px;
   }
@@ -107,22 +125,29 @@ const StyleWrapper = styled.div`
     justify-content: center;
     margin-top:4rem;
       p {
-        font-size: 22px;
+        font-size: 1.3rem;
         font-style: bold;
         font-weight: 700;
       }
   }
   .mapContainer{
-    margin-top: 1rem;
-    margin-bottom: 5px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     display: flex;
     width: 100%;
-    height: 800px;
+    height: 8rem;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 1000px) {
+      height: 80vh;
+      width: 80vw;      
+      justify-content: center;
+      align-items: center;
+      margin:auto;      
+    }
       .mappi {
         width: 100%;
-        height: 600px;
+        height: 60vh;
         border: 1px solid black;
         
         }

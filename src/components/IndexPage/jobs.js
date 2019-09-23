@@ -114,12 +114,11 @@ const JobsWrapper = styled.div`
     }
     
     button {
-      margin-top: 4rem;
       background: #ffffff;
       border: 1px solid #000000;
-      width: 8rem;
-      height: 3rem;
-      font-size: 18px;
+      width: 15rem;
+      height: 4rem;
+      font-size: 1rem;
       line-height: 24px;
       font-weight: 700;
       display: flex;
@@ -127,7 +126,7 @@ const JobsWrapper = styled.div`
       justify-content: space-around;
       align-items: center;
       margin-bottom:3rem;
-      margin-top:3rem;
+      margin-top:6rem;
     }
   }
 

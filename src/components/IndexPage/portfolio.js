@@ -42,7 +42,7 @@ const PortfolioWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 22vw;
+    margin-left: 35vw;
     margin-top: 4rem;
     position: relative;
     z-index: 1;
@@ -77,7 +77,7 @@ const PortfolioWrapper = styled.div`
   }
 
   .portfolio-text {
-    padding-left: 30vw;
+    padding-left:35vw;
     position: relative;
     font-size: 26px;
     width: 80%;
@@ -91,12 +91,13 @@ const PortfolioWrapper = styled.div`
 
   .portfolio-cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin:auto;
     margin-top: -10rem;
     background: white;
     padding-top: 15%;
     padding-bottom: 15%;
+
 
     .portfolio-text {
       padding-left: 30vw;
@@ -108,7 +109,6 @@ const PortfolioWrapper = styled.div`
         margin:auto;
         justify-content: center;
         align-items: center;
-        margin:auto;
         margin-top: -2rem 0vh;
         margin-bottom: 8rem;
         width: 80vw;

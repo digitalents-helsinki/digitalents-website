@@ -10,22 +10,25 @@ const TeamsAlt = () => {
       <div className="teams-heading">
         <h2>Digitalents tiimimme</h2>
       </div>
-
-      <div className="teams">
-        <div className="team">
-          <button>Digitalents Media<img src={rightArrow} alt="" className="arrow" /></button>         
-          <p>Digitalents Media tuottaa monipuolista digitaalista mediaa, 2D- ja 3D-animointia sekä sosiaalisen median sisältöjä.</p>
-        </div>
-
-        <div className="team">          
-          <button>Digitalents SoftDev<img src={rightArrow} alt="" className="arrow" /></button>         
-          <p>Digitalents ohjelmistotiimi kehittää ohjelmistoja sekä sivustoja moderneilla alustoilla ja välineillä.</p>
-        </div>
-
-        <div className="team">
-          <button>Digitalents ICT<img src={rightArrow} alt="" className="arrow" /></button>         
-          <p>Digitalents ICT toteuttaa ylläpito-, asennus- ja tukipalveluita sekä sisäisiä tuotantopalveluita.</p>
-        </div>
+      <div className="teams">       
+        <a href="/fi/media">
+          <div className="team">
+            <button>Digitalents Media<img src={rightArrow} alt="" className="arrow" /></button>         
+            <p>Digitalents Media tuottaa monipuolista digitaalista mediaa, 2D- ja 3D-animointia sekä sosiaalisen median sisältöjä.</p>
+          </div>
+        </a>
+        <a href="/fi/softdev">
+          <div className="team">          
+            <button>Digitalents SoftDev<img src={rightArrow} alt="" className="arrow" /></button>         
+            <p>Digitalents ohjelmistotiimi kehittää ohjelmistoja sekä sivustoja moderneilla alustoilla ja välineillä.</p>
+          </div>
+        </a>
+        <a href="/fi/ict">
+          <div className="team">
+            <button>Digitalents ICT<img src={rightArrow} alt="" className="arrow" /></button>         
+            <p>Digitalents ICT toteuttaa ylläpito-, asennus- ja tukipalveluita sekä sisäisiä tuotantopalveluita.</p>
+          </div>
+        </a>
       </div>
     </TeamsWrapper>
   )
@@ -58,10 +61,9 @@ const TeamsWrapper = styled.div`
     @media screen and (max-width: 1200px) {
       justify-content: center;
       align-items: center;
-      width: 18rem;
+      width: 90%;
       margin: auto;
       margin-top: 6rem;
-
     }
 
     h2 {
@@ -99,7 +101,7 @@ const TeamsWrapper = styled.div`
   .team {
     display: flex;
     flex-flow: column nowrap;
-    width: 20rem;
+    width: 18rem;
     padding-top:10vh;
     padding-bottom:10vh;
       @media screen and (max-width: 1200px) {

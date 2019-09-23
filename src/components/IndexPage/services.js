@@ -14,8 +14,10 @@ const Services = () => {
         <div className="services-text">
          
           <div class="prompt">
-            <p>Onko sinulla Idea?</p>
-            <h3 className="prompt">Suunnitellaan seuraava projektisi!</h3>
+            <a href="/fi/contact">
+              <p className="services-first">Onko sinulla Idea?</p>
+              <h3 className="services-second">Suunnitellaan seuraava projektisi!</h3>
+            </a>
           </div>
         </div>
       </div>
@@ -34,7 +36,7 @@ const ServicesWrapper = styled.div`
   justify-content: center;
   align-items: center; 
   margin-top: 14rem;
-  margin-left: 63vw;
+  margin-left: 60vw;
   position: relative;
   z-index: 1;
   @media screen and (max-width: 1200px) {
@@ -90,34 +92,72 @@ const ServicesWrapper = styled.div`
           display:none;
         }
       }
+
+      
       
       .services-text {
-        margin: auto;
+        
         justify-content: center;
         justify-items: center;
         width: 80vw;
-
-        p {
-          font-family: Asap;
-          font-size: 1rem;
-          line-height: 150%;
-          margin-top: 1rem;
-        }
-
-  
-        h3 {
-          justify-items: center;
-          justify-content: center;
-          font-family: futura-pt-bold;
-          font-size: 1.4rem;         
-          font-weigth: 700;
-          margin: auto;
-          margin-bottom: 1rem;
-          margin-top: 2rem;    
-           
-        }
-      }      
+      }
+      .services-first {
+        text-align: center;
+        font-family: Asap;
+        font-size: 1rem;
+        line-height: 150%;
+        font-family: Asap;
+        font-size: 1rem;
+        line-height: 150%;
+        margin-top: 1rem;
+        color:black;
+      }
+      .services-second {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        padding-top: 1.5rem;
+        justify-items: center;
+        justify-content: center;
+        font-family: futura-pt-bold;
+        font-size: 1.4rem;         
+        font-weigth: 700;
+        margin: auto;
+        margin-bottom: 1rem;
+        margin-top: 2rem;  
+        color:black;        
+      }
+      
     }
+
+    .services-content{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: inline;
+      width: 100vw;
+      margin: auto;      
+      height: auto;
+      margin-top: -2rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: white;
+      position: relative;
+      z-index: 0;
+
+      @media screen and (max-width: 1200px) {
+        justify-content: center;
+        align-items: center;
+        margin-top: -1rem;
+        height: auto;
+        width: 100vw;
+        padding-top:4rem;
+        padding-bottom:4rem;
+
+      }
+    
+    }      
   }
 }
 
