@@ -48,7 +48,7 @@ const TeamsWrapper = styled.div`
   }
 
   .teams-heading {
-    margin-top: 4rem;
+    margin-top: 10rem;
     width: 28rem;
     height: 10rem;
     background: #000000;

@@ -13,7 +13,9 @@ const Jobs = () => {
       <div className="jobs-content">
         <h3>Hae meille töihin</h3>
         <span>Rekrytoimme 18–29-vuotiaita nuoria ympäri vuoden, joten kannattaa laittaa hakemus tulemaan.</span>
+        <a href="/fi/jobs">
         <button>Työpaikat <img src={rightArrow} alt="" className="arrow" /></button>
+        </a>
       </div>
     </JobsWrapper>
   )

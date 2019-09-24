@@ -54,9 +54,16 @@ const ContactPage = () => {
         <p>PL18402, 00099 HELSIGIN KAUPUNKI</p>
       </div>
       <div className="mapContainer">
-        <iframe scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox=24.92110133171082%2C60.16673876279075%2C24.935263395309452%2C60.17165409991959&amp;layer=mapnik"></iframe>
-        </div>
-
+            <a class="mappi" href="https://www.openstreetmap.org/?mlat=60.16512&amp;mlon=24.92169#map=17/60.16512/24.92169">
+              <iframe class="mappi"                       
+                          frameborder="0" 
+                          scrolling="yes" 
+                          marginheight="0" 
+                          marginwidth="0" 
+                          src="https://www.openstreetmap.org/export/embed.html?bbox=24.914610385894775%2C60.16286895186937%2C24.92877244949341%2C60.16737390200942&amp;layer=mapnik&amp;marker=60.16512150414045%2C24.921691417694092" >
+              </iframe>       
+            </a>            
+          </div>
 
       </StyleWrapper>
     </Layout>
@@ -148,6 +155,7 @@ const StyleWrapper = styled.div`
       margin-top: .5rem;
       flex-direction: column;
       align-items: center;
+      padding: 3rem auto;
     }
     .Member{
       width: 22rem;
@@ -170,17 +178,17 @@ const StyleWrapper = styled.div`
   .addressContainer {
     margin-top: 5rem;
     display:flex;
-    width:100%;
+    width:80%;
     flow-direction:row;
     justify-content:center;
     @media screen and (max-width: 1000px) {
       margin-top: 2rem;
       flex-direction: column;
       align-items: center;
+      margin:auto;
     }
       p{
-        margin-right: 52px;
-        font-size: 20px;
+        font-size: 1rem;
         font-style: bold;
         font-weight: 700;
         @media screen and (max-width: 1000px) {
@@ -189,20 +197,27 @@ const StyleWrapper = styled.div`
       }
   }
   .mapContainer{
-    margin-top: 50px;
-    margin-bottom: 5px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     display: flex;
     width: 100%;
-    heght: 800px;
+    height: auto;
     justify-content: center;
     align-items: center;
-      iframe{
-        width: 100%;
-        height: 600px;
-        border: 1px solid black;
-        pointer-events: none;
-        }
+    @media screen and (max-width: 1000px) {
+      height: 80vh;
+      width: 80vw;      
+      justify-content: center;
+      align-items: center;
+      margin:auto;      
     }
+      .mappi {
+        width: 100%;
+        height: 60vh;
+        border: 1px solid black;
+        
+        }
+  }
 `
 
 export default ContactPage

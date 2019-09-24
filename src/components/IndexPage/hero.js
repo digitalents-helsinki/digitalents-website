@@ -151,6 +151,7 @@ const TextWrapper = styled.div`
 
     @media screen and (max-width: 1024px) {
       width: 80vw;     
+      
     }
 
     h1 {
@@ -161,10 +162,12 @@ const TextWrapper = styled.div`
       margin-right: 1rem;
 
       @media screen and (max-width: 1000px) {
-        font-size: 2.5rem;       
+        font-size: 2.5rem; 
+        padding-bottom: 1rem;      
       }
       @media screen and (max-width: 600px) {
-        font-size: 1.5rem;       
+        font-size: 1.5rem; 
+        padding-bottom: 0.5rem;      
       }
       @media screen and (min-width: 3400px) {
         font-size: 7rem;     

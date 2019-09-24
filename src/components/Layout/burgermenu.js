@@ -26,16 +26,21 @@ const BurgerMenu = (props) => {
     <div className="wrapper">
       <div className="links">
         <ul>
-          <li><Link to={props.pagePrefix}>{props.language === 'en' ? 'FRONT PAGE' : 'ETUSIVU'}</Link></li>
+          <li classname="burger-item"><Link to={props.pagePrefix}>{props.language === 'en' ? 'FRONT PAGE' : 'ETUSIVU'}</Link></li>
+          <li classname="burger-item"><Link to={`${props.pagePrefix}/about/`}>MEISTÄ</Link></li>
+          <li classname="burger-item"><Link to={`${props.pagePrefix}/Portfolio-Slider/`}>TÖITÄMME</Link></li>
+          <li classname="burger-item"><Link to={`${props.pagePrefix}/services/`}>PALVELUT</Link></li>
+          <li classname="burger-item"><Link to={`${props.pagePrefix}/contact/`}>{props.language === 'en' ? 'CONTACT' : 'YHTEYSTIEDOT'}</Link></li>
+          <li classname="burger-item"><Link to={`${props.pagePrefix}/tyopaikat/`}>{props.language === 'en' ? 'JOBS' : 'TYÖPAIKAT'}</Link></li>
+          
         </ul>
         <ul>
-          <li><Link to={`${props.pagePrefix}/media/`}>DT MEDIA</Link></li>
-          <li><Link to={`${props.pagePrefix}/ict/`}>DT ICT</Link></li>
-          <li><Link to={`${props.pagePrefix}/softdev/`}>DT SOFTDEV</Link></li>
+          <li><Link to={`${props.pagePrefix}/media/`}>DigiTalents MEDIA</Link></li>
+          <li><Link to={`${props.pagePrefix}/ict/`}>DigiTalents ICT</Link></li>
+          <li><Link to={`${props.pagePrefix}/softdev/`}>DigiTalents SOFTDEV</Link></li>
         </ul>
         <ul>
-          <li><Link to={`${props.pagePrefix}/#persons`}>{props.language === 'en' ? 'CONTACT' : 'YHTEYSTIEDOT'}</Link></li>
-          <li><Link to={`${props.pagePrefix}/tyopaikat/`}>{props.language === 'en' ? 'JOBS' : 'TYÖPAIKAT'}</Link></li>
+          
         </ul>
       </div>
       <div className="langOptions">
@@ -136,7 +141,7 @@ const SideBar = styled.div`
         padding-bottom: 2rem;
 
         li {
-          padding-bottom: 0.5rem;
+          padding-bottom: 1rem;
         }
       }
     }

@@ -51,10 +51,9 @@ const StyleWrapper = styled.div`
   }
 
   .container {
-    margin-top: 5rem;
-    padding-top: 4rem;
+    margin-top: 8rem;
+    padding: 12rem 0;
     background: white;
-    height: auto;
     width: 100vw;
     @media screen and (max-width: 600px) {
       text-align:left;     
@@ -72,6 +71,7 @@ const StyleWrapper = styled.div`
       width: 60vw;
       margin: 3rem auto;
       font-size: 2rem;
+      padding: 8rem auto;
       @media screen and (max-width: 600px) {
         font-size: 1.2rem;
         width: 80vw;
@@ -84,7 +84,7 @@ const StyleWrapper = styled.div`
     display: flex;
     justify-content: flex-start;
     width: 60%;
-    margin: 5rem auto;
+    margin: 12rem auto 1rem;
     @media screen and (max-width: 1000px) {
         width: 90%;
         flex-direction: column;
@@ -93,9 +93,9 @@ const StyleWrapper = styled.div`
     .container_Img{
       display: flex;
       width: 50%;
-      height: 18rem;
+      height: 26rem;
       background-size: cover;
-      margin: 5rem 1rem;
+      margin: 1rem 1rem;
       background-image: url(${gray});
       @media screen and (max-width: 1000px) {
          align-items: center;

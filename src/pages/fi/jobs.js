@@ -81,7 +81,7 @@ const StyleWrapper = styled.div`
       font-size: 24px;
       font-weight: 400;
       padding-top: 4rem;
-      padding:1rem;
+      padding:4rem;
     }
   }
 
