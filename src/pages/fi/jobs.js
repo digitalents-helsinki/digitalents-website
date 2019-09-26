@@ -75,13 +75,14 @@ const StyleWrapper = styled.div`
     justify-content: center;
     align-items: center;
     text-align: left;
+    padding:4rem 0;
     p {
       text-align: center;
       max-width: 80vw;
       font-size: 24px;
       font-weight: 400;
-      padding-top: 4rem;
-      padding:4rem;
+      padding-top: 1rem;
+      padding:1rem;
     }
   }
 

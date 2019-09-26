@@ -35,9 +35,9 @@ const BurgerMenu = (props) => {
           
         </ul>
         <ul>
-          <li><Link to={`${props.pagePrefix}/media/`}>DigiTalents MEDIA</Link></li>
-          <li><Link to={`${props.pagePrefix}/ict/`}>DigiTalents ICT</Link></li>
-          <li><Link to={`${props.pagePrefix}/softdev/`}>DigiTalents SOFTDEV</Link></li>
+          <li><Link to={`${props.pagePrefix}/media/`}>Digitalents MEDIA</Link></li>
+          <li><Link to={`${props.pagePrefix}/ict/`}>Digitalents ICT</Link></li>
+          <li><Link to={`${props.pagePrefix}/softdev/`}>Digitalents SOFTDEV</Link></li>
         </ul>
         <ul>
           
@@ -65,7 +65,7 @@ const BurgerMenu = (props) => {
           <a href="/fi/">
             <img src={DTLogo} alt="" onClick={handleClick} />
           </a>
-          <img class="burger" src={openIcon} alt="" onClick={handleClick} />
+          <img id="menu" class="burger" src={openIcon} alt="" onClick={handleClick} />
         </div>
       </BurgerButton> : null}
       {sideBarElement}
@@ -88,6 +88,10 @@ const BurgerButton = styled.div`
 
   img {
     height: 1.6rem;
+  }
+
+  #menu {
+    float: right;
   }
 }
 

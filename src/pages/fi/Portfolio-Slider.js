@@ -11,7 +11,8 @@ const PortfolioSlider = () => {
         <p>Inspiroidu töistämme. Jokainen tekemämme tilaustyö on tarkoin toteutettu asiakkaan toiveiden mukaisesti.</p>
       </div>
 
-      <div className="Container_Img">
+      
+      <div className="Container_Imgallery">
         <div className="Container_Img_Images">
         </div>
         <div className="Container_Img_Images">
@@ -72,13 +73,25 @@ const StyleWrapper = styled.div`
         }
       }
     }
-        .Container_Img{
-          display: flex;
+
+    .btn {
+      font-size: 2rem;
+      align-self: center;
+      justify-content: center;
+      border: none;
+      outline: none;
+      padding: 1rem 4rem;
+      background-color: white;
+      
+    }
+        .Container_Imgallery{
+          display: flex;         
   	      flex-direction: row;
   	      flex-wrap: wrap;
           width: 70vw;
           justify-content: center;
           margin: 0 auto;
+          overflow: hidden;
           @media screen and (max-width: 1400px) {
             flex-direction: row;
             justify-content: center;
@@ -94,11 +107,16 @@ const StyleWrapper = styled.div`
             width: 100vw;
           }
           .Container_Img_Images{
-            border: 12px solid white;          
+            border: 0px solid white; 
+            margin: 10px;         
             height: 40vh;
             width: 18vw;
             background-size: cover;
+            object-fit: cover;
+	          transition: transform 200ms ease-out;
             background-image: url(${PortfolioSliderPhoto});
+            box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+            
             @media screen and (max-width: 1000px) {
               height: 20vh;
               width: 30vw;
@@ -107,6 +125,10 @@ const StyleWrapper = styled.div`
               align-items: center;
               
             }
+          }
+
+          .Container_Img_Images:hover {
+            transform: scale(1.05);
           }
         }
         .BottomText{

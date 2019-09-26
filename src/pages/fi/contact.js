@@ -19,34 +19,40 @@ const ContactPage = () => {
       </div>
       <div className="Team">
         <div className="Member">
-        <h1>Vesa Jaakola</h1>
-        <p>Head of Digitalents Helsinki</p>
-        <p>vesa.jaakola@hel.fi</p>
-        <p>040 717 9121</p>
+          <h1>Vesa Jaakola</h1>
+          <p>Head of Digitalents Helsinki</p>
+          <p>vesa.jaakola@hel.fi</p>
+          <p>040 717 9121</p>
         </div>
         <div className="Member">
-        <h1>Karoliina Leisti</h1>
-        <p>Head of Digitalents Media</p>
-        <p>karoliina.leisti@digitalentshelsinki.fi</p>
-        <p>040 522 4296</p>
+          <h1>Karoliina Leisti</h1>
+          <p>Head of Digitalents Media</p>
+          <p>karoliina.leisti@digitalentshelsinki.fi</p>
+          <p>040 522 4296</p>
         </div>
         <div className="Member">
-        <h1>Tarja Kurvinen</h1>
-        <p>Project Coordinator</p>
-        <p>tarja.kurvinen@hel.fi</p>
-        <p>040 669 2530</p>
+          <h1>Jukka Kalkasmaa</h1>
+          <p>Career Coach</p>
+          <p>jukka.kalkasmaa@digitalentshelsinki.fi</p>
+          <p>040 181 1682</p>
         </div>
         <div className="Member">
-        <h1>Seppo Rouhiainen</h1>
-        <p>Head of Digitalents ICT</p>
-        <p>seppo.rouhiainen@digitalentshelsinki.fi</p>
-        <p>040 487 1644</p>
+          <h1>Tarja Kurvinen</h1>
+          <p>Project Coordinator</p>
+          <p>tarja.kurvinen@hel.fi</p>
+          <p>040 669 2530</p>
         </div>
         <div className="Member">
-        <h1>Veikko Hiiri</h1>
-        <p>Project Coordinator</p>
-        <p>veikko.hiiri@hel.fi</p>
-        <p>040 489 6016</p>
+          <h1>Seppo Rouhiainen</h1>
+          <p>Head of Digitalents ICT</p>
+          <p>seppo.rouhiainen@digitalentshelsinki.fi</p>
+          <p>040 487 1644</p>
+        </div>
+        <div className="Member">
+          <h1>Veikko Hiiri</h1>
+          <p>Project Coordinator</p>
+          <p>veikko.hiiri@hel.fi</p>
+          <p>040 489 6016</p>
         </div>
       </div>
       <div className="addressContainer">
