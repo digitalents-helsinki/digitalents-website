@@ -6,7 +6,6 @@ import rightArrow from '../../images/right-arrow.svg'
 const TeamsAlt = () => {
   return (
     <TeamsWrapper>
-     
       <div className="teams-heading">
         <h2>Digitalents tiimimme</h2>
       </div>
