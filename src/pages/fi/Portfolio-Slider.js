@@ -2,51 +2,88 @@ import React from 'react'
 import styled from 'styled-components'
 import Layout from '../../components/Layout/layout'
 import PortfolioSliderPhoto from '../../images/PortfolioSliderPhoto.png'
+import TestImg from '../../images/annie-spratt-qckxruozjrg-unsplash.jpg'
 
-const PortfolioSlider = () => {
-  return (
-    <Layout>
-      <StyleWrapper>
-      <div className="Container">
-        <p>Inspiroidu töistämme. Jokainen tekemämme tilaustyö on tarkoin toteutettu asiakkaan toiveiden mukaisesti.</p>
-      </div>
+export default class PortfolioSlider extends React.Component {
+  constructor(props) {
+    super(props)
 
-      <div className="Container_Img">
-        <div className="Container_Img_Images">
+    this.state = {
+      teamVisible: 'media'
+    }
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(team) {
+    this.setState(state => ({
+      teamVisible: team
+    }))
+  }
+
+  render() {
+    return (
+      <Layout>
+        <StyleWrapper>
+        <div className="Container">
+          <p>Inspiroidu töistämme. Jokainen tekemämme tilaustyö on tarkoin toteutettu asiakkaan toiveiden mukaisesti.</p>
         </div>
-        <div className="Container_Img_Images">
+        <button onClick={(e) => this.handleClick('media', e)}>Media</button>
+        <button onClick={(e) => this.handleClick('softdev', e)}>SoftDev</button>
+        <button onClick={(e) => this.handleClick('ict', e)}>ICT</button>
+        {this.state.teamVisible === 'media' ? 
+        <div className= 'Container_Img'>
+          <div className="Container_Img_Images defaultImg">
+          </div>
+          <div className="Container_Img_Images">
+          </div>
+          <div className="Container_Img_Images">
+          </div>
         </div>
-        <div className="Container_Img_Images">
+        : null }
+        {this.state.teamVisible === 'softdev' ? 
+        <div className='Container_Img'>
+          <div className="Container_Img_Images">
+          </div>
+          <div className="Container_Img_Images">
+          </div>
+          <div className="Container_Img_Images">
+          </div>
         </div>
-        <div className="Container_Img_Images">
+        : null }
+        {this.state.teamVisible === 'ict' ? 
+        <div className='Container_Img'>
+          <div className="Container_Img_Images ictImg">
+          </div>
+          <div className="Container_Img_Images">
+          </div>
+          <div className="Container_Img_Images">
+          </div>
         </div>
-        <div className="Container_Img_Images">
-        </div>
-        <div className="Container_Img_Images">
-        </div>
-        <div className="Container_Img_Images">
-        </div>
-        <div className="Container_Img_Images">
-        </div>
-        <div className="Container_Img_Images">
-        </div>
-      </div>
-      
-       
-      <a href="/fi/contact">
-        <div className="BottomText">
-          <p className='BottomText_First'> Onko sinulla Idea?</p>
-          <p className='BottomText_Second'>Suunnitellaan projekti</p>
-        </div>
-      </a>
-      
-      </StyleWrapper>
-    </Layout>
-  )
+        : null }
+        <a href="/fi/contact">
+          <div className="BottomText">
+            <p className='BottomText_First'> Onko sinulla Idea?</p>
+            <p className='BottomText_Second'>Suunnitellaan projekti</p>
+          </div>
+        </a>
+        
+        </StyleWrapper>
+      </Layout>
+    )
+  }
 }
 
 const StyleWrapper = styled.div`
     height: auto;
+
+    .ictImg {
+      background-image: url(${TestImg});
+    }
+
+    .defaultImg {
+      background-image: url(${PortfolioSliderPhoto});
+    }
     .Container{
       display: flex;
       width: 80%;
@@ -98,7 +135,6 @@ const StyleWrapper = styled.div`
             height: 40vh;
             width: 18vw;
             background-size: cover;
-            background-image: url(${PortfolioSliderPhoto});
             @media screen and (max-width: 1000px) {
               height: 20vh;
               width: 30vw;
@@ -131,5 +167,3 @@ const StyleWrapper = styled.div`
         }
       }
 `
-
-export default PortfolioSlider
