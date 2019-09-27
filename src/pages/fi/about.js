@@ -265,9 +265,12 @@ const StyleWrapper = styled.div`
       background-size: cover;
       margin: 5vw;
       flex-shrink: 1;
+      
     }
-    
-    
+    .ImagesContainer_Media:hover, .ImagesContainer_ICT:hover, .ImagesContainer_SoftDev:hover{
+      transition: transform 200ms ease-out;
+      transform: scale(1.05);
+    }
   }
 
   .ImagesContainer_Media {

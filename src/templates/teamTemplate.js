@@ -97,6 +97,7 @@ const StyleWrapper = styled.div`
       background-size: cover;
       margin: 1rem 1rem;
       background-image: url(${gray});
+      box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
       @media screen and (max-width: 1000px) {
          align-items: center;
          margin: 1rem auto;

@@ -11,15 +11,23 @@ export default class PortfolioSlider extends React.Component {
     super(props)
 
     this.state = {
-      teamVisible: 'media'
+      teamVisible: 'media',
+      imageVisible: null
     }
 
     this.handleClick = this.handleClick.bind(this)
+    this.handleImageClick = this.handleImageClick.bind(this)
   }
 
   handleClick(team) {
     this.setState(state => ({
       teamVisible: team
+    }))
+  }
+
+  handleImageClick(image) {
+    this.setState(state => ({
+      imageVisible: image
     }))
   }
 
@@ -35,71 +43,307 @@ export default class PortfolioSlider extends React.Component {
         <button class="btn" onClick={(e) => this.handleClick('softdev', e)}>SoftDev</button>
         <button class="btn" onClick={(e) => this.handleClick('ict', e)}>ICT</button>
         {this.state.teamVisible === 'media' ? 
-        <div className= 'Container_Imgallery'>         
-          <div className="Container_Img_Images defaultImg">
-          </div>
-          <div className="Container_Img_Images defaultImg">
-          </div>
-          <div className="Container_Img_Images defaultImg">           
-          </div>
-          <div className="Container_Img_Images defaultImg">
-          </div>
-          <div className="Container_Img_Images defaultImg">
-          </div>
-          <div className="Container_Img_Images defaultImg">
-          </div>
-          <div className="Container_Img_Images defaultImg">
-          </div>
-          <div className="Container_Img_Images defaultImg">
-          </div>
-          <div className="Container_Img_Images defaultImg">
-          </div>         
+        <div className= 'Container_Imgallery'>
+          
+          {this.state.imageVisible === 'media1' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="defaultImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('media1', e)} className="Container_Img_Images defaultImg">
+            </div>
+          }
+
+          {this.state.imageVisible === 'media2' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="defaultImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('media2', e)} className="Container_Img_Images defaultImg">
+            </div>
+          }
+
+          {this.state.imageVisible === 'media3' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="defaultImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('media3', e)} className="Container_Img_Images defaultImg">
+            </div>
+          }
+
+          {this.state.imageVisible === 'media4' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="defaultImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('media4', e)} className="Container_Img_Images defaultImg">
+            </div>
+          }
+
+          {this.state.imageVisible === 'media5' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="defaultImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('media5', e)} className="Container_Img_Images defaultImg">
+            </div>
+          }
+
+          {this.state.imageVisible === 'media6' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="defaultImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('media6', e)} className="Container_Img_Images defaultImg">
+            </div>
+          }
+
+          {this.state.imageVisible === 'media7' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="defaultImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('media7', e)} className="Container_Img_Images defaultImg">
+            </div>
+          }
+
+          {this.state.imageVisible === 'media8' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="defaultImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('media8', e)} className="Container_Img_Images defaultImg">
+            </div>
+          }
+
+          {this.state.imageVisible === 'media9' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="defaultImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('media9', e)} className="Container_Img_Images defaultImg">
+            </div>
+          }
+         
         </div>
         : null }
+        
         {this.state.teamVisible === 'softdev' ? 
         <div className='Container_Imgallery'>
-          <div className="Container_Img_Images softdevImg">
+
+          {this.state.imageVisible === 'softdev1' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="softdevImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('softdev1', e)} className="Container_Img_Images softdevImg">
+            </div>
+          }
+
+
+          {this.state.imageVisible === 'softdev2' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="softdevImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('softdev2', e)} className="Container_Img_Images softdevImg">
+            </div>
+          }
+
+
+          {this.state.imageVisible === 'softdev3' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="softdevImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('softdev3', e)} className="Container_Img_Images softdevImg">
+            </div>
+          }
+
+
+          {this.state.imageVisible === 'softdev4' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="softdevImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('softdev4', e)} className="Container_Img_Images softdevImg">
+            </div>
+          }
+
+
+          {this.state.imageVisible === 'softdev5' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="softdevImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('softdev5', e)} className="Container_Img_Images softdevImg">
+            </div>
+          }
+
+
+          {this.state.imageVisible === 'softdev6' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="softdevImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('softdev6', e)} className="Container_Img_Images softdevImg">
+            </div>
+          }
+
+
+          {this.state.imageVisible === 'softdev7' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="softdevImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('softdev7', e)} className="Container_Img_Images softdevImg">
+            </div>
+          }
+
+
+          {this.state.imageVisible === 'softdev8' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="softdevImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('softdev8', e)} className="Container_Img_Images softdevImg">
+            </div>
+          }
+
+
+        {this.state.imageVisible === 'softdev9' ?          
+          <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+            <div className="softdevImg modal-content">
+            </div>
           </div>
-          <div className="Container_Img_Images softdevImg">
+          :
+          <div onClick={(e) => this.handleImageClick('softdev9', e)} className="Container_Img_Images softdevImg">
           </div>
-          <div className="Container_Img_Images softdevImg">
-          </div>
-          <div className="Container_Img_Images softdevImg">
-          </div>
-          <div className="Container_Img_Images softdevImg">
-          </div>
-          <div className="Container_Img_Images softdevImg">
-          </div>
-          <div className="Container_Img_Images softdevImg">
-          </div>
-          <div className="Container_Img_Images softdevImg">
-          </div>
-          <div className="Container_Img_Images softdevImg">
-          </div>
+        }
         </div>
         : null }
+
         {this.state.teamVisible === 'ict' ? 
         <div className='Container_Imgallery'>
-          <div className="Container_Img_Images ictImg">
+
+            {this.state.imageVisible === 'ict1' ?          
+              <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+                <div className="ictImg modal-content">
+                </div>
+              </div>
+              :
+              <div onClick={(e) => this.handleImageClick('ict1', e)} className="Container_Img_Images ictImg">
+              </div>
+            }
+  
+  
+            {this.state.imageVisible === 'ict2' ?          
+              <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+                <div className="ictImg modal-content">
+                </div>
+              </div>
+              :
+              <div onClick={(e) => this.handleImageClick('ict2', e)} className="Container_Img_Images ictImg">
+              </div>
+            }
+  
+  
+            {this.state.imageVisible === 'ict3' ?          
+              <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+                <div className="ictImg modal-content">
+                </div>
+              </div>
+              :
+              <div onClick={(e) => this.handleImageClick('ict3', e)} className="Container_Img_Images ictImg">
+              </div>
+            }
+  
+  
+            {this.state.imageVisible === 'ict4' ?          
+              <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+                <div className="ictImg modal-content">
+                </div>
+              </div>
+              :
+              <div onClick={(e) => this.handleImageClick('ict4', e)} className="Container_Img_Images ictImg">
+              </div>
+            }
+  
+  
+            {this.state.imageVisible === 'ict5' ?          
+              <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+                <div className="ictImg modal-content">
+                </div>
+              </div>
+              :
+              <div onClick={(e) => this.handleImageClick('ict5', e)} className="Container_Img_Images ictImg">
+              </div>
+            }
+  
+  
+            {this.state.imageVisible === 'ict6' ?          
+              <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+                <div className="ictImg modal-content">
+                </div>
+              </div>
+              :
+              <div onClick={(e) => this.handleImageClick('ict6', e)} className="Container_Img_Images ictImg">
+              </div>
+            }
+  
+  
+            {this.state.imageVisible === 'ict7' ?          
+              <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+                <div className="ictImg modal-content">
+                </div>
+              </div>
+              :
+              <div onClick={(e) => this.handleImageClick('ict7', e)} className="Container_Img_Images ictImg">
+              </div>
+            }
+  
+  
+            {this.state.imageVisible === 'ict8' ?          
+              <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+                <div className="ictImg modal-content">
+                </div>
+              </div>
+              :
+              <div onClick={(e) => this.handleImageClick('ict8', e)} className="Container_Img_Images ictImg">
+              </div>
+            }
+  
+  
+          {this.state.imageVisible === 'ict9' ?          
+            <div className="modal" onClick={(e) => this.handleImageClick(null)}>
+              <div className="ictImg modal-content">
+              </div>
+            </div>
+            :
+            <div onClick={(e) => this.handleImageClick('ict9', e)} className="Container_Img_Images ictImg">
+            </div>
+          }
           </div>
-          <div className="Container_Img_Images ictImg">
-          </div>
-          <div className="Container_Img_Images ictImg">
-          </div>
-          <div className="Container_Img_Images ictImg">
-          </div>
-          <div className="Container_Img_Images ictImg">
-          </div>
-          <div className="Container_Img_Images ictImg">
-          </div>
-          <div className="Container_Img_Images ictImg">
-          </div>
-          <div className="Container_Img_Images ictImg">
-          </div>
-          <div className="Container_Img_Images ictImg">
-          </div>
-        </div>
-        : null }
+          : null }
+  
         <a href="/fi/contact">
           <div className="BottomText">
             <p className='BottomText_First'> Onko sinulla Idea?</p>
@@ -173,18 +417,41 @@ const StyleWrapper = styled.div`
         font-size: 1.5rem;
         margin-left:18.6vw;
         padding: 0rem 0rem 2rem;
-      }
-
-      
+      }  
     }
+
     .btn:hover {
       transform: scale(1.1);
     }
+
+    .modal {
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 15vh; /* Location of the box */
+      left: 0;
+      top: 0;
+      margin: auto;
+      width: 100%; /* Full width */
+      height: 100vh; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    
+    }
+
+    .modal-content {
+      z-index: 3; /* Sit on top */
+      margin: 5rem auto;
+      display: block;
+      width: 45rem;
+      height: 65vh;
+      background-size: cover;
+    }
+
         .Container_Imgallery{
           display: flex;         
   	      flex-direction: row;
   	      flex-wrap: wrap;
-          width: 70vw;
+          width: 75vw;
           justify-content: center;
           margin: 0 auto;
           overflow: hidden;
@@ -195,6 +462,7 @@ const StyleWrapper = styled.div`
             margin: auto;
             width: 90vw;
           }
+
           @media screen and (max-width: 1000px) {
             flex-direction: row;
             justify-content: center;
@@ -202,11 +470,12 @@ const StyleWrapper = styled.div`
             margin: auto;
             width: 100vw;
           }
+
           .Container_Img_Images{
             border: 0px solid white; 
             margin: 10px;         
             height: 40vh;
-            width: 18vw;
+            width: 22vw;
             background-size: cover;
             object-fit: cover;
 	          transition: transform 200ms ease-out;
