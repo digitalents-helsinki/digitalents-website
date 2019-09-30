@@ -373,7 +373,8 @@ const StyleWrapper = styled.div`
     }
 
     .ictback {
-      background-image: url(${ict});
+      /*background-image: url(${ict});*/
+      background-color:white;
     }
 
     .defaultImg {
@@ -381,15 +382,17 @@ const StyleWrapper = styled.div`
     }
 
     .mediaback {
-      background-image: url(${media});
+      /*background-image: url(${media});*/
+      background-color:white;
     }
 
     .softdevImg {
-      background-image: url(${softdev})
+      background-image: url(${softdev});
     }
 
     .softback {
-      background-image: url(${dev})
+      /*background-image: url(${dev});*/
+      background-color:white;
     }
 
     .Container{
@@ -495,14 +498,14 @@ const StyleWrapper = styled.div`
             border: 0px solid white; 
             margin: 10px;         
             height: 30vh;
-            width: 17vw;
+            width: 15vw;
             background-size: cover;
             object-fit: cover;
 	          transition: transform 200ms ease-out;
             box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 800;
-            color:white;
+            color:black;
             
             @media screen and (max-width: 1000px) {
               height: 20vh;
@@ -516,6 +519,7 @@ const StyleWrapper = styled.div`
 
           .squeeze {
             height: 10vh;
+            box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0);
           }
 
           .Container_Img_Images:hover {
