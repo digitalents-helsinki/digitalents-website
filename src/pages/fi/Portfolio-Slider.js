@@ -4,6 +4,9 @@ import Layout from '../../components/Layout/layout'
 import PortfolioSliderPhoto from '../../images/PortfolioSliderPhoto.png'
 import TestImg from '../../images/annie-spratt-qckxruozjrg-unsplash.jpg'
 import softdev from '../../images/pexels-photo-2.jpeg'
+import media from '../../images/Media_kuva.png'
+import ict from '../../images/ICT_kuva.png'
+import dev from '../../images/Softdev_kuva.png'
 
 
 export default class PortfolioSlider extends React.Component {
@@ -37,11 +40,12 @@ export default class PortfolioSlider extends React.Component {
         <StyleWrapper>
         <div className="Container">
           <p>Inspiroidu töistämme. Jokainen tekemämme tilaustyö on tarkoin toteutettu asiakkaan toiveiden mukaisesti.</p>      
-        </div>        
-
-        <button class="btn" onClick={(e) => this.handleClick('media', e)}>Media</button>
-        <button class="btn" onClick={(e) => this.handleClick('softdev', e)}>SoftDev</button>
-        <button class="btn" onClick={(e) => this.handleClick('ict', e)}>ICT</button>
+        </div> 
+      <div className= 'Container_Imgallery'>
+        <button class="Container_Img_Images squeeze mediaback" onClick={(e) => this.handleClick('media', e)}>Media</button>
+        <button class="Container_Img_Images squeeze softback" onClick={(e) => this.handleClick('softdev', e)}>SoftDev</button>
+        <button class="Container_Img_Images squeeze ictback" onClick={(e) => this.handleClick('ict', e)}>ICT</button>
+      </div>       
         {this.state.teamVisible === 'media' ? 
         <div className= 'Container_Imgallery'>
           
@@ -258,6 +262,10 @@ export default class PortfolioSlider extends React.Component {
             {this.state.imageVisible === 'ict2' ?          
               <div className="modal" onClick={(e) => this.handleImageClick(null)}>
                 <div className="ictImg modal-content">
+             
+                </div>
+                <div>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam consequuntur at natus fugiat placeat voluptates, aut nemo facere voluptate architecto eaque non quibusdam iste dolorem nihil repudiandae. Ab, provident reiciendis.</p>
                 </div>
               </div>
               :
@@ -364,12 +372,24 @@ const StyleWrapper = styled.div`
       background-image: url(${TestImg});
     }
 
+    .ictback {
+      background-image: url(${ict});
+    }
+
     .defaultImg {
       background-image: url(${PortfolioSliderPhoto});
     }
 
+    .mediaback {
+      background-image: url(${media});
+    }
+
     .softdevImg {
       background-image: url(${softdev})
+    }
+
+    .softback {
+      background-image: url(${dev})
     }
 
     .Container{
@@ -451,7 +471,7 @@ const StyleWrapper = styled.div`
           display: flex;         
   	      flex-direction: row;
   	      flex-wrap: wrap;
-          width: 75vw;
+          width: 60vw;
           justify-content: center;
           margin: 0 auto;
           overflow: hidden;
@@ -474,12 +494,15 @@ const StyleWrapper = styled.div`
           .Container_Img_Images{
             border: 0px solid white; 
             margin: 10px;         
-            height: 40vh;
-            width: 22vw;
+            height: 30vh;
+            width: 17vw;
             background-size: cover;
             object-fit: cover;
 	          transition: transform 200ms ease-out;
             box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+            font-size: 3rem;
+            font-weight: 800;
+            color:white;
             
             @media screen and (max-width: 1000px) {
               height: 20vh;
@@ -489,6 +512,10 @@ const StyleWrapper = styled.div`
               align-items: center;
               
             }
+          }
+
+          .squeeze {
+            height: 10vh;
           }
 
           .Container_Img_Images:hover {
