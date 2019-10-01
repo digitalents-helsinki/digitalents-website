@@ -85,7 +85,7 @@ const JobsWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50%;
+    height: auto;
     width: 50%;
     background: white;
     margin: auto;
@@ -113,6 +113,7 @@ const JobsWrapper = styled.div`
       font-family: Asap;
       font-size: 1rem;
       line-height: 150%;
+      margin: auto 2rem;
     }
     
     button {

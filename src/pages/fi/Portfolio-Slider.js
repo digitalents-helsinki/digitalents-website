@@ -41,8 +41,8 @@ export default class PortfolioSlider extends React.Component {
         <div className="Container">
           <p>Inspiroidu töistämme. Jokainen tekemämme tilaustyö on tarkoin toteutettu asiakkaan toiveiden mukaisesti.</p>      
         </div> 
-      <div className= 'Container_Imgallery'>
-        <button class="Container_Img_Images squeeze mediaback" onClick={(e) => this.handleClick('media', e)}>Media</button>
+      <div className= 'Container_Imgallery'>        
+        <button class="Container_Img_Images squeeze mediaback" onClick={(e) => this.handleClick('media', e)}>Media</button>     
         <button class="Container_Img_Images squeeze softback" onClick={(e) => this.handleClick('softdev', e)}>SoftDev</button>
         <button class="Container_Img_Images squeeze ictback" onClick={(e) => this.handleClick('ict', e)}>ICT</button>
       </div>       
@@ -474,11 +474,11 @@ const StyleWrapper = styled.div`
           display: flex;         
   	      flex-direction: row;
   	      flex-wrap: wrap;
-          width: 60vw;
+          width: 55vw;
           justify-content: center;
           margin: 0 auto;
           overflow: hidden;
-          @media screen and (max-width: 1400px) {
+          @media screen and (max-width: 800px) {
             flex-direction: row;
             justify-content: center;
             align-items: center;
@@ -498,13 +498,12 @@ const StyleWrapper = styled.div`
             border: 0px solid white; 
             margin: 10px;         
             height: 30vh;
-            width: 15vw;
+            width: 16vw;
             background-size: cover;
             object-fit: cover;
 	          transition: transform 200ms ease-out;
-            box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
-            font-size: 2rem;
-            font-weight: 800;
+            box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.2);
+            font-size: 2rem;      
             color:black;
             
             @media screen and (max-width: 1000px) {
@@ -519,7 +518,16 @@ const StyleWrapper = styled.div`
 
           .squeeze {
             height: 10vh;
+            width: 5vw;
             box-shadow: 0rem 0rem 0rem rgba(0, 0, 0, 0);
+            font-size: 1.2rem;
+            margin-bottom:3rem;
+          }
+
+          .squeeze:hover {
+            text-decoration: underline;
+            text-decoration: bold;
+            font-weight: bold;
           }
 
           .Container_Img_Images:hover {

@@ -147,7 +147,7 @@ const TextWrapper = styled.div`
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    width: 70vw;
+    width: 50vw;
 
     @media screen and (max-width: 1024px) {
       width: 80vw;     
@@ -155,7 +155,7 @@ const TextWrapper = styled.div`
     }
 
     h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: bold;
       text-transform: uppercase;
       font-family: futura-pt-bold;
@@ -177,9 +177,9 @@ const TextWrapper = styled.div`
 
 
   p {
-    width: 70vw;
+    width: 50vw;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     padding-top: 4rem;
 
